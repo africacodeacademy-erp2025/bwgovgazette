@@ -5,19 +5,19 @@
 ## Features
 
 ### For Citizens
-- ** Browse Gazettes**: Easy access to all published gazettes with advanced search and filtering
-- ** Smart Search**: Find specific notices by title, category, date, or keywords  
-- ** Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- ** Download Center**: Direct download access to official documents
-- ** Category Organization**: Browse by Infrastructure, Legal, Environment, Health, Education, and Finance
+- **Browse Gazettes**: Easy access to all published gazettes with advanced search and filtering
+- **Smart Search**: Find specific notices by title, category, date, or keywords  
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **Download Center**: Direct download access to official documents
+- **Category Organization**: Browse by Infrastructure, Legal, Environment, Health, Education, and Finance
 
 ### For Administrators
-- ** Content Management**: Create new gazettes with rich text editor
-- ** Document Upload**: Drag-and-drop file upload with automatic processing
-- ** Analytics Dashboard**: Track downloads, user engagement, and publication metrics
-- ** User Management**: Monitor active users and system activity
-- ** Notification System**: Real-time alerts for pending approvals and system updates
-- ** Quick Actions**: Streamlined workflow for publishing and managing content
+- **Content Management**: Create new gazettes with rich text editor
+- **Document Upload**: Drag-and-drop file upload with automatic processing
+- **Analytics Dashboard**: Track downloads, user engagement, and publication metrics
+- **User Management**: Monitor active users and system activity
+- **Notification System**: Real-time alerts for pending approvals and system updates
+- **Quick Actions**: Streamlined workflow for publishing and managing content
 
 ## Technology Stack
 
