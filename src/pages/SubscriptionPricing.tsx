@@ -20,19 +20,19 @@ export default function SubscriptionPricing() {
         </div>
       </header>
 
-      <div className="w-full py-20 lg:py-40">
+      <div className="w-full py-8">
         <div className="container mx-auto">
-          <div className="flex text-center justify-center items-center gap-4 flex-col">
+          <div className="flex text-center justify-center items-center gap-3 flex-col">
             <Badge>Subscription Plans</Badge>
-            <div className="flex gap-2 flex-col">
-              <h1 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
+            <div className="flex gap-1 flex-col">
+              <h1 className="text-2xl md:text-4xl tracking-tighter max-w-xl text-center font-regular">
                 Never Miss an Important <span className="text-primary">Gazette Alert</span>
               </h1>
-              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
+              <p className="text-base leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
                 Stay informed with real-time notifications for official gazettes, tenders, and public notices.
               </p>
             </div>
-            <div className="grid text-left w-full grid-cols-3 lg:grid-cols-4 divide-x pt-20">
+            <div className="grid text-left w-full grid-cols-3 lg:grid-cols-4 divide-x pt-8">
               <div className="col-span-3 lg:col-span-1"></div>
               <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
                 <p className="text-2xl">Basic</p>
