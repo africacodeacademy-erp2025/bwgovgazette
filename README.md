@@ -1,25 +1,25 @@
-# govgazette 🏛️
+# govgazette 
 
 **govgazette** is a modern, comprehensive digital platform for managing and distributing official government gazettes and public notices. Built with React, TypeScript, and Tailwind CSS, it provides seamless access to governmental publications for citizens and administrative management for officials.
 
-## ✨ Features
+## Features
 
 ### For Citizens
-- **📖 Browse Gazettes**: Easy access to all published gazettes with advanced search and filtering
-- **🔍 Smart Search**: Find specific notices by title, category, date, or keywords  
-- **📱 Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **📥 Download Center**: Direct download access to official documents
-- **🏷️ Category Organization**: Browse by Infrastructure, Legal, Environment, Health, Education, and Finance
+- **Browse Gazettes**: Easy access to all published gazettes with advanced search and filtering
+- **Smart Search**: Find specific notices by title, category, date, or keywords  
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **Download Center**: Direct download access to official documents
+- **Category Organization**: Browse by Infrastructure, Legal, Environment, Health, Education, and Finance
 
 ### For Administrators
-- **📝 Content Management**: Create new gazettes with rich text editor
-- **📤 Document Upload**: Drag-and-drop file upload with automatic processing
-- **📊 Analytics Dashboard**: Track downloads, user engagement, and publication metrics
-- **👥 User Management**: Monitor active users and system activity
-- **🔔 Notification System**: Real-time alerts for pending approvals and system updates
-- **⚡ Quick Actions**: Streamlined workflow for publishing and managing content
+- **Content Management**: Create new gazettes with rich text editor
+- **Document Upload**: Drag-and-drop file upload with automatic processing
+- **Analytics Dashboard**: Track downloads, user engagement, and publication metrics
+- **User Management**: Monitor active users and system activity
+- **Notification System**: Real-time alerts for pending approvals and system updates
+- **Quick Actions**: Streamlined workflow for publishing and managing content
 
-## 🚀 Technology Stack
+## Technology Stack
 
 - **Frontend**: React 18 with TypeScript
 - **Styling**: Tailwind CSS with custom design system
@@ -30,7 +30,7 @@
 - **State Management**: TanStack Query for server state
 - **Build Tool**: Vite for fast development and builds
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 govgazette/
@@ -56,7 +56,7 @@ govgazette/
 └── package.json            # Dependencies and scripts
 ```
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -102,7 +102,7 @@ govgazette uses a comprehensive design system built on Tailwind CSS:
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint for code quality
 
-## 🔒 Admin Access
+## Admin Access
 
 The admin dashboard provides comprehensive management tools:
 
@@ -117,7 +117,7 @@ The admin dashboard provides comprehensive management tools:
 - Manage user permissions
 - Real-time notifications
 
-## 🌐 API Integration
+## API Integration
 
 govgazette is designed to integrate with government backend systems:
 
@@ -126,13 +126,13 @@ govgazette is designed to integrate with government backend systems:
 - **File Upload**: Support for PDF, DOC, DOCX document formats
 - **Search API**: Advanced search and filtering capabilities
 
-## 📱 Browser Support
+## Browser Support
 
 - **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
 - **Mobile Browsers**: iOS Safari, Chrome Mobile, Samsung Internet
 - **Progressive Web App**: PWA capabilities for mobile installation
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to improve govgazette:
 
@@ -142,11 +142,11 @@ We welcome contributions to improve govgazette:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## Support
 
 For support and questions:
 
@@ -154,7 +154,7 @@ For support and questions:
 - **Issues**: Create an issue on GitHub
 - **Email**: support@govgazette.gov
 
-## 🏗️ Deployment
+## Deployment
 
 ### Production Deployment
 
@@ -178,7 +178,7 @@ VITE_APP_NAME=govgazette
 VITE_CONTACT_EMAIL=support@govgazette.gov
 ```
 
-## 🎯 Roadmap
+## Roadmap
 
 ### Upcoming Features
 - [ ] Multi-language support
