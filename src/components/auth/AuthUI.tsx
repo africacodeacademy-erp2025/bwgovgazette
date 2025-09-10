@@ -9,7 +9,6 @@ import { Eye, EyeOff } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useNavigate } from "react-router-dom";
-import { Loader } from "@/components/ui/loader";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -183,30 +182,14 @@ PasswordInput.displayName = "PasswordInput";
 
 function SignInForm() {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
   
-  const handleSignIn = async (event: React.FormEvent<HTMLFormElement>) => { 
+  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => { 
     event.preventDefault(); 
-    setIsLoading(true);
     console.log("UI: Sign In form submitted");
-    
-    // Simulate loading time
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
     // Check current path to determine redirect destination
     const isAdminPath = window.location.pathname.includes('/admin');
     navigate(isAdminPath ? '/admin/dashboard' : '/dashboard');
-    setIsLoading(false);
   };
-  
-  if (isLoading) {
-    return (
-      <div className="flex flex-col items-center gap-4">
-        <Loader size={120} />
-        <p className="text-sm text-muted-foreground">Signing you in...</p>
-      </div>
-    );
-  }
   
   return (
     <form onSubmit={handleSignIn} autoComplete="on" className="flex flex-col gap-8">
