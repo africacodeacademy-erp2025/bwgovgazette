@@ -7,6 +7,7 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
 import { Menu, X, FileText } from 'lucide-react';
+import { OutlineText } from '@/components/ui/outline-text';
 export function HeroSection() {
   const navigate = useNavigate();
   return <>
@@ -83,7 +84,7 @@ const HeroHeader = () => {
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <a href="/" aria-label="home" className="flex items-center space-x-2">
                                 <FileText className="h-8 w-8 text-primary" />
-                                <span className="text-2xl font-bold">govgazette</span>
+                                <OutlineText className="text-2xl font-bold">govgazette</OutlineText>
                             </a>
 
                             <button onClick={() => setMenuState(!menuState)} aria-label={menuState == true ? 'Close Menu' : 'Open Menu'} className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
