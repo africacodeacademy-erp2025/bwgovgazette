@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, MapPin, DollarSign, Clock, FileText, Download, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, DollarSign, Clock, FileText, Download, AlertTriangle, X } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import { ResponsiveModal, ResponsiveModalContent, ResponsiveModalHeader, ResponsiveModalTitle } from '@/components/ui/responsive-modal';
+import { Component } from '@/components/ui/404-page-not-found';
 interface TenderDetails {
   id: string;
   title: string;
@@ -19,6 +21,12 @@ interface TenderDetails {
     officer: string;
     email: string;
     phone: string;
+  };
+  specifications: {
+    technicalSpecs: string[];
+    deliverables: string[];
+    timeline: string[];
+    qualityStandards: string[];
   };
 }
 const botswanaTenders: Record<string, TenderDetails> = {
@@ -38,6 +46,35 @@ const botswanaTenders: Record<string, TenderDetails> = {
       officer: 'Eng. Thabo Mokoena',
       email: 'tmokoena@gov.bw',
       phone: '+267 318 4400'
+    },
+    specifications: {
+      technicalSpecs: [
+        'Bridge span: 250 meters',
+        'Load capacity: 80 tons per axle',
+        'Construction materials: Reinforced concrete and steel',
+        'Foundation depth: Minimum 15 meters',
+        'Seismic resistance: Zone 2 earthquake standards'
+      ],
+      deliverables: [
+        'Complete bridge structure',
+        'Access roads (2km each side)',
+        'Safety barriers and signage',
+        'Lighting system installation',
+        'Environmental rehabilitation'
+      ],
+      timeline: [
+        'Site preparation: 3 months',
+        'Foundation work: 6 months',
+        'Superstructure construction: 12 months',
+        'Finishing and testing: 3 months',
+        'Total project duration: 24 months'
+      ],
+      qualityStandards: [
+        'BS EN 1992 (Eurocode 2) for concrete structures',
+        'BS EN 1993 (Eurocode 3) for steel structures',
+        'SADC Road Traffic Signs Manual compliance',
+        'Botswana Bureau of Standards certification required'
+      ]
     }
   },
   '2': {
@@ -56,6 +93,35 @@ const botswanaTenders: Record<string, TenderDetails> = {
       officer: 'Dr. Keabetswe Segwabe',
       email: 'ksegwabe@gov.bw',
       phone: '+267 395 3000'
+    },
+    specifications: {
+      technicalSpecs: [
+        '3T MRI Scanner with advanced imaging capabilities',
+        '128-slice CT Scanner with cardiac imaging',
+        '20-station Dialysis machines with water treatment',
+        'Digital X-ray systems with PACS integration',
+        'Patient monitoring systems (ICU grade)'
+      ],
+      deliverables: [
+        'Equipment supply and installation',
+        'Comprehensive warranty (5 years)',
+        'Staff training program (40 hours)',
+        'Technical documentation in English and Setswana',
+        'Remote diagnostic support system'
+      ],
+      timeline: [
+        'Equipment delivery: 4 months',
+        'Installation and testing: 2 months',
+        'Staff training: 1 month',
+        'System commissioning: 1 month',
+        'Total implementation: 8 months'
+      ],
+      qualityStandards: [
+        'ISO 13485 Medical Device Quality Management',
+        'IEC 60601 Medical Equipment Safety Standards',
+        'FDA or CE Mark certification required',
+        'BoMRA registration and approval'
+      ]
     }
   },
   '3': {
@@ -74,6 +140,35 @@ const botswanaTenders: Record<string, TenderDetails> = {
       officer: 'Mr. Kabelo Motsumi',
       email: 'kmotsumi@gov.bw',
       phone: '+267 318 4500'
+    },
+    specifications: {
+      technicalSpecs: [
+        'Euro 6 emission compliant engines',
+        'Capacity: 45-60 passengers per bus',
+        'Wheelchair accessible with hydraulic ramp',
+        'GPS tracking and fleet management system',
+        'Air conditioning and ergonomic seating'
+      ],
+      deliverables: [
+        '150 modern buses delivered',
+        'GPS fleet management software',
+        'Driver training program (200 drivers)',
+        'Maintenance facility setup',
+        'Spare parts inventory (2 years)'
+      ],
+      timeline: [
+        'Manufacturing and delivery: 12 months',
+        'Driver training program: 3 months',
+        'System integration: 2 months',
+        'Fleet deployment: 1 month',
+        'Total project: 18 months'
+      ],
+      qualityStandards: [
+        'Euro 6 emission standards',
+        'UN ECE R107 vehicle safety regulations',
+        'ISO 9001:2015 Quality Management',
+        'Local content requirements (40% minimum)'
+      ]
     }
   }
 };
@@ -85,6 +180,7 @@ function TenderView() {
   }>();
   const [tender, setTender] = useState<TenderDetails | null>(null);
   const [showSimulationAlert, setShowSimulationAlert] = useState(true);
+  const [showSpecifications, setShowSpecifications] = useState(false);
   useEffect(() => {
     if (id && botswanaTenders[id]) {
       setTender(botswanaTenders[id]);
@@ -101,15 +197,7 @@ function TenderView() {
     }
   }, [showSimulationAlert]);
   if (!tender) {
-    return <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Tender Not Found</h2>
-          <p className="text-muted-foreground mb-6">The requested tender could not be found.</p>
-          <Link to="/" className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-            Back to Home
-          </Link>
-        </div>
-      </div>;
+    return <Component />;
   }
   return <div className="min-h-screen bg-background text-foreground">
       {/* Simulation Alert Banner */}
@@ -119,7 +207,7 @@ function TenderView() {
     }} animate={{
       opacity: 1,
       y: 0
-    }} className="border-l-4 border-yellow-400 p-4 bg-white rounded-none">
+    }} className="p-4 bg-white rounded-none">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <AlertTriangle className="h-5 w-5 text-yellow-600 mr-2" />
@@ -147,7 +235,7 @@ function TenderView() {
             Back to Gazettes
           </Link>
           
-          <div className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
+          <div className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium inline-block mb-4 ml-4">
             {tender.category}
           </div>
           
@@ -248,9 +336,12 @@ function TenderView() {
               <div className="space-y-3">
                 <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center">
                   <Download className="h-4 w-4 mr-2" />
-                  Download Tender Document
+                  Download Document
                 </button>
-                <button className="w-full border border-border py-3 rounded-lg hover:bg-accent transition-colors flex items-center justify-center">
+                <button 
+                  onClick={() => setShowSpecifications(true)}
+                  className="w-full border border-border py-3 rounded-lg hover:bg-accent transition-colors flex items-center justify-center"
+                >
                   <FileText className="h-4 w-4 mr-2" />
                   View Specifications
                 </button>
@@ -258,6 +349,77 @@ function TenderView() {
             </div>
           </motion.div>
         </div>
+
+        {/* Specifications Modal */}
+        <ResponsiveModal open={showSpecifications} onOpenChange={setShowSpecifications}>
+          <ResponsiveModalContent side="bottom" className="max-w-4xl max-h-[90vh] lg:max-w-4xl">
+            <ResponsiveModalHeader>
+              <ResponsiveModalTitle className="text-2xl font-bold">Technical Specifications</ResponsiveModalTitle>
+            </ResponsiveModalHeader>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              {/* Technical Requirements */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">Technical Requirements</h3>
+                <ul className="space-y-2">
+                  {tender?.specifications.technicalSpecs.map((spec, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="bg-primary/10 p-1 rounded-full mt-1 mr-3 shrink-0">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <span className="text-muted-foreground text-sm">{spec}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Key Deliverables */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">Key Deliverables</h3>
+                <ul className="space-y-2">
+                  {tender?.specifications.deliverables.map((deliverable, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="bg-primary/10 p-1 rounded-full mt-1 mr-3 shrink-0">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <span className="text-muted-foreground text-sm">{deliverable}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Implementation Timeline */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">Implementation Timeline</h3>
+                <ul className="space-y-2">
+                  {tender?.specifications.timeline.map((phase, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="bg-primary/10 p-1 rounded-full mt-1 mr-3 shrink-0">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <span className="text-muted-foreground text-sm">{phase}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Quality Standards & Compliance */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3 text-primary">Quality Standards & Compliance</h3>
+                <ul className="space-y-2">
+                  {tender?.specifications.qualityStandards.map((standard, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="bg-primary/10 p-1 rounded-full mt-1 mr-3 shrink-0">
+                        <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      </div>
+                      <span className="text-muted-foreground text-sm">{standard}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </ResponsiveModalContent>
+        </ResponsiveModal>
       </div>
     </div>;
 }

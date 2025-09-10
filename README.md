@@ -1,4 +1,4 @@
-# govgazette
+# govgazette 
 
 **govgazette** is a modern, comprehensive digital platform for managing and distributing official government gazettes and public notices. Built with React, TypeScript, and Tailwind CSS, it provides seamless access to governmental publications for citizens and administrative management for officials.
 
@@ -85,7 +85,7 @@ govgazette/
 4. **Open in browser**
    Navigate to `http://localhost:5173` to view the application
 
-## Design System
+## 🎨 Design System
 
 govgazette uses a comprehensive design system built on Tailwind CSS:
 
@@ -95,7 +95,7 @@ govgazette uses a comprehensive design system built on Tailwind CSS:
 - **Animations**: Smooth transitions and micro-interactions
 - **Dark Mode**: Full support for light and dark themes
 
-## Available Scripts
+## 📋 Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production

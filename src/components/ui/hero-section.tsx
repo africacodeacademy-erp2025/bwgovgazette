@@ -1,12 +1,14 @@
 'use client';
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
 import { Menu, X, FileText } from 'lucide-react';
 export function HeroSection() {
+  const navigate = useNavigate();
   return <>
             <HeroHeader />
             <main className="overflow-x-hidden">
@@ -22,7 +24,7 @@ export function HeroSection() {
                                         <Button size="default" className="px-4 text-sm">
                                             <span className="text-nowrap">Browse Gazettes</span>
                                         </Button>
-                                        <Button key={2} size="default" variant="ghost" className="px-4 text-sm">
+                                        <Button key={2} size="default" variant="ghost" className="px-4 text-sm" onClick={() => navigate('/subscription')}>
                                             <span className="text-nowrap">Subscribe for Alerts</span>
                                         </Button>
                                     </div>
@@ -43,11 +45,11 @@ export function HeroSection() {
                             </p>
                             <div className="grid grid-cols-2 gap-8 text-center max-w-sm mx-auto">
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">50K+</div>
+                                    <div className="text-2xl font-bold text-primary">0K+</div>
                                     <div className="text-sm text-muted-foreground">Documents</div>
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">25K+</div>
+                                    <div className="text-2xl font-bold text-primary">K+</div>
                                     <div className="text-sm text-muted-foreground">Users</div>
                                 </div>
                             </div>
@@ -73,6 +75,7 @@ const menuItems = [{
 }];
 const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
+  const navigate = useNavigate();
   return <header>
             <nav data-state={menuState && 'active'} className="group bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
@@ -110,10 +113,10 @@ const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button variant="outline" size="sm">
+                                <Button variant="outline" size="sm" onClick={() => navigate('/login')}>
                                     <span>Login</span>
                                 </Button>
-                                <Button size="sm">
+                                <Button size="sm" onClick={() => navigate('/signup')}>
                                     <span>Sign Up</span>
                                 </Button>
                             </div>

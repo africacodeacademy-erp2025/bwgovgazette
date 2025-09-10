@@ -7,6 +7,7 @@ import { Search, Filter, Download, Eye, Check, FileText, Calendar, Users, Bell, 
 import { HeroSection } from '@/components/ui/hero-section';
 import { AnimatedCard, CardBody, CardDescription, CardTitle, CardVisual, Visual3 } from '@/components/ui/animated-card-chart';
 import { FloatingAdminButton } from '@/components/ui/floating-admin-button';
+import { Footerdemo } from '@/components/ui/footer-section';
 import { SearchResults } from '@/components/SearchResults';
 import { useSearch } from '@/hooks/useSearch';
 interface GazetteCard {
@@ -361,63 +362,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-accent/50 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <FileText className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">govgazette</span>
-              </div>
-              <p className="text-muted-foreground">
-                Your trusted source for official gazettes and public notices.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Quick Links</h3>
-              <div className="space-y-2">
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">About</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Contact</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Terms</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Categories</h3>
-              <div className="space-y-2">
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Legal Notices</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Government Tenders</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Public Announcements</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Policy Updates</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  <Instagram className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 govgazette. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footerdemo />
 
       {/* Floating Admin Button */}
       <FloatingAdminButton />

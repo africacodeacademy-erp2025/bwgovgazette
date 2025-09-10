@@ -186,8 +186,9 @@ function SignInForm() {
   const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => { 
     event.preventDefault(); 
     console.log("UI: Sign In form submitted");
-    // Redirect to admin dashboard after successful sign in
-    navigate('/admin/dashboard');
+    // Check current path to determine redirect destination
+    const isAdminPath = window.location.pathname.includes('/admin');
+    navigate(isAdminPath ? '/admin/dashboard' : '/dashboard');
   };
   
   return (
