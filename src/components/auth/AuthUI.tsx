@@ -8,6 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Eye, EyeOff } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useNavigate } from "react-router-dom";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -180,7 +181,15 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
 PasswordInput.displayName = "PasswordInput";
 
 function SignInForm() {
-  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); console.log("UI: Sign In form submitted"); };
+  const navigate = useNavigate();
+  
+  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => { 
+    event.preventDefault(); 
+    console.log("UI: Sign In form submitted");
+    // Redirect to admin dashboard after successful sign in
+    navigate('/admin/dashboard');
+  };
+  
   return (
     <form onSubmit={handleSignIn} autoComplete="on" className="flex flex-col gap-8">
       <div className="flex flex-col items-center gap-2 text-center">

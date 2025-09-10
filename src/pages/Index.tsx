@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { Search, Filter, Download, Eye, Check, FileText, Calendar, Users, Bell, Menu, X, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { HeroSection } from '@/components/ui/hero-section';
 import { AnimatedCard, CardBody, CardDescription, CardTitle, CardVisual, Visual3 } from '@/components/ui/animated-card-chart';
+import { FloatingAdminButton } from '@/components/ui/floating-admin-button';
+import { SearchResults } from '@/components/SearchResults';
+import { useSearch } from '@/hooks/useSearch';
 interface GazetteCard {
   id: string;
   title: string;
@@ -70,9 +73,18 @@ function Index() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('Latest');
   const heroRef = useRef<HTMLElement>(null);
+  const { results, loading, error, search, clearResults } = useSearch();
 
   const handleViewTender = (id: string) => {
     navigate(`/tender/${id}`);
+  };
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      search(searchQuery);
+    } else {
+      clearResults();
+    }
   };
   useEffect(() => {
     const handleScroll = () => {
@@ -115,9 +127,19 @@ function Index() {
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                  <input type="text" placeholder="Search gazettes by title, date, or category" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background" />
+                  <input 
+                    type="text" 
+                    placeholder="Search gazettes by title, content, or category (e.g., 'tax', 'business license')" 
+                    value={searchQuery} 
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                    className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background" 
+                  />
                 </div>
-                <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                <button 
+                  onClick={handleSearch}
+                  className="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+                >
                   Search
                 </button>
               </div>
@@ -132,61 +154,84 @@ function Index() {
         </div>
       </section>
 
-      {/* Featured Gazettes */}
+      {/* Search Results or Featured Gazettes */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Gazettes</h2>
-            <p className="text-muted-foreground text-lg">Latest official publications and notices</p>
-          </motion.div>
+          {searchQuery ? (
+            // Show search results when there's a search query
+            <div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.6 }} 
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Search Results</h2>
+                <p className="text-muted-foreground text-lg">Official gazette search with full-text matching</p>
+              </motion.div>
+              <SearchResults 
+                results={results} 
+                loading={loading} 
+                error={error} 
+                query={searchQuery} 
+              />
+            </div>
+          ) : (
+            // Show featured gazettes when no search query
+            <div>
+              <motion.div initial={{
+                opacity: 0,
+                y: 20
+              }} whileInView={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.6
+              }} className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Gazettes</h2>
+                <p className="text-muted-foreground text-lg">Latest official publications and notices</p>
+              </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredGazettes.map((gazette, index) => <motion.div key={gazette.id} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.6,
-            delay: index * 0.1
-          }} className="bg-background border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    {gazette.category}
-                  </span>
-                  <div className="flex items-center text-muted-foreground text-sm">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    {gazette.date}
-                  </div>
-                </div>
-                
-                <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
-                <p className="text-muted-foreground mb-4 line-clamp-3">{gazette.description}</p>
-                
-                <div className="flex gap-2">
-                  <button 
-                    onClick={() => handleViewTender(gazette.id)}
-                    className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredGazettes.map((gazette, index) => (
+                  <motion.div 
+                    key={gazette.id} 
+                    initial={{ opacity: 0, y: 20 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    transition={{ duration: 0.6, delay: index * 0.1 }} 
+                    className="bg-background border border-border rounded-lg p-6 hover:shadow-lg transition-shadow"
                   >
-                    <Eye className="h-4 w-4" />
-                    View
-                  </button>
-                  <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
-                    <Download className="h-4 w-4" />
-                    Download
-                  </button>
-                </div>
-              </motion.div>)}
-          </div>
+                    <div className="flex items-start justify-between mb-3">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        {gazette.category}
+                      </span>
+                      <div className="flex items-center text-muted-foreground text-sm">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        {gazette.date}
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-3">{gazette.description}</p>
+                    
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => handleViewTender(gazette.id)}
+                        className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                      >
+                        <Eye className="h-4 w-4" />
+                        View
+                      </button>
+                      <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
+                        <Download className="h-4 w-4" />
+                        Download
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -373,6 +418,9 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Admin Button */}
+      <FloatingAdminButton />
     </div>;
 }
 export default Index;

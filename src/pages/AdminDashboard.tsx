@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useToast } from '@/hooks/use-toast';
 import CreateGazetteDialog from '@/components/admin/CreateGazetteDialog';
 import UploadDocumentDialog from '@/components/admin/UploadDocumentDialog';
+import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog';
+import Sidebar from '@/components/ui/sidebar-with-submenu';
 
 // Mock data for the dashboard
 const stats = [{
@@ -64,12 +67,32 @@ export default function AdminDashboard() {
   const [gazettes, setGazettes] = useState(recentGazettes);
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [gazetteToDelete, setGazetteToDelete] = useState<any>(null);
+  const { toast } = useToast();
+
   const handleGazetteCreated = (newGazette: any) => {
     setGazettes([newGazette, ...gazettes]);
   };
 
   const handleDocumentUploaded = (newDocument: any) => {
     setGazettes([newDocument, ...gazettes]);
+  };
+
+  const handleDeleteClick = (gazette: any) => {
+    setGazetteToDelete(gazette);
+    setShowDeleteDialog(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    if (gazetteToDelete) {
+      setGazettes(gazettes.filter(g => g.id !== gazetteToDelete.id));
+      toast({
+        title: "Gazette Deleted",
+        description: `"${gazetteToDelete.title}" has been deleted successfully.`,
+      });
+      setGazetteToDelete(null);
+    }
   };
 
   const getStatusColor = (status: string) => {
@@ -84,39 +107,11 @@ export default function AdminDashboard() {
         return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
     }
   };
-  return <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <FileText className="h-8 w-8 text-primary" />
-                <span className="text-2xl font-bold">govgazette</span>
-              </div>
-              <div className="flex items-center space-x-1 px-3 py-1 rounded-full bg-emerald-200">
-                
-                <span className="text-sm font-medium text-primary">Admin</span>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon" className="relative">
-                <Bell className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-[10px] text-white flex items-center justify-center">
-                  3
-                </span>
-              </Button>
-              <Button variant="ghost" size="icon">
-                <LogOut className="h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+  return <div className="min-h-screen bg-background flex">
+      <Sidebar />
+      
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="flex-1 ml-80 px-8 py-8">
         {/* Welcome Section */}
         <motion.div initial={{
         opacity: 0,
@@ -249,7 +244,12 @@ export default function AdminDashboard() {
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <Edit className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="h-8 w-8 text-destructive hover:text-destructive"
+                        onClick={() => handleDeleteClick(gazette)}
+                      >
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     </div>
@@ -274,6 +274,14 @@ export default function AdminDashboard() {
         open={showUploadDialog} 
         onOpenChange={setShowUploadDialog}
         onDocumentUploaded={handleDocumentUploaded}
+      />
+      <DeleteConfirmDialog
+        open={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+        onConfirm={handleDeleteConfirm}
+        title="Gazette"
+        itemName={gazetteToDelete?.title}
+        description="This will permanently delete the gazette and all associated data. This action cannot be undone."
       />
     </div>;
 }
