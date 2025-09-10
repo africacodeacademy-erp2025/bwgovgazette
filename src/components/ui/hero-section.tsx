@@ -8,6 +8,7 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
 import { Menu, X, FileText } from 'lucide-react';
 export function HeroSection() {
+  const navigate = useNavigate();
   return <>
             <HeroHeader />
             <main className="overflow-x-hidden">
@@ -23,7 +24,7 @@ export function HeroSection() {
                                         <Button size="default" className="px-4 text-sm">
                                             <span className="text-nowrap">Browse Gazettes</span>
                                         </Button>
-                                        <Button key={2} size="default" variant="ghost" className="px-4 text-sm">
+                                        <Button key={2} size="default" variant="ghost" className="px-4 text-sm" onClick={() => navigate('/subscription')}>
                                             <span className="text-nowrap">Subscribe for Alerts</span>
                                         </Button>
                                     </div>

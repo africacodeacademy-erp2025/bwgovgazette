@@ -18,6 +18,7 @@ import AdminSignup from "./pages/AdminSignup";
 import AdminDashboard from "./pages/AdminDashboard";
 import TenderView from "./pages/TenderView";
 import NotFound from "./pages/NotFound";
+import SubscriptionPricing from "./pages/SubscriptionPricing";
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/admin/signup" element={<AdminSignup />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/tender/:id" element={<TenderView />} />
+          <Route path="/subscription" element={<SubscriptionPricing />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
