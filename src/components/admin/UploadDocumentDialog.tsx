@@ -122,7 +122,7 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
                   ref={fileInputRef}
                   type="file"
                   onChange={handleFileSelect}
-                  accept=".pdf,.doc,.docx,.txt"
+                  accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff"
                   className="hidden"
                 />
                 
@@ -152,7 +152,7 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
                     <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
                     <p className="text-sm font-medium">Click to upload or drag and drop</p>
                     <p className="text-xs text-muted-foreground">
-                      PDF, DOC, DOCX or TXT files (max 10MB)
+                      PDF, DOC, DOCX, TXT, or image files (max 10MB)
                     </p>
                   </div>
                 )}
