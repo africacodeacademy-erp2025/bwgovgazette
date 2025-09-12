@@ -16,25 +16,43 @@ export type Database = {
     Tables: {
       gazettes: {
         Row: {
+          category: string | null
+          content: string | null
           created_at: string
+          description: string | null
+          file_name: string | null
+          file_size: number | null
           id: string
           published_date: string
+          status: string | null
           storage_path: string
           title: string
           uploaded_by: string | null
         }
         Insert: {
+          category?: string | null
+          content?: string | null
           created_at?: string
+          description?: string | null
+          file_name?: string | null
+          file_size?: number | null
           id?: string
           published_date: string
+          status?: string | null
           storage_path: string
           title: string
           uploaded_by?: string | null
         }
         Update: {
+          category?: string | null
+          content?: string | null
           created_at?: string
+          description?: string | null
+          file_name?: string | null
+          file_size?: number | null
           id?: string
           published_date?: string
+          status?: string | null
           storage_path?: string
           title?: string
           uploaded_by?: string | null

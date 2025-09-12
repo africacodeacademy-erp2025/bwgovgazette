@@ -95,21 +95,21 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      const newGazette = {
-        id: Date.now().toString(),
+    try {
+      // Import the gazette service
+      const { GazetteService } = await import('@/services/GazetteService');
+      
+      const gazetteData = {
         title: formData.title,
-        category: formData.category,
-        status: 'Draft',
-        date: new Date().toISOString().split('T')[0],
-        downloads: 0,
         description: formData.description,
+        category: formData.category,
         content: formData.content,
-        hasUploadedDocument: !!selectedFile,
-        fileName: selectedFile?.name
+        file: selectedFile || undefined,
+        status: 'draft'
       };
 
+      const newGazette = await GazetteService.createGazette(gazetteData);
+      
       onGazetteCreated(newGazette);
       toast({
         title: "Gazette Created",
@@ -120,9 +120,17 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
       setFormData({ title: '', description: '', category: '', content: '' });
       setSelectedFile(null);
       setExtractedText('');
-      setIsSubmitting(false);
       onOpenChange(false);
-    }, 1000);
+    } catch (error) {
+      console.error('Error creating gazette:', error);
+      toast({
+        title: "Creation Failed",
+        description: error instanceof Error ? error.message : "Failed to create gazette.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
