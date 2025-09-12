@@ -15,6 +15,7 @@ export class GazetteRepository {
     // response even when default behavior is to return nothing.
     const { data: inserted, error } = await supabase
       .from("gazettes")
+
       .insert(data)
       .select()
       .single();

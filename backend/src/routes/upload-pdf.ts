@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { supabase } from "../utils/supabase/supabase-client";
 import { PDFTextExtractor } from "../services/pdf-text-extractor";
 import { GazetteRepository } from "../services/gazette-repository";
+import { processGazetteChunks} from "../services/embedding-service"
 
 // Configure multer once, reuse
 const upload = multer({
@@ -85,8 +86,9 @@ export const uploadPDF = [
           "completed",
           extractedText
         );
+        
       }
-
+      await processGazetteChunks(inserted.id, extractedText);
       return res.status(201).json({
         message: "Uploaded to Supabase",
         path: uploadData?.path ?? objectPath,
