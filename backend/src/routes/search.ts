@@ -2,52 +2,89 @@
 import { RequestHandler } from "express";
 import OpenAI from "openai";
 import { supabase } from "../utils/supabase/supabase-client";
+import { GazetteChunk } from "../model/types";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export const searchGazettes: RequestHandler = async (req, res) => {
   try {
-    const { query, limit = 5 } = req.body;
+    const { query, topK = 10 } = req.body;
+    if (!query) return res.status(400).json({ error: "Missing query" });
 
-    if (!query || typeof query !== "string") {
-      return res.status(400).json({ error: "query (string) is required in body" });
-    }
-
-    // 1) Create embedding
-    const embedResp = await openai.embeddings.create({
+    // 1. Embed the query
+    const embeddingResp = await openai.embeddings.create({
       model: "text-embedding-3-small",
       input: query,
     });
 
-    // 2) Runtime-check the response to satisfy TypeScript's strict null checks
-    const firstItem = embedResp.data?.[0];
-    if (!firstItem || !Array.isArray(firstItem.embedding)) {
-      // log full response for debugging in case the SDK shape changes or API returns an error
-      console.error("Invalid embedding response from OpenAI:", embedResp);
-      return res.status(500).json({ error: "Failed to generate embedding" });
+    if (!embeddingResp.data || embeddingResp.data.length === 0) {
+      throw new Error("OpenAI embedding response is empty or undefined");
     }
 
-    // At this point TS knows firstItem.embedding exists and is an array
-    const queryEmbedding = firstItem.embedding as number[];
+    const queryEmbedding = embeddingResp.data[0]?.embedding;
 
-    // 3) Query Supabase RPC (match_gazette_chunks)
-    const { data, error } = await supabase.rpc("match_gazette_chunks", {
+    // 2. Search pgvector for topK chunks
+    const { data: chunks, error } = await supabase.rpc("match_chunks", {
       query_embedding: queryEmbedding,
-      match_count: limit,
+      match_count: topK,
     });
 
-    if (error) {
-      console.error("Supabase RPC error:", error);
-      // some supabase errors are objects; coerce to string safely
-      const message = (error && typeof error.message === "string") ? error.message : String(error);
-      return res.status(500).json({ error: message });
+    if (error) throw error;
+
+    if (!Array.isArray(chunks) || chunks.length === 0) {
+      throw new Error("No matching chunks found.");
     }
 
-    return res.json({ results: data ?? [] });
+   const context = (chunks as GazetteChunk[])
+  .filter((c): c is GazetteChunk => !!c && typeof c.content === "string")
+  .map((c) => `[chunk_id=${c.id}] ${c.content.slice(0, 500)}...`)
+  .join("\n\n");
+
+    // 4. Ask LLM to summarize with citations
+    const prompt = `
+You are answering a question based on Botswana Government Gazette text.
+Use ONLY the provided context. 
+
+Question: ${query}
+
+Context:
+${context}
+
+Answer requirements:
+- Summarize in plain English.
+- keep it to < 60 sentenses while providing details 
+`;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini", // or gpt-4-turbo
+      messages: [{ role: "user", content: prompt }],
+      temperature: 0.2,
+    });
+
+    const summary =
+      completion.choices &&
+      completion.choices.length > 0 &&
+      completion.choices[0]?.message?.content
+        ? completion.choices[0]?.message.content
+        : "";
+
+    // 5. Return structured response
+    res.json({
+  query,
+  summary,
+  citations: (chunks as GazetteChunk[]).map((c) => ({
+    chunk_id: c.id,
+    gazette_id: c.gazette_id,
+    snippet: c.content.slice(0, 200) + "...",
+    similarity: c.similarity,
+  })),
+
+    });
   } catch (err: unknown) {
-    // No 'any' here — narrow unknown into a message safely
-    console.error("Search handler error:", err);
-    const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ error: message });
+    if (err instanceof Error) {
+      res.status(500).json({ error: err.message });
+    } else {
+      res.status(500).json({ error: "An unknown error occurred" });
+    }
   }
 };

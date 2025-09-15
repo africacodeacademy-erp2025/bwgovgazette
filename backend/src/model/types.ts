@@ -22,3 +22,10 @@ export interface FileValidationResult {
     valid: boolean;
     error?: string;
 }
+
+export interface GazetteChunk {
+  id: string;
+  gazette_id: string;
+  content: string;
+  similarity: number;
+}
