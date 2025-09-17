@@ -2,9 +2,24 @@ import { Check, Minus, MoveRight, PhoneCall } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
+import { useStripe } from "@/hooks/useStripe";
 
 function Pricing() {
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const { createCheckoutSession } = useStripe();
+
+  const handlePlanClick = (planType: string, gazetteId?: string) => {
+    if (!user) {
+      // Store the plan info in sessionStorage to redirect after login
+      sessionStorage.setItem('pendingPurchase', JSON.stringify({ planType, gazetteId }));
+      navigate('/login');
+      return;
+    }
+    
+    createCheckoutSession(planType, gazetteId);
+  };
 
   return (
     <div className="w-full py-20 lg:py-40">
@@ -43,7 +58,10 @@ function Pricing() {
                 <span className="text-4xl">P120</span>
                 <span className="text-sm text-muted-foreground"> / month</span>
               </p>
-              <Button className="gap-4 mt-8">
+              <Button 
+                className="gap-4 mt-8"
+                onClick={() => handlePlanClick('subscriber')}
+              >
                 Try it <MoveRight className="w-4 h-4" />
               </Button>
             </div>
@@ -69,7 +87,11 @@ function Pricing() {
                 <span className="text-4xl">P50</span>
                 <span className="text-sm text-muted-foreground"> / issue</span>
               </p>
-              <Button variant="outline" className="gap-4 mt-8">
+              <Button 
+                variant="outline" 
+                className="gap-4 mt-8"
+                onClick={() => handlePlanClick('pay-per-download')}
+              >
                 Buy now <MoveRight className="w-4 h-4" />
               </Button>
             </div>

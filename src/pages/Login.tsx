@@ -1,4 +1,5 @@
 import { AuthUI } from '@/components/auth/AuthUI';
+import { LoginRedirect } from '@/components/LoginRedirect';
 
 export default function Login() {
   const signInContent = {
@@ -12,5 +13,10 @@ export default function Login() {
     }
   };
 
-  return <AuthUI signInContent={signInContent} />;
+  return (
+    <>
+      <LoginRedirect />
+      <AuthUI signInContent={signInContent} />
+    </>
+  );
 }
