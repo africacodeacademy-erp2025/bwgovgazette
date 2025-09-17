@@ -63,19 +63,19 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
 
     setIsUploading(true);
 
-    // Simulate file upload
-    setTimeout(() => {
-      const newDocument = {
-        id: Date.now().toString(),
+    try {
+      // Import the gazette service
+      const { GazetteService } = await import('@/services/GazetteService');
+      
+      const gazetteData = {
         title: uploadData.title,
+        description: uploadData.description,
         category: uploadData.category,
-        status: 'Draft',
-        date: new Date().toISOString().split('T')[0],
-        downloads: 0,
-        fileName: selectedFile.name,
-        fileSize: (selectedFile.size / 1024).toFixed(2) + ' KB',
-        description: uploadData.description
+        file: selectedFile,
+        status: 'draft'
       };
+
+      const newDocument = await GazetteService.createGazette(gazetteData);
 
       onDocumentUploaded(newDocument);
       toast({
@@ -86,9 +86,17 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
       // Reset form
       setSelectedFile(null);
       setUploadData({ title: '', category: '', description: '' });
-      setIsUploading(false);
       onOpenChange(false);
-    }, 1500);
+    } catch (error) {
+      console.error('Error uploading document:', error);
+      toast({
+        title: "Upload Failed",
+        description: error instanceof Error ? error.message : "Failed to upload document.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   const removeFile = () => {
@@ -122,7 +130,7 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
                   ref={fileInputRef}
                   type="file"
                   onChange={handleFileSelect}
-                  accept=".pdf,.doc,.docx,.txt"
+                  accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff"
                   className="hidden"
                 />
                 
@@ -152,7 +160,7 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
                     <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
                     <p className="text-sm font-medium">Click to upload or drag and drop</p>
                     <p className="text-xs text-muted-foreground">
-                      PDF, DOC, DOCX or TXT files (max 10MB)
+                      PDF, DOC, DOCX, TXT, or image files (max 10MB)
                     </p>
                   </div>
                 )}

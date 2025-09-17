@@ -9,6 +9,8 @@ import { Eye, EyeOff } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
+import { toast } from "sonner";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -182,10 +184,27 @@ PasswordInput.displayName = "PasswordInput";
 
 function SignInForm() {
   const navigate = useNavigate();
+  const { signIn } = useAuth();
+  const [loading, setLoading] = useState(false);
   
-  const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => { 
+  const handleSignIn = async (event: React.FormEvent<HTMLFormElement>) => { 
     event.preventDefault(); 
-    console.log("UI: Sign In form submitted");
+    setLoading(true);
+    
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    
+    const { error } = await signIn(email, password);
+    
+    if (error) {
+      toast.error(error);
+      setLoading(false);
+      return;
+    }
+    
+    toast.success('Successfully signed in!');
+    
     // Check current path to determine redirect destination
     const isAdminPath = window.location.pathname.includes('/admin');
     navigate(isAdminPath ? '/admin/dashboard' : '/dashboard');
@@ -200,14 +219,39 @@ function SignInForm() {
       <div className="grid gap-4">
         <div className="grid gap-2"><Label htmlFor="email">Email</Label><Input id="email" name="email" type="email" placeholder="m@example.com" required autoComplete="email" /></div>
         <PasswordInput name="password" label="Password" required autoComplete="current-password" placeholder="Password" />
-        <Button type="submit" variant="outline" className="mt-2">Sign In</Button>
+        <Button type="submit" variant="outline" className="mt-2" disabled={loading}>
+          {loading ? 'Signing in...' : 'Sign In'}
+        </Button>
       </div>
     </form>
   );
 }
 
 function SignUpForm() {
-  const handleSignUp = (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); console.log("UI: Sign Up form submitted"); };
+  const navigate = useNavigate();
+  const { signUp } = useAuth();
+  const [loading, setLoading] = useState(false);
+  
+  const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => { 
+    event.preventDefault(); 
+    setLoading(true);
+    
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    const name = formData.get('name') as string;
+    
+    const { error } = await signUp(email, password, name);
+    
+    if (error) {
+      toast.error(error);
+      setLoading(false);
+      return;
+    }
+    
+    toast.success('Account created successfully! Please check your email to verify your account.');
+    navigate('/login');
+  };
   return (
     <form onSubmit={handleSignUp} autoComplete="on" className="flex flex-col gap-8">
       <div className="flex flex-col items-center gap-2 text-center">
@@ -218,7 +262,9 @@ function SignUpForm() {
         <div className="grid gap-1"><Label htmlFor="name">Full Name</Label><Input id="name" name="name" type="text" placeholder="John Doe" required autoComplete="name" /></div>
         <div className="grid gap-2"><Label htmlFor="email">Email</Label><Input id="email" name="email" type="email" placeholder="m@example.com" required autoComplete="email" /></div>
         <PasswordInput name="password" label="Password" required autoComplete="new-password" placeholder="Password"/>
-        <Button type="submit" variant="outline" className="mt-2">Sign Up</Button>
+        <Button type="submit" variant="outline" className="mt-2" disabled={loading}>
+          {loading ? 'Creating account...' : 'Sign Up'}
+        </Button>
       </div>
     </form>
   );
