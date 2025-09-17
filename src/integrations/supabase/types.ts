@@ -14,66 +14,110 @@ export type Database = {
   }
   public: {
     Tables: {
-      gazettes: {
+      gazette_chunks: {
         Row: {
-          category: string | null
-          content: string | null
-          created_at: string
-          description: string | null
-          file_name: string | null
-          file_size: number | null
+          chunk_index: number
+          content: string
+          embedding: string | null
+          gazette_id: string
           id: string
-          published_date: string
-          status: string | null
-          storage_path: string
-          title: string
-          uploaded_by: string | null
         }
         Insert: {
-          category?: string | null
-          content?: string | null
-          created_at?: string
-          description?: string | null
-          file_name?: string | null
-          file_size?: number | null
+          chunk_index: number
+          content: string
+          embedding?: string | null
+          gazette_id: string
           id?: string
-          published_date: string
-          status?: string | null
-          storage_path: string
-          title: string
-          uploaded_by?: string | null
         }
         Update: {
-          category?: string | null
-          content?: string | null
-          created_at?: string
-          description?: string | null
-          file_name?: string | null
-          file_size?: number | null
+          chunk_index?: number
+          content?: string
+          embedding?: string | null
+          gazette_id?: string
           id?: string
-          published_date?: string
-          status?: string | null
-          storage_path?: string
-          title?: string
-          uploaded_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "gazette_chunks_gazette_id_fkey"
+            columns: ["gazette_id"]
+            isOneToOne: false
+            referencedRelation: "gazettes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gazettes: {
+        Row: {
+          created_at: string
+          extracted_text: string | null
+          file_name: string
+          file_url: string
+          id: string
+          processing_status: string
+        }
+        Insert: {
+          created_at?: string
+          extracted_text?: string | null
+          file_name: string
+          file_url: string
+          id?: string
+          processing_status?: string
+        }
+        Update: {
+          created_at?: string
+          extracted_text?: string | null
+          file_name?: string
+          file_url?: string
+          id?: string
+          processing_status?: string
         }
         Relationships: []
       }
       profiles: {
         Row: {
           created_at: string
+          email: string
+          full_name: string | null
           id: string
-          role: string
+          updated_at: string
+          user_id: string
         }
         Insert: {
           created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
           id: string
-          role?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
         }
         Update: {
           created_at?: string
           id?: string
-          role?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
       }
@@ -82,10 +126,131 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      binary_quantize: {
+        Args: { "": string } | { "": unknown }
+        Returns: unknown
+      }
+      get_user_role: {
+        Args: { _user_id: string }
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
+      halfvec_avg: {
+        Args: { "": number[] }
+        Returns: unknown
+      }
+      halfvec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      halfvec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      halfvec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      hnsw_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnsw_sparsevec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      hnswhandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_bit_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflat_halfvec_support: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      ivfflathandler: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      l2_norm: {
+        Args: { "": unknown } | { "": unknown }
+        Returns: number
+      }
+      l2_normalize: {
+        Args: { "": string } | { "": unknown } | { "": unknown }
+        Returns: unknown
+      }
+      match_chunks: {
+        Args: { match_count?: number; query_embedding: string }
+        Returns: {
+          content: string
+          gazette_id: string
+          id: string
+          similarity: number
+        }[]
+      }
+      match_gazette_chunks: {
+        Args: { match_count?: number; query_embedding: string }
+        Returns: {
+          chunk_index: number
+          content: string
+          gazette_id: string
+          id: string
+          similarity: number
+        }[]
+      }
+      sparsevec_out: {
+        Args: { "": unknown }
+        Returns: unknown
+      }
+      sparsevec_send: {
+        Args: { "": unknown }
+        Returns: string
+      }
+      sparsevec_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
+      vector_avg: {
+        Args: { "": number[] }
+        Returns: string
+      }
+      vector_dims: {
+        Args: { "": string } | { "": unknown }
+        Returns: number
+      }
+      vector_norm: {
+        Args: { "": string }
+        Returns: number
+      }
+      vector_out: {
+        Args: { "": string }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: { "": string }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: { "": unknown[] }
+        Returns: number
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -212,6 +377,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
