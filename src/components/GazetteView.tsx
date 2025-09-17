@@ -45,15 +45,15 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
   };
 
   const handleDownload = async () => {
-    if (!gazette?.storage_path) return;
+    if (!gazette?.file_url) return;
 
     try {
-      const fileUrl = await GazetteService.getFileUrl(gazette.storage_path);
+      const fileUrl = await GazetteService.getFileUrl(gazette.file_url);
       
       // Create download link
       const link = document.createElement('a');
       link.href = fileUrl;
-      link.download = gazette.file_name || gazette.title;
+      link.download = gazette.file_name;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -74,11 +74,11 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
 
   const getStatusColor = (status: string) => {
     switch (status?.toLowerCase()) {
-      case 'published':
+      case 'completed':
         return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300';
-      case 'draft':
+      case 'pending':
         return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300';
-      case 'under review':
+      case 'processing':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300';
@@ -115,44 +115,25 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader className="space-y-4">
           <DialogTitle className="text-xl font-bold line-clamp-2">
-            {gazette.title}
+            {gazette.file_name}
           </DialogTitle>
           
           {/* Gazette metadata */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              <span>{new Date(gazette.published_date).toLocaleDateString()}</span>
+              <span>{new Date(gazette.created_at).toLocaleDateString()}</span>
             </div>
             
-            {gazette.category && (
-              <Badge variant="outline" className="text-xs">
-                {gazette.category}
-              </Badge>
-            )}
-            
-            <Badge className={`text-xs ${getStatusColor(gazette.status)}`}>
-              {gazette.status}
+            <Badge className={`text-xs ${getStatusColor(gazette.processing_status)}`}>
+              {gazette.processing_status}
             </Badge>
 
-            {gazette.file_name && (
-              <div className="flex items-center gap-1">
-                <FileText className="h-4 w-4" />
-                <span>{gazette.file_name}</span>
-                {gazette.file_size && (
-                  <span className="text-xs">
-                    ({(gazette.file_size / 1024).toFixed(1)} KB)
-                  </span>
-                )}
-              </div>
-            )}
+            <div className="flex items-center gap-1">
+              <FileText className="h-4 w-4" />
+              <span>{gazette.file_name}</span>
+            </div>
           </div>
-
-          {gazette.description && (
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {gazette.description}
-            </p>
-          )}
         </DialogHeader>
 
         <Separator />
@@ -161,10 +142,10 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
         <div className="flex-1 overflow-hidden">
           <ScrollArea className="h-full max-h-[60vh] pr-4">
             <div className="space-y-4">
-              {gazette.content ? (
+              {gazette.extracted_text ? (
                 <div className="prose prose-sm max-w-none dark:prose-invert">
                   <div className="whitespace-pre-wrap text-sm leading-relaxed">
-                    {gazette.content}
+                    {gazette.extracted_text}
                   </div>
                 </div>
               ) : (
@@ -186,7 +167,7 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
           </div>
           
           <div className="flex items-center gap-2">
-            {gazette.storage_path && (
+            {gazette.file_url && (
               <Button
                 variant="outline"
                 size="sm"

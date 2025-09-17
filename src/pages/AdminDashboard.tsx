@@ -122,7 +122,7 @@ export default function AdminDashboard() {
         setGazettes(gazettes.filter(g => g.id !== gazetteToDelete.id));
         toast({
           title: "Gazette Deleted",
-          description: `"${gazetteToDelete.title}" has been deleted successfully.`,
+          description: `"${gazetteToDelete.file_name}" has been deleted successfully.`,
         });
       } catch (error) {
         console.error('Failed to delete gazette:', error);
@@ -138,12 +138,12 @@ export default function AdminDashboard() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'Published':
-        return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
-      case 'Draft':
-        return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
-      case 'Under Review':
-        return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
+      case 'completed':
+        return 'px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium';
+      case 'pending':
+        return 'px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium';
+      case 'processing':
+        return 'px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium';
       default:
         return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
     }
@@ -268,22 +268,22 @@ export default function AdminDashboard() {
                     <div key={gazette.id} className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="font-semibold text-sm">{gazette.title}</h3>
-                          <Badge className={getStatusColor(gazette.status)}>
-                            {gazette.status}
+                          <h3 className="font-semibold text-sm">{gazette.file_name}</h3>
+                          <Badge className={getStatusColor(gazette.processing_status)}>
+                            {gazette.processing_status}
                           </Badge>
                         </div>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <span>{gazette.category}</span>
                           <div className="flex items-center space-x-1">
                             <Calendar className="h-3 w-3" />
-                            <span>{new Date(gazette.published_date).toLocaleDateString()}</span>
+                            <span>{new Date(gazette.created_at).toLocaleDateString()}</span>
                           </div>
-                          {gazette.file_name && (
-                            <div className="flex items-center space-x-1">
-                              <FileText className="h-3 w-3" />
-                              <span>{gazette.file_name}</span>
-                            </div>
+                          <div className="flex items-center space-x-1">
+                            <FileText className="h-3 w-3" />
+                            <span>{gazette.file_name}</span>
+                          </div>
+                          {gazette.extracted_text && (
+                            <span className="text-xs">({gazette.extracted_text.length} chars)</span>
                           )}
                         </div>
                       </div>
@@ -345,7 +345,7 @@ export default function AdminDashboard() {
         onOpenChange={setShowDeleteDialog}
         onConfirm={handleDeleteConfirm}
         title="Gazette"
-        itemName={gazetteToDelete?.title}
+        itemName={gazetteToDelete?.file_name}
         description="This will permanently delete the gazette and all associated data. This action cannot be undone."
       />
     </div>;
