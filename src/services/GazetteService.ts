@@ -3,17 +3,11 @@ import { DocumentExtractor } from './DocumentExtractor';
 
 export interface Gazette {
   id: string;
-  title: string;
-  content?: string;
-  category?: string;
-  description?: string;
-  status: string;
-  published_date: string;
+  file_name: string;
+  file_url: string;
+  extracted_text?: string;
+  processing_status: string;
   created_at: string;
-  uploaded_by?: string;
-  storage_path?: string;
-  file_name?: string;
-  file_size?: number;
 }
 
 export class GazetteService {
@@ -65,16 +59,10 @@ export class GazetteService {
       const { data, error } = await supabase
         .from('gazettes')
         .insert({
-          title: gazetteData.title,
-          description: gazetteData.description,
-          category: gazetteData.category,
-          content: finalContent,
-          status: gazetteData.status || 'draft',
-          published_date: new Date().toISOString().split('T')[0],
-          storage_path: storagePath,
-          file_name: fileName,
-          file_size: fileSize,
-          uploaded_by: (await supabase.auth.getUser()).data.user?.id
+          file_name: fileName || gazetteData.title,
+          file_url: storagePath || '',
+          extracted_text: finalContent,
+          processing_status: 'completed'
         })
         .select()
         .single();
@@ -91,8 +79,6 @@ export class GazetteService {
   }
 
   static async getGazettes(options?: {
-    status?: string;
-    category?: string;
     search?: string;
     limit?: number;
   }): Promise<Gazette[]> {
@@ -102,18 +88,8 @@ export class GazetteService {
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (options?.status) {
-        query = query.eq('status', options.status);
-      }
-
-      if (options?.category) {
-        query = query.eq('category', options.category);
-      }
-
       if (options?.search) {
-        query = query.or(
-          `title.ilike.%${options.search}%,description.ilike.%${options.search}%,content.ilike.%${options.search}%`
-        );
+        query = query.ilike('extracted_text', `%${options.search}%`);
       }
 
       if (options?.limit) {
@@ -178,10 +154,10 @@ export class GazetteService {
       const gazette = await this.getGazette(id);
       
       // Delete file from storage if exists
-      if (gazette?.storage_path) {
+      if (gazette?.file_url) {
         await supabase.storage
           .from('gazettes')
-          .remove([gazette.storage_path]);
+          .remove([gazette.file_url]);
       }
 
       // Delete database record
