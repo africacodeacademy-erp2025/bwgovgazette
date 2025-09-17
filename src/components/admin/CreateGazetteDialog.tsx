@@ -56,17 +56,26 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
   const extractTextFromFile = async (file: File) => {
     setIsExtracting(true);
     try {
-      const text = await file.text();
-      setExtractedText(text);
-      setFormData({ ...formData, content: text });
+      // Import the document extractor dynamically
+      const { DocumentExtractor } = await import('@/services/DocumentExtractor');
+      const result = await DocumentExtractor.extractText(file);
+      
+      setExtractedText(result.text);
+      setFormData({ ...formData, content: result.text });
+      
+      const method = result.method === 'ocr' ? ' using OCR' : 
+                    result.method === 'hybrid' ? ' using hybrid extraction' : '';
+      const confidence = result.confidence ? ` (${Math.round(result.confidence)}% confidence)` : '';
+      
       toast({
         title: "Text Extracted",
-        description: "Document content has been extracted successfully.",
+        description: `Document content extracted successfully${method}${confidence}.`,
       });
     } catch (error) {
+      console.error('Extraction error:', error);
       toast({
         title: "Extraction Failed",
-        description: "Could not extract text from the document.",
+        description: error instanceof Error ? error.message : "Could not extract text from the document.",
         variant: "destructive"
       });
     } finally {
@@ -86,21 +95,21 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      const newGazette = {
-        id: Date.now().toString(),
+    try {
+      // Import the gazette service
+      const { GazetteService } = await import('@/services/GazetteService');
+      
+      const gazetteData = {
         title: formData.title,
-        category: formData.category,
-        status: 'Draft',
-        date: new Date().toISOString().split('T')[0],
-        downloads: 0,
         description: formData.description,
+        category: formData.category,
         content: formData.content,
-        hasUploadedDocument: !!selectedFile,
-        fileName: selectedFile?.name
+        file: selectedFile || undefined,
+        status: 'draft'
       };
 
+      const newGazette = await GazetteService.createGazette(gazetteData);
+      
       onGazetteCreated(newGazette);
       toast({
         title: "Gazette Created",
@@ -111,9 +120,17 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
       setFormData({ title: '', description: '', category: '', content: '' });
       setSelectedFile(null);
       setExtractedText('');
-      setIsSubmitting(false);
       onOpenChange(false);
-    }, 1000);
+    } catch (error) {
+      console.error('Error creating gazette:', error);
+      toast({
+        title: "Creation Failed",
+        description: error instanceof Error ? error.message : "Failed to create gazette.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -204,7 +221,7 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
                   ref={fileInputRef}
                   type="file"
                   onChange={handleFileSelect}
-                  accept=".pdf,.doc,.docx,.txt"
+                  accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.bmp,.webp,.tiff"
                   className="hidden"
                 />
                 
@@ -237,7 +254,7 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
                     <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
                     <p className="text-sm font-medium">Click to upload or drag and drop</p>
                     <p className="text-xs text-muted-foreground">
-                      PDF, DOC, DOCX or TXT files (max 10MB)
+                      PDF, DOC, DOCX, TXT, or image files (max 10MB)
                     </p>
                   </div>
                 )}

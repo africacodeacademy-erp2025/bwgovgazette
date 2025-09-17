@@ -10,6 +10,7 @@ import { FloatingAdminButton } from '@/components/ui/floating-admin-button';
 import { Footerdemo } from '@/components/ui/footer-section';
 import { SearchResults } from '@/components/SearchResults';
 import { useSearch } from '@/hooks/useSearch';
+import { Pricing } from '@/components/ui/pricing-section-with-comparison';
 interface GazetteCard {
   id: string;
   title: string;
@@ -273,6 +274,9 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Pricing */}
+      <Pricing />
 
       {/* Benefits */}
       <section className="py-16">
