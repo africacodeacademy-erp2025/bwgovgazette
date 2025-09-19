@@ -49,43 +49,23 @@ serve(async (req) => {
 
     console.log('Creating checkout session for:', { planType, gazetteId, userId: user.id })
 
-    let priceData
+    let priceId
     let mode = 'subscription'
 
     if (planType === 'subscriber') {
-      priceData = {
-        currency: 'zar',
-        unit_amount: 12000, // P120 in cents
-        recurring: {
-          interval: 'month',
-        },
-        product_data: {
-          name: 'Subscriber Plan',
-          description: '30 downloads per month, full access to all standard issues, email notifications',
-        },
-      }
-    } else if (planType === 'enterprise') {
-      priceData = {
-        currency: 'zar',
-        unit_amount: 150000, // P1,500 in cents
-        recurring: {
-          interval: 'month',
-        },
-        product_data: {
-          name: 'Enterprise Plan',
-          description: 'Unlimited downloads, multiple team accounts, priority support & API access',
-        },
-      }
+      priceId = Deno.env.get('PRICE_SUBSCRIBER_MONTHLY')
+      mode = 'subscription'
     } else if (planType === 'pay-per-download') {
+      priceId = Deno.env.get('PRICE_PAY_PER_DOWNLOAD')
       mode = 'payment'
-      priceData = {
-        currency: 'zar',
-        unit_amount: 5000, // P50 in cents
-        product_data: {
-          name: 'Single Gazette Download',
-          description: 'Single issue download with 3 download attempts',
-        },
-      }
+    } else if (planType === 'enterprise') {
+      return new Response(
+        JSON.stringify({ error: 'Please contact us for Enterprise pricing' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
     } else {
       return new Response(
         JSON.stringify({ error: 'Invalid plan type' }),
@@ -96,12 +76,22 @@ serve(async (req) => {
       )
     }
 
+    if (!priceId) {
+      return new Response(
+        JSON.stringify({ error: 'Price configuration not found' }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      )
+    }
+
     const session = await stripe.checkout.sessions.create({
       customer_email: user.email,
       billing_address_collection: 'required',
       line_items: [
         {
-          price_data: priceData,
+          price: priceId,
           quantity: 1,
         },
       ],
