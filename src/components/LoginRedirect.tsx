@@ -15,10 +15,9 @@ export function LoginRedirect() {
       
       if (pendingPurchase) {
         const { planType, gazetteId } = JSON.parse(pendingPurchase);
-        sessionStorage.removeItem('pendingPurchase');
-        
-        // Create checkout session
-        createCheckoutSession(planType, gazetteId);
+        // Do not remove yet; Dashboard will read and clear it when user confirms
+        // Navigate to dashboard with a state flag to show subscription modal
+        navigate('/dashboard', { state: { showSubscribeConfirm: true } });
       } else {
         // Regular login redirect
         navigate('/dashboard');
