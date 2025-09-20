@@ -112,7 +112,6 @@ function Index() {
       const currentDate = new Date();
       return matchesSearch && gazetteDate.getMonth() === currentDate.getMonth();
     }
-    if (activeFilter === 'Categories') return matchesSearch;
     return matchesSearch;
   });
   const isSubscriber = planChoice === 'subscriber';
@@ -154,7 +153,7 @@ function Index() {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center">
-              {['Latest', 'This Month', 'Categories'].map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-6 py-2 rounded-full transition-colors ${activeFilter === filter ? 'bg-primary text-primary-foreground' : 'bg-background border border-border hover:bg-accent'}`}>
+              {['Latest', 'This Month'].map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-6 py-2 rounded-full transition-colors ${activeFilter === filter ? 'bg-primary text-primary-foreground' : 'bg-background border border-border hover:bg-accent'}`}>
                   {filter}
                 </button>)}
             </div>
