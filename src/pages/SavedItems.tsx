@@ -212,7 +212,7 @@ export default function SavedItems() {
                       </CardHeader>
                       <CardContent>
                         <div className="flex gap-2">
-                          <Button variant="outline" size="sm">
+                          <Button variant="outline" size="sm" onClick={() => navigate(`/gazette/${gazette.id}`)}>
                             <Eye className="h-4 w-4 mr-2" />
                             View
                           </Button>
@@ -244,7 +244,7 @@ export default function SavedItems() {
                       </CardHeader>
                       <CardContent>
                         <div className="flex gap-2">
-                          <Button variant="outline" size="sm">
+                          <Button variant="outline" size="sm" onClick={() => navigate(`/tender/${tender.id}`)}>
                             <Eye className="h-4 w-4 mr-2" />
                             View
                           </Button>

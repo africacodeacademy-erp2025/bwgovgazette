@@ -224,7 +224,7 @@ export default function SearchGazettes() {
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">Published: {result.date}</span>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" onClick={() => navigate(`/gazette/${result.id}`)}>
                     <Eye className="h-4 w-4 mr-2" />
                     View
                   </Button>

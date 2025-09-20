@@ -395,9 +395,9 @@ export default function Dashboard() {
                         <p className="text-sm text-muted-foreground">{new Date(g.created_at).toLocaleString()}</p>
                       </div>
                       {currentPlan === 'subscriber' ? (
-                        <Button size="sm" variant="default" onClick={() => { setActiveGazetteId(g.id); setViewerOpen(true); }}>View Gazette</Button>
+                        <Button size="sm" variant="default" onClick={() => navigate(`/gazette/${g.id}`)}>View Gazette</Button>
                       ) : (
-                        <Button size="sm" variant="outline" onClick={() => { setActiveGazetteId(g.id); setViewerOpen(true); }}>Preview</Button>
+                        <Button size="sm" variant="outline" onClick={() => navigate(`/gazette/${g.id}`)}>Preview</Button>
                       )}
                     </div>
                   ))}

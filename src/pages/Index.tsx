@@ -78,8 +78,8 @@ function Index() {
   const { results, loading, error, search, clearResults } = useSearch();
   const [planChoice, setPlanChoice] = useState<string | null>(null);
 
-  const handleViewTender = (id: string) => {
-    navigate(`/tender/${id}`);
+  const handleViewGazette = (id: string) => {
+    navigate(`/gazette/${id}`);
   };
 
   const handleSearch = () => {
@@ -224,7 +224,7 @@ function Index() {
                     {isSubscriber ? (
                       <div className="flex gap-2">
                         <button 
-                          onClick={() => handleViewTender(gazette.id)}
+                          onClick={() => handleViewGazette(gazette.id)}
                           className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
                         >
                           <Eye className="h-4 w-4" />
