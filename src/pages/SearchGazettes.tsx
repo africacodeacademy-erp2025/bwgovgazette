@@ -31,9 +31,8 @@ import {
   Download, 
   Eye
 } from "lucide-react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from '@/hooks/useAuth';
 
 const menuItems = [
   {
@@ -76,14 +75,7 @@ const menuItems = [
 export default function SearchGazettes() {
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
-  const navigate = useNavigate();
-  const { signOut } = useAuth();
   const currentPath = location.pathname;
-
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
-  };
 
   const isActive = (path: string) => currentPath === path;
 
@@ -163,7 +155,7 @@ export default function SearchGazettes() {
                 <SidebarTrigger />
                 <h1 className="text-2xl font-bold text-foreground">Search Gazettes</h1>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout}>
+              <Button variant="outline" size="sm">
                 Logout
               </Button>
             </div>

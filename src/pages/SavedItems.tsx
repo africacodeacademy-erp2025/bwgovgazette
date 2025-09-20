@@ -30,8 +30,7 @@ import {
   Trash2, 
   Eye
 } from "lucide-react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from '@/hooks/useAuth';
+import { NavLink, useLocation } from "react-router-dom";
 
 const menuItems = [
   {
@@ -73,14 +72,7 @@ const menuItems = [
 
 export default function SavedItems() {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { signOut } = useAuth();
   const currentPath = location.pathname;
-
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
-  };
 
   const isActive = (path: string) => currentPath === path;
 
@@ -172,7 +164,7 @@ export default function SavedItems() {
                 <SidebarTrigger />
                 <h1 className="text-2xl font-bold text-foreground">Saved Items</h1>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout}>
+              <Button variant="outline" size="sm">
                 Logout
               </Button>
             </div>
