@@ -57,10 +57,10 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="/about" className="block transition-colors hover:text-primary">
                 About
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="/contact" className="block transition-colors hover:text-primary">
                 Contact
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
