@@ -132,7 +132,7 @@ export default function Dashboard() {
     // Could set a flag in local storage to hide prompts
     sessionStorage.removeItem('pendingPurchase');
     localStorage.setItem('plan_choice', 'free');
-    toast.success('Continuing on Free plan');
+    toast.success('Continuing with Free');
     setCurrentPlan('free');
   };
 
@@ -263,6 +263,7 @@ export default function Dashboard() {
             </div>
 
             {/* Pricing / Plans */}
+            {currentPlan === null && (
             <div className="mb-10">
               <div className="flex items-end justify-between mb-4">
                 <div>
@@ -323,6 +324,7 @@ export default function Dashboard() {
                 </Card>
               </div>
             </div>
+            )}
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
