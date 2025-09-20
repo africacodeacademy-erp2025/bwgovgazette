@@ -78,7 +78,7 @@ const menuItems = [
 export default function SettingsPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
   const currentPath = location.pathname;
 
   const handleLogout = async () => {
@@ -87,6 +87,8 @@ export default function SettingsPage() {
   };
 
   const isActive = (path: string) => currentPath === path;
+  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
+  const displayEmail = user?.email || '';
 
   return (
     <SidebarProvider>
@@ -122,8 +124,8 @@ export default function SettingsPage() {
                 <div className="flex items-center gap-2">
                   <User className="h-5 w-5 rounded-md" />
                   <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium">John Doe</span>
-                    <span className="text-xs text-muted-foreground">john@example.com</span>
+                    <span className="text-sm font-medium">{displayName}</span>
+                    <span className="text-xs text-muted-foreground">{displayEmail}</span>
                   </div>
                 </div>
                 <ChevronsUpDown className="h-5 w-5 rounded-md" />

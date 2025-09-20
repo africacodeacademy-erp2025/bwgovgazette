@@ -9,7 +9,6 @@ function Pricing() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { createCheckoutSession } = useStripe();
-  const planChoice = typeof window !== 'undefined' ? localStorage.getItem('plan_choice') : null;
 
   const handlePlanClick = (planType: string, gazetteId?: string) => {
     if (!user) {
@@ -21,10 +20,6 @@ function Pricing() {
     
     createCheckoutSession(planType, gazetteId);
   };
-
-  if (planChoice === 'free' || planChoice === 'subscriber') {
-    return null;
-  }
 
   return (
     <div className="w-full py-8 lg:py-12">
