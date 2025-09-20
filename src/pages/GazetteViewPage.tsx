@@ -43,6 +43,7 @@ export default function GazetteViewPage() {
 
   const [gazette, setGazette] = useState<Gazette | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
 
   const isActive = (path: string) => currentPath === path;
   const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
@@ -55,6 +56,17 @@ export default function GazetteViewPage() {
       try {
         const data = await GazetteService.getGazette(id);
         setGazette(data);
+        if (data?.file_url) {
+          try {
+            const url = await GazetteService.getFileUrl(data.file_url);
+            setPdfUrl(url);
+          } catch (e) {
+            // eslint-disable-next-line no-console
+            console.error(e);
+          }
+        } else {
+          setPdfUrl(null);
+        }
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e);
@@ -173,11 +185,32 @@ export default function GazetteViewPage() {
                   </CardContent>
                 </Card>
 
-                {/* Row 2, Col 1: Extracted Text */}
+                {/* Row 2, Col 1: PDF Preview */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2"><Eye className="h-5 w-5 text-primary" />Extracted Text</CardTitle>
-                    <CardDescription>Full OCR text when available</CardDescription>
+                    <CardTitle className="flex items-center gap-2"><Eye className="h-5 w-5 text-primary" />PDF Preview</CardTitle>
+                    <CardDescription>Inline preview when available</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    {pdfUrl ? (
+                      <div className="border rounded-md overflow-hidden">
+                        <iframe
+                          src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`}
+                          title="PDF Preview"
+                          className="w-full h-[300px] bg-white"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-sm text-muted-foreground">No PDF available for preview.</div>
+                    )}
+                  </CardContent>
+                </Card>
+
+                {/* Row 2, Col 2: Extracted Text */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Extracted Text</CardTitle>
+                    <CardDescription>OCR/parsed content</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ScrollArea className="h-[300px] pr-3">
@@ -187,18 +220,6 @@ export default function GazetteViewPage() {
                         <div className="text-sm text-muted-foreground">No extracted content available.</div>
                       )}
                     </ScrollArea>
-                  </CardContent>
-                </Card>
-
-                {/* Row 2, Col 2: File Info */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>File Info</CardTitle>
-                    <CardDescription>Technical details</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2"><span>Filename:</span><span className="truncate">{gazette.file_name}</span></div>
-                    <div className="flex items-center gap-2"><span>Size:</span><span>{Math.round((gazette.file_size || 0) / 1024)} KB</span></div>
                   </CardContent>
                 </Card>
               </div>
