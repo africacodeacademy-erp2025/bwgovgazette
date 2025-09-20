@@ -27,12 +27,13 @@ import {
   FileText,
   Heart
 } from "lucide-react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
 import { useEffect, useMemo, useState } from "react";
 import { useStripe } from '@/hooks/useStripe';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Check, Star } from "lucide-react";
+import { toast } from 'sonner';
 
 const menuItems = [
   {
@@ -78,15 +79,26 @@ export default function Dashboard() {
   const { signOut } = useAuth();
   const currentPath = location.pathname;
   const { createCheckoutSession } = useStripe();
+  const [searchParams] = useSearchParams();
 
   const [showSubscribeConfirm, setShowSubscribeConfirm] = useState<boolean>(false);
   const [pendingPlan, setPendingPlan] = useState<{ planType: string; gazetteId?: string } | null>(null);
+  const [showSuccessDialog, setShowSuccessDialog] = useState<boolean>(false);
 
   const shouldOpenSubscribe = useMemo(() => {
     // Receive flag from navigation state (set after login)
     const stateAny = location.state as any;
     return Boolean(stateAny?.showSubscribeConfirm);
   }, [location.state]);
+
+  useEffect(() => {
+    // Detect redirect from Stripe success and show success popup
+    const sessionId = searchParams.get('session_id');
+    if (sessionId) {
+      setShowSuccessDialog(true);
+      toast.success('Subscription activated successfully');
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Load pending purchase from sessionStorage if present
@@ -117,6 +129,8 @@ export default function Dashboard() {
     // Free plan: simply keep user on dashboard; optionally navigate to /subscription for details
     // Could set a flag in local storage to hide prompts
     sessionStorage.removeItem('pendingPurchase');
+    localStorage.setItem('plan_choice', 'free');
+    toast.success('Continuing on Free plan');
   };
 
   const handleSubscribeClick = (planType: 'subscriber') => {
@@ -125,6 +139,12 @@ export default function Dashboard() {
     sessionStorage.setItem('pendingPurchase', JSON.stringify(purchase));
     setPendingPlan(purchase);
     setShowSubscribeConfirm(true);
+  };
+
+  const handleCloseSuccess = () => {
+    setShowSuccessDialog(false);
+    // Clean the session_id from URL so it does not re-open
+    navigate('/dashboard', { replace: true });
   };
 
   const handleCancelSubscribe = () => {
@@ -209,6 +229,23 @@ export default function Dashboard() {
                 <DialogFooter>
                   <Button variant="outline" onClick={handleCancelSubscribe}>Not now</Button>
                   <Button onClick={handleContinueSubscribe}>Continue</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+              <DialogContent className="sm:max-w-md">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto">
+                  <Check className="w-8 h-8 text-green-600" />
+                </div>
+                <DialogHeader>
+                  <DialogTitle>Subscription Successful</DialogTitle>
+                  <DialogDescription>
+                    Your premium subscription is now active. Enjoy unlimited alerts and features.
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <Button onClick={handleCloseSuccess} className="w-full">Go to Dashboard</Button>
                 </DialogFooter>
               </DialogContent>
             </Dialog>
