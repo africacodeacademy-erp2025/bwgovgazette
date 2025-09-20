@@ -27,7 +27,7 @@ function Pricing() {
   }
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-8 lg:py-12">
       <div className="container mx-auto">
         <div className="flex text-center justify-center items-center gap-4 flex-col">
           <Badge>Pricing</Badge>
@@ -39,7 +39,7 @@ function Pricing() {
               Our goal is to make official Gazettes accessible to everyone while giving a preview of the content before purchase.
             </p>
           </div>
-          <div className="grid text-left w-full grid-cols-3 lg:grid-cols-5 divide-x pt-20">
+          <div className="grid text-left w-full grid-cols-3 lg:grid-cols-5 divide-x pt-8">
             <div className="col-span-3 lg:col-span-1"></div>
             <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
               <p className="text-2xl">Free</p>

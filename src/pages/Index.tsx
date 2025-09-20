@@ -292,7 +292,7 @@ function Index() {
       </section>
 
       {/* Pricing */}
-      {!planChoice && <Pricing />}
+      <Pricing />
 
       {/* Benefits */}
       <section className="py-16">

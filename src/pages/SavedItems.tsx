@@ -192,7 +192,7 @@ export default function SavedItems() {
               </TabsList>
 
               <TabsContent value="all" className="space-y-4">
-                <div className="grid gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Saved Gazettes */}
                   {savedGazettes.map((gazette) => (
                     <Card key={`gazette-${gazette.id}`} className="hover:shadow-lg transition-shadow">
@@ -258,7 +258,7 @@ export default function SavedItems() {
               </TabsContent>
 
               <TabsContent value="gazettes" className="space-y-4">
-                <div className="grid gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {savedGazettes.map((gazette) => (
                     <Card key={gazette.id} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
@@ -291,7 +291,7 @@ export default function SavedItems() {
               </TabsContent>
 
               <TabsContent value="tenders" className="space-y-4">
-                <div className="grid gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {savedTenders.map((tender) => (
                     <Card key={tender.id} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
