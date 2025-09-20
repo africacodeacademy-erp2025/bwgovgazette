@@ -6,18 +6,20 @@ import { Search, Download, Bell, BadgeCheck, Shield, FileText } from 'lucide-rea
 export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="py-16">
+      <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold mb-3">About govgazette</h1>
-            <p className="text-muted-foreground text-lg">
-              govgazette is a modern platform for discovering, reading, and tracking official gazettes and public notices. 
-              Our goal is to make authoritative information easy to find, searchable, and available to everyone.
-            </p>
+          <div className="flex text-center justify-center items-center gap-4 flex-col mb-10">
+            <div className="px-3 py-1 border rounded-full text-xs">About</div>
+            <div className="flex gap-2 flex-col">
+              <h1 className="text-3xl md:text-5xl tracking-tighter max-w-3xl text-center font-regular">Building the most accessible way to read official Gazettes</h1>
+              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+                We make authoritative information easy to find, searchable, and available to everyone.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-border rounded-lg p-6 bg-background">
+          <div className="grid text-left w-full grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <Search className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">Search & Browse</h2>
@@ -32,7 +34,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="border border-border rounded-lg p-6 bg-background">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <Download className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">Read & Download</h2>
@@ -47,7 +49,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="border border-border rounded-lg p-6 bg-background">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <Bell className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">Instant Alerts</h2>
@@ -62,7 +64,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="border border-border rounded-lg p-6 bg-background">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <BadgeCheck className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">Accessible & Trusted</h2>
@@ -78,8 +80,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-border rounded-lg p-6 bg-background">
+          <div className="mt-10 grid text-left w-full grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <Shield className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">Privacy & Security</h2>
@@ -88,7 +90,7 @@ export default function About() {
                 We follow industry-standard best practices to safeguard your account and data.
               </p>
             </div>
-            <div className="border border-border rounded-lg p-6 bg-background">
+            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
               <div className="flex items-center gap-3 mb-3">
                 <FileText className="h-5 w-5 text-primary" />
                 <h2 className="text-xl font-semibold">What’s Next</h2>
