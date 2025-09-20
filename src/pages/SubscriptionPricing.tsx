@@ -5,6 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function SubscriptionPricing() {
   const navigate = useNavigate();
+  const planChoice = typeof window !== 'undefined' ? localStorage.getItem('plan_choice') : null;
+
+  if (planChoice === 'free' || planChoice === 'subscriber') {
+    // Hide pricing page if already on a plan
+    navigate('/dashboard', { replace: true });
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,8 +50,8 @@ export default function SubscriptionPricing() {
                   <span className="text-4xl">Free</span>
                   <span className="text-sm text-muted-foreground"> / month</span>
                 </p>
-                <Button variant="outline" className="gap-4 mt-8" onClick={() => navigate('/signup')}>
-                  Get Started <MoveRight className="w-4 h-4" />
+                <Button variant="outline" className="gap-4 mt-8" onClick={() => { localStorage.setItem('plan_choice', 'free'); navigate('/dashboard'); }}>
+                  Continuing with Free <MoveRight className="w-4 h-4" />
                 </Button>
               </div>
               <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">

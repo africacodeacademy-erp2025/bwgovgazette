@@ -76,6 +76,7 @@ function Index() {
   const [activeFilter, setActiveFilter] = useState('Latest');
   const heroRef = useRef<HTMLElement>(null);
   const { results, loading, error, search, clearResults } = useSearch();
+  const [planChoice, setPlanChoice] = useState<string | null>(null);
 
   const handleViewTender = (id: string) => {
     navigate(`/tender/${id}`);
@@ -99,6 +100,10 @@ function Index() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setPlanChoice(localStorage.getItem('plan_choice'));
+  }, []);
   const filteredGazettes = featuredGazettes.filter(gazette => {
     const matchesSearch = gazette.title.toLowerCase().includes(searchQuery.toLowerCase()) || gazette.description.toLowerCase().includes(searchQuery.toLowerCase());
     if (activeFilter === 'Latest') return matchesSearch;
@@ -110,6 +115,7 @@ function Index() {
     if (activeFilter === 'Categories') return matchesSearch;
     return matchesSearch;
   });
+  const isSubscriber = planChoice === 'subscriber';
   return <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
 
@@ -216,19 +222,29 @@ function Index() {
                     <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
                     <p className="text-muted-foreground mb-4 line-clamp-3">{gazette.description}</p>
                     
-                    <div className="flex gap-2">
+                    {isSubscriber ? (
+                      <div className="flex gap-2">
+                        <button 
+                          onClick={() => handleViewTender(gazette.id)}
+                          className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                        >
+                          <Eye className="h-4 w-4" />
+                          View Gazette
+                        </button>
+                        <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
+                          <Download className="h-4 w-4" />
+                          Download
+                        </button>
+                      </div>
+                    ) : (
                       <button 
-                        onClick={() => handleViewTender(gazette.id)}
-                        className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                        onClick={() => navigate('/dashboard')}
+                        className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm"
                       >
                         <Eye className="h-4 w-4" />
-                        View
+                        Preview
                       </button>
-                      <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
-                        <Download className="h-4 w-4" />
-                        Download
-                      </button>
-                    </div>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -276,7 +292,7 @@ function Index() {
       </section>
 
       {/* Pricing */}
-      <Pricing />
+      {!planChoice && <Pricing />}
 
       {/* Benefits */}
       <section className="py-16">

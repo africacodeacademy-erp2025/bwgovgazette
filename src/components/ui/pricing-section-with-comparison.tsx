@@ -9,6 +9,7 @@ function Pricing() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { createCheckoutSession } = useStripe();
+  const planChoice = typeof window !== 'undefined' ? localStorage.getItem('plan_choice') : null;
 
   const handlePlanClick = (planType: string, gazetteId?: string) => {
     if (!user) {
@@ -20,6 +21,10 @@ function Pricing() {
     
     createCheckoutSession(planType, gazetteId);
   };
+
+  if (planChoice === 'free' || planChoice === 'subscriber') {
+    return null;
+  }
 
   return (
     <div className="w-full py-20 lg:py-40">
@@ -48,9 +53,9 @@ function Pricing() {
               <Button 
                 variant="outline" 
                 className="gap-4 mt-8"
-                onClick={() => navigate('/dashboard')}
+                onClick={() => { localStorage.setItem('plan_choice', 'free'); navigate('/dashboard'); }}
               >
-                Try it <MoveRight className="w-4 h-4" />
+                Continuing with Free <MoveRight className="w-4 h-4" />
               </Button>
             </div>
             <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
