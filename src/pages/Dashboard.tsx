@@ -32,6 +32,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useEffect, useMemo, useState } from "react";
 import { useStripe } from '@/hooks/useStripe';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Check, Star } from "lucide-react";
 
 const menuItems = [
   {
@@ -110,6 +111,20 @@ export default function Dashboard() {
     } else {
       setShowSubscribeConfirm(false);
     }
+  };
+
+  const startFreePlan = () => {
+    // Free plan: simply keep user on dashboard; optionally navigate to /subscription for details
+    // Could set a flag in local storage to hide prompts
+    sessionStorage.removeItem('pendingPurchase');
+  };
+
+  const handleSubscribeClick = (planType: 'subscriber') => {
+    // Prepare and open confirmation dialog, then on continue we call checkout
+    const purchase = { planType } as { planType: string };
+    sessionStorage.setItem('pendingPurchase', JSON.stringify(purchase));
+    setPendingPlan(purchase);
+    setShowSubscribeConfirm(true);
   };
 
   const handleCancelSubscribe = () => {
@@ -202,6 +217,68 @@ export default function Dashboard() {
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-2">Welcome back!</h2>
               <p className="text-muted-foreground">Stay updated with the latest gazette publications and tender opportunities.</p>
+            </div>
+
+            {/* Pricing / Plans */}
+            <div className="mb-10">
+              <div className="flex items-end justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold">Choose your plan</h3>
+                  <p className="text-sm text-muted-foreground">Continue on Free or subscribe for full access</p>
+                </div>
+                <Button variant="ghost" size="sm" onClick={() => navigate('/subscription')}>See all plans</Button>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <CardTitle className="text-lg">Free</CardTitle>
+                        <CardDescription>Stay on the free trial and explore basics</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-2 text-2xl">
+                      <span className="font-bold">$0</span>
+                      <span className="text-sm text-muted-foreground">/ month</span>
+                    </div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Basic gazette search</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Limited notifications</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Save a few items</li>
+                    </ul>
+                    <div className="pt-2">
+                      <Button variant="outline" onClick={startFreePlan}>Continue Free</Button>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/30">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <CardTitle className="text-lg flex items-center gap-2">Subscriber <Star className="h-4 w-4 text-primary" /></CardTitle>
+                        <CardDescription>Unlock full access and priority alerts</CardDescription>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-2 text-2xl">
+                      <span className="font-bold">$29</span>
+                      <span className="text-sm text-muted-foreground">/ month</span>
+                    </div>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Unlimited alerts</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Advanced filters</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Priority support</li>
+                    </ul>
+                    <div className="pt-2">
+                      <Button onClick={() => handleSubscribeClick('subscriber')}>Subscribe</Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Quick Actions */}
