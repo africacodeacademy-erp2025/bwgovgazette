@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
   SidebarProvider,
   Sidebar,
@@ -16,7 +15,6 @@ import {
   SidebarInset
 } from "@/components/ui/sidebar";
 import { 
-  Calendar, 
   Search, 
   Gavel, 
   Bell, 
@@ -62,11 +60,6 @@ const menuItems = [
     icon: Bell,
   },
   {
-    title: "Calendar",
-    url: "/calendar",
-    icon: Calendar,
-  },
-  {
     title: "Settings",
     url: "/settings",
     icon: Settings,
@@ -84,6 +77,7 @@ export default function Dashboard() {
   const [showSubscribeConfirm, setShowSubscribeConfirm] = useState<boolean>(false);
   const [pendingPlan, setPendingPlan] = useState<{ planType: string; gazetteId?: string } | null>(null);
   const [showSuccessDialog, setShowSuccessDialog] = useState<boolean>(false);
+  const [currentPlan, setCurrentPlan] = useState<'free' | 'subscriber' | null>(null);
 
   const shouldOpenSubscribe = useMemo(() => {
     // Receive flag from navigation state (set after login)
@@ -97,10 +91,18 @@ export default function Dashboard() {
     if (sessionId) {
       setShowSuccessDialog(true);
       toast.success('Subscription activated successfully');
+      localStorage.setItem('plan_choice', 'subscriber');
+      setCurrentPlan('subscriber');
     }
   }, [searchParams]);
 
   useEffect(() => {
+    // Initialize current plan from storage
+    const storedPlan = localStorage.getItem('plan_choice') as 'free' | 'subscriber' | null;
+    if (storedPlan) {
+      setCurrentPlan(storedPlan);
+    }
+
     // Load pending purchase from sessionStorage if present
     const stored = sessionStorage.getItem('pendingPurchase');
     if (stored) {
@@ -131,6 +133,7 @@ export default function Dashboard() {
     sessionStorage.removeItem('pendingPurchase');
     localStorage.setItem('plan_choice', 'free');
     toast.success('Continuing on Free plan');
+    setCurrentPlan('free');
   };
 
   const handleSubscribeClick = (planType: 'subscriber') => {
@@ -211,9 +214,12 @@ export default function Dashboard() {
                 <SidebarTrigger />
                 <h1 className="text-2xl font-bold text-foreground">User Dashboard</h1>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout}>
-                Logout
-              </Button>
+              <div className="flex items-center gap-2">
+                {currentPlan !== 'subscriber' && (
+                  <Button size="sm" onClick={() => handleSubscribeClick('subscriber')}>Subscribe</Button>
+                )}
+                <Button variant="outline" size="sm" onClick={handleLogout}>Logout</Button>
+              </div>
             </div>
           </header>
 
@@ -319,7 +325,7 @@ export default function Dashboard() {
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Search Gazettes</CardTitle>
@@ -349,16 +355,6 @@ export default function Dashboard() {
                   <p className="text-xs text-muted-foreground">Manage your alerts</p>
                 </CardContent>
               </Card>
-
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Calendar</CardTitle>
-                  <Calendar className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xs text-muted-foreground">Important dates</p>
-                </CardContent>
-              </Card>
             </div>
 
             {/* Recent Activity */}
@@ -374,21 +370,21 @@ export default function Dashboard() {
                       <h4 className="font-medium">Government Tender Notice</h4>
                       <p className="text-sm text-muted-foreground">Published 2 hours ago</p>
                     </div>
-                    <Badge variant="secondary">New</Badge>
+                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground bg-secondary">New</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg border">
                     <div>
                       <h4 className="font-medium">Regulatory Update</h4>
                       <p className="text-sm text-muted-foreground">Published 1 day ago</p>
                     </div>
-                    <Badge variant="outline">Update</Badge>
+                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">Update</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg border">
                     <div>
                       <h4 className="font-medium">Public Notice</h4>
                       <p className="text-sm text-muted-foreground">Published 3 days ago</p>
                     </div>
-                    <Badge variant="outline">Notice</Badge>
+                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">Notice</span>
                   </div>
                 </CardContent>
               </Card>
@@ -404,14 +400,14 @@ export default function Dashboard() {
                       <h4 className="font-medium">Construction Tender - Road Works</h4>
                       <p className="text-sm text-muted-foreground">Deadline: Dec 15, 2024</p>
                     </div>
-                    <Badge>Saved</Badge>
+                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-primary text-primary-foreground">Saved</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg border">
                     <div>
                       <h4 className="font-medium">IT Services Procurement</h4>
                       <p className="text-sm text-muted-foreground">Deadline: Dec 20, 2024</p>
                     </div>
-                    <Badge>Saved</Badge>
+                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-primary text-primary-foreground">Saved</span>
                   </div>
                   <div className="text-center py-4">
                     <Button variant="outline" size="sm">View All Saved Items</Button>
