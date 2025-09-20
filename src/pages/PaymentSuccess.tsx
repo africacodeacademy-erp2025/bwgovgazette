@@ -10,16 +10,22 @@ export default function PaymentSuccess() {
   const sessionId = searchParams.get('session_id');
 
   useEffect(() => {
+    // Always attempt to fix state and redirect on entry
     if (sessionId) {
       toast.success('Payment successful! Welcome to your new plan.');
-      // Persist subscriber plan and redirect to dashboard shortly
       localStorage.setItem('plan_choice', 'subscriber');
       const timer = setTimeout(() => {
-        navigate('/dashboard?session_id=' + sessionId, { replace: true });
-      }, 1200);
+        window.location.replace('/dashboard?session_id=' + sessionId);
+      }, 500);
+      return () => clearTimeout(timer);
+    } else {
+      // Fallback: if we landed here without session id, just go home
+      const timer = setTimeout(() => {
+        navigate('/', { replace: true });
+      }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [sessionId]);
+  }, [sessionId, navigate]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-6">

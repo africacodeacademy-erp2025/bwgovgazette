@@ -313,7 +313,7 @@ export default function Dashboard() {
                       <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> Save a few items</li>
                     </ul>
                     <div className="pt-2">
-                      <Button variant="outline" onClick={startFreePlan}>Continue Free</Button>
+                      <Button variant="outline" onClick={startFreePlan}>Continuing with Free</Button>
                     </div>
                   </CardContent>
                 </Card>
