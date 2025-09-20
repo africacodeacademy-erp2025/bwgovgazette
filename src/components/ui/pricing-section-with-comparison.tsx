@@ -45,7 +45,11 @@ function Pricing() {
                 <span className="text-4xl">P0</span>
                 <span className="text-sm text-muted-foreground"> / month</span>
               </p>
-              <Button variant="outline" className="gap-4 mt-8">
+              <Button 
+                variant="outline" 
+                className="gap-4 mt-8"
+                onClick={() => navigate('/dashboard')}
+              >
                 Try it <MoveRight className="w-4 h-4" />
               </Button>
             </div>
