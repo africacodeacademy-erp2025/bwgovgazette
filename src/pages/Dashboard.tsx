@@ -29,6 +29,9 @@ import {
 } from "lucide-react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
+import { useEffect, useMemo, useState } from "react";
+import { useStripe } from '@/hooks/useStripe';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const menuItems = [
   {
@@ -73,6 +76,46 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const { signOut } = useAuth();
   const currentPath = location.pathname;
+  const { createCheckoutSession } = useStripe();
+
+  const [showSubscribeConfirm, setShowSubscribeConfirm] = useState<boolean>(false);
+  const [pendingPlan, setPendingPlan] = useState<{ planType: string; gazetteId?: string } | null>(null);
+
+  const shouldOpenSubscribe = useMemo(() => {
+    // Receive flag from navigation state (set after login)
+    const stateAny = location.state as any;
+    return Boolean(stateAny?.showSubscribeConfirm);
+  }, [location.state]);
+
+  useEffect(() => {
+    // Load pending purchase from sessionStorage if present
+    const stored = sessionStorage.getItem('pendingPurchase');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored) as { planType: string; gazetteId?: string };
+        setPendingPlan(parsed);
+        if (shouldOpenSubscribe) {
+          setShowSubscribeConfirm(true);
+        }
+      } catch {}
+    }
+  }, [shouldOpenSubscribe]);
+
+  const handleContinueSubscribe = async () => {
+    if (pendingPlan) {
+      // Clear before redirect to Stripe to avoid re-opening on return
+      sessionStorage.removeItem('pendingPurchase');
+      setShowSubscribeConfirm(false);
+      await createCheckoutSession(pendingPlan.planType, pendingPlan.gazetteId);
+    } else {
+      setShowSubscribeConfirm(false);
+    }
+  };
+
+  const handleCancelSubscribe = () => {
+    // User declined; keep browsing dashboard
+    setShowSubscribeConfirm(false);
+  };
 
   const handleLogout = async () => {
     await signOut();
@@ -140,6 +183,21 @@ export default function Dashboard() {
           </header>
 
           <div className="container mx-auto px-4 py-8">
+            <Dialog open={showSubscribeConfirm} onOpenChange={setShowSubscribeConfirm}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Continue to subscribe</DialogTitle>
+                  <DialogDescription>
+                    {pendingPlan?.planType === 'subscriber' ? 'You are about to start a monthly subscription.' : 'Proceed to payment to complete your purchase.'}
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <Button variant="outline" onClick={handleCancelSubscribe}>Not now</Button>
+                  <Button onClick={handleContinueSubscribe}>Continue</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+
             {/* Welcome Section */}
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-2">Welcome back!</h2>
