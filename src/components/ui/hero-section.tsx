@@ -21,7 +21,7 @@ export function HeroSection() {
                                     <p className="mt-4 max-w-xl text-pretty text-base md:text-lg">Search, read, and download the latest publications — anytime, anywhere.</p>
 
                                     <div className="mt-6 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                        <Button size="default" className="px-4 text-sm">
+                                        <Button size="default" className="px-4 text-sm" onClick={() => navigate('/search')}>
                                             <span className="text-nowrap">Browse Gazettes</span>
                                         </Button>
                                         <Button key={2} size="default" variant="ghost" className="px-4 text-sm" onClick={() => navigate('/subscription')}>

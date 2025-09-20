@@ -71,7 +71,7 @@ const menuItems = [
 export default function Dashboard() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
   const currentPath = location.pathname;
   const { createCheckoutSession } = useStripe();
   const [searchParams] = useSearchParams();
@@ -181,6 +181,9 @@ export default function Dashboard() {
 
   const isActive = (path: string) => currentPath === path;
 
+  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
+  const displayEmail = user?.email || '';
+
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
@@ -215,8 +218,8 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <User className="h-5 w-5 rounded-md" />
                   <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium">John Doe</span>
-                    <span className="text-xs text-muted-foreground">john@example.com</span>
+                    <span className="text-sm font-medium">{displayName}</span>
+                    <span className="text-xs text-muted-foreground">{displayEmail}</span>
                   </div>
                 </div>
                 <ChevronsUpDown className="h-5 w-5 rounded-md" />
@@ -348,7 +351,7 @@ export default function Dashboard() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/search')}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Search Gazettes</CardTitle>
                   <Search className="h-4 w-4 text-muted-foreground" />
@@ -358,7 +361,7 @@ export default function Dashboard() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/tenders')}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Browse Tenders</CardTitle>
                   <Gavel className="h-4 w-4 text-muted-foreground" />
