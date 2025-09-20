@@ -32,6 +32,8 @@ import { useStripe } from '@/hooks/useStripe';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Check, Star } from "lucide-react";
 import { toast } from 'sonner';
+import GazetteView from "@/components/GazetteView";
+import { GazetteService, type Gazette } from "@/services/GazetteService";
 
 const menuItems = [
   {
@@ -78,6 +80,10 @@ export default function Dashboard() {
   const [pendingPlan, setPendingPlan] = useState<{ planType: string; gazetteId?: string } | null>(null);
   const [showSuccessDialog, setShowSuccessDialog] = useState<boolean>(false);
   const [currentPlan, setCurrentPlan] = useState<'free' | 'subscriber' | null>(null);
+  const [gazettes, setGazettes] = useState<Gazette[]>([]);
+  const [loadingGazettes, setLoadingGazettes] = useState<boolean>(false);
+  const [viewerOpen, setViewerOpen] = useState<boolean>(false);
+  const [activeGazetteId, setActiveGazetteId] = useState<string | null>(null);
 
   const shouldOpenSubscribe = useMemo(() => {
     // Receive flag from navigation state (set after login)
@@ -114,6 +120,19 @@ export default function Dashboard() {
         }
       } catch {}
     }
+
+    // Fetch recent gazettes
+    (async () => {
+      setLoadingGazettes(true);
+      try {
+        const items = await GazetteService.getGazettes({ limit: 5 });
+        setGazettes(items);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoadingGazettes(false);
+      }
+    })();
   }, [shouldOpenSubscribe]);
 
   const handleContinueSubscribe = async () => {
@@ -132,7 +151,7 @@ export default function Dashboard() {
     // Could set a flag in local storage to hide prompts
     sessionStorage.removeItem('pendingPurchase');
     localStorage.setItem('plan_choice', 'free');
-    toast.success('Continuing on Free plan');
+    toast.success('Continuing with Free');
     setCurrentPlan('free');
   };
 
@@ -224,6 +243,7 @@ export default function Dashboard() {
           </header>
 
           <div className="container mx-auto px-4 py-8">
+            <GazetteView gazetteId={activeGazetteId} open={viewerOpen} onOpenChange={(open) => { setViewerOpen(open); if (!open) setActiveGazetteId(null); }} />
             <Dialog open={showSubscribeConfirm} onOpenChange={setShowSubscribeConfirm}>
               <DialogContent>
                 <DialogHeader>
@@ -263,6 +283,7 @@ export default function Dashboard() {
             </div>
 
             {/* Pricing / Plans */}
+            {currentPlan === null && (
             <div className="mb-10">
               <div className="flex items-end justify-between mb-4">
                 <div>
@@ -323,6 +344,7 @@ export default function Dashboard() {
                 </Card>
               </div>
             </div>
+            )}
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -357,7 +379,7 @@ export default function Dashboard() {
               </Card>
             </div>
 
-            {/* Recent Activity */}
+            {/* Recent Activity & Gazettes */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
@@ -365,27 +387,25 @@ export default function Dashboard() {
                   <CardDescription>Latest gazette publications you might be interested in</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-center justify-between p-3 rounded-lg border">
-                    <div>
-                      <h4 className="font-medium">Government Tender Notice</h4>
-                      <p className="text-sm text-muted-foreground">Published 2 hours ago</p>
+                  {loadingGazettes && (
+                    <div className="flex items-center justify-center p-6 text-sm text-muted-foreground">Loading gazettes...</div>
+                  )}
+                  {!loadingGazettes && gazettes.length === 0 && (
+                    <div className="flex items-center justify-center p-6 text-sm text-muted-foreground">No recent publications found.</div>
+                  )}
+                  {!loadingGazettes && gazettes.map((g) => (
+                    <div key={g.id} className="flex items-center justify-between p-3 rounded-lg border">
+                      <div>
+                        <h4 className="font-medium">{g.file_name}</h4>
+                        <p className="text-sm text-muted-foreground">{new Date(g.created_at).toLocaleString()}</p>
+                      </div>
+                      {currentPlan === 'subscriber' ? (
+                        <Button size="sm" variant="default" onClick={() => { setActiveGazetteId(g.id); setViewerOpen(true); }}>View Gazette</Button>
+                      ) : (
+                        <Button size="sm" variant="outline" onClick={() => { setActiveGazetteId(g.id); setViewerOpen(true); }}>Preview</Button>
+                      )}
                     </div>
-                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground bg-secondary">New</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg border">
-                    <div>
-                      <h4 className="font-medium">Regulatory Update</h4>
-                      <p className="text-sm text-muted-foreground">Published 1 day ago</p>
-                    </div>
-                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">Update</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg border">
-                    <div>
-                      <h4 className="font-medium">Public Notice</h4>
-                      <p className="text-sm text-muted-foreground">Published 3 days ago</p>
-                    </div>
-                    <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">Notice</span>
-                  </div>
+                  ))}
                 </CardContent>
               </Card>
 

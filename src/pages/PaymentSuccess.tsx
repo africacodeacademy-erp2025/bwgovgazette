@@ -12,6 +12,12 @@ export default function PaymentSuccess() {
   useEffect(() => {
     if (sessionId) {
       toast.success('Payment successful! Welcome to your new plan.');
+      // Persist subscriber plan and redirect to dashboard shortly
+      localStorage.setItem('plan_choice', 'subscriber');
+      const timer = setTimeout(() => {
+        navigate('/dashboard?session_id=' + sessionId, { replace: true });
+      }, 1200);
+      return () => clearTimeout(timer);
     }
   }, [sessionId]);
 
