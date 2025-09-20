@@ -205,7 +205,7 @@ export default function SearchGazettes() {
       </Card>
 
       {/* Results Section */}
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {mockResults.map((result) => (
           <Card key={result.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>

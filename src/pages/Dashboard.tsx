@@ -347,7 +347,7 @@ export default function Dashboard() {
             )}
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Search Gazettes</CardTitle>
@@ -368,15 +368,7 @@ export default function Dashboard() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Notifications</CardTitle>
-                  <Bell className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <p className="text-xs text-muted-foreground">Manage your alerts</p>
-                </CardContent>
-              </Card>
+              
             </div>
 
             {/* Recent Activity & Gazettes */}

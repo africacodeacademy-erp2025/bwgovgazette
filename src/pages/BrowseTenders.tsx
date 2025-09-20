@@ -213,7 +213,7 @@ export default function BrowseTenders() {
             </Card>
 
             {/* Tenders Grid */}
-            <div className="grid gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {mockTenders.map((tender) => (
                 <Card key={tender.id} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
