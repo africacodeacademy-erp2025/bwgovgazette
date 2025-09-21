@@ -118,8 +118,8 @@ function Index() {
   return <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
 
-      {/* Search & Filters */}
-      <section className="py-16 bg-accent/30">
+      {/* Search & Filters - styled closer to Pricing */}
+      <section className="py-12 lg:py-16 bg-accent/30">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,
@@ -130,7 +130,7 @@ function Index() {
         }} transition={{
           duration: 0.6
         }} className="max-w-4xl mx-auto">
-            <div className="bg-background rounded-xl shadow-lg p-6 mb-8">
+            <div className="bg-background rounded-xl border p-6 mb-8">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
@@ -152,7 +152,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center pt-2">
               {['Latest', 'This Month'].map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-6 py-2 rounded-full transition-colors ${activeFilter === filter ? 'bg-primary text-primary-foreground' : 'bg-background border border-border hover:bg-accent'}`}>
                   {filter}
                 </button>)}
@@ -252,8 +252,8 @@ function Index() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 bg-accent/30">
+      {/* How It Works - harmonized heading spacing */}
+      <section className="py-12 lg:py-16 bg-accent/30">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,

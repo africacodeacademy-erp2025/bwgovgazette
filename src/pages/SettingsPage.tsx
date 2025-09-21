@@ -120,15 +120,11 @@ export default function SettingsPage() {
 
           <SidebarFooter>
             <SidebarGroup>
-              <SidebarMenuButton className="w-full justify-between gap-3 h-12">
-                <div className="flex items-center gap-2">
-                  <User className="h-5 w-5 rounded-md" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium">{displayName}</span>
-                    <span className="text-xs text-muted-foreground">{displayEmail}</span>
-                  </div>
+              <SidebarMenuButton className="w-full justify-start gap-3 h-12">
+                <div className="flex flex-col items-start">
+                  <span className="text-sm font-medium">{displayName}</span>
+                  <span className="text-xs text-muted-foreground">{displayEmail}</span>
                 </div>
-                <ChevronsUpDown className="h-5 w-5 rounded-md" />
               </SidebarMenuButton>
             </SidebarGroup>
           </SidebarFooter>
