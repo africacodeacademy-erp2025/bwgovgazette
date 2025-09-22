@@ -46,11 +46,11 @@ export function HeroSection() {
                             </p>
                             <div className="grid grid-cols-2 gap-8 text-center max-w-sm mx-auto">
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">0K+</div>
+                                    <div className="text-2xl font-bold text-primary">24K+</div>
                                     <div className="text-sm text-muted-foreground">Documents</div>
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">K+</div>
+                                    <div className="text-2xl font-bold text-primary">7K+</div>
                                     <div className="text-sm text-muted-foreground">Users</div>
                                 </div>
                             </div>
@@ -76,9 +76,8 @@ const HeroHeader = () => {
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                            <a href="/" aria-label="home" className="flex items-center space-x-2">
-                                <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-8 w-8 object-contain" />
-                                <span className="text-2xl font-bold">govgazette</span>
+                            <a href="/" aria-label="home" className="flex items-center">
+                                <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-8 w-auto object-contain" />
                             </a>
 
                             <button onClick={() => setMenuState(!menuState)} aria-label={menuState == true ? 'Close Menu' : 'Open Menu'} className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
