@@ -9,6 +9,7 @@ interface AuthContextType {
   session: Session | null;
   signIn: (email: string, password: string) => Promise<{ error?: string }>;
   signUp: (email: string, password: string, fullName: string) => Promise<{ error?: string }>;
+  signInWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
   loading: boolean;
 }
@@ -82,6 +83,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const signInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    });
+    if (error) {
+      toast.error(error.message);
+    }
+  };
+
   const signOut = async () => {
     await supabase.auth.signOut();
   };
@@ -91,6 +101,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     session,
     signIn,
     signUp,
+    signInWithGoogle,
     signOut,
     loading,
   };

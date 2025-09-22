@@ -271,6 +271,7 @@ function SignUpForm() {
 }
 
 function AuthFormContainer({ isSignIn, onToggle }: { isSignIn: boolean; onToggle: () => void; }) {
+    const { signInWithGoogle } = useAuth();
     return (
         <div className="mx-auto grid w-[350px] gap-2">
             {isSignIn ? <SignInForm /> : <SignUpForm />}
@@ -283,7 +284,7 @@ function AuthFormContainer({ isSignIn, onToggle }: { isSignIn: boolean; onToggle
             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
                 <span className="relative z-10 bg-background px-2 text-muted-foreground">Or continue with</span>
             </div>
-            <Button variant="outline" type="button" onClick={() => console.log("UI: Google button clicked")}>
+            <Button variant="outline" type="button" onClick={signInWithGoogle}>
                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google icon" className="mr-2 h-4 w-4" />
                 Continue with Google
             </Button>
