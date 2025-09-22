@@ -1,88 +1,84 @@
 "use client";
 
 import React from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Clock, LifeBuoy } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <section className="py-12 lg:py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex text-center justify-center items-center gap-4 flex-col mb-10">
-            <div className="px-3 py-1 border rounded-full text-xs">Contact</div>
-            <div className="flex gap-2 flex-col">
-              <h1 className="text-3xl md:text-5xl tracking-tighter max-w-3xl text-center font-regular">We’re here to help</h1>
-              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-                Questions about subscriptions, features, or access? Reach out and we’ll respond promptly.
-              </p>
-            </div>
+    <div className="w-full">
+      <div className="container mx-auto">
+        <div className="flex gap-4 py-12 flex-col items-start">
+          <div>
+            <Badge>Contact Us</Badge>
           </div>
-
-          <div className="grid text-left w-full grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Email Support</h2>
-              </div>
-              <p className="text-muted-foreground">
-                support@govgazette.example
-              </p>
-            </div>
-
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Phone</h2>
-              </div>
-              <p className="text-muted-foreground">
-                +1 (000) 123-4567
-              </p>
-            </div>
-
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <MapPin className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Office</h2>
-              </div>
-              <p className="text-muted-foreground">
-                Gaborone, Botswana (remote-first team)
-              </p>
-            </div>
-
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <Clock className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Hours</h2>
-              </div>
-              <p className="text-muted-foreground">
-                Mon–Fri, 9:00–17:00 (CAT)
-              </p>
-            </div>
+          <div className="flex gap-2 flex-col">
+            <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular">
+              Get in Touch
+            </h2>
+            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-muted-foreground">
+              We’d love to hear from you. Whether you have a question about features, trials, pricing, or anything else, our team is ready to answer all your questions.
+            </p>
           </div>
-
-          <div className="mt-10 grid text-left w-full grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <MessageSquare className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">General Inquiries</h2>
-              </div>
-              <p className="text-muted-foreground">
-                Have a question about how the platform works? We can help you search gazettes, view documents, and manage your account.
-              </p>
+          <div className="flex flex-col md:flex-row gap-10 pt-12 w-full">
+            {/* Contact Form */}
+            <div className="w-full md:w-1/2">
+              <form className="flex flex-col gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="first-name" className="sr-only">First Name</label>
+                    <Input id="first-name" placeholder="First Name" />
+                  </div>
+                  <div>
+                    <label htmlFor="last-name" className="sr-only">Last Name</label>
+                    <Input id="last-name" placeholder="Last Name" />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">Email</label>
+                  <Input id="email" type="email" placeholder="Email" />
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">Message</label>
+                  <Textarea id="message" placeholder="Message" rows={5} />
+                </div>
+                <Button type="submit">Send Message</Button>
+              </form>
             </div>
-            <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border rounded-lg">
-              <div className="flex items-center gap-3 mb-3">
-                <LifeBuoy className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Account & Billing</h2>
+
+            {/* Contact Details */}
+            <div className="w-full md:w-1/2 flex flex-col gap-8">
+              <div className="flex items-start gap-4">
+                <Mail className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="text-lg font-semibold">Email</h3>
+                  <p className="text-muted-foreground">support@govgazette.example</p>
+                  <p className="text-sm text-muted-foreground">We'll get back to you within 24 hours.</p>
+                </div>
               </div>
-              <p className="text-muted-foreground">
-                Need help with your subscription or payment? Our team can assist with plan changes and billing issues.
-              </p>
+              <div className="flex items-start gap-4">
+                <Phone className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="text-lg font-semibold">Phone</h3>
+                  <p className="text-muted-foreground">+1 (000) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">Mon-Fri, 9am-5pm CAT</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h3 className="text-lg font-semibold">Office</h3>
+                  <p className="text-muted-foreground">Gaborone, Botswana</p>
+                  <p className="text-sm text-muted-foreground">Our team is fully remote.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
-
