@@ -57,7 +57,6 @@ const App = () => (
             <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/signup" element={<AdminSignup />} />
-            <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
             <Route path="/tender/:id" element={<TenderView />} />
             <Route path="/subscription" element={<SubscriptionPricing />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />

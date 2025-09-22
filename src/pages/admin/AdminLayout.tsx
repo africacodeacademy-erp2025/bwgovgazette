@@ -19,7 +19,8 @@ export default function AdminLayout() {
   const location = useLocation();
   const navigate = useNavigate();
   const isActive = (path: string) => location.pathname === path;
-  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'Admin');
+  type UserMetadata = { full_name?: string };
+  const displayName = ((user?.user_metadata as UserMetadata)?.full_name || (user?.email ? user.email.split('@')[0] : 'Admin'));
   const displayEmail = user?.email || '';
 
   const handleLogout = async () => {
