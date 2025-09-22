@@ -7,6 +7,7 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import { GooeyMarquee } from '@/components/ui/gooey-marquee';
 export function HeroSection() {
   const navigate = useNavigate();
   return <>
@@ -30,7 +31,7 @@ export function HeroSection() {
                                     </div>
                                 </div>
                                 <div className="order-first lg:order-last">
-                                    <img className="pointer-events-none w-full h-48 sm:h-64 lg:h-80 object-cover invert dark:mix-blend-lighten dark:invert-0" src="https://ik.imagekit.io/lrigu76hy/tailark/abstract-bg.jpg?updatedAt=1745733473768" alt="Abstract Object" height="4000" width="3000" />
+                                    <GooeyMarquee text="govgazette — official gazettes & public notices" className="h-40" speed={18} />
                                 </div>
                             </div>
                         </div>

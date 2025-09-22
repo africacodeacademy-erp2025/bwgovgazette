@@ -29,6 +29,7 @@ import AdminLayout from "./pages/admin/AdminLayout";
 import ManageGazettes from "./pages/admin/ManageGazettes";
 import UploadDocument from "./pages/admin/UploadDocument";
 import Users from "./pages/admin/Users";
+import DemoGooey from "./pages/DemoGooey";
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="/gazette/:id" element={<GazetteViewPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/demo/gooey" element={<DemoGooey />} />
             {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
               <Route path="dashboard" element={<AdminDashboard />} />
