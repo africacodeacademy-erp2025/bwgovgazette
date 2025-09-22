@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Upload, Users as UsersIcon, BarChart3, Settings, Search, Plus, Eye, Edit, Trash2, Filter, Calendar, Bell } from 'lucide-react';
+import { FileText, Upload, Users as UsersIcon, BarChart3, Settings, Search, Plus, Eye, Edit, Trash2, Filter, Calendar, Bell, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -25,7 +25,7 @@ const stats = [{
   title: 'Active Users',
   value: '8,432',
   change: '+5%',
-  icon: Users
+  icon: UsersIcon
 }, {
   title: 'Downloads Today',
   value: '342',
