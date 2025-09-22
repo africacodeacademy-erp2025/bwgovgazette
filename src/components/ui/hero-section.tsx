@@ -46,11 +46,11 @@ export function HeroSection() {
                             </p>
                             <div className="grid grid-cols-2 gap-8 text-center max-w-sm mx-auto">
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">0K+</div>
+                                    <div className="text-2xl font-bold text-primary">24K+</div>
                                     <div className="text-sm text-muted-foreground">Documents</div>
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">K+</div>
+                                    <div className="text-2xl font-bold text-primary">7K+</div>
                                     <div className="text-sm text-muted-foreground">Users</div>
                                 </div>
                             </div>
