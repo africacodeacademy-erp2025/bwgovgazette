@@ -195,8 +195,8 @@ function Index() {
               }} transition={{
                 duration: 0.6
               }} className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Gazettes</h2>
-                <p className="text-muted-foreground text-lg">Latest official publications and notices</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest official publications and notices</h2>
+                <p className="text-muted-foreground text-lg">Browse the most recent publications from various government departments.</p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -219,7 +219,7 @@ function Index() {
                     </div>
                     
                     <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">{gazette.description}</p>
+                    <p className="text-muted-foreground font-normal mb-4 line-clamp-3">{gazette.description}</p>
                     
                     {isSubscriber ? (
                       <div className="flex gap-2">
