@@ -77,7 +77,7 @@ const HeroHeader = () => {
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <a href="/" aria-label="home" className="flex items-center">
-                                <img src="/logo.png" alt="govgazette" className="h-8 w-auto object-contain" />
+                                <img src="/logo.png" alt="govgazette" className="h-12 w-auto object-contain" />
                             </a>
 
                             <button onClick={() => setMenuState(!menuState)} aria-label={menuState == true ? 'Close Menu' : 'Open Menu'} className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
