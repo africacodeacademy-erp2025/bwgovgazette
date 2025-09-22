@@ -33,6 +33,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Check, Star } from "lucide-react";
 import { toast } from 'sonner';
 import GazetteView from "@/components/GazetteView";
+import { Spinner } from "@/components/ui/spinner-1";
 import { GazetteService, type Gazette } from "@/services/GazetteService";
 
 const menuItems = [
@@ -87,8 +88,8 @@ export default function Dashboard() {
 
   const shouldOpenSubscribe = useMemo(() => {
     // Receive flag from navigation state (set after login)
-    const stateAny = location.state as any;
-    return Boolean(stateAny?.showSubscribeConfirm);
+    const state = location.state as { showSubscribeConfirm?: boolean } | null;
+    return Boolean(state?.showSubscribeConfirm);
   }, [location.state]);
 
   useEffect(() => {
@@ -181,7 +182,8 @@ export default function Dashboard() {
 
   const isActive = (path: string) => currentPath === path;
 
-  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
+  type UserMetadata = { full_name?: string };
+  const displayName = ((user?.user_metadata as UserMetadata)?.full_name || (user?.email ? user.email.split('@')[0] : 'User'));
   const displayEmail = user?.email || '';
 
   return (
@@ -379,7 +381,10 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {loadingGazettes && (
-                    <div className="flex items-center justify-center p-6 text-sm text-muted-foreground">Loading gazettes...</div>
+                    <div className="flex items-center justify-center p-6">
+                      <Spinner size={32} />
+                      <span className="ml-2 text-sm text-muted-foreground">Loading gazettes...</span>
+                    </div>
                   )}
                   {!loadingGazettes && gazettes.length === 0 && (
                     <div className="flex items-center justify-center p-6 text-sm text-muted-foreground">No recent publications found.</div>
