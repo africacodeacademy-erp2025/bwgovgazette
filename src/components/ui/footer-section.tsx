@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { useToast } from "@/hooks/use-toast"
-import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter, FileText } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(false)
@@ -30,10 +30,10 @@ function Footerdemo() {
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <div className="flex items-center space-x-2 mb-4">
-              <FileText className="h-6 w-6 text-primary" />
+            <a href="/" className="flex items-center space-x-2 mb-4">
+              <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-6 w-6 object-contain" />
               <span className="text-xl font-bold">govgazette</span>
-            </div>
+            </a>
             <p className="mb-6 text-muted-foreground">
               Your trusted source for official gazettes and public notices.
             </p>

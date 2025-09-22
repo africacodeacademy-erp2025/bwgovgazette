@@ -172,54 +172,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <SidebarProvider>
-      <div className="flex min-h-screen w-full">
-        <Sidebar>
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupLabel>Admin</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {menuItems.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild tooltip={item.title} isActive={isActive(item.url)}>
-                        <NavLink to={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </NavLink>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-
-          <SidebarFooter>
-            <SidebarGroup>
-              <SidebarMenuButton className="w-full justify-start gap-3 h-12">
-                <div className="flex flex-col items-start">
-                  <span className="text-sm font-medium">{displayName}</span>
-                  <span className="text-xs text-muted-foreground">{displayEmail}</span>
-                </div>
-              </SidebarMenuButton>
-            </SidebarGroup>
-          </SidebarFooter>
-        </Sidebar>
-
-        <SidebarInset>
-          {/* Header */}
-          <header className="border-b border-border bg-card">
-            <div className="flex items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-3">
-                <SidebarTrigger />
-                <h1 className="text-2xl font-bold text-foreground">Admin Dashboard</h1>
-              </div>
-              <Button variant="outline" size="sm" onClick={handleLogout}>Logout</Button>
-            </div>
-          </header>
-
-          <div className="container mx-auto px-4 py-8">
+          <div className="container mx-auto px-4 py-0">
             {/* Welcome Section */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
               <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
@@ -341,8 +294,6 @@ export default function AdminDashboard() {
               </Card>
             </motion.div>
           </div>
-        </SidebarInset>
-      </div>
 
       {/* Dialogs */}
       <CreateGazetteDialog 
@@ -371,6 +322,6 @@ export default function AdminDashboard() {
         itemName={gazetteToDelete?.file_name}
         description="This will permanently delete the gazette and all associated data. This action cannot be undone."
       />
-    </SidebarProvider>
+    
   );
 }

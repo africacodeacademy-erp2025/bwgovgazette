@@ -25,6 +25,11 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import GazetteViewPage from "./pages/GazetteViewPage";
+import AdminLayout from "./pages/admin/AdminLayout";
+import ManageGazettes from "./pages/admin/ManageGazettes";
+import UploadDocument from "./pages/admin/UploadDocument";
+import Users from "./pages/admin/Users";
+import DemoGooey from "./pages/DemoGooey";
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -59,6 +64,14 @@ const App = () => (
             <Route path="/gazette/:id" element={<GazetteViewPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/demo/gooey" element={<DemoGooey />} />
+            {/* Admin routes */}
+            <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="gazettes" element={<ManageGazettes />} />
+              <Route path="upload" element={<UploadDocument />} />
+              <Route path="users" element={<Users />} />
+            </Route>
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

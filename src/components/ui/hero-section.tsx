@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { GooeyMarquee } from '@/components/ui/gooey-marquee';
 export function HeroSection() {
   const navigate = useNavigate();
   return <>
@@ -30,7 +31,7 @@ export function HeroSection() {
                                     </div>
                                 </div>
                                 <div className="order-first lg:order-last">
-                                    <img className="pointer-events-none w-full h-48 sm:h-64 lg:h-80 object-cover invert dark:mix-blend-lighten dark:invert-0" src="https://ik.imagekit.io/lrigu76hy/tailark/abstract-bg.jpg?updatedAt=1745733473768" alt="Abstract Object" height="4000" width="3000" />
+                                    <GooeyMarquee text="govgazette — official gazettes & public notices" className="h-40" speed={18} />
                                 </div>
                             </div>
                         </div>
@@ -76,7 +77,7 @@ const HeroHeader = () => {
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <a href="/" aria-label="home" className="flex items-center space-x-2">
-                                <FileText className="h-8 w-8 text-primary" />
+                                <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-8 w-8 object-contain" />
                                 <span className="text-2xl font-bold">govgazette</span>
                             </a>
 
