@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 export function HeroSection() {
   const navigate = useNavigate();
   return <>
@@ -76,7 +76,7 @@ const HeroHeader = () => {
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <a href="/" aria-label="home" className="flex items-center space-x-2">
-                                <FileText className="h-8 w-8 text-primary" />
+                                <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-8 w-8 object-contain" />
                                 <span className="text-2xl font-bold">govgazette</span>
                             </a>
 
