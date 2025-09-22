@@ -30,6 +30,7 @@ import ManageGazettes from "./pages/admin/ManageGazettes";
 import UploadDocument from "./pages/admin/UploadDocument";
 import Users from "./pages/admin/Users";
 import DemoGooey from "./pages/DemoGooey";
+import DemoSpinner from "./pages/DemoSpinner";
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -57,7 +58,6 @@ const App = () => (
             <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/signup" element={<AdminSignup />} />
-            <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
             <Route path="/tender/:id" element={<TenderView />} />
             <Route path="/subscription" element={<SubscriptionPricing />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
@@ -65,6 +65,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/demo/gooey" element={<DemoGooey />} />
+            <Route path="/demo/spinner" element={<DemoSpinner />} />
             {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
               <Route path="dashboard" element={<AdminDashboard />} />

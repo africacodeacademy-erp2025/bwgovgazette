@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Upload, Users as UsersIcon, BarChart3, Settings, Search, Plus, Eye, Edit, Trash2, Filter, Calendar, Bell, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,9 +10,7 @@ import CreateGazetteDialog from '@/components/admin/CreateGazetteDialog';
 import UploadDocumentDialog from '@/components/admin/UploadDocumentDialog';
 import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog';
 import GazetteView from '@/components/GazetteView';
-import { SidebarProvider, Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter, SidebarTrigger, SidebarInset } from '@/components/ui/sidebar';
-import { useAuth } from '@/hooks/useAuth';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Spinner } from '@/components/ui/spinner-1';
 import { GazetteService, type Gazette } from '@/services/GazetteService';
 
 // Mock data for the dashboard
@@ -38,42 +36,6 @@ const stats = [{
   icon: Bell
 }];
 
-const menuItems = [
-  { title: 'Dashboard', url: '/admin/dashboard', icon: BarChart3 },
-  { title: 'Manage Gazettes', url: '/admin/dashboard#gazettes', icon: FileText },
-  { title: 'Upload Document', url: '/admin/dashboard#upload', icon: Upload },
-  { title: 'Users', url: '/admin/dashboard#users', icon: UsersIcon },
-  { title: 'Settings', url: '/admin/dashboard#settings', icon: Settings },
-];
-const recentGazettes = [{
-  id: '1',
-  title: 'Public Infrastructure Development Notice',
-  category: 'Infrastructure',
-  status: 'Published',
-  date: '2024-01-15',
-  downloads: 156
-}, {
-  id: '2',
-  title: 'Legal Notice - Property Tax Assessment',
-  category: 'Legal',
-  status: 'Draft',
-  date: '2024-01-14',
-  downloads: 0
-}, {
-  id: '3',
-  title: 'Environmental Conservation Policy Update',
-  category: 'Environment',
-  status: 'Under Review',
-  date: '2024-01-13',
-  downloads: 89
-}, {
-  id: '4',
-  title: 'Health Department Vaccination Notice',
-  category: 'Health',
-  status: 'Published',
-  date: '2024-01-12',
-  downloads: 234
-}];
 export default function AdminDashboard() {
   const [searchQuery, setSearchQuery] = useState('');
   const [gazettes, setGazettes] = useState<Gazette[]>([]);
@@ -85,16 +47,8 @@ export default function AdminDashboard() {
   const [gazetteToDelete, setGazetteToDelete] = useState<Gazette | null>(null);
   const [gazetteToView, setGazetteToView] = useState<string | null>(null);
   const { toast } = useToast();
-  const { signOut, user } = useAuth();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const currentPath = location.pathname;
 
-  useEffect(() => {
-    loadGazettes();
-  }, []);
-
-  const loadGazettes = async () => {
+  const loadGazettes = useCallback(async () => {
     try {
       setLoading(true);
       const gazetteData = await GazetteService.getGazettes({ limit: 10 });
@@ -109,7 +63,11 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [toast]);
+
+  useEffect(() => {
+    loadGazettes();
+  }, [loadGazettes]);
 
   const handleGazetteCreated = (newGazette: Gazette) => {
     setGazettes([newGazette, ...gazettes]);
@@ -161,14 +119,6 @@ export default function AdminDashboard() {
       default:
         return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
     }
-  };
-  const isActive = (path: string) => currentPath === path;
-  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'Admin');
-  const displayEmail = user?.email || '';
-
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
   };
 
   return (
@@ -244,7 +194,7 @@ export default function AdminDashboard() {
                 <CardContent>
                   {loading ? (
                     <div className="flex items-center justify-center p-8">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                      <Spinner size={32} />
                       <span className="ml-2">Loading gazettes...</span>
                     </div>
                   ) : (
