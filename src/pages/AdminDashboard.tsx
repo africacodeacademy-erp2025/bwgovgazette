@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Upload, Users, BarChart3, Settings, Search, Plus, Eye, Edit, Trash2, Download, Filter, Calendar, Bell, LogOut, Shield } from 'lucide-react';
+import { FileText, Upload, Users as UsersIcon, BarChart3, Settings, Search, Plus, Eye, Edit, Trash2, Filter, Calendar, Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,7 +10,9 @@ import CreateGazetteDialog from '@/components/admin/CreateGazetteDialog';
 import UploadDocumentDialog from '@/components/admin/UploadDocumentDialog';
 import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog';
 import GazetteView from '@/components/GazetteView';
-import Sidebar from '@/components/ui/sidebar-with-submenu';
+import { SidebarProvider, Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter, SidebarTrigger, SidebarInset } from '@/components/ui/sidebar';
+import { useAuth } from '@/hooks/useAuth';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { GazetteService, type Gazette } from '@/services/GazetteService';
 
 // Mock data for the dashboard
@@ -35,6 +37,14 @@ const stats = [{
   change: '-8%',
   icon: Bell
 }];
+
+const menuItems = [
+  { title: 'Dashboard', url: '/admin/dashboard', icon: BarChart3 },
+  { title: 'Manage Gazettes', url: '/admin/dashboard#gazettes', icon: FileText },
+  { title: 'Upload Document', url: '/admin/dashboard#upload', icon: Upload },
+  { title: 'Users', url: '/admin/dashboard#users', icon: UsersIcon },
+  { title: 'Settings', url: '/admin/dashboard#settings', icon: Settings },
+];
 const recentGazettes = [{
   id: '1',
   title: 'Public Infrastructure Development Notice',
@@ -75,6 +85,10 @@ export default function AdminDashboard() {
   const [gazetteToDelete, setGazetteToDelete] = useState<Gazette | null>(null);
   const [gazetteToView, setGazetteToView] = useState<string | null>(null);
   const { toast } = useToast();
+  const { signOut, user } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentPath = location.pathname;
 
   useEffect(() => {
     loadGazettes();
@@ -148,178 +162,187 @@ export default function AdminDashboard() {
         return 'px-3 py-1 rounded-full bg-muted text-sm font-medium text-muted-foreground';
     }
   };
-  return <div className="min-h-screen bg-background flex">
-      <Sidebar />
-      
-      {/* Main Content */}
-      <main className="flex-1 ml-80 px-8 py-8">
-        {/* Welcome Section */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.6
-      }} className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-          <p className="text-muted-foreground">Welcome back! Here's what's happening with your gazettes.</p>
-        </motion.div>
+  const isActive = (path: string) => currentPath === path;
+  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'Admin');
+  const displayEmail = user?.email || '';
 
-        {/* Stats Grid */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.6,
-        delay: 0.1
-      }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {stats.map((stat, index) => <Card key={index}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
-                    <p className="text-2xl font-bold">{stat.value}</p>
-                    <p className="text-xs text-black">
-                      {stat.change} from last month
-                    </p>
-                  </div>
-                  <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <stat.icon className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>)}
-        </motion.div>
+  const handleLogout = async () => {
+    await signOut();
+    navigate('/');
+  };
 
-        {/* Quick Actions */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.6,
-        delay: 0.2
-      }} className="mb-8">
-          <div className="flex flex-wrap gap-4">
-            <Button className="flex items-center gap-2" onClick={() => setShowCreateDialog(true)}>
-              <Plus className="h-4 w-4" />
-              Create New Gazette
-            </Button>
-            <Button variant="outline" className="flex items-center gap-2" onClick={() => setShowUploadDialog(true)}>
-              <Upload className="h-4 w-4" />
-              Upload Document
-            </Button>
-            <Button variant="outline" className="flex items-center gap-2">
-              <BarChart3 className="h-4 w-4" />
-              View Analytics
-            </Button>
-            <Button variant="outline" className="flex items-center gap-2">
-              <Settings className="h-4 w-4" />
-              Settings
-            </Button>
-          </div>
-        </motion.div>
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <Sidebar>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupLabel>Admin</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {menuItems.map((item) => (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild tooltip={item.title} isActive={isActive(item.url)}>
+                        <NavLink to={item.url}>
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </NavLink>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
 
-        {/* Recent Gazettes */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.6,
-        delay: 0.3
-      }}>
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle>Recent Gazettes</CardTitle>
-                  <CardDescription>Manage and monitor your latest publications</CardDescription>
+          <SidebarFooter>
+            <SidebarGroup>
+              <SidebarMenuButton className="w-full justify-start gap-3 h-12">
+                <div className="flex flex-col items-start">
+                  <span className="text-sm font-medium">{displayName}</span>
+                  <span className="text-xs text-muted-foreground">{displayEmail}</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                    <Input placeholder="Search gazettes..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 w-64" />
-                  </div>
-                  <Button variant="outline" size="icon">
-                    <Filter className="h-4 w-4" />
-                  </Button>
-                </div>
+              </SidebarMenuButton>
+            </SidebarGroup>
+          </SidebarFooter>
+        </Sidebar>
+
+        <SidebarInset>
+          {/* Header */}
+          <header className="border-b border-border bg-card">
+            <div className="flex items-center justify-between px-4 py-4">
+              <div className="flex items-center gap-3">
+                <SidebarTrigger />
+                <h1 className="text-2xl font-bold text-foreground">Admin Dashboard</h1>
               </div>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="flex items-center justify-center p-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-                  <span className="ml-2">Loading gazettes...</span>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {gazettes.map(gazette => (
-                    <div key={gazette.id} className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="font-semibold text-sm">{gazette.file_name}</h3>
-                          <Badge className={getStatusColor(gazette.processing_status)}>
-                            {gazette.processing_status}
-                          </Badge>
-                        </div>
-                        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <div className="flex items-center space-x-1">
-                            <Calendar className="h-3 w-3" />
-                            <span>{new Date(gazette.created_at).toLocaleDateString()}</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <FileText className="h-3 w-3" />
-                            <span>{gazette.file_name}</span>
-                          </div>
-                          {gazette.extracted_text && (
-                            <span className="text-xs">({gazette.extracted_text.length} chars)</span>
-                          )}
-                        </div>
+              <Button variant="outline" size="sm" onClick={handleLogout}>Logout</Button>
+            </div>
+          </header>
+
+          <div className="container mx-auto px-4 py-8">
+            {/* Welcome Section */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
+              <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
+              <p className="text-muted-foreground">Welcome back! Here's what's happening with your gazettes.</p>
+            </motion.div>
+
+            {/* Stats Grid */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {stats.map((stat, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
+                        <p className="text-2xl font-bold">{stat.value}</p>
+                        <p className="text-xs text-black">{stat.change} from last month</p>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Button 
-                          variant="ghost" 
-                          size="icon" 
-                          className="h-8 w-8"
-                          onClick={() => handleViewClick(gazette.id)}
-                        >
-                          <Eye className="h-4 w-4" />
-                        </Button>
-                        <Button variant="ghost" size="icon" className="h-8 w-8">
-                          <Edit className="h-4 w-4" />
-                        </Button>
-                        <Button 
-                          variant="ghost" 
-                          size="icon" 
-                          className="h-8 w-8 text-destructive hover:text-destructive"
-                          onClick={() => handleDeleteClick(gazette)}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
+                      <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <stat.icon className="h-6 w-6 text-primary" />
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
-              
-              <div className="mt-6 text-center">
-                <Button variant="outline">View All Gazettes</Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </motion.div>
+
+            {/* Quick Actions */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mb-8">
+              <div className="flex flex-wrap gap-4">
+                <Button className="flex items-center gap-2" onClick={() => setShowCreateDialog(true)}>
+                  <Plus className="h-4 w-4" />
+                  Create New Gazette
+                </Button>
+                <Button variant="outline" className="flex items-center gap-2" onClick={() => setShowUploadDialog(true)}>
+                  <Upload className="h-4 w-4" />
+                  Upload Document
+                </Button>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <BarChart3 className="h-4 w-4" />
+                  View Analytics
+                </Button>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Settings className="h-4 w-4" />
+                  Settings
+                </Button>
               </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </main>
+            </motion.div>
+
+            {/* Recent Gazettes */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <CardTitle>Recent Gazettes</CardTitle>
+                      <CardDescription>Manage and monitor your latest publications</CardDescription>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                        <Input placeholder="Search gazettes..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 w-64" />
+                      </div>
+                      <Button variant="outline" size="icon">
+                        <Filter className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {loading ? (
+                    <div className="flex items-center justify-center p-8">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                      <span className="ml-2">Loading gazettes...</span>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {gazettes.map(gazette => (
+                        <div key={gazette.id} className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-3 mb-2">
+                              <h3 className="font-semibold text-sm">{gazette.file_name}</h3>
+                              <Badge className={getStatusColor(gazette.processing_status)}>
+                                {gazette.processing_status}
+                              </Badge>
+                            </div>
+                            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                              <div className="flex items-center space-x-1">
+                                <Calendar className="h-3 w-3" />
+                                <span>{new Date(gazette.created_at).toLocaleDateString()}</span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <FileText className="h-3 w-3" />
+                                <span>{gazette.file_name}</span>
+                              </div>
+                              {gazette.extracted_text && (
+                                <span className="text-xs">({gazette.extracted_text.length} chars)</span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleViewClick(gazette.id)}>
+                              <Eye className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Edit className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive hover:text-destructive" onClick={() => handleDeleteClick(gazette)}>
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="mt-6 text-center">
+                    <Button variant="outline">View All Gazettes</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </SidebarInset>
+      </div>
 
       {/* Dialogs */}
       <CreateGazetteDialog 
@@ -348,5 +371,6 @@ export default function AdminDashboard() {
         itemName={gazetteToDelete?.file_name}
         description="This will permanently delete the gazette and all associated data. This action cannot be undone."
       />
-    </div>;
+    </SidebarProvider>
+  );
 }
