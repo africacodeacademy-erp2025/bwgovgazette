@@ -10,6 +10,7 @@ import CreateGazetteDialog from '@/components/admin/CreateGazetteDialog';
 import UploadDocumentDialog from '@/components/admin/UploadDocumentDialog';
 import DeleteConfirmDialog from '@/components/admin/DeleteConfirmDialog';
 import GazetteView from '@/components/GazetteView';
+import { Spinner } from '@/components/ui/spinner-1';
 import { GazetteService, type Gazette } from '@/services/GazetteService';
 
 // Mock data for the dashboard
@@ -193,7 +194,7 @@ export default function AdminDashboard() {
                 <CardContent>
                   {loading ? (
                     <div className="flex items-center justify-center p-8">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                      <Spinner size={32} />
                       <span className="ml-2">Loading gazettes...</span>
                     </div>
                   ) : (

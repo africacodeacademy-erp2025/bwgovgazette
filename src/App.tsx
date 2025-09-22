@@ -30,6 +30,7 @@ import ManageGazettes from "./pages/admin/ManageGazettes";
 import UploadDocument from "./pages/admin/UploadDocument";
 import Users from "./pages/admin/Users";
 import DemoGooey from "./pages/DemoGooey";
+import DemoSpinner from "./pages/DemoSpinner";
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/demo/gooey" element={<DemoGooey />} />
+            <Route path="/demo/spinner" element={<DemoSpinner />} />
             {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
               <Route path="dashboard" element={<AdminDashboard />} />
