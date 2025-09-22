@@ -43,50 +43,50 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <CookieNotice />
-        <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <CookieNotice />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/search" element={<SearchGazettes />} />
-            <Route path="/tenders" element={<BrowseTenders />} />
-            <Route path="/saved" element={<ProtectedRoute><SavedItems /></ProtectedRoute>} />
-            <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
-            <Route path="/calendar" element={<CalendarPage />} />
-            <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/signup" element={<AdminSignup />} />
-            <Route path="/tender/:id" element={<TenderView />} />
-            <Route path="/subscription" element={<SubscriptionPricing />} />
-            <Route path="/payment-success" element={<PaymentSuccess />} />
-            <Route path="/gazette/:id" element={<GazetteViewPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/demo/gooey" element={<DemoGooey />} />
-            <Route path="/demo/spinner" element={<DemoSpinner />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="/update-password" element={<UpdatePasswordPage />} />
-            {/* Admin routes */}
-            <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-              <Route path="dashboard" element={<AdminDashboard />} />
-              <Route path="gazettes" element={<ManageGazettes />} />
-              <Route path="upload" element={<UploadDocument />} />
-              <Route path="users" element={<Users />} />
-            </Route>
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </AuthProvider>
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="/search" element={<SearchGazettes />} />
+              <Route path="/tenders" element={<BrowseTenders />} />
+              <Route path="/saved" element={<ProtectedRoute><SavedItems /></ProtectedRoute>} />
+              <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
+              <Route path="/calendar" element={<CalendarPage />} />
+              <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/signup" element={<AdminSignup />} />
+              <Route path="/tender/:id" element={<TenderView />} />
+              <Route path="/subscription" element={<SubscriptionPricing />} />
+              <Route path="/payment-success" element={<PaymentSuccess />} />
+              <Route path="/gazette/:id" element={<GazetteViewPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/demo/gooey" element={<DemoGooey />} />
+              <Route path="/demo/spinner" element={<DemoSpinner />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/update-password" element={<UpdatePasswordPage />} />
+              {/* Admin routes */}
+              <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
+                <Route path="dashboard" element={<AdminDashboard />} />
+                <Route path="gazettes" element={<ManageGazettes />} />
+                <Route path="upload" element={<UploadDocument />} />
+                <Route path="users" element={<Users />} />
+              </Route>
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </TooltipProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
