@@ -3,11 +3,34 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
 
 export default function PaymentSuccess() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (sessionId && user) {
+      const sendReceipt = async () => {
+        try {
+          const { error } = await supabase.functions.invoke('send-payment-receipt', {
+            body: {
+              email: user.email,
+              name: user.user_metadata?.full_name || 'Valued Customer'
+            },
+          });
+          if (error) throw error;
+        } catch (error) {
+          console.error('Failed to send payment receipt:', error);
+          toast.error('Could not send payment receipt email.');
+        }
+      };
+      sendReceipt();
+    }
+  }, [sessionId, user]);
 
   useEffect(() => {
     // Always attempt to fix state and redirect on entry
