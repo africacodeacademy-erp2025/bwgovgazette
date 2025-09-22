@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Search, Download, Bell, BadgeCheck, Shield, FileText } from 'lucide-react';
+import { Feature } from '@/components/ui/feature-with-image-carousel';
 
 export default function About() {
   return (
@@ -102,6 +103,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <Feature />
     </div>
   );
 }
