@@ -172,7 +172,6 @@ export default function AdminDashboard() {
   };
 
   return (
-    <>
           <div className="container mx-auto px-4 py-0">
             {/* Welcome Section */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
@@ -294,35 +293,33 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
             </motion.div>
-          </div>
 
-      {/* Dialogs */}
-      <CreateGazetteDialog 
-        open={showCreateDialog} 
-        onOpenChange={setShowCreateDialog}
-        onGazetteCreated={handleGazetteCreated}
-      />
-      <UploadDocumentDialog 
-        open={showUploadDialog} 
-        onOpenChange={setShowUploadDialog}
-        onDocumentUploaded={handleDocumentUploaded}
-      />
-      <GazetteView
-        gazetteId={gazetteToView}
-        open={showViewDialog}
-        onOpenChange={(open) => {
-          setShowViewDialog(open);
-          if (!open) setGazetteToView(null);
-        }}
-      />
-      <DeleteConfirmDialog
-        open={showDeleteDialog}
-        onOpenChange={setShowDeleteDialog}
-        onConfirm={handleDeleteConfirm}
-        title="Gazette"
-        itemName={gazetteToDelete?.file_name}
-        description="This will permanently delete the gazette and all associated data. This action cannot be undone."
-      />
-    </>
+            <CreateGazetteDialog 
+              open={showCreateDialog} 
+              onOpenChange={setShowCreateDialog}
+              onGazetteCreated={handleGazetteCreated}
+            />
+            <UploadDocumentDialog 
+              open={showUploadDialog} 
+              onOpenChange={setShowUploadDialog}
+              onDocumentUploaded={handleDocumentUploaded}
+            />
+            <GazetteView
+              gazetteId={gazetteToView}
+              open={showViewDialog}
+              onOpenChange={(open) => {
+                setShowViewDialog(open);
+                if (!open) setGazetteToView(null);
+              }}
+            />
+            <DeleteConfirmDialog
+              open={showDeleteDialog}
+              onOpenChange={setShowDeleteDialog}
+              onConfirm={handleDeleteConfirm}
+              title="Gazette"
+              itemName={gazetteToDelete?.file_name}
+              description="This will permanently delete the gazette and all associated data. This action cannot be undone."
+            />
+          </div>
   );
 }
