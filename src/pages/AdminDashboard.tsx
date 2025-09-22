@@ -172,6 +172,7 @@ export default function AdminDashboard() {
   };
 
   return (
+    <>
           <div className="container mx-auto px-4 py-0">
             {/* Welcome Section */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
@@ -322,6 +323,6 @@ export default function AdminDashboard() {
         itemName={gazetteToDelete?.file_name}
         description="This will permanently delete the gazette and all associated data. This action cannot be undone."
       />
-    
+    </>
   );
 }
