@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Feature } from '@/components/ui/feature-with-image-carousel';
+import { Feature } from '@/components/ui/feature-with-advantages';
 
 export default function About() {
   return (
