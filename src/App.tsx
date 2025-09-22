@@ -33,6 +33,8 @@ const UploadDocument = lazy(() => import("./pages/admin/UploadDocument"));
 const Users = lazy(() => import("./pages/admin/Users"));
 const DemoGooey = lazy(() => import("./pages/DemoGooey"));
 const DemoSpinner = lazy(() => import("./pages/DemoSpinner"));
+const ForgotPasswordPage = lazy(() => import("./pages/ForgotPassword"));
+const UpdatePasswordPage = lazy(() => import("./pages/UpdatePassword"));
 import CookieNotice from "./components/ui/cookie-notice";
 
 const queryClient = new QueryClient();
@@ -69,6 +71,8 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/demo/gooey" element={<DemoGooey />} />
             <Route path="/demo/spinner" element={<DemoSpinner />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/update-password" element={<UpdatePasswordPage />} />
             {/* Admin routes */}
             <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
               <Route path="dashboard" element={<AdminDashboard />} />
