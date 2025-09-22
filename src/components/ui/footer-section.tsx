@@ -31,7 +31,7 @@ function Footerdemo() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
             <a href="/" className="flex items-center mb-4">
-              <img src="/Red_And_black_Minimalist_Brand_music_logo-removebg-preview (1).png" alt="govgazette" className="h-7 w-auto object-contain" />
+              <img src="/logo.png" alt="govgazette" className="h-7 w-auto object-contain" />
             </a>
             <p className="mb-6 text-muted-foreground">
               Your trusted source for official gazettes and public notices.
