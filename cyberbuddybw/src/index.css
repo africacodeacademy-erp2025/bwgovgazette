@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(159, 239, 0, 0.7);
+}
+
+@utility box-glow {
+  box-shadow: 0 0 15px rgba(159, 239, 0, 0.5);
+}
+
+@utility terminal-text {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@utility animated-border {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(159, 239, 0, 0.3);
+    border-radius: inherit;
+    animation: border-pulse 2s infinite;
+  }
+}
+
+@keyframes border-pulse {
+  0% {
+    border-color: rgba(159, 239, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(159, 239, 0, 0.8);
+  }
+  100% {
+    border-color: rgba(159, 239, 0, 0.3);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@utility typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+@utility grid-background {
+  background-image: 
+    linear-gradient(rgba(159, 239, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(159, 239, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
