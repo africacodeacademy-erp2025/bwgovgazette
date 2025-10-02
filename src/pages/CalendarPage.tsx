@@ -31,8 +31,9 @@ import {
   MapPin, 
   Plus
 } from "lucide-react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from '@/hooks/useAuth';
 
 const menuItems = [
   {
@@ -75,9 +76,18 @@ const menuItems = [
 export default function CalendarPage() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const location = useLocation();
+  const navigate = useNavigate();
+  const { signOut, user } = useAuth();
   const currentPath = location.pathname;
 
+  const handleLogout = async () => {
+    await signOut();
+    navigate('/');
+  };
+
   const isActive = (path: string) => currentPath === path;
+  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
+  const displayEmail = user?.email || '';
 
   const upcomingEvents = [
     {
@@ -170,15 +180,11 @@ export default function CalendarPage() {
 
           <SidebarFooter>
             <SidebarGroup>
-              <SidebarMenuButton className="w-full justify-between gap-3 h-12">
-                <div className="flex items-center gap-2">
-                  <User className="h-5 w-5 rounded-md" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium">John Doe</span>
-                    <span className="text-xs text-muted-foreground">john@example.com</span>
-                  </div>
+              <SidebarMenuButton className="w-full justify-start gap-3 h-12">
+                <div className="flex flex-col items-start">
+                  <span className="text-sm font-medium">{displayName}</span>
+                  <span className="text-xs text-muted-foreground">{displayEmail}</span>
                 </div>
-                <ChevronsUpDown className="h-5 w-5 rounded-md" />
               </SidebarMenuButton>
             </SidebarGroup>
           </SidebarFooter>
@@ -192,7 +198,7 @@ export default function CalendarPage() {
                 <SidebarTrigger />
                 <h1 className="text-2xl font-bold text-foreground">Calendar</h1>
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={handleLogout}>
                 Logout
               </Button>
             </div>

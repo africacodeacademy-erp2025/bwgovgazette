@@ -22,7 +22,7 @@ function Pricing() {
   };
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-8 lg:py-12">
       <div className="container mx-auto">
         <div className="flex text-center justify-center items-center gap-4 flex-col">
           <Badge>Pricing</Badge>
@@ -34,7 +34,7 @@ function Pricing() {
               Our goal is to make official Gazettes accessible to everyone while giving a preview of the content before purchase.
             </p>
           </div>
-          <div className="grid text-left w-full grid-cols-3 lg:grid-cols-5 divide-x pt-20">
+          <div className="grid text-left w-full grid-cols-3 lg:grid-cols-5 divide-x pt-8">
             <div className="col-span-3 lg:col-span-1"></div>
             <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
               <p className="text-2xl">Free</p>
@@ -48,9 +48,9 @@ function Pricing() {
               <Button 
                 variant="outline" 
                 className="gap-4 mt-8"
-                onClick={() => navigate('/dashboard')}
+                onClick={() => { localStorage.setItem('plan_choice', 'free'); navigate('/dashboard'); }}
               >
-                Try it <MoveRight className="w-4 h-4" />
+                Continuing with Free <MoveRight className="w-4 h-4" />
               </Button>
             </div>
             <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">

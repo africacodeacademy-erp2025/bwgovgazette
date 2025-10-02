@@ -7,6 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Download, Calendar, User, FileText, Eye } from 'lucide-react';
 import { GazetteService, type Gazette } from '@/services/GazetteService';
 import { useToast } from '@/hooks/use-toast';
+import { Spinner } from '@/components/ui/spinner-1';
 
 interface GazetteViewProps {
   gazetteId: string | null;
@@ -90,8 +91,8 @@ export default function GazetteView({ gazetteId, open, onOpenChange }: GazetteVi
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="max-w-4xl max-h-[90vh]">
           <div className="flex items-center justify-center p-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-            <span className="ml-2">Loading gazette...</span>
+            <Spinner size={32} />
+            <span className="ml-3">Loading gazette...</span>
           </div>
         </DialogContent>
       </Dialog>

@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -9,10 +9,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Upload, FileText, X, FileUp } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+interface GazetteCard {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  category: string;
+}
+
 interface CreateGazetteDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onGazetteCreated: (gazette: any) => void;
+  onGazetteCreated: (gazette: GazetteCard) => void;
 }
 
 export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreated }: CreateGazetteDialogProps) {
@@ -33,7 +41,6 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
     const file = e.target.files?.[0];
     if (file) {
       setSelectedFile(file);
-      extractTextFromFile(file);
       // Auto-populate title from filename
       if (!formData.title) {
         setFormData({ ...formData, title: file.name.replace(/\.[^/.]+$/, "") });
@@ -46,40 +53,9 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
     const file = e.dataTransfer.files[0];
     if (file) {
       setSelectedFile(file);
-      extractTextFromFile(file);
       if (!formData.title) {
         setFormData({ ...formData, title: file.name.replace(/\.[^/.]+$/, "") });
       }
-    }
-  };
-
-  const extractTextFromFile = async (file: File) => {
-    setIsExtracting(true);
-    try {
-      // Import the document extractor dynamically
-      const { DocumentExtractor } = await import('@/services/DocumentExtractor');
-      const result = await DocumentExtractor.extractText(file);
-      
-      setExtractedText(result.text);
-      setFormData({ ...formData, content: result.text });
-      
-      const method = result.method === 'ocr' ? ' using OCR' : 
-                    result.method === 'hybrid' ? ' using hybrid extraction' : '';
-      const confidence = result.confidence ? ` (${Math.round(result.confidence)}% confidence)` : '';
-      
-      toast({
-        title: "Text Extracted",
-        description: `Document content extracted successfully${method}${confidence}.`,
-      });
-    } catch (error) {
-      console.error('Extraction error:', error);
-      toast({
-        title: "Extraction Failed",
-        description: error instanceof Error ? error.message : "Could not extract text from the document.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsExtracting(false);
     }
   };
 
@@ -91,46 +67,30 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Import the gazette service
-      const { GazetteService } = await import('@/services/GazetteService');
-      
-      const gazetteData = {
-        title: formData.title,
-        description: formData.description,
-        category: formData.category,
-        content: formData.content,
-        file: selectedFile || undefined,
-        status: 'draft'
-      };
+    const newGazette: GazetteCard = {
+      id: new Date().toISOString(),
+      title: formData.title,
+      description: formData.description,
+      category: formData.category,
+      date: new Date().toLocaleDateString('en-CA'),
+    };
 
-      const newGazette = await GazetteService.createGazette(gazetteData);
-      
-      onGazetteCreated(newGazette);
-      toast({
-        title: "Gazette Created",
-        description: "Your new gazette has been created successfully.",
-      });
-      
-      // Reset form
-      setFormData({ title: '', description: '', category: '', content: '' });
-      setSelectedFile(null);
-      setExtractedText('');
-      onOpenChange(false);
-    } catch (error) {
-      console.error('Error creating gazette:', error);
-      toast({
-        title: "Creation Failed",
-        description: error instanceof Error ? error.message : "Failed to create gazette.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    onGazetteCreated(newGazette);
+    toast({
+      title: "Gazette Created",
+      description: "Your new gazette has been created successfully.",
+    });
+
+    // Reset form
+    setFormData({ title: '', description: '', category: '', content: '' });
+    setSelectedFile(null);
+    setExtractedText('');
+    onOpenChange(false);
+    setIsSubmitting(false);
   };
 
   return (
@@ -205,7 +165,6 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                   placeholder="Enter the main content of the gazette manually"
                   rows={8}
-                  required
                 />
               </div>
             </TabsContent>
@@ -278,14 +237,14 @@ export default function CreateGazetteDialog({ open, onOpenChange, onGazetteCreat
               )}
             </TabsContent>
 
-            <div className="flex justify-end space-x-2">
+            <DialogFooter>
               <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
                 Cancel
               </Button>
               <Button type="submit" disabled={isSubmitting || isExtracting}>
                 {isSubmitting ? 'Creating...' : 'Create Gazette'}
               </Button>
-            </div>
+            </DialogFooter>
           </form>
         </Tabs>
       </DialogContent>
