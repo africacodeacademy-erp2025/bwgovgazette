@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, FileText } from 'lucide-react'
+import { Spinner } from '@/components/ui/spinner-1'
 
 interface SearchResult {
   id: string
@@ -20,21 +21,9 @@ interface SearchResultsProps {
 export function SearchResults({ results, loading, error, query }: SearchResultsProps) {
   if (loading) {
     return (
-      <div className="space-y-4">
-        {[...Array(3)].map((_, i) => (
-          <Card key={i} className="animate-pulse">
-            <CardHeader className="space-y-2">
-              <div className="h-4 bg-muted rounded w-3/4"></div>
-              <div className="h-3 bg-muted rounded w-1/2"></div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                <div className="h-3 bg-muted rounded w-full"></div>
-                <div className="h-3 bg-muted rounded w-2/3"></div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="flex items-center justify-center p-12">
+        <Spinner size={32} />
+        <span className="ml-3 text-muted-foreground">Loading results...</span>
       </div>
     )
   }

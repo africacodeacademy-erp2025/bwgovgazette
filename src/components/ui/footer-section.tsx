@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { useToast } from "@/hooks/use-toast"
-import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter, FileText } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(false)
@@ -30,10 +30,9 @@ function Footerdemo() {
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <div className="flex items-center space-x-2 mb-4">
-              <FileText className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">govgazette</span>
-            </div>
+            <a href="/" className="flex items-center mb-4">
+              <img src="/logo.png" alt="govgazette" className="h-7 w-auto object-contain" />
+            </a>
             <p className="mb-6 text-muted-foreground">
               Your trusted source for official gazettes and public notices.
             </p>
@@ -57,10 +56,10 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="/about" className="block transition-colors hover:text-primary">
                 About
               </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              <a href="/contact" className="block transition-colors hover:text-primary">
                 Contact
               </a>
               <a href="#" className="block transition-colors hover:text-primary">

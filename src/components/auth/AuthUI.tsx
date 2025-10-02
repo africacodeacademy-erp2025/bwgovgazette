@@ -89,6 +89,89 @@ export function Typewriter({
   );
 }
 
+export function UpdatePasswordForm() {
+  const { updatePassword } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handlePasswordUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+    const password = formData.get('password') as string;
+
+    const { error } = await updatePassword(password);
+
+    if (error) {
+      toast.error(error);
+    } else {
+      toast.success('Password updated successfully!');
+      navigate('/login');
+    }
+    setLoading(false);
+  };
+
+  return (
+    <form onSubmit={handlePasswordUpdate} className="flex flex-col gap-8">
+      <div className="flex flex-col items-center gap-2 text-center">
+        <h1 className="text-2xl font-bold">Update your password</h1>
+        <p className="text-balance text-sm text-muted-foreground">
+          Enter your new password below.
+        </p>
+      </div>
+      <div className="grid gap-4">
+        <PasswordInput name="password" label="New Password" required autoComplete="new-password" placeholder="New Password" />
+        <Button type="submit" variant="outline" className="mt-2" disabled={loading}>
+          {loading ? 'Updating...' : 'Update Password'}
+        </Button>
+      </div>
+    </form>
+  );
+}
+
+export function ForgotPasswordForm() {
+  const { resetPassword } = useAuth();
+  const [loading, setLoading] = useState(false);
+
+  const handlePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email') as string;
+
+    const { error } = await resetPassword(email);
+
+    if (error) {
+      toast.error(error);
+    } else {
+      toast.success('Password reset link sent! Please check your email.');
+    }
+    setLoading(false);
+  };
+
+  return (
+    <form onSubmit={handlePasswordReset} className="flex flex-col gap-8">
+      <div className="flex flex-col items-center gap-2 text-center">
+        <h1 className="text-2xl font-bold">Forgot your password?</h1>
+        <p className="text-balance text-sm text-muted-foreground">
+          Enter your email and we'll send you a link to reset your password.
+        </p>
+      </div>
+      <div className="grid gap-4">
+        <div className="grid gap-2">
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" placeholder="m@example.com" required />
+        </div>
+        <Button type="submit" variant="outline" className="mt-2" disabled={loading}>
+          {loading ? 'Sending...' : 'Send Reset Link'}
+        </Button>
+      </div>
+    </form>
+  );
+}
+
 const labelVariants = cva(
   "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 );
@@ -198,6 +281,7 @@ function SignInForm() {
     const { error } = await signIn(email, password);
     
     if (error) {
+      console.error("Sign up error:", error);
       toast.error(error);
       setLoading(false);
       return;
@@ -219,6 +303,11 @@ function SignInForm() {
       <div className="grid gap-4">
         <div className="grid gap-2"><Label htmlFor="email">Email</Label><Input id="email" name="email" type="email" placeholder="m@example.com" required autoComplete="email" /></div>
         <PasswordInput name="password" label="Password" required autoComplete="current-password" placeholder="Password" />
+        <div className="text-right">
+            <Button variant="link" type="button" className="p-0 h-auto" onClick={() => navigate('/forgot-password')}>
+                Forgot Password?
+            </Button>
+        </div>
         <Button type="submit" variant="outline" className="mt-2" disabled={loading}>
           {loading ? 'Signing in...' : 'Sign In'}
         </Button>
@@ -271,6 +360,7 @@ function SignUpForm() {
 }
 
 function AuthFormContainer({ isSignIn, onToggle }: { isSignIn: boolean; onToggle: () => void; }) {
+    const { signInWithGoogle } = useAuth();
     return (
         <div className="mx-auto grid w-[350px] gap-2">
             {isSignIn ? <SignInForm /> : <SignUpForm />}
@@ -283,7 +373,7 @@ function AuthFormContainer({ isSignIn, onToggle }: { isSignIn: boolean; onToggle
             <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
                 <span className="relative z-10 bg-background px-2 text-muted-foreground">Or continue with</span>
             </div>
-            <Button variant="outline" type="button" onClick={() => console.log("UI: Google button clicked")}>
+            <Button variant="outline" type="button" onClick={signInWithGoogle}>
                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google icon" className="mr-2 h-4 w-4" />
                 Continue with Google
             </Button>

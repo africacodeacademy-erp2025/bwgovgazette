@@ -76,9 +76,10 @@ function Index() {
   const [activeFilter, setActiveFilter] = useState('Latest');
   const heroRef = useRef<HTMLElement>(null);
   const { results, loading, error, search, clearResults } = useSearch();
+  const [planChoice, setPlanChoice] = useState<string | null>(null);
 
-  const handleViewTender = (id: string) => {
-    navigate(`/tender/${id}`);
+  const handleViewGazette = (id: string) => {
+    navigate(`/gazette/${id}`);
   };
 
   const handleSearch = () => {
@@ -99,6 +100,10 @@ function Index() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setPlanChoice(localStorage.getItem('plan_choice'));
+  }, []);
   const filteredGazettes = featuredGazettes.filter(gazette => {
     const matchesSearch = gazette.title.toLowerCase().includes(searchQuery.toLowerCase()) || gazette.description.toLowerCase().includes(searchQuery.toLowerCase());
     if (activeFilter === 'Latest') return matchesSearch;
@@ -107,14 +112,14 @@ function Index() {
       const currentDate = new Date();
       return matchesSearch && gazetteDate.getMonth() === currentDate.getMonth();
     }
-    if (activeFilter === 'Categories') return matchesSearch;
     return matchesSearch;
   });
+  const isSubscriber = planChoice === 'subscriber';
   return <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
 
-      {/* Search & Filters */}
-      <section className="py-16 bg-accent/30">
+      {/* Search & Filters - styled closer to Pricing */}
+      <section className="py-12 lg:py-16 bg-accent/30">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,
@@ -125,7 +130,7 @@ function Index() {
         }} transition={{
           duration: 0.6
         }} className="max-w-4xl mx-auto">
-            <div className="bg-background rounded-xl shadow-lg p-6 mb-8">
+            <div className="bg-background rounded-xl border p-6 mb-8">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
@@ -147,8 +152,8 @@ function Index() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center">
-              {['Latest', 'This Month', 'Categories'].map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-6 py-2 rounded-full transition-colors ${activeFilter === filter ? 'bg-primary text-primary-foreground' : 'bg-background border border-border hover:bg-accent'}`}>
+            <div className="flex flex-wrap gap-3 justify-center pt-2">
+              {['Latest', 'This Month'].map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-6 py-2 rounded-full transition-colors ${activeFilter === filter ? 'bg-primary text-primary-foreground' : 'bg-background border border-border hover:bg-accent'}`}>
                   {filter}
                 </button>)}
             </div>
@@ -190,8 +195,8 @@ function Index() {
               }} transition={{
                 duration: 0.6
               }} className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Gazettes</h2>
-                <p className="text-muted-foreground text-lg">Latest official publications and notices</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest official publications and notices</h2>
+                <p className="text-muted-foreground text-lg">Browse the most recent publications from various government departments.</p>
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -214,21 +219,31 @@ function Index() {
                     </div>
                     
                     <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">{gazette.description}</p>
+                    <p className="text-muted-foreground font-normal mb-4 line-clamp-3">{gazette.description}</p>
                     
-                    <div className="flex gap-2">
+                    {isSubscriber ? (
+                      <div className="flex gap-2">
+                        <button 
+                          onClick={() => handleViewGazette(gazette.id)}
+                          className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                        >
+                          <Eye className="h-4 w-4" />
+                          View Gazette
+                        </button>
+                        <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
+                          <Download className="h-4 w-4" />
+                          Download
+                        </button>
+                      </div>
+                    ) : (
                       <button 
-                        onClick={() => handleViewTender(gazette.id)}
-                        className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                        onClick={() => navigate('/dashboard')}
+                        className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm"
                       >
                         <Eye className="h-4 w-4" />
-                        View
+                        Preview
                       </button>
-                      <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
-                        <Download className="h-4 w-4" />
-                        Download
-                      </button>
-                    </div>
+                    )}
                   </motion.div>
                 ))}
               </div>
@@ -237,8 +252,8 @@ function Index() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 bg-accent/30">
+      {/* How It Works - harmonized heading spacing */}
+      <section className="py-12 lg:py-16 bg-accent/30">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,

@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 import { cn } from '@/lib/utils';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { GooeyMarquee } from '@/components/ui/gooey-marquee';
 export function HeroSection() {
   const navigate = useNavigate();
   return <>
@@ -21,7 +22,7 @@ export function HeroSection() {
                                     <p className="mt-4 max-w-xl text-pretty text-base md:text-lg">Search, read, and download the latest publications — anytime, anywhere.</p>
 
                                     <div className="mt-6 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                        <Button size="default" className="px-4 text-sm">
+                                        <Button size="default" className="px-4 text-sm" onClick={() => navigate('/search')}>
                                             <span className="text-nowrap">Browse Gazettes</span>
                                         </Button>
                                         <Button key={2} size="default" variant="ghost" className="px-4 text-sm" onClick={() => navigate('/subscription')}>
@@ -30,7 +31,7 @@ export function HeroSection() {
                                     </div>
                                 </div>
                                 <div className="order-first lg:order-last">
-                                    <img className="pointer-events-none w-full h-48 sm:h-64 lg:h-80 object-cover invert dark:mix-blend-lighten dark:invert-0" src="https://ik.imagekit.io/lrigu76hy/tailark/abstract-bg.jpg?updatedAt=1745733473768" alt="Abstract Object" height="4000" width="3000" />
+                                    <GooeyMarquee text="govgazette — official gazettes & public notices" className="h-40" speed={18} />
                                 </div>
                             </div>
                         </div>
@@ -45,11 +46,11 @@ export function HeroSection() {
                             </p>
                             <div className="grid grid-cols-2 gap-8 text-center max-w-sm mx-auto">
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">0K+</div>
+                                    <div className="text-2xl font-bold text-primary">24K+</div>
                                     <div className="text-sm text-muted-foreground">Documents</div>
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-bold text-primary">K+</div>
+                                    <div className="text-2xl font-bold text-primary">7K+</div>
                                     <div className="text-sm text-muted-foreground">Users</div>
                                 </div>
                             </div>
@@ -61,17 +62,11 @@ export function HeroSection() {
         </>;
 }
 const menuItems = [{
-  name: 'Browse',
-  href: '#'
-}, {
-  name: 'Categories',
-  href: '#'
-}, {
   name: 'About',
-  href: '#'
+  href: '/about'
 }, {
   name: 'Contact',
-  href: '#'
+  href: '/contact'
 }];
 const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -79,11 +74,10 @@ const HeroHeader = () => {
   return <header>
             <nav data-state={menuState && 'active'} className="group bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
                 <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-1 lg:gap-0 lg:py-2">
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                            <a href="/" aria-label="home" className="flex items-center space-x-2">
-                                <FileText className="h-8 w-8 text-primary" />
-                                <span className="text-2xl font-bold">govgazette</span>
+                            <a href="/" aria-label="home" className="flex items-center">
+                                <img src="/logo.png" alt="govgazette" className="h-16 w-auto object-contain" />
                             </a>
 
                             <button onClick={() => setMenuState(!menuState)} aria-label={menuState == true ? 'Close Menu' : 'Open Menu'} className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
