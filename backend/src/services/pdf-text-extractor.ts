@@ -1,4 +1,3 @@
-
 import Tesseract from "tesseract.js";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import type { TextItem } from "pdfjs-dist/types/src/display/api";
@@ -7,12 +6,24 @@ export class PDFTextExtractor {
   static async extract(
     input: Buffer | ArrayBuffer | Uint8Array | Blob | File
   ): Promise<string> {
-    // Normalize to Uint8Array for pdfjs
+    // Normalize to Uint8Array for pdfjs - create a proper copy to avoid detached ArrayBuffer issues
     let uint8: Uint8Array;
+
     if (input instanceof Uint8Array) {
-      uint8 = input;
+      // Create a fresh copy to avoid detached ArrayBuffer issues
+      uint8 = new Uint8Array(
+        input.buffer.slice(
+          input.byteOffset,
+          input.byteOffset + input.byteLength
+        )
+      );
     } else if (input instanceof ArrayBuffer) {
-      uint8 = new Uint8Array(input);
+      // Check if ArrayBuffer is detached
+      try {
+        uint8 = new Uint8Array(input.slice(0));
+      } catch (error) {
+        throw new Error("ArrayBuffer is detached and cannot be processed");
+      }
     } else if (typeof (input as Blob).arrayBuffer === "function") {
       const ab = await (input as Blob).arrayBuffer();
       uint8 = new Uint8Array(ab);
@@ -20,7 +31,10 @@ export class PDFTextExtractor {
       typeof Buffer !== "undefined" &&
       Buffer.isBuffer(input as unknown)
     ) {
-      uint8 = new Uint8Array(input as unknown as Buffer);
+      // Create a proper copy from Buffer to avoid detached ArrayBuffer issues
+      const buffer = input as unknown as Buffer;
+      uint8 = new Uint8Array(buffer.length);
+      buffer.copy(uint8);
     } else {
       throw new Error("Unsupported input type for PDFTextExtractor.extract");
     }
@@ -31,45 +45,35 @@ export class PDFTextExtractor {
     // Fast path: extract selectable text via pdf.js textContent
     try {
       let extractedText = "";
+
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const textContent = await page.getTextContent();
         const pageText = textContent.items
           .map((item: unknown) => (item as TextItem).str ?? "")
           .join(" ");
+
         extractedText += pageText + "\n";
       }
+
       if (extractedText.trim()) return extractedText.trim();
     } catch (err) {
       console.warn("pdf.js text extraction failed, falling back to OCR:", err);
     }
 
-    // Fallback: render each page to a DOM canvas and OCR with Tesseract (browser)
-    let ocrText = "";
-    for (let i = 1; i <= pdf.numPages; i++) {
-      const page = await pdf.getPage(i);
-      const viewport = page.getViewport({ scale: 2.0 });
+    // OCR fallback is not available in Node.js environment
+    // For Node.js OCR, you would need to use different libraries like:
+    // - node-canvas for canvas rendering
+    // - tesseract.js/node or node-tesseract-ocr for OCR
+    console.warn("OCR fallback not implemented for Node.js environment");
 
-      // Browser canvas (React environment)
-      const canvas = document.createElement("canvas");
-      canvas.width = Math.ceil(viewport.width);
-      canvas.height = Math.ceil(viewport.height);
-      const context = canvas.getContext("2d");
-      if (!context) throw new Error("Unable to get 2D context from canvas");
-
-      // pdfjs expects both canvas and canvasContext (browser types match)
-      await page.render({ canvasContext: context, viewport, canvas }).promise;
-
-      // Convert to Blob and run Tesseract
-      const blob: Blob | null = await new Promise((resolve) =>
-        canvas.toBlob(resolve, "image/png")
-      );
-      if (!blob) continue;
-
-      const { data: ocrData } = await Tesseract.recognize(blob, "eng");
-      ocrText += ocrData.text + "\n";
-    }
-
-    return ocrText.trim();
+    // Return empty string if text extraction failed and OCR is not available
+    return "";
   }
+
+  /*
+   *
+   * Extend this to include a variety of text extraction methods from different mediums
+   * text from Images
+   */
 }

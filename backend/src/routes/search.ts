@@ -7,6 +7,7 @@ import { GazetteChunk } from "../model/types";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export const searchGazettes: RequestHandler = async (req, res) => {
+  
   try {
     const { query, topK = 10 } = req.body;
     if (!query) return res.status(400).json({ error: "Missing query" });
@@ -40,7 +41,7 @@ export const searchGazettes: RequestHandler = async (req, res) => {
   .map((c) => `[chunk_id=${c.id}] ${c.content.slice(0, 500)}...`)
   .join("\n\n");
 
-    // 4. Ask LLM to summarize with citations
+    // 4. Ask LLM to summarize 
     const prompt = `
 You are answering a question based on Botswana Government Gazette text.
 Use ONLY the provided context. 
@@ -52,7 +53,7 @@ ${context}
 
 Answer requirements:
 - Summarize in plain English.
-- keep it to < 60 sentenses while providing details 
+- keep it to < 15 sentenses while providing details 
 `;
 
     const completion = await openai.chat.completions.create({

@@ -88,6 +88,7 @@ export const uploadPDF = [
         );
         
       }
+      
       await processGazetteChunks(inserted.id, extractedText);
       return res.status(201).json({
         message: "Uploaded to Supabase",
