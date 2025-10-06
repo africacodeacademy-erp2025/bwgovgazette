@@ -21,7 +21,7 @@ class EmbeddingService{
         this.isConfigured = true;
         console.log('OpenAI embedding service initialized');
         } else if(!process.env.OPENAI_API_KEY){
-            console.warn('OPEN_API_KEY not set - embedding features will be disabled');
+            console.warn('OPENAI_API_KEY not set - embedding features will be disabled');
             this.isConfigured = false;
         }
     }
