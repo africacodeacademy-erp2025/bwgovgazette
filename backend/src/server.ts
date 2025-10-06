@@ -16,7 +16,7 @@ if (result.error) {
 import { isInteger } from "./utils/utilities";
 
 // Legacy gazette routes (backward compatibility)
-import { uploadPDF } from "./routes/upload-pdf";
+
 import { searchGazettes } from "./routes/search";
 
 
@@ -26,8 +26,8 @@ import {
   classifyDocument,
   generateTags,
   deleteDocument,
-  getTaxonomies,
-  getTaxonomyNodes,
+ // getTaxonomies,
+  //getTaxonomyNodes,
   listDocuments as listDocumentsNew,
   getDocument as getDocumentNew,
 } from "./controllers/document.controller";
@@ -48,8 +48,7 @@ function setupExpress(): void {
   // ============================================================
   // LEGACY ROUTES (Backward Compatibility)
   // ============================================================
-  app.route("/gazette/upload").post(uploadPDF);
-  app.route("/gazette/search").post(searchGazettes);
+   app.route("/gazette/search").post(searchGazettes);
  
 
   // ============================================================
@@ -72,8 +71,8 @@ function setupExpress(): void {
   app.route("/api/documents/:id").get(getDocumentNew).delete(deleteDocument);
 
   // Taxonomy helpers (for admin UI)
-  app.route("/api/documents/taxonomies").get(getTaxonomies);
-  app.route("/api/documents/taxonomies/:id/nodes").get(getTaxonomyNodes);
+  //app.route("/api/documents/taxonomies").get(getTaxonomies);
+  //app.route("/api/documents/taxonomies/:id/nodes").get(getTaxonomyNodes);
 
   // Health check endpoint
   app.route("/api/health").get((_req: Request, res: Response) => {

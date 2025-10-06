@@ -351,7 +351,7 @@ export async function deleteDocument(
 /**
  * Get available taxonomies for classification
  * GET /documents/taxonomies?country_code=BWA
- */
+ 
 export async function getTaxonomies(
   req: Request,
   res: Response
@@ -377,12 +377,12 @@ export async function getTaxonomies(
           : "Failed to retrieve taxonomies",
     });
   }
-}
+}*/
 
 /**
  * Get taxonomy nodes for a specific taxonomy
  * GET /documents/taxonomies/:id/nodes?level=1
- */
+ 
 export async function getTaxonomyNodes(
   req: Request,
   res: Response
@@ -428,4 +428,4 @@ export async function getTaxonomyNodes(
           : "Failed to retrieve taxonomy nodes",
     });
   }
-}
+}*/

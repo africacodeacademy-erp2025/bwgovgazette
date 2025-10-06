@@ -6,8 +6,8 @@ import {
   listDocuments,
   getDocument,
   deleteDocument,
-  getTaxonomies,
-  getTaxonomyNodes,
+  /*getTaxonomies,
+  getTaxonomyNodes,*/
 } from "../controllers/document.controller";
 import DocumentService from "../services/document-processing.service";
 
@@ -30,7 +30,7 @@ router.route("/:id").get(getDocument);
 router.route("/:id").delete(deleteDocument);
 
 // Taxonomy helpers (for admin UI dropdowns)
-router.route("/taxonomies").get(getTaxonomies);
-router.route("/taxonomies/:id/nodes").get(getTaxonomyNodes);
+//router.route("/taxonomies").get(getTaxonomies);
+//router.route("/taxonomies/:id/nodes").get(getTaxonomyNodes);
 
 export default router;

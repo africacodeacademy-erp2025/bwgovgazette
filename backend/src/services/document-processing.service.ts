@@ -3,6 +3,7 @@ import path from "path";
 import { v4 as uuidv4 } from "uuid";
 import { supabase } from "../utils/supabase/supabase-client";
 import { PDFTextExtractor } from "./pdf-text-extractor";
+import summaryService from "./summary.service";
 
 interface UploadResult {
   documentId: string;
@@ -107,10 +108,8 @@ class DocumentService {
    * @param file Multer file object
    * @param sourceType Type of document (gazette, tender, etc.)
    */
-  async uploadDocument(
-    file: Express.Multer.File,
-    sourceType: string = "gazette"
-  ): Promise<UploadResult> {
+  async uploadDocument(file: Express.Multer.File, sourceType: string = "gazette"): Promise<UploadResult> {
+    
     if (!file) {
       throw new Error("No file provided");
     }
@@ -124,12 +123,14 @@ class DocumentService {
     // 2. Convert Buffer to Uint8Array
     const nodeBuffer = file.buffer as Buffer;
     const fileBytes = new Uint8Array(nodeBuffer.length);
+
     for (let i = 0; i < nodeBuffer.length; i++) {
       fileBytes[i] = nodeBuffer[i]!;
     }
 
     // 3. Extract text BEFORE uploading (fail fast if extraction fails)
     let extractedText: string;
+
     try {
       extractedText = await this.extractText(fileBytes);
 
@@ -167,6 +168,7 @@ class DocumentService {
 
     // 6. Insert document record
     let documentId: string;
+
     try {
       documentId = await this.insertDocumentRecord({
         source_type: sourceType,
@@ -176,6 +178,7 @@ class DocumentService {
         file_size: file.size,
         processing_status: "processing",
       });
+
     } catch (error) {
       // Cleanup: Delete uploaded file if DB insert fails
       await supabase.storage.from("gazettes").remove([objectPath]);
@@ -184,7 +187,8 @@ class DocumentService {
 
     // 7. Insert extracted text
     try {
-      await this.insertDocumentText(documentId, extractedText);
+      const summaryResult = await summaryService.generateSummary(extractedText, {maxWords: 300, style: 'concise',includeKeyPoints: true }); 
+      await this.insertDocumentText(documentId, extractedText, summaryResult?.summary);
     } catch (error) {
       console.error("Failed to insert document text:", error);
       // Update status to failed but don't rollback document
@@ -216,9 +220,9 @@ class DocumentService {
     file_url: string;
     mime_type: string;
     file_size: number;
-    processing_status: string;
-  }): Promise<string> {
-    const { data, error } = await supabase
+    processing_status: string;}): Promise<string> {
+    
+      const { data, error } = await supabase
       .from("documents")
       .insert(documentData)
       .select("id")
@@ -238,11 +242,8 @@ class DocumentService {
    * @param content Extracted text content
    * @param summary Optional summary
    */
-  async insertDocumentText(
-    documentId: string,
-    content: string,
-    summary?: string
-  ): Promise<void> {
+  async insertDocumentText(documentId: string, content: string, summary?: string): Promise<void> {
+    
     const { error } = await supabase.from("document_texts").insert({
       doc_id: documentId,
       content: content,
@@ -260,12 +261,7 @@ class DocumentService {
    * @param documentId Document UUID
    * @param chunks Array of text chunks with optional embeddings
    */
-  async insertDocumentChunks(
-    documentId: string,
-    chunks: Array<{
-      content: string;
-      embedding?: number[];
-    }>
+  async insertDocumentChunks(documentId: string,chunks: Array<{content: string; embedding?: number[];}>
   ): Promise<void> {
     const chunkInserts = chunks.map((chunk, index) => ({
       document_id: documentId,
@@ -325,10 +321,7 @@ class DocumentService {
    * @param documentId Document UUID
    * @param extractedText Text extracted from document
    */
-  async generateAndSaveTags(
-    documentId: string,
-    extractedText: string
-  ): Promise<string[]> {
+  async generateAndSaveTags(documentId: string, extractedText: string): Promise<string[]> {
     // 1. Call LLM to analyze text and generate tags independently
     const tagResult = await this.generateTagsWithLLM(extractedText);
 
@@ -424,10 +417,8 @@ If no clear industry references can be identified, return:
   /**
    * Update document text summary
    */
-  async updateDocumentSummary(
-    documentId: string,
-    summary: string
-  ): Promise<void> {
+  async updateDocumentSummary(documentId: string, summary: string): Promise<void> {
+    
     const { error } = await supabase
       .from("document_texts")
       .update({ summary })
@@ -699,54 +690,8 @@ If no clear industry references can be identified, return:
     if (error) throw error;
   }
 
-  /**
-   * Get taxonomy nodes for classification dropdown
-   * Useful for admin UI to select categories
-   */
-  async getTaxonomyNodes(taxonomyId?: number, level?: number) {
-    let query = supabase
-      .from("taxonomy_nodes")
-      .select(
-        `
-        *,
-        taxonomies(name, version)
-      `
-      )
-      .order("code");
+  
 
-    if (taxonomyId) {
-      query = query.eq("taxonomy_id", taxonomyId);
-    }
-
-    if (level) {
-      query = query.eq("level", level);
-    }
-
-    const { data, error } = await query;
-
-    if (error) throw error;
-    return data;
-  }
-
-  /**
-   * Get available taxonomies
-   */
-  async getTaxonomies(countryCode?: string) {
-    let query = supabase.from("taxonomies").select(`
-        *,
-        countries(code, name)
-      `);
-
-    if (countryCode) {
-      // Use inner join syntax for filtering
-      query = query.eq("countries.code", countryCode);
-    }
-
-    const { data, error } = await query;
-
-    if (error) throw error;
-    return data;
-  }
 }
 
 export default new DocumentService();
