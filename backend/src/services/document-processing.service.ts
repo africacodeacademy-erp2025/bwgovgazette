@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { supabase } from "../utils/supabase/supabase-client";
 import { PDFTextExtractor } from "./pdf-text-extractor";
 import summaryService from "./summary.service";
+import embeddingService from "./embedding.service";
+import e from "express";
 
 interface UploadResult {
   documentId: string;
@@ -187,14 +189,60 @@ class DocumentService {
 
     // 7. Insert extracted text
     try {
-      const summaryResult = await summaryService.generateSummary(extractedText, {maxWords: 300, style: 'concise',includeKeyPoints: true }); 
+      const summaryResult = await summaryService.generateSummary(extractedText, {maxWords: 300, style: 'concise',includeKeyPoints: true }); //generate summary
       await this.insertDocumentText(documentId, extractedText, summaryResult?.summary);
+
     } catch (error) {
+
       console.error("Failed to insert document text:", error);
       // Update status to failed but don't rollback document
       await this.updateProcessingStatus(documentId, "failed");
       throw new Error("Failed to save extracted text");
     }
+
+    try {
+  // Split text into chunks for better search granularity
+    const textChunks = embeddingService.splitTextIntoChuncks(extractedText, 800);
+  
+    if (embeddingService.isReady()) {
+      console.log('Generating embeddings...');
+    
+      // Generate document-level embedding (first 2000 chars for context)
+      const documentText = extractedText.substring(0, 2000);
+      const documentEmbedding = await embeddingService.generateEmbedding(documentText);
+    
+      // Update document_texts with embedding
+      if (documentEmbedding) {
+        await this.updateDocumentEmbedding(documentId, documentEmbedding);
+        console.log('Document-level embedding saved');
+      }
+    
+      // Generate chunk embeddings if we have chunks
+      if (textChunks.length > 0) {
+        const chunkEmbeddings = await embeddingService.generateEmbeddingsForChunks(textChunks);
+
+        const chunks = textChunks.map((chunk, index) => ({
+          content: chunk,
+          embedding: chunkEmbeddings?.[index] || null,
+          token_count: embeddingService.estimateTokenCount(chunk),
+          metadata: {
+            chunk_length: chunk.length,
+            has_embedding: Boolean(chunkEmbeddings?.[index]),
+            word_count: chunk.split(/\s+/).length,
+          }
+      }));
+
+      await this.insertDocumentChunks(documentId, chunks);
+      console.log(`Successfully inserted ${chunks.length} chunks with embeddings`);
+    }
+  } else {
+    console.warn('Embedding service not ready');
+  }
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error('Failed to generate/insert embeddings:', message);
+  // Don't throw - allow document to be saved even if embeddings fail
+}
 
     // 8. Update status to completed
     await this.updateProcessingStatus(documentId, "completed");
@@ -236,33 +284,35 @@ class DocumentService {
     return data.id;
   }
 
-  /**
-   * Insert extracted text into document_texts table
-   * @param documentId Document UUID
-   * @param content Extracted text content
-   * @param summary Optional summary
-   */
-  async insertDocumentText(documentId: string, content: string, summary?: string): Promise<void> {
-    
-    const { error } = await supabase.from("document_texts").insert({
-      doc_id: documentId,
-      content: content,
-      summary: summary || null,
-    });
+ 
+ /* Insert extracted text into document_texts table
+ * @param documentId Document UUID
+ * @param content Extracted text content
+ * @param summary Optional summary
+ * @param embedding Optional document-level embedding
+ */
+async insertDocumentText(documentId: string, content: string, summary?: string,embedding?: number[] | null): Promise<void> {
+  
+  const { error } = await supabase.from("document_texts").insert({
+    doc_id: documentId,
+    content: content,
+    summary: summary || null,
+    embedding: embedding || null,
+  });
 
-    if (error) {
-      console.error("Failed to insert document text:", error);
-      throw new Error(`Failed to insert document text: ${error.message}`);
-    }
+  if (error) {
+    console.error("Failed to insert document text:", error);
+    throw new Error(`Failed to insert document text: ${error.message}`);
   }
+}
 
   /**
    * Insert chunks into document_chunks table
    * @param documentId Document UUID
    * @param chunks Array of text chunks with optional embeddings
    */
-  async insertDocumentChunks(documentId: string,chunks: Array<{content: string; embedding?: number[];}>
-  ): Promise<void> {
+  async insertDocumentChunks(documentId: string,chunks: Array<{content: string; embedding?: number[]| null;}>): Promise<void> {
+    
     const chunkInserts = chunks.map((chunk, index) => ({
       document_id: documentId,
       chunk_index: index,
@@ -279,6 +329,22 @@ class DocumentService {
       throw new Error(`Failed to insert document chunks: ${error.message}`);
     }
   }
+
+  /**
+ * Update document-level embedding
+ */
+async updateDocumentEmbedding(documentId: string, embedding: number[]): Promise<void> {
+  
+  const { error } = await supabase
+    .from("document_texts")
+    .update({ embedding })
+    .eq("doc_id", documentId);
+
+  if (error) {
+    console.error("Failed to update document embedding:", error);
+    throw new Error(`Failed to update document embedding: ${error.message}`);
+  }
+}
 
   /**
    * Extract text from PDF bytes
