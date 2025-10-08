@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist/* || true",
     "build": "tsc",
     "start-server": "node dist/server.js",
     "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js\"",
-    "dev": "npm-run-all clean build start-dev-server"
+    "dev": "npm-run-all build start-dev-server"
   },
   "keywords": [],
   "author": "",

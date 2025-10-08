@@ -1,0 +1,29 @@
+services:
+  backend:
+    container_name: bwgovgazette-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    restart: unless-stopped
+
+    ports:
+      - "4000:4000"
+
+    environment:
+      - NODE_ENV=production
+
+    # Load environment variables from .env.local
+    env_file:
+      - .env.local
+
+    networks:
+      - bwgovgazette_network
+
+networks:
+  bwgovgazette_network:
+    driver: bridge
+
+# Define volumes used in the service
+volumes:
+  dist-volume:

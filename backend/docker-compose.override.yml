@@ -1,0 +1,32 @@
+services:
+  backend:
+    container_name: bwgovgazette-backend-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    restart: always
+
+    # Enable hot reload with volume mounts
+    volumes:
+      - ./src:/app/src
+      - ./tsconfig.json:/app/tsconfig.json
+      # Use a named volume for the dist folder to avoid host-container locking issues
+      - dist-volume:/app/dist
+      # Isolate node_modules in the container
+      - /app/node_modules
+      # Provide .env.local inside container (read-only)
+      - ./.env.local:/app/.env.local:ro
+
+    environment:
+      - NODE_ENV=development
+
+    # Load variables from .env.local if present
+    env_file:
+      - ./.env.local
+
+  # If you later add a dedicated dev env file, list it above or append here.
+
+# Define the named volume
+volumes:
+  dist-volume:
