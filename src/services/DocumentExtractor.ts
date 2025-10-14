@@ -72,24 +72,30 @@ export class DocumentExtractor {
   }
 
   private static async extractPDFText(arrayBuffer: ArrayBuffer): Promise<string> {
-    // Use browser-based PDF text extraction
-    // This is a simplified approach - in production, you might want to use pdf-lib
     try {
-      const uint8Array = new Uint8Array(arrayBuffer);
-      const text = new TextDecoder().decode(uint8Array);
+      const pdfjsLib = await import('pdfjs-dist');
       
-      // Extract readable text from PDF content
-      const textMatches = text.match(/\(([^)]+)\)/g);
-      if (textMatches) {
-        return textMatches
-          .map(match => match.slice(1, -1))
-          .join(' ')
-          .replace(/\\[0-9]+/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
+      // Use unpkg CDN for better reliability
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
+      
+      const loadingTask = pdfjsLib.getDocument({
+        data: new Uint8Array(arrayBuffer),
+        verbosity: 0
+      });
+      
+      const pdf = await loadingTask.promise;
+      let fullText = '';
+      
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items
+          .map((item: any) => item.str)
+          .join(' ');
+        fullText += pageText + '\n';
       }
       
-      return '';
+      return fullText.trim();
     } catch (error) {
       console.error('Direct PDF text extraction failed:', error);
       return '';
@@ -139,9 +145,22 @@ export class DocumentExtractor {
   }
 
   private static async loadPDFFromArrayBuffer(arrayBuffer: ArrayBuffer): Promise<any> {
-    // Dynamically import pdfjsLib to avoid build issues
-    const pdfjsLib = await import('pdfjs-dist');
-    return pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    try {
+      const pdfjsLib = await import('pdfjs-dist');
+      
+      // Use unpkg CDN for better reliability
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
+      
+      const loadingTask = pdfjsLib.getDocument({
+        data: new Uint8Array(arrayBuffer),
+        verbosity: 0
+      });
+      
+      return await loadingTask.promise;
+    } catch (error) {
+      console.error('Failed to load PDF:', error);
+      throw new Error('Failed to load PDF document');
+    }
   }
 
   private static async extractFromImage(file: File): Promise<ExtractionResult> {

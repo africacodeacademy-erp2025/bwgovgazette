@@ -10,13 +10,13 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 const Index = lazy(() => import("./pages/Index"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const SearchGazettes = lazy(() => import("./pages/SearchGazettes"));
-const BrowseTenders = lazy(() => import("./pages/BrowseTenders"));
-const SavedItems = lazy(() => import("./pages/SavedItems"));
-const Notifications = lazy(() => import("./pages/Notifications"));
-const CalendarPage = lazy(() => import("./pages/CalendarPage"));
-const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+import Dashboard from "./pages/Dashboard";
+import SearchGazettes from "./pages/SearchGazettes";
+import BrowseTenders from "./pages/BrowseTenders";
+import SavedItems from "./pages/SavedItems";
+import Notifications from "./pages/Notifications";
+import CalendarPage from "./pages/CalendarPage";
+import SettingsPage from "./pages/SettingsPage";
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminSignup = lazy(() => import("./pages/AdminSignup"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -31,8 +31,12 @@ const CookiePreferences = lazy(() => import("./pages/CookiePreferences"));
 const GazetteViewPage = lazy(() => import("./pages/GazetteViewPage"));
 const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
 const ManageGazettes = lazy(() => import("./pages/admin/ManageGazettes"));
+const ManageGazettesDb = lazy(() => import("./pages/admin/ManageGazettesDb"));
 const UploadDocument = lazy(() => import("./pages/admin/UploadDocument"));
 const Users = lazy(() => import("./pages/admin/Users"));
+const UsersDb = lazy(() => import("./pages/admin/UsersDb"));
+const AdminDashboardDb = lazy(() => import("./pages/admin/AdminDashboardDb"));
+const AdminProfile = lazy(() => import("./pages/admin/AdminProfile"));
 const UserManagement = lazy(() => import("./pages/admin/UserManagement"));
 const DemoGooey = lazy(() => import("./pages/DemoGooey"));
 const DemoSpinner = lazy(() => import("./pages/DemoSpinner"));
@@ -80,10 +84,11 @@ const App = () => (
               <Route path="/update-password" element={<UpdatePasswordPage />} />
               {/* Admin routes */}
               <Route path="/admin" element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-                <Route path="dashboard" element={<AdminDashboard />} />
-                <Route path="gazettes" element={<ManageGazettes />} />
+                <Route path="dashboard" element={<AdminDashboardDb />} />
+                <Route path="gazettes" element={<ManageGazettesDb />} />
                 <Route path="upload" element={<UploadDocument />} />
-                <Route path="users" element={<Users />} />
+                <Route path="users" element={<UsersDb />} />
+                <Route path="profile" element={<AdminProfile />} />
                 <Route path="users-management" element={<UserManagement />} />
               </Route>
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

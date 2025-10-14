@@ -8,6 +8,7 @@ export interface Gazette {
   extracted_text?: string;
   processing_status: string;
   created_at: string;
+  pricing_tier?: 'free' | 'premium';
 }
 
 export class GazetteService {
@@ -184,6 +185,102 @@ export class GazetteService {
       return data.publicUrl;
     } catch (error) {
       console.error('Get file URL error:', error);
+      throw error;
+    }
+  }
+
+  static async saveGazetteToFavorites(userId: string, gazetteId: string): Promise<any> {
+    try {
+      const { data, error } = await supabase
+        .from('saved_gazettes')
+        .insert({ user_id: userId, gazette_id: gazetteId })
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(`Failed to save gazette: ${error.message}`);
+      }
+      return data;
+    } catch (error) {
+      console.error('Save gazette to favorites error:', error);
+      throw error;
+    }
+  }
+
+  static async removeGazetteFromFavorites(userId: string, gazetteId: string): Promise<void> {
+    try {
+      const { error } = await supabase
+        .from('saved_gazettes')
+        .delete()
+        .eq('user_id', userId)
+        .eq('gazette_id', gazetteId);
+
+      if (error) {
+        throw new Error(`Failed to remove gazette from favorites: ${error.message}`);
+      }
+    } catch (error) {
+      console.error('Remove gazette from favorites error:', error);
+      throw error;
+    }
+  }
+
+  static async isGazetteInFavorites(userId: string, gazetteId: string): Promise<boolean> {
+    try {
+      const { data, error } = await supabase
+        .from('saved_gazettes')
+        .select('id')
+        .eq('user_id', userId)
+        .eq('gazette_id', gazetteId)
+        .maybeSingle();
+
+      if (error) {
+        throw new Error(`Failed to check favorite status: ${error.message}`);
+      }
+      return !!data;
+    } catch (error) {
+      console.error('Check favorite status error:', error);
+      throw error;
+    }
+  }
+
+  static async getSavedGazettes(userId: string): Promise<Gazette[]> {
+    try {
+      const { data: savedData, error: savedError } = await supabase
+        .from('saved_gazettes')
+        .select('gazette_id')
+        .eq('user_id', userId);
+
+      if (savedError) {
+        throw new Error(`Failed to fetch saved gazette IDs: ${savedError.message}`);
+      }
+
+      if (!savedData || savedData.length === 0) {
+        return [];
+      }
+
+      const documentIds = savedData.map(item => item.gazette_id);
+
+      const { data: gazettesData, error: gazettesError } = await supabase
+        .from('documents') // Assuming 'documents' is the correct table name
+        .select(`
+          id,
+          file_name,
+          created_at,
+          processing_status,
+          document_texts (
+            content
+          )
+        `)
+        .in('id', documentIds)
+        .order('created_at', { ascending: false });
+
+      if (gazettesError) {
+        throw new Error(`Failed to fetch gazette details: ${gazettesError.message}`);
+      }
+
+      return gazettesData as Gazette[];
+    } catch (error) {
+      console.error('Get saved gazettes error:', error);
       throw error;
     }
   }

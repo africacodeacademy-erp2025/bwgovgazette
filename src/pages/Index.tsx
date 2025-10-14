@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Search, Filter, Download, Eye, Check, FileText, Calendar, Users, Bell, Menu, X, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Spinner } from '@/components/ui/spinner-1';
 import { HeroSection } from '@/components/ui/hero-section';
 import { AnimatedCard, CardBody, CardDescription, CardTitle, CardVisual, Visual3 } from '@/components/ui/animated-card-chart';
 import { FloatingAdminButton } from '@/components/ui/floating-admin-button';
@@ -11,50 +12,8 @@ import { Footerdemo } from '@/components/ui/footer-section';
 import { SearchResults } from '@/components/SearchResults';
 import { useSearch } from '@/hooks/useSearch';
 import { Pricing } from '@/components/ui/pricing-section-with-comparison';
-interface GazetteCard {
-  id: string;
-  title: string;
-  date: string;
-  description: string;
-  category: string;
-}
-const featuredGazettes: GazetteCard[] = [{
-  id: '1',
-  title: 'Construction of Gaborone-Francistown Highway Bridge',
-  date: '2024-01-15',
-  description: 'Major infrastructure tender for highway bridge construction connecting Botswana\'s two largest cities.',
-  category: 'Infrastructure'
-}, {
-  id: '2',
-  title: 'Supply of Medical Equipment to Princess Marina Hospital',
-  date: '2024-01-12',
-  description: 'Procurement tender for advanced medical equipment and devices to enhance healthcare delivery in Botswana.',
-  category: 'Healthcare'
-}, {
-  id: '3',
-  title: 'Modernization of Public Transportation Fleet',
-  date: '2024-01-10',
-  description: 'Botswana Government tender for procurement of modern, eco-friendly buses for public transport system.',
-  category: 'Transport'
-}, {
-  id: '4',
-  title: 'Solar Power Plant Development - Kalahari Region',
-  date: '2024-01-08',
-  description: 'Renewable energy project tender for solar power plant construction in Botswana\'s Kalahari region.',
-  category: 'Energy'
-}, {
-  id: '5',
-  title: 'Digital Education Infrastructure Upgrade',
-  date: '2024-01-05',
-  description: 'Technology procurement tender for digital learning infrastructure across Botswana schools.',
-  category: 'Education'
-}, {
-  id: '6',
-  title: 'Water Treatment Facility - Maun District',
-  date: '2024-01-03',
-  description: 'Water infrastructure development tender for new treatment facility serving Maun and surrounding areas.',
-  category: 'Water & Sanitation'
-}];
+import { getDocuments } from '@/services/govGazetteApi';
+import { type Gazette } from '@/pages/admin/ManageGazettesDb';
 const benefits = ['Fast Access — no more waiting for printed copies', 'Searchable PDFs — OCR-enabled for text search', 'Secure & Verified documents', '24/7 availability'];
 const howItWorksSteps = [{
   icon: Search,
@@ -77,6 +36,8 @@ function Index() {
   const heroRef = useRef<HTMLElement>(null);
   const { results, loading, error, search, clearResults } = useSearch();
   const [planChoice, setPlanChoice] = useState<string | null>(null);
+  const [gazettes, setGazettes] = useState<Gazette[]>([]);
+  const [loadingGazettes, setLoadingGazettes] = useState(true);
 
   const handleViewGazette = (id: string) => {
     navigate(`/gazette/${id}`);
@@ -103,12 +64,32 @@ function Index() {
 
   useEffect(() => {
     setPlanChoice(localStorage.getItem('plan_choice'));
+    
+    const loadRecentGazettes = async () => {
+      setLoadingGazettes(true);
+      try {
+        const response = await getDocuments();
+        const documents = response?.data?.documents;
+        if (Array.isArray(documents)) {
+          setGazettes(documents.slice(0, 6)); // Limit to 6 most recent
+        } else {
+          console.error("Could not find a document array in the API response:", response);
+        }
+      } catch (err) {
+        console.error('Failed to load gazettes:', err);
+      } finally {
+        setLoadingGazettes(false);
+      }
+    };
+
+    loadRecentGazettes();
   }, []);
-  const filteredGazettes = featuredGazettes.filter(gazette => {
-    const matchesSearch = gazette.title.toLowerCase().includes(searchQuery.toLowerCase()) || gazette.description.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredGazettes = gazettes.filter(gazette => {
+    const matchesSearch = (gazette.file_name || '').toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          (gazette.extracted_text || '').toLowerCase().includes(searchQuery.toLowerCase());
     if (activeFilter === 'Latest') return matchesSearch;
     if (activeFilter === 'This Month') {
-      const gazetteDate = new Date(gazette.date);
+      const gazetteDate = new Date(gazette.created_at);
       const currentDate = new Date();
       return matchesSearch && gazetteDate.getMonth() === currentDate.getMonth();
     }
@@ -199,54 +180,73 @@ function Index() {
                 <p className="text-muted-foreground text-lg">Browse the most recent publications from various government departments.</p>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredGazettes.map((gazette, index) => (
-                  <motion.div 
-                    key={gazette.id} 
-                    initial={{ opacity: 0, y: 20 }} 
-                    whileInView={{ opacity: 1, y: 0 }} 
-                    transition={{ duration: 0.6, delay: index * 0.1 }} 
-                    className="bg-background border border-border rounded-lg p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        {gazette.category}
-                      </span>
-                      <div className="flex items-center text-muted-foreground text-sm">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {gazette.date}
-                      </div>
-                    </div>
+              {loadingGazettes ? (
+                <div className="flex justify-center items-center py-12">
+                  <Spinner size={40} />
+                  <p className="ml-3 text-muted-foreground">Loading gazettes...</p>
+                </div>
+              ) : filteredGazettes.length === 0 ? (
+                <div className="text-center py-12">
+                  <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-lg text-muted-foreground">No gazettes found</p>
+                  <p className="text-sm text-muted-foreground">Try adjusting your search or filters</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredGazettes.map((gazette, index) => {
+                    const excerpt = (gazette.document_texts?.content)
+                      ? `${gazette.document_texts.content.substring(0, 150)}...`
+                      : 'No preview available';
                     
-                    <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.title}</h3>
-                    <p className="text-muted-foreground font-normal mb-4 line-clamp-3">{gazette.description}</p>
-                    
-                    {isSubscriber ? (
-                      <div className="flex gap-2">
-                        <button 
-                          onClick={() => handleViewGazette(gazette.id)}
-                          className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
-                        >
-                          <Eye className="h-4 w-4" />
-                          View Gazette
-                        </button>
-                        <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
-                          <Download className="h-4 w-4" />
-                          Download
-                        </button>
-                      </div>
-                    ) : (
-                      <button 
-                        onClick={() => navigate('/dashboard')}
-                        className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm"
+                    return (
+                      <motion.div 
+                        key={gazette.id} 
+                        initial={{ opacity: 0, y: 20 }} 
+                        whileInView={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.6, delay: index * 0.1 }} 
+                        className="bg-background border border-border rounded-lg p-6 hover:shadow-lg transition-shadow"
                       >
-                        <Eye className="h-4 w-4" />
-                        Preview
-                      </button>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
+                        <div className="flex items-start justify-between mb-3">
+                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            {gazette.processing_status || 'completed'}
+                          </span>
+                          <div className="flex items-center text-muted-foreground text-sm">
+                            <Calendar className="h-4 w-4 mr-1" />
+                            {new Date(gazette.created_at).toLocaleDateString()}
+                          </div>
+                        </div>
+                        
+                        <h3 className="font-semibold text-lg mb-3 line-clamp-2">{gazette.file_name}</h3>
+                        <p className="text-muted-foreground font-normal mb-4 line-clamp-3">{excerpt}</p>
+                        
+                        {isSubscriber ? (
+                          <div className="flex gap-2">
+                            <button 
+                              onClick={() => handleViewGazette(gazette.id)}
+                              className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                            >
+                              <Eye className="h-4 w-4" />
+                              View Gazette
+                            </button>
+                            <button className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm">
+                              <Download className="h-4 w-4" />
+                              Download
+                            </button>
+                          </div>
+                        ) : (
+                          <button 
+                            onClick={() => navigate('/dashboard')}
+                            className="flex items-center gap-2 border border-border px-4 py-2 rounded-lg hover:bg-accent transition-colors text-sm"
+                          >
+                            <Eye className="h-4 w-4" />
+                            Preview
+                          </button>
+                        )}
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -281,17 +281,13 @@ function SignInForm() {
     const { error } = await signIn(email, password);
     
     if (error) {
-      console.error("Sign up error:", error);
+      console.error("Sign in error:", error);
       toast.error(error);
-      setLoading(false);
-      return;
     }
-    
-    toast.success('Successfully signed in!');
-    
-    // Check current path to determine redirect destination
-    const isAdminPath = window.location.pathname.includes('/admin');
-    navigate(isAdminPath ? '/admin/dashboard' : '/dashboard');
+
+    // Reset loading state regardless of outcome.
+    // The redirect is handled by the onAuthStateChange listener in useAuth.tsx.
+    setLoading(false);
   };
   
   return (
@@ -338,8 +334,10 @@ function SignUpForm() {
       return;
     }
     
-    toast.success('Account created successfully! Please check your email to verify your account.');
-    navigate('/login');
+    toast.success('Account created! Please check your email for a confirmation link to verify your account.', {
+      duration: 5000,
+    });
+    setLoading(false);
   };
   return (
     <form onSubmit={handleSignUp} autoComplete="on" className="flex flex-col gap-8">

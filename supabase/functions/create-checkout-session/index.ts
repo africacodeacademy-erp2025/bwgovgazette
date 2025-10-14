@@ -86,7 +86,15 @@ serve(async (req) => {
       )
     }
 
-    const session = await stripe.checkout.sessions.create({
+    // Prepare line item description based on plan type
+    let lineItemDescription = '';
+    if (planType === 'subscriber') {
+      lineItemDescription = 'Monthly subscription with unlimited alerts, advanced filters, and priority support';
+    } else if (planType === 'pay-per-download') {
+      lineItemDescription = 'Single gazette download access with instant download';
+    }
+
+    const sessionConfig: any = {
       customer_email: user.email,
       billing_address_collection: 'required',
       line_items: [
@@ -96,14 +104,38 @@ serve(async (req) => {
         },
       ],
       mode: mode as 'subscription' | 'payment',
-      success_url: `${Deno.env.get('APP_URL')}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${Deno.env.get('APP_URL')}/subscription`,
+      success_url: `https://govgazette.vercel.app/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://govgazette.vercel.app/subscription`,
       metadata: {
         user_id: user.id,
         plan_type: planType,
         gazette_id: gazetteId || '',
       },
-    })
+    };
+
+    // Add payment_intent_data for one-time payments
+    if (mode === 'payment') {
+      sessionConfig.payment_intent_data = {
+        description: lineItemDescription,
+        metadata: {
+          user_id: user.id,
+          plan_type: planType,
+        },
+      };
+    }
+
+    // Add subscription_data for subscriptions
+    if (mode === 'subscription') {
+      sessionConfig.subscription_data = {
+        description: lineItemDescription,
+        metadata: {
+          user_id: user.id,
+          plan_type: planType,
+        },
+      };
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig)
 
     console.log('Checkout session created:', session.id)
 

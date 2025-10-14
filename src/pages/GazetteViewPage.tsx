@@ -1,249 +1,171 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useParams, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Spinner } from "@/components/ui/spinner-1";
-import {
-  SidebarProvider,
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarGroupContent,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-  SidebarFooter,
-  SidebarTrigger,
-  SidebarInset
-} from "@/components/ui/sidebar";
-import { Calendar, Download, FileText, Gavel, Heart, LayoutDashboard, Search, Settings, User, Bell, ChevronsUpDown, Eye } from 'lucide-react';
-import { type Gazette } from '@/services/GazetteService';
-import { useAuth } from '@/hooks/useAuth';
-
-const mockGazettes: Gazette[] = [
-  {
-    id: '1',
-    file_name: "Government Tender Notice - Infrastructure Development",
-    file_url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    extracted_text: "This is the full extracted text for the infrastructure development tender. It includes details about road construction, maintenance requirements, submission deadlines, and contact information for inquiries.",
-    processing_status: "Tender",
-    created_at: "2024-12-10T10:00:00Z",
-  },
-  {
-    id: '2',
-    file_name: "Public Notice - Environmental Assessment",
-    file_url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    extracted_text: "This document outlines the environmental impact assessment for the proposed mining operations in the northern region. It covers potential effects on local wildlife, water sources, and air quality. Public feedback is requested by January 15, 2025.",
-    processing_status: "Notice",
-    created_at: "2024-12-09T14:30:00Z",
-  },
-  {
-    id: '3',
-    file_name: "Regulatory Update - Building Codes",
-    file_url: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    extracted_text: "This gazette contains the latest updates to the national building codes. Key changes include new fire safety regulations, updated structural integrity standards for commercial properties, and new requirements for energy efficiency.",
-    processing_status: "Regulation",
-    created_at: "2024-12-08T09:00:00Z",
-  },
-];
-
-const menuItems = [
-  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
-  { title: "Search Gazettes", url: "/search", icon: Search },
-  { title: "Browse Tenders", url: "/tenders", icon: Gavel },
-  { title: "Saved Items", url: "/saved", icon: Heart },
-  { title: "Notifications", url: "/notifications", icon: Bell },
-  { title: "Settings", url: "/settings", icon: Settings },
-];
-
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
+import { Download, Calendar, FileText } from 'lucide-react';
+import { getDocuments } from '@/services/govGazetteApi';
+import { type Gazette } from '@/pages/admin/ManageGazettesDb';
+import { useToast } from '@/hooks/use-toast';
+import { Spinner } from '@/components/ui/spinner-1';
+import { DashboardSidebar } from '@/components/DashboardSidebar';
+import { Menu, X } from 'lucide-react';
+function cn(...inputs: any[]) {
+  return inputs.filter(Boolean).join(" ");
+}
 export default function GazetteViewPage() {
-  const { id } = useParams();
-  const location = useLocation();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
   const navigate = useNavigate();
-  const { signOut, user } = useAuth();
-  const currentPath = location.pathname;
-
+  const {
+    toast
+  } = useToast();
   const [gazette, setGazette] = useState<Gazette | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
-
-  const isActive = (path: string) => currentPath === path;
-  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
-  const displayEmail = user?.email || '';
-
+  const [loading, setLoading] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [currentPlan, setCurrentPlan] = useState<"free" | "subscriber" | null>(null);
   useEffect(() => {
-    setLoading(true);
+    const storedPlan = localStorage.getItem('plan_choice') as 'free' | 'subscriber' | null;
+    if (storedPlan) setCurrentPlan(storedPlan);
+  }, []);
+  useEffect(() => {
     if (id) {
-      const foundGazette = mockGazettes.find(g => g.id === id);
-      setTimeout(() => { // Simulate network delay
-        if (foundGazette) {
-          setGazette(foundGazette);
-          setPdfUrl(foundGazette.file_url);
-        } else {
-          setGazette(null);
-          setPdfUrl(null);
-        }
-        setLoading(false);
-      }, 500);
-    } else {
-      setLoading(false);
+      loadGazette();
     }
   }, [id]);
-
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
+  const loadGazette = async () => {
+    if (!id) return;
+    setLoading(true);
+    try {
+      const response = await getDocuments();
+      const documents = response?.data?.documents;
+      if (Array.isArray(documents)) {
+        const gazetteData = documents.find(g => g.id.toString() === id);
+        setGazette(gazetteData || null);
+        if (!gazetteData) {
+          toast({
+            title: "Error",
+            description: "Could not find the specified gazette.",
+            variant: "destructive"
+          });
+        }
+      } else {
+        setGazette(null);
+        toast({
+          title: "Error",
+          description: "Failed to load gazettes due to invalid data format.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Failed to load gazette:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load gazette details.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
-
   const handleDownload = () => {
-    if (!gazette?.file_url) return;
-    const link = document.createElement('a');
-    link.href = gazette.file_url;
-    link.download = gazette.file_name;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (!gazette?.file_url) {
+      toast({
+        title: "Download Failed",
+        description: "No file URL available.",
+        variant: "destructive"
+      });
+      return;
+    }
+    window.open(gazette.file_url, '_blank');
   };
+  const getStatusColor = (status?: string) => {
+    switch (status?.toLowerCase()) {
+      case 'completed':
+        return 'bg-green-100 text-green-800';
+      case 'processing':
+        return 'bg-yellow-100 text-yellow-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+  const content = gazette?.document_texts?.content || 'No content available.';
+  // Split content into paragraphs based on one or more newlines for better formatting
+  const paragraphs = content.split(/[\r\n]+/).filter(p => p.trim() !== '');
+  return <div className="flex h-screen w-screen bg-gray-50">
+      <DashboardSidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} isMobileOpen={isMobileOpen} setIsMobileOpen={setIsMobileOpen} userName="User" currentPlan={currentPlan} onUpgradeClick={() => navigate('/dashboard')} />
+      
+      <button onClick={() => setIsMobileOpen(!isMobileOpen)} className="fixed top-4 left-4 z-50 p-2 rounded-lg bg-white shadow-md border md:hidden">
+        {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+      </button>
 
-  return (
-    <SidebarProvider>
-      <div className="flex min-h-screen w-full">
-        <Sidebar>
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupLabel>User Dashboard</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {menuItems.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild tooltip={item.title} isActive={isActive(item.url)}>
-                        <NavLink to={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </NavLink>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-
-          <SidebarFooter>
-            <SidebarGroup>
-              <SidebarMenuButton className="w-full justify-between gap-3 h-12">
-                <div className="flex items-center gap-2">
-                  <User className="h-5 w-5 rounded-md" />
-                  <div className="flex flex-col items-start">
-                    <span className="text-sm font-medium">{displayName}</span>
-                    <span className="text-xs text-muted-foreground">{displayEmail}</span>
-                  </div>
-                </div>
-                <ChevronsUpDown className="h-5 w-5 rounded-md" />
-              </SidebarMenuButton>
-            </SidebarGroup>
-          </SidebarFooter>
-        </Sidebar>
-
-        <SidebarInset>
-          <header className="border-b border-border bg-card">
-            <div className="flex items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-3">
-                <SidebarTrigger />
-                <h1 className="text-2xl font-bold text-foreground">Gazette</h1>
-              </div>
-              <Button variant="outline" size="sm" onClick={handleLogout}>Logout</Button>
+      <div className={cn("flex-1 transition-all", isCollapsed ? "md:ml-[3.05rem]" : "md:ml-60")}>
+        <div className="flex flex-col h-full">
+          <header className="bg-white border-b p-4">
+            <div className="flex items-center gap-4">
+              <h2 className="text-xl font-semibold text-gray-900">Gazette Details</h2>
             </div>
           </header>
 
-          <div className="container mx-auto px-4 py-8">
-            {loading && (
-              <div className="flex items-center justify-center p-12">
-                <Spinner size={32} />
-                <span className="ml-3 text-muted-foreground">Loading gazette...</span>
-              </div>
-            )}
-            {!loading && !gazette && (
-              <div className="flex items-center justify-center p-12 text-sm text-muted-foreground">Gazette not found.</div>
-            )}
-            {!loading && gazette && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Row 1, Col 1: Overview */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2"><FileText className="h-5 w-5 text-primary" />Overview</CardTitle>
-                    <CardDescription>Document overview</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm">
-                    <div className="font-medium">{gazette.file_name}</div>
-                    <div className="flex items-center gap-2"><Calendar className="h-4 w-4" />{new Date(gazette.created_at).toLocaleString()}</div>
-                    <div className="flex items-center gap-2"><Badge variant="secondary">{gazette.processing_status}</Badge></div>
+          <main className="flex-1 overflow-auto p-6 bg-white">
+            <div className="max-w-5xl mx-auto space-y-6">
+              {loading ? <div className="flex items-center justify-center p-12">
+                  <Spinner size={48} />
+                  <span className="ml-4 text-lg">Loading gazette...</span>
+                </div> : !gazette ? <Card>
+                  <CardContent className="flex items-center justify-center p-12">
+                    <p className="text-muted-foreground text-lg">Gazette not found.</p>
                   </CardContent>
-                </Card>
-
-                {/* Row 1, Col 2: Actions */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Actions</CardTitle>
-                    <CardDescription>Download or navigate</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex flex-wrap gap-2">
-                    {gazette.file_url && (
-                      <Button size="sm" onClick={handleDownload} className="gap-2"><Download className="h-4 w-4" />Download</Button>
-                    )}
-                    <Button variant="outline" size="sm" onClick={() => navigate(-1)}>Back</Button>
-                  </CardContent>
-                </Card>
-
-                {/* Row 2, Col 1: PDF Preview */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2"><Eye className="h-5 w-5 text-primary" />PDF Preview</CardTitle>
-                    <CardDescription>Inline preview when available</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    {pdfUrl ? (
-                      <div className="border rounded-md overflow-hidden">
-                        <iframe
-                          src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`}
-                          title="PDF Preview"
-                          className="w-full h-[300px] bg-white"
-                        />
+                </Card> : <>
+                  <Card>
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <CardTitle className="text-2xl mb-2">{gazette.file_name}</CardTitle>
+                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1.5">
+                              <Calendar className="h-4 w-4" />
+                              <span>{new Date(gazette.created_at).toLocaleDateString()}</span>
+                            </div>
+                            <Badge className={getStatusColor(gazette.processing_status)}>
+                              {gazette.processing_status || 'pending'}
+                            </Badge>
+                          </div>
+                        </div>
+                        <Button onClick={handleDownload} className="flex items-center gap-2">
+                          <Download className="h-4 w-4" />
+                          Download PDF
+                        </Button>
                       </div>
-                    ) : (
-                      <div className="text-sm text-muted-foreground">No PDF available for preview.</div>
-                    )}
-                  </CardContent>
-                </Card>
+                    </CardHeader>
+                  </Card>
 
-                {/* Row 2, Col 2: Extracted Text */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Extracted Text</CardTitle>
-                    <CardDescription>OCR/parsed content</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ScrollArea className="h-[300px] pr-3">
-                      {gazette.extracted_text ? (
-                        <div className="whitespace-pre-wrap text-sm leading-relaxed">{gazette.extracted_text}</div>
-                      ) : (
-                        <div className="text-sm text-muted-foreground">No extracted content available.</div>
-                      )}
-                    </ScrollArea>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-          </div>
-        </SidebarInset>
+                  <Card className="flex-1 flex flex-col min-h-0">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <FileText className="h-5 w-5" />
+                        Gazette Content
+                      </CardTitle>
+                    </CardHeader>
+                    <Separator />
+                    <CardContent className="pt-6 flex-1 min-h-0">
+                      <ScrollArea className="h-[600px] w-full rounded-md border p-4 bg-muted/20">
+                        <div className="prose prose-sm max-w-none dark:prose-invert">
+                          {paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+                        </div>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+                </>}
+            </div>
+          </main>
+        </div>
       </div>
-    </SidebarProvider>
-  );
+    </div>;
 }
-

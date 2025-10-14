@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Upload, FileText, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { uploadDocument as uploadDocumentService } from '@/services/govGazetteApi';
 
 interface UploadDocumentDialogProps {
   open: boolean;
@@ -64,18 +65,7 @@ export default function UploadDocumentDialog({ open, onOpenChange, onDocumentUpl
     setIsUploading(true);
 
     try {
-      // Import the gazette service
-      const { GazetteService } = await import('@/services/GazetteService');
-      
-      const gazetteData = {
-        title: uploadData.title,
-        description: uploadData.description,
-        category: uploadData.category,
-        file: selectedFile,
-        status: 'draft'
-      };
-
-      const newDocument = await GazetteService.createGazette(gazetteData);
+      const newDocument = await uploadDocumentService(selectedFile);
 
       onDocumentUploaded(newDocument);
       toast({

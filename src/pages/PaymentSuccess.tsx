@@ -16,16 +16,19 @@ export default function PaymentSuccess() {
     if (sessionId && user) {
       const sendReceipt = async () => {
         try {
+          const planType = localStorage.getItem('plan_choice') || 'subscriber';
           const { error } = await supabase.functions.invoke('send-payment-receipt', {
             body: {
               email: user.email,
-              name: user.user_metadata?.full_name || 'Valued Customer'
+              name: user.user_metadata?.full_name || 'Valued Customer',
+              planType,
+              amount: planType === 'subscriber' ? 80 : 20
             },
           });
           if (error) throw error;
+          toast.success('Payment receipt sent to your email!');
         } catch (error) {
           console.error('Failed to send payment receipt:', error);
-          toast.error('Could not send payment receipt email.');
         }
       };
       sendReceipt();
@@ -33,16 +36,13 @@ export default function PaymentSuccess() {
   }, [sessionId, user]);
 
   useEffect(() => {
-    // Always attempt to fix state and redirect on entry
     if (sessionId) {
-      toast.success('Payment successful! Welcome to your new plan.');
-      localStorage.setItem('plan_choice', 'subscriber');
+      toast.success('Payment successful! Check your email for confirmation.');
       const timer = setTimeout(() => {
-        window.location.replace('/dashboard?session_id=' + sessionId);
-      }, 500);
+        navigate('/dashboard', { replace: true });
+      }, 2000);
       return () => clearTimeout(timer);
     } else {
-      // Fallback: if we landed here without session id, just go home
       const timer = setTimeout(() => {
         navigate('/', { replace: true });
       }, 1500);

@@ -86,7 +86,7 @@ export default function CalendarPage() {
   };
 
   const isActive = (path: string) => currentPath === path;
-  const displayName = (user?.user_metadata as any)?.full_name || (user?.email ? user.email.split('@')[0] : 'User');
+  const displayName = user?.email || 'User';
   const displayEmail = user?.email || '';
 
   const upcomingEvents = [

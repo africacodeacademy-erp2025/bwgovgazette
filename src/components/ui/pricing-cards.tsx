@@ -44,13 +44,13 @@ export function PricingCards({
         <section
             className={cn(
                 "bg-background text-foreground",
-                "py-12 sm:py-24 md:py-32 px-4",
+                "py-6 sm:py-8 md:py-12 px-2 sm:px-4",
                 "fade-bottom overflow-hidden pb-0",
                 sectionClassName
             )}
         >
-            <div className={cn("w-full max-w-5xl mx-auto px-4", containerClassName)} {...props}>
-                <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8", className)}>
+            <div className={cn("w-full max-w-7xl mx-auto px-2 sm:px-4", containerClassName)} {...props}>
+                <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8", className)}>
                     {tiers.map((tier) => (
                         <div
                             key={tier.name}
@@ -66,7 +66,7 @@ export function PricingCards({
                                 cardClassName
                             )}
                         >
-                            <div className="p-6 flex flex-col h-full">
+                            <div className="p-4 sm:p-6 flex flex-col h-full min-h-[420px]">
                                 <div className="space-y-4">
                                     <h3 className={cn(
                                         "text-lg uppercase tracking-wider font-medium",
@@ -76,17 +76,17 @@ export function PricingCards({
                                     )}>
                                         {tier.name}
                                     </h3>
-                                    <div className="flex items-baseline gap-2">
+                                    <div className="flex items-baseline gap-1.5 sm:gap-2">
                                         <span className={cn(
-                                            "text-5xl font-light",
+                                            "text-4xl sm:text-5xl font-light",
                                             tier.highlight
                                                 ? "text-white"
                                                 : "text-neutral-900 dark:text-white"
                                         )}>
-                                            ${tier.price}
+                                            BWP {tier.price}
                                         </span>
                                         <span className={cn(
-                                            "text-sm",
+                                            "text-xs sm:text-sm",
                                             tier.highlight
                                                 ? "text-neutral-400"
                                                 : "text-neutral-500 dark:text-neutral-400"
@@ -133,10 +133,10 @@ export function PricingCards({
                                 </div>
 
                                 {tier.cta && (
-                                    <div className="mt-6">
+                                    <div className="mt-4 sm:mt-6">
                                         <Button
                                             className={cn(
-                                                "w-full h-12 group relative",
+                                                "w-full h-10 sm:h-12 group relative text-sm sm:text-base",
                                                 tier.highlight
                                                     ? "bg-white hover:bg-neutral-100 text-neutral-900"
                                                     : "bg-neutral-900 hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-100 dark:text-neutral-900",

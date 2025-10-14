@@ -28,6 +28,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        if (event === 'SIGNED_IN') {
+          toast.success('Successfully signed in!');
+          // Redirect based on the current path after a successful sign-in
+          const isAdminPath = window.location.pathname.startsWith('/admin');
+          navigate(isAdminPath ? '/admin/dashboard' : '/dashboard');
+        }
         if (event === 'PASSWORD_RECOVERY') {
           navigate('/update-password');
         }

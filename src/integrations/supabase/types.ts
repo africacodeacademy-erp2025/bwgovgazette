@@ -14,6 +14,183 @@ export type Database = {
   }
   public: {
     Tables: {
+      countries: {
+        Row: {
+          code: string
+          id: number
+          name: string
+        }
+        Insert: {
+          code: string
+          id?: number
+          name: string
+        }
+        Update: {
+          code?: string
+          id?: number
+          name?: string
+        }
+        Relationships: []
+      }
+      document_chunks: {
+        Row: {
+          chunk_index: number
+          content: string
+          created_at: string | null
+          document_id: string
+          embedding: string | null
+          id: string
+        }
+        Insert: {
+          chunk_index: number
+          content: string
+          created_at?: string | null
+          document_id: string
+          embedding?: string | null
+          id?: string
+        }
+        Update: {
+          chunk_index?: number
+          content?: string
+          created_at?: string | null
+          document_id?: string
+          embedding?: string | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_chunks_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      document_classifications: {
+        Row: {
+          confidence: number | null
+          document_id: string
+          node_id: number
+          source: string | null
+        }
+        Insert: {
+          confidence?: number | null
+          document_id: string
+          node_id: number
+          source?: string | null
+        }
+        Update: {
+          confidence?: number | null
+          document_id?: string
+          node_id?: number
+          source?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_classifications_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "document_classifications_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
+            referencedRelation: "taxonomy_nodes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      document_tags: {
+        Row: {
+          document_id: string
+          tag: string
+        }
+        Insert: {
+          document_id: string
+          tag: string
+        }
+        Update: {
+          document_id?: string
+          tag?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_tags_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      document_texts: {
+        Row: {
+          content: string | null
+          doc_id: string | null
+          extracted_at: string | null
+          summary: string | null
+        }
+        Insert: {
+          content?: string | null
+          doc_id?: string | null
+          extracted_at?: string | null
+          summary?: string | null
+        }
+        Update: {
+          content?: string | null
+          doc_id?: string | null
+          extracted_at?: string | null
+          summary?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_texts_doc_id_fkey"
+            columns: ["doc_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      documents: {
+        Row: {
+          created_at: string | null
+          file_name: string
+          file_size: number | null
+          file_url: string
+          id: string
+          mime_type: string | null
+          processing_status: string | null
+          source_type: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          file_name: string
+          file_size?: number | null
+          file_url: string
+          id?: string
+          mime_type?: string | null
+          processing_status?: string | null
+          source_type?: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          file_name?: string
+          file_size?: number | null
+          file_url?: string
+          id?: string
+          mime_type?: string | null
+          processing_status?: string | null
+          source_type?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       gazette_chunks: {
         Row: {
           chunk_index: number
@@ -79,6 +256,7 @@ export type Database = {
           email: string
           full_name: string | null
           id: string
+          role: string | null
           updated_at: string
           user_id: string
         }
@@ -87,6 +265,7 @@ export type Database = {
           email: string
           full_name?: string | null
           id?: string
+          role?: string | null
           updated_at?: string
           user_id: string
         }
@@ -95,8 +274,192 @@ export type Database = {
           email?: string
           full_name?: string | null
           id?: string
+          role?: string | null
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      saved_gazettes: {
+        Row: {
+          created_at: string
+          gazette_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          gazette_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          gazette_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_gazettes_gazette_id_fkey"
+            columns: ["gazette_id"]
+            isOneToOne: false
+            referencedRelation: "gazettes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      saved_tenders: {
+        Row: {
+          created_at: string | null
+          id: string
+          tender_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          tender_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          tender_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_tenders_tender_id_fkey"
+            columns: ["tender_id"]
+            isOneToOne: false
+            referencedRelation: "tenders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      taxonomies: {
+        Row: {
+          country_id: number | null
+          description: string | null
+          id: number
+          name: string
+          version: string | null
+        }
+        Insert: {
+          country_id?: number | null
+          description?: string | null
+          id?: number
+          name: string
+          version?: string | null
+        }
+        Update: {
+          country_id?: number | null
+          description?: string | null
+          id?: number
+          name?: string
+          version?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "taxonomies_country_id_fkey"
+            columns: ["country_id"]
+            isOneToOne: false
+            referencedRelation: "countries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      taxonomy_nodes: {
+        Row: {
+          code: string
+          description: string | null
+          id: number
+          label: string
+          level: number
+          parent_id: number | null
+          taxonomy_id: number
+        }
+        Insert: {
+          code: string
+          description?: string | null
+          id?: number
+          label: string
+          level: number
+          parent_id?: number | null
+          taxonomy_id: number
+        }
+        Update: {
+          code?: string
+          description?: string | null
+          id?: number
+          label?: string
+          level?: number
+          parent_id?: number | null
+          taxonomy_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "taxonomy_nodes_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "taxonomy_nodes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "taxonomy_nodes_taxonomy_id_fkey"
+            columns: ["taxonomy_id"]
+            isOneToOne: false
+            referencedRelation: "taxonomies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tenders: {
+        Row: {
+          budget_display: string | null
+          budget_max: number | null
+          budget_min: number | null
+          category: string | null
+          created_at: string | null
+          days_left: number | null
+          deadline: string
+          description: string | null
+          id: string
+          location: string | null
+          status: string | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          budget_display?: string | null
+          budget_max?: number | null
+          budget_min?: number | null
+          category?: string | null
+          created_at?: string | null
+          days_left?: number | null
+          deadline: string
+          description?: string | null
+          id?: string
+          location?: string | null
+          status?: string | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          budget_display?: string | null
+          budget_max?: number | null
+          budget_min?: number | null
+          category?: string | null
+          created_at?: string | null
+          days_left?: number | null
+          deadline?: string
+          description?: string | null
+          id?: string
+          location?: string | null
+          status?: string | null
+          title?: string
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -172,6 +535,10 @@ export type Database = {
       hnswhandler: {
         Args: { "": unknown }
         Returns: unknown
+      }
+      is_admin: {
+        Args: { uid: string }
+        Returns: boolean
       }
       ivfflat_bit_support: {
         Args: { "": unknown }

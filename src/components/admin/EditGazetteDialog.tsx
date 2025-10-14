@@ -4,53 +4,61 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
-interface GazetteCard {
+// Simplified interface for editing
+interface Gazette {
   id: string;
-  title: string;
-  date: string;
-  description: string;
-  category: string;
+  file_name: string;
 }
 
 interface EditGazetteDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  gazette: GazetteCard | null;
-  onGazetteUpdated: (gazette: GazetteCard) => void;
+  gazette: Gazette | null;
+  onGazetteUpdated: () => void;
 }
 
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-
 export default function EditGazetteDialog({ open, onOpenChange, gazette, onGazetteUpdated }: EditGazetteDialogProps) {
-  const [formData, setFormData] = useState({ title: '', description: '', category: '' });
+  const [title, setTitle] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     if (gazette) {
-      setFormData({
-        title: gazette.title,
-        description: gazette.description,
-        category: gazette.category,
-      });
+      setTitle(gazette.file_name);
     }
   }, [gazette]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!gazette) return;
 
     setIsSubmitting(true);
-    const updatedGazette = { ...gazette, ...formData };
-    onGazetteUpdated(updatedGazette);
-    toast({
-      title: 'Gazette Updated',
-      description: 'The gazette has been updated successfully.',
-    });
-    onOpenChange(false);
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase
+        .from('documents')
+        .update({ file_name: title })
+        .eq('id', gazette.id);
+
+      if (error) throw error;
+
+      onGazetteUpdated();
+      toast({
+        title: 'Gazette Updated',
+        description: 'The gazette has been updated successfully.',
+      });
+      onOpenChange(false);
+    } catch (error: any) {
+      console.error('Error updating gazette:', error);
+      toast({
+        title: "Update Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,37 +75,11 @@ export default function EditGazetteDialog({ open, onOpenChange, gazette, onGazet
             <Label htmlFor="title">Title</Label>
             <Input
               id="title"
-              value={formData.title}
-              onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               placeholder="Enter gazette title"
               required
             />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
-            <Textarea
-              id="description"
-              value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              placeholder="Brief description of the gazette"
-              rows={3}
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="category">Category</Label>
-            <Select value={formData.category} onValueChange={(value) => setFormData({ ...formData, category: value })}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Infrastructure">Infrastructure</SelectItem>
-                <SelectItem value="Legal">Legal</SelectItem>
-                <SelectItem value="Environment">Environment</SelectItem>
-                <SelectItem value="Health">Health</SelectItem>
-                <SelectItem value="Education">Education</SelectItem>
-                <SelectItem value="Finance">Finance</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
           <DialogFooter>
             <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>

@@ -31,7 +31,7 @@ export default function SubscriptionPricing({ onSelectFree, onSelectPaid }: Subs
     },
     {
       name: "Subscriber",
-      price: 29,
+      price: 80,
       interval: "/ month",
       description: "Unlock full access and priority alerts.",
       highlight: true,
@@ -47,13 +47,12 @@ export default function SubscriptionPricing({ onSelectFree, onSelectPaid }: Subs
     },
     {
       name: "Pay Per Download",
-      price: 5,
+      price: 20,
       interval: "/ download",
       description: "Pay only for what you need.",
       features: [
         { name: "Single gazette access", included: true },
         { name: "Instant download", included: true },
-        { name: "No commitment", included: true },
       ],
       cta: {
         text: "Buy Now",
@@ -65,9 +64,9 @@ export default function SubscriptionPricing({ onSelectFree, onSelectPaid }: Subs
   return (
     <PricingCards
         tiers={tiers}
-        className="gap-4"
-        sectionClassName="py-8"
-        containerClassName="py-6"
+        className="gap-4 md:gap-6"
+        sectionClassName="py-4 sm:py-6"
+        containerClassName="py-2 sm:py-4"
     />
   );
 }
