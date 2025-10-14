@@ -4,32 +4,39 @@ import * as React from "react";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
-import { useGazettes } from '@/hooks/useGazettes';
 import { searchGazettes as searchGazettesService } from '@/services/govGazetteApi';
 import { toast } from 'sonner';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Spinner } from "@/components/ui/spinner-1";
 import SubscriptionPricing from '@/components/SubscriptionPricing';
 import { DashboardSidebar } from '@/components/DashboardSidebar';
-import { Menu, X, LogOut, User, Search, Filter, Download, Eye } from "lucide-react";
+import { Menu, X, Search, Filter, Eye } from "lucide-react";
+
 function cn(...inputs: any[]) {
   return inputs.filter(Boolean).join(" ");
 }
+
+interface Citation {
+  chunk_id: string;
+  gazette_id: string;
+  snippet: string;
+  similarity: number;
+}
+
+interface SearchResult {
+  query: string;
+  summary: string;
+  citations: Citation[];
+}
+
 export default function SearchGazettes() {
   const [searchQuery, setSearchQuery] = useState("");
-  const location = useLocation();
   const navigate = useNavigate();
-  const {
-    signOut,
-    user
-  } = useAuth();
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const { user } = useAuth();
+  const [searchResult, setSearchResult] = useState<SearchResult | null>(null);
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
@@ -40,20 +47,18 @@ export default function SearchGazettes() {
     }
     setIsSearching(true);
     setHasSearched(true);
+    setSearchResult(null);
+
     try {
       const response = await searchGazettesService(searchQuery);
-      // Handle wrapped API responses and ensure we have an array
-      const results = Array.isArray(response) ? response : (response?.data || []);
-
-      if (Array.isArray(results)) {
-        setSearchResults(results);
-        if (results.length === 0) {
-          toast.info("No results found.");
+      if (response && response.summary && Array.isArray(response.citations)) {
+        setSearchResult(response);
+        if (response.citations.length === 0) {
+          toast.info("No gazette found matching your search");
         }
       } else {
-        setSearchResults([]);
         toast.error("Search failed: Invalid data format from server.");
-        console.error("Search API did not return an array:", response);
+        console.error("Search API returned an unexpected format:", response);
       }
     } catch (error) {
       toast.error("Search failed.");
@@ -64,7 +69,6 @@ export default function SearchGazettes() {
   };
 
   const displayName = user?.email || 'User';
-  const displayEmail = user?.email || '';
   const [isCollapsed, setIsCollapsed] = React.useState(false);
   const [isMobileOpen, setIsMobileOpen] = React.useState(false);
   const [currentPlan, setCurrentPlan] = React.useState<"free" | "subscriber" | null>(null);
@@ -73,10 +77,6 @@ export default function SearchGazettes() {
     const storedPlan = localStorage.getItem('plan_choice') as 'free' | 'subscriber' | null;
     if (storedPlan) setCurrentPlan(storedPlan);
   }, []);
-  const handleLogout = async () => {
-    await signOut();
-    navigate('/');
-  };
   const startFreePlan = () => {
     localStorage.setItem('plan_choice', 'free');
     toast.success('Continuing with Free plan');
@@ -87,6 +87,7 @@ export default function SearchGazettes() {
     toast.info('Redirecting to checkout...');
     setShowPricingModal(false);
   };
+
   return <div className="flex h-screen w-screen bg-gray-50">
       <DashboardSidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} isMobileOpen={isMobileOpen} setIsMobileOpen={setIsMobileOpen} userName={displayName} currentPlan={currentPlan} onUpgradeClick={() => setShowPricingModal(true)} />
       
@@ -140,49 +141,36 @@ export default function SearchGazettes() {
                     <p className="text-muted-foreground">Enter a search term above to find gazettes.</p>
                   </CardContent>
                 </Card>
-              ) : searchResults.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {searchResults.filter(g => g && g.id).map((gazette) => (
-                    <Card key={gazette.id} className="hover:shadow-lg transition-shadow">
-                      <CardHeader>
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <CardTitle className="text-lg">{gazette.file_name || 'Untitled Gazette'}</CardTitle>
-                            <CardDescription className="mt-2">
-                              Published: {gazette.created_at ? new Date(gazette.created_at).toLocaleDateString() : 'Date not available'}
-                            </CardDescription>
-                          </div>
-                          {gazette.pricing_tier &&
-                            <Badge variant={gazette.pricing_tier === 'premium' ? 'default' : 'secondary'}>
-                              {gazette.pricing_tier === 'premium' ? 'Premium' : 'Free'}
-                            </Badge>
-                          }
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-muted-foreground">
-                            Status: {gazette.processing_status || 'pending'}
-                          </span>
-                          <div className="flex gap-2">
-                            <Button variant="outline" size="sm" onClick={() => navigate(`/gazette/${gazette.id}`)}>
+              ) : searchResult && searchResult.citations.length > 0 ? (
+                <div>
+                  <Card className="mb-6">
+                    <CardHeader>
+                      <CardTitle>Search Summary</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{searchResult.summary}</p>
+                    </CardContent>
+                  </Card>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {searchResult.citations.map((citation) => (
+                      <Card key={citation.chunk_id} className="hover:shadow-lg transition-shadow">
+                        <CardContent className="pt-6">
+                          <p className="text-sm text-muted-foreground mb-4" dangerouslySetInnerHTML={{ __html: citation.snippet }}></p>
+                          <div className="flex justify-end">
+                            <Button variant="outline" size="sm" onClick={() => navigate(`/gazette/${citation.gazette_id}`)}>
                               <Eye className="h-4 w-4 mr-2" />
-                              View
-                            </Button>
-                            <Button variant="outline" size="sm">
-                              <Download className="h-4 w-4 mr-2" />
-                              Download
+                              View Gazette
                             </Button>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <Card>
                   <CardContent className="py-12 text-center">
-                    <p className="text-muted-foreground">No results found for your query.</p>
+                    <p className="text-muted-foreground">No gazette found matching your search</p>
                   </CardContent>
                 </Card>
               )}
