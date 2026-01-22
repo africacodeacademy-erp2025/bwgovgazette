@@ -11,5 +11,43 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id               String   @id @default(uuid())
+  sourceType       String   @default("gazette")
+  fileName         String
+  fileUrl          String
+  mimeType         String?
+  fileSize         Int?
+  processingStatus String   @default("pending")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  text             DocumentText?
+  tags             DocumentTag[]
+
+  @@map("documents")
+}
+
+model DocumentText {
+  documentId String   @id
+  content    String?
+  summary    String?
+  extractedAt DateTime @default(now())
+
+  document  Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@map("document_texts")
+}
+
+
+model DocumentTag {
+  documentId String
+  tag        String
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@id([documentId, tag])
+  @@map("document_tags")
 }
