@@ -5,8 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -26,6 +25,7 @@ model Document {
 
   text             DocumentText?
   tags             DocumentTag[]
+  chunks           DocumentChunk[]
 
   @@map("documents")
 }
@@ -50,4 +50,18 @@ model DocumentTag {
 
   @@id([documentId, tag])
   @@map("document_tags")
+}
+
+model DocumentChunk {
+  id         String   @id @default(uuid())
+  documentId String
+  index      Int
+  text       String
+  embedding  Json?
+  createdAt  DateTime @default(now())
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([documentId, index])
+  @@map("document_chunks")
 }

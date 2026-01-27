@@ -1,21 +1,30 @@
-import { PrismaClient } from "@/app/generated/prisma/client";
+import { Pool, PoolConfig } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@prisma/client";
 
-declare global {
-  var prisma: PrismaClient | undefined;
+const globalForPrisma = globalThis as unknown as {
+  prisma?: PrismaClient;
+};
+
+function createPrismaClient() {
+  const connectionString = process.env.DATABASE_URL;
+
+  // Configure pool with SSL settings for Supabase
+  // Force SSL but don't verify the certificate chain (required for Supabase pooler)
+  const poolConfig: PoolConfig = {
+    connectionString,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  };
+
+  const pool = new Pool(poolConfig);
+  const adapter = new PrismaPg(pool);
+  return new PrismaClient({ adapter });
 }
 
-// Pass empty object or configuration options
-export const prisma = globalThis.prisma || new PrismaClient({
-
-    accelerateUrl: process.env.SHADOW_DATABASE_URL || '',
-    
-    // Add logging in development
-    log:
-      process.env.NODE_ENV === "development"
-        ? ["query", "error", "warn"]
-        : ["error"],
-  });
+export const prisma = globalForPrisma.prisma ?? createPrismaClient();
 
 if (process.env.NODE_ENV !== "production") {
-  globalThis.prisma = prisma;
+  globalForPrisma.prisma = prisma;
 }
