@@ -5,15 +5,23 @@ import { writeFile, unlink, mkdir } from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
 
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-);
-
 const BUCKET = process.env.SUPABASE_STORAGE_BUCKET || "documents";
 
 export async function POST(request: Request) {
+  // Lazily initialize Supabase client to avoid requiring env at build time
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!supabaseUrl || !supabaseKey) {
+    console.error(
+      "Supabase config missing: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY",
+    );
+    return NextResponse.json(
+      { error: "Supabase not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY." },
+      { status: 500 },
+    );
+  }
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File;
