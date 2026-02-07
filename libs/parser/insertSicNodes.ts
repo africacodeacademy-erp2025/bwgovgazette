@@ -1,7 +1,6 @@
-import { PrismaClient } from '@prisma/client'
-import { ParsedSicNode } from './parseBotswanaSic'
 
-const prisma = new PrismaClient()
+import { prisma } from '../prisma.ts'
+import type { ParsedSicNode } from './parseBotswanaSic.ts'
 
 export async function insertSicNodes(nodes: ParsedSicNode[]) {
   if (!nodes.length) {
@@ -11,27 +10,26 @@ export async function insertSicNodes(nodes: ParsedSicNode[]) {
 
   console.log(`Inserting ${nodes.length} SIC nodes...`)
 
-  await prisma.$transaction(
-    nodes.map(node =>
-      prisma.sicNode.create({
-        data: {
-          id: node.id,
-          parentId: node.parentId,
-          level: node.level,
-          code: node.code,
-          title: node.title,
-          description: node.description,
-
-          isDuplicate: node.isDuplicate,
-          isInferred: node.isInferred,
-          isTruncated: node.isTruncated,
-          isActive: node.isActive,
-
-          path: node.path
-        }
-      })
-    )
-  )
-
-  console.log('SIC insert complete')
+  try {
+    await prisma.sicNode.createMany({
+      data: nodes.map(node => ({
+        id: node.id,
+        parentId: node.parentId,
+        level: node.level,
+        code: node.code,
+        title: node.title,
+        description: node.description,
+        isDuplicate: node.isDuplicate,
+        isInferred: node.isInferred,
+        isTruncated: node.isTruncated,
+        isActive: node.isActive,
+        path: node.path
+      })),
+      skipDuplicates: true
+    })
+    console.log('SIC insert complete')
+  } catch (err) {
+    console.error('SIC seeding failed', err)
+    throw err
+  }
 }

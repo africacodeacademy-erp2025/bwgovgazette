@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { parseBotswanaSic } from './parser/parseBotswanaSic'
-import { insertSicNodes } from './parser/insertSicNodes'
+import { parseBotswanaSic } from './parseBotswanaSic.ts'
+import { insertSicNodes } from './insertSicNodes.ts'
 
 async function seedSic() {
   const filePath = path.join(

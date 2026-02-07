@@ -1,0 +1,11 @@
+Industry
+Division 01 Agriculture
+Class 011 Growing of crops
+Group 0111 Growing of cereals (except rice)
+
+Division 02 Mining and Quarrying
+Class 021 Mining of coal
+Group 0210 Mining of coal
+
+Class 051 Manufacture of basic chemicals
+Group 0511 Manufacture of industrial gases

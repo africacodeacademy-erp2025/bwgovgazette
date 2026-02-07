@@ -6,71 +6,41 @@ datasource db {
   provider = "postgresql"
 }
 
-/* =========================
-   DOCUMENTS
-========================= */
-
 model Document {
-  id               String   @id @default(uuid())
-  sourceType       String   @default("gazette")
+  id               String          @id @default(uuid())
+  sourceType       String          @default("gazette")
   fileName         String
   fileUrl          String
   mimeType         String?
   fileSize         Int?
-  processingStatus ProcessingStatus @default(pending)
-
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  text             DocumentText?
-  tags             DocumentTag[]        // free-text labels
-  sicTags          DocumentSicTag[]     // structured SIC tagging
+  processingStatus String          @default("pending")
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
   chunks           DocumentChunk[]
+  tags             DocumentTag[]
+  text             DocumentText?
 
   @@map("documents")
 }
-
-enum ProcessingStatus {
-  pending
-  text_extracted
-  chunked
-  classified
-  reviewed
-  failed
-}
-
-/* =========================
-   DOCUMENT TEXT
-========================= */
 
 model DocumentText {
   documentId  String   @id
   content     String?
   summary     String?
   extractedAt DateTime @default(now())
-
   document    Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
 
   @@map("document_texts")
 }
 
-/* =========================
-   FREE-TEXT TAGS (NON-SIC)
-========================= */
-
 model DocumentTag {
   documentId String
   tag        String
-
   document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
 
   @@id([documentId, tag])
   @@map("document_tags")
 }
-
-/* =========================
-   DOCUMENT CHUNKS
-========================= */
 
 model DocumentChunk {
   id         String   @id @default(uuid())
@@ -79,82 +49,26 @@ model DocumentChunk {
   text       String
   embedding  Json?
   createdAt  DateTime @default(now())
-
   document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
 
   @@index([documentId, index])
   @@map("document_chunks")
 }
 
-/* =========================
-   SIC HIERARCHY
-========================= */
-
 model SicNode {
-  id           String   @id @default(uuid())
+  id          String  @id @default(uuid())
+  parentId    String? 
+  level       String
+  code        String?
+  title       String?
+  description String?
 
-  parentId     String?
-  parent       SicNode?  @relation("SicHierarchy", fields: [parentId], references: [id])
-  children     SicNode[] @relation("SicHierarchy")
+  isDuplicate Boolean @default(false)
+  isInferred  Boolean @default(false)
+  isTruncated Boolean @default(false)
+  isActive    Boolean @default(true)
 
-  level        SicLevel
-  code         String?
-  title        String?
-  description  String?
+  path        String?
 
-  // data-quality flags
-  isDuplicate  Boolean  @default(false)
-  isInferred   Boolean  @default(false)
-  isTruncated  Boolean  @default(false)
-
-  // lifecycle / normalization
-  isActive     Boolean  @default(true)
-  supersededBy String?  // SicNode.id (soft reference)
-
-  // provenance
-  sourceDoc    String?
-  sourcePage   Int?
-
-  // optional but powerful
-  path         String?
-
-  createdAt    DateTime @default(now())
-
-  documentTags DocumentSicTag[]
-
-  @@index([level])
-  @@index([code])
-  @@index([isActive])
-}
-
-enum SicLevel {
-  industry
-  division
-  class
-  group
-}
-
-/* =========================
-   DOCUMENT ↔ SIC TAGGING
-========================= */
-
-model DocumentSicTag {
-  documentId String
-  sicNodeId  String
-
-  confidence Float?
-  tagSource  TagSource
-  notes      String?
-
-  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
-  sicNode    SicNode  @relation(fields: [sicNodeId], references: [id], onDelete: Cascade)
-
-  @@id([documentId, sicNodeId])
-  @@index([sicNodeId])
-}
-
-enum TagSource {
-  ai
-  manual
-  rule
+  @@map("sic_nodes")
 }
