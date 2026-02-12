@@ -1,0 +1,76 @@
+INDUSTRY: WATER SUPPLY; SEWERAGE, WASTE MANAGEMENT AND REMEDIATIONACTIVITIES
+============================================================================
+
+Division 36: Water Collection, Treatment and Supply
+
+  Class 360: Water Collection, Treatment and Supply
+    Group 3600: Water Collection, Treatment and Supply
+Description:
+  collection of water from rivers, lakes, wells; collection of rain water; purification of water for
+  water supply purposes; treatment of water for industrial and other purposes; desalting of sea or
+  ground water to produce water as the principal product of interest; distribution of water through
+  mains, by trucks or other means; operation of irrigation canals
+Division 37: Sewerage
+
+  Class 370: Sewerage
+    Group 3700: Sewerage
+Description:
+  operation of sewer systems or sewer treatment facilities ; collecting and transporting of human or
+  industrial wastewater from one or several users, as well as rain water by means of sewerage
+  networks, collectors, tanks and other means of transport (sewage vehicles etc.); emptying and
+  cleaning of cesspools and septic tanks, sinks and pits from sewage; servicing of chemical toilets;
+  treatment of wastewater (including human and industrial wastewater, water from swimming pools
+  etc.) by means of physical, chemical and biological processes like dilution, screening, filtering,
+  sedimentation; maintenance and cleaning of sewers and drains, including sewer rodding.
+Division 38: Waste Collection, Treatment and Disposal Activities; Materials Recovery
+
+  Class 381: Waste Collection
+    Group 3811: Collection of Non-hazardous Waste
+Description:
+  collection of non-hazardous solid waste (i.e. garbage) within a local area, such as collection of
+  waste from households and businesses by means of refuse bins, wheeled bins, containers may include
+  mixed recoverable materials; collection of recyclable materials; collection of used cooking oils
+  and fats; collection of refuse in litter-bins in public places; collection of construction and
+  demolition waste; collection and removal of debris such as brush and rubble; collection of waste
+  output of textile mills; operation of waste transfer stations for non-hazardous waste
+    Group 3812: Collection of Hazardous Waste
+Description:
+  includes the collection of solid and non-solid hazardous waste, i.e. explosive, oxidizing,
+  flammable, toxic, irritant, carcinogenic, corrosive, infectious and other substances and
+  preparations harmful for human health and environment. It may also entail identification,
+  treatment, packaging and labelling of waste for the purposes of transport. 70
+  Class 382: Waste Treatment and Disposal
+    Group 3821: Treatment and Disposal of Non-hazardous Waste
+Description:
+  operation of landfills for the disposal of non-hazardous waste; disposal of non- hazardous waste by
+  combustion or incineration or other methods, with or without the resulting production of
+  electricity or steam, substitute fuels, biogas, ashes or other by-products for further use;
+  treatment of organic waste for disposal; production of compost from organic waste.
+    Group 3822: Treatment and Disposal of Hazardous Waste
+Description:
+  operation of facilities for treatment of hazardous waste; treatment and disposal of toxic live or
+  dead animals and other contaminated waste; incineration of hazardous waste; disposal of used goods
+  such as refrigerators to eliminate harmful waste; treatment, disposal and storage of radioactive
+  nuclear waste including (treatment and disposal of transition radioactive waste, i.e. decaying
+  within the period of transport, from hospitals, encapsulation, preparation and other treatment of
+  nuclear waste for storage).
+  Class 383: Materials Recovery
+    Group 3830: Materials Recovery
+Description:
+  processing of metal and non-metal waste and scrap and other articles into secondary raw materials,
+  usually involving a mechanical or chemical transformation process; recovery of materials from
+  waste streams in the form of (separating and sorting recoverable materials from non-hazardous
+  waste streams (i.e. garbage), separating and sorting of commingled recoverable materials, such as
+  paper, plastics, used beverage cans and metals, into distinct categories.
+Division 39: Remediation Activities and Other Waste Management Services
+
+  Class 390: Remediation Activities and Other Waste Management Services
+    Group 3900: Remediation Activities and Other Waste Management Services
+Description:
+  decontamination of soils and groundwater at the place of pollution, either in situ or ex situ, using
+  e.g. mechanical, chemical or biological methods; decontamination of industrial plants or sites,
+  including nuclear plants and sites; decontamination and cleaning up of surface water following
+  accidental pollution, e.g. through collection of pollutants or through application of chemicals;
+  cleaning up of oil spills and other pollutions on land, in surface water, in ocean and seas,
+  including coastal areas; asbestos, lead paint, and other toxic material abatement; clearing of
+  landmines and the like (including detonation); other specialized pollution-control activities.

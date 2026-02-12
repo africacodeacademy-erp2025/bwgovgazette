@@ -1,0 +1,136 @@
+INDUSTRY: TRANSPORTATION AND STORAGE
+====================================
+
+Division 49: Land Transport and Transport Via Pipelines
+
+  Class 491: Transport Via Railways
+    Group 4911: Passenger Rail Transport, Interurban
+Description:
+  This class includes: passenger transport by inter-urban railways, operation of sleeping cars or
+  dining cars as an integrated operation of railway companies.
+    Group 4912: Freight Rail Transport
+Description:
+  This class includes: freight transport on mainline rail networks as well as short-line freight
+  railroads 79
+  Class 492: Other Land Transport
+    Group 4921: Urban and Suburban Passenger Land Transport
+Description:
+  This class includes: land transport of passengers by urban or suburban transport systems. This may
+  include different modes of land transport, such as by motorbus, tramway, streetcar, trolleybus,
+  underground and elevated railways etc. The transport is carried out on scheduled routes normally
+  following a fixed time schedule, entailing the picking up and setting down of passengers at
+  normally fixed stops.
+    Group 4922: Other Passenger Land Transport
+Description:
+  This class includes: other passenger road transport; scheduled long- distance bus services,
+  charters, excursions and other occasional coach services, taxi operation, airport shuttles,
+  Operation of telfers, funiculars, ski and cable lifts if not part of urban or suburban transit
+  systems. This class also includes other renting of private cars with driver, operation of school
+  buses and buses for transport of employees, Passenger transport by man or animal drawn vehicles.
+    Group 4923: Freight Transport by Road
+Description:
+  This class includes all freight transport operations by road; logging haulage, stock haulage,
+  refrigerated haulage, heavy haulage, bulk haulage, including haulage in tanker trucks, haulage of
+  automobiles, transport of waste and waste materials, without collection or disposal. This also
+  includes furniture removal, renting of trucks with driver and freight transport by man or animal-
+  drawn vehicles
+  Class 493: Transport Via Pipeline
+    Group 4930: Transport Via Pipeline
+Description:
+  This club includes Transport of gases, liquids, water, slurry and other commodities via pipelines.
+  This class also includes Operation of pump stations.
+Division 50: Water Transport
+
+  Class 501: Sea and Coastal Water Transport
+  Class 502: Inland Water Transport
+    Group 5021: Inland Passenger Water Transport
+Description:
+  This class includes Transport of passenger via rivers, canals, lakes and other inland waterways,
+  including inside harbours and ports. This class also includes renting of pleasure boats with crew
+  for inland water transport
+    Group 5022: Inland Freight Water Transport
+Description:
+  This class includes transport of freight via rivers, canals, lakes and other inland waterways,
+  including inside harbours and ports. 80
+Division 51: Air Transport
+
+  Class 511: Passenger Air Transport
+    Group 5110: Passenger Air Transport
+Description:
+  This class includes Transport of passenger by air over regular routes and on regular schedules,
+  Charter flights for passengers, Scenic and sight- seeing flights. This class also includes Renting
+  of air-transport equipment with operator for the purpose of passenger transportation and General
+  aviation activities, such as transport of passengers by aero clubs for instruction or pleasure
+  Class 512: Freight Air Transport
+    Group 5120: Freight Air Transport
+Description:
+  This class includes transport freight by air over regular routes and on regular schedules; Non-
+  scheduled transport of freight by air; Launching of satellites and space vehicles; Space
+  transport; This class also includes and Renting of air-transport equipment with operator for the
+  purpose of freight transportation.
+Division 52: Warehousing and Support Activities for Transport
+
+  Class 521: Warehousing and Storage
+    Group 5210: Warehousing and Storage
+Description:
+  This class includes operation of storage and warehouse facilities for all kind of goods; Operation
+  of grain silos, general merchandise warehouses, refrigerated warehouses, storage tanks etc. This
+  class also includes storage of goods in foreign trade zones and blast freezing
+  Class 522: Support Activities for Transport
+    Group 5221: Service Activities Incidental to Land Transportation
+Description:
+  This class includes activities related to land transport of passengers, animals or freight;
+  Operation of terminal facilities such as railway stations, bus stations, stations for the handling
+  of goods; Operation of railroad infrastructure; Operation of roads, bridges, tunnels, car parks or
+  garages, bicycle parkings; Switching and shunting; Towing and road side assistance. This class
+  also includes liquefaction of gas for transportation purposes.
+    Group 5222: Service Activities Incidental to Water Transportation
+Description:
+  This class includes activities related to water transport of passengers, animals or freight;
+  operation of terminal facilities such as harbours and piers; navigation, pilotage and berthing
+  activities; lighterage, salvage activities; lighthouse activities.
+    Group 5223: Service Activities Incidental to Air Transportation
+Description:
+  This class includes activities related to air transport of passengers, animals or freight; operation
+  of terminal facilities such as airway terminals; airport and air-traffic-control activities;
+  ground service activities on airfields; this class also includes firefighting and fire-prevention
+  services at airports 81
+    Group 5224: Cargo Handling
+Description:
+  This class includes loading and unloading of goods or passengers’ luggage irrespective of the mode
+  of transport used for transportation; stevedoring; loading and unloading of freight railway cars
+    Group 5229: Other Transportation Support Activities
+Description:
+  This class includes forwarding of freight; arranging or organising of transport operations by rail,
+  road, sea or air; organization of group and individual consignments (including pickup and delivery
+  of goods and grouping of consignments); logistics activities, i.e. planning, designing and
+  supporting operations of transportation, warehousing and distribution; issue and procurement of
+  transport documents and waybills; activities of customs agents; activities of sea-freight
+  forwarders and air-cargo agents; brokerage for ship and aircraft space; goods- handling
+  operations, e.g. temporary crating for the sole purpose of protecting the goods during transit,
+  uncrating, sampling, weighting of goods.
+Division 53: Postal and Courier Activities
+
+  Class 531: Postal Activities
+    Group 5310: Postal Activities
+Description:
+  This class includes the activities of postal services operating under a universal service
+  obligation. The activities include use of the universal service infrastructure, including retail
+  locations, sorting and processing facilities, carrier routes to pickup and deliver the mail. The
+  delivery can include letter-post, i.e. letters, postcards, printed papers (news paper,
+  periodicals, advertising items, etc.), small packets, goods or documents. Also included are other
+  services necessary to support the universal service obligation. This class includes pickup,
+  sorting, transport and delivery (domestic or international) of letter-post and (mail-type) parcels
+  and packages by postal services operating under a universal service obligation. One or more modes
+  of transport may be involved and the activity may be carried out with either self-owned (private)
+  transport or via public transport. Collection of letter-mail and parcels from public letter-boxes
+  or from post offices; Distribution and delivery of mail and parcels
+  Class 532: Courier Activities
+    Group 5320: Courier Activities
+Description:
+  This class includes courier activities not operating under a universal service obligation This class
+  includes pickup, sorting, transport and delivery (domestic or international) of letter-post and
+  (mail-type) parcels and packages by firms not operating under a universal service obligation. One
+  or more modes of transport may be involved and the activity may be carried out with either self-
+  owned (private) transport or via public transport; Distribution and delivery of mail and parcels.
+  This class also includes home delivery services 82

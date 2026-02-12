@@ -1,0 +1,283 @@
+INDUSTRY: AGRICULTURE, FORESTRY AND FISHING
+===========================================
+
+Division 01: Crop and Animal Production, hunting and related Services Activities
+
+  Class 011: Growing of Non-Perennial Crops
+    Group 0111: Growing of Cereals (except Rice) Leguminous Crops and Oil Seeds)
+Description:
+  includes all forms of growing of cereals, leguminous crops and oil seeds in open fields, including
+  those considered organic farming and the growing of genetically modified crops. The growing of
+  these crops is often combined within agricultural units. These are wheat, grain maize, sorghum,
+  barley, rye, oats, millet, beans, cowpeas, lentils, peas, pigeon peas, soya beans, groundnuts,
+  castor beans, rape seed, sunflower seed, sesame seed.
+    Group 0112: Growing of Rice
+Description:
+  includes organic farming and the growing of genetically modified rice
+    Group 0113: Growing of Vegetables and Melons, Roots and Tubers
+Description:
+  growing of leafy or stem vegetables such as (artichokes, asparagus, cabbages, cauliflower and
+  broccoli, lettuce and chicory, spinach, other leafy or stem vegetables); growing of fruit bearing
+  vegetables such as: (cucumbers and gherkins, eggplants, tomatoes, watermelons, cantaloupes, other
+  melons and fruit-bearing vegetables); growing of root, bulb or tuberous vegetables such as:(
+  carrots, turnips, garlic, onions, leeks and other alliaceous vegetables, other root, bulb or
+  tuberous vegetables); growing of mushrooms and truffles; growing of vegetable seeds, except beet
+  seeds; growing of sugar beet; growing of other vegetables; growing of roots and tubers such as:
+  (potatoes, sweet potatoes , cassava, yams, other roots and tubers).
+    Group 0114: Growing of Sugar Cane
+    Group 0115: Growing of Tobacco
+Description:
+  includes growing of unmanufactured tobacco.
+    Group 0116: Growing of Fibre Crops
+Description:
+  includes growing of cotton, sisal and other textile fibre of the genus agave, growing of abaca and
+  other vegetable textile fibres and growing of other fibre crops 30
+    Group 0119: Growing of Other Non-perennial Crops
+Description:
+  growing of swedes, mangolds, fodder roots, clover, alfalfa, sainfoin, maize and other grasses,
+  forage, kale and similar forage products,; growing of beet seeds and seed of forage plants;
+  growing of flowers, including production of cut flowers and flower buds.
+  Class 012: Growing of Perennial Crops
+Description:
+  this group includes the growing of perennial crops, i.e. plants that lasts for more than two growing
+  seasons, either dying back after each season or growing continuously. Included is the growing of
+  these plants for the purpose of seed production.
+    Group 0121: Growing of Grapes
+Description:
+  growing of wine grapes and table grapes in vineyards.
+    Group 0122: Growing of Tropical and Subtropical Fruits
+Description:
+  growing of avocadoes, bananas, mangoes, papayas, pineapples.
+    Group 0123: Growing of Citrus Fruits
+Description:
+  grapefruits, lemons and limes, oranges, mandarins and clementines and other citrus fruits.
+    Group 0124: Growing of Pome Fruits and Stone Fruits
+Description:
+  apples, apricot, cherries and sour cherries, peaches and nectarines, pears and quinceres, plums and
+  sloes. Growing of Other Trees and Bush Fruits and Nuts includes growing of berries; blue berries,
+  kiwi fruits, raspberries, strawberries, growing of fruit seeds; growing of edible nuts; almonds,
+  chestnuts, hazelnuts, walnuts and other nuts.
+    Group 0125: Growing of Other Trees and Bush Fruits and Nuts
+Description:
+  includes growing of berries; blue berries, kiwi fruits, raspberries, strawberries, growing of fruit
+  seeds; growing of edible nuts; almonds, chestnuts, hazelnuts, walnuts and other nuts.
+    Group 0126: Growing of Oleaginous fruits
+Description:
+  olives, oils palms and other oleaginous fruits.
+    Group 0127: Growing of Beverage Crops
+    Group 0128: Growing of Spices, Aromatic, Drug and Pharmaceutical Crops
+Description:
+  growing of perennial and non-perennial spices and aromatic crops; pepper, chilies’ and pepper,
+  cinnamon, cloves, ginger, vanilla, hops; growing of drug and narcotic crops; growing of plants
+  used primarily in perfumery, in pharmacy, in pharmacy or for insecticidal, fungicidal or similar
+  purposes.
+    Group 0129: Growing of Other Perennial Crops
+Description:
+  rubber trees; growing of Christmas trees; growing of trees for extraction of sap; growing of
+  vegetable materials of a kind used primarily for plaiting. 31
+  Class 013: Plant Propagation
+Description:
+  includes the production of all vegetative planting materials including cuttings, suckers and
+  seedlings for direct plant propagation or to create plant grafting stock into which selected scion
+  is grafted for eventual planting to produce crops; growing of plants for ornamental purposes,
+  including turf for transplanting, growing of live plants for bulbs, tubers and roots; cuttings and
+  slips; mushroom spawn, operation of tree nurseries
+    Group 0130: Plant Propagation
+  Class 014: Animal Production
+    Group 0141: Raising of Cattle and
+Description:
+  raising and breeding of cattle and buffaloes; production of raw cow milk from cows or buffaloes;
+  production of bovine semen
+    Group 0142: Raising of Horse and Other Equines
+Description:
+  (including racing horses), asses, mules or hinnies
+    Group 0143: Raising of Camels and Camelids
+Description:
+  raising and breeding of camels (dromedary) and camelids
+    Group 0144: Raising of Sheep
+Description:
+  raising and breeding of sheep, production of raw sheep milk, production of raw wool.
+    Group 0145: Raising of Swine or Pigs
+Description:
+  raising and breeding of swine (pigs).
+    Group 0146: Raising of Poultry
+Description:
+  raising and breeding of poultry: fowls of the species Gallus domesticus (chicken and capons), ducks,
+  geese, turkeys and guinea fowls); production of eggs; operation of poultry hatcheries
+    Group 0147: Raising of Goats (S)
+Description:
+  raising and breeding of goats, production of raw goat milk.
+    Group 0148: Raising of Game (S)
+Description:
+  raising and breeding of wild animals such as buffalos, lions, kudus, impalas, etc for meat, tourism
+  or any other purposes relevant to the breeder.
+    Group 0149: Raising of Other Animals
+Description:
+  raising and breeding of semi-domesticated or other live animals:(ostriches and emus, other birds
+  (except poultry), insects, rabbits and other fur animals); production of fur skins, reptile or
+  bird skins from ranching operation; operation of worm farms, land mollusc farms, snail farms;
+  raising of silk worms, production of silk worm cocoons; bee-keeping and production of honey and
+  beeswax; raising and breeding of pet animals (cats and dogs, birds, such as parakeets, hamsters,
+  raising of diverse animals) 32
+  Class 015: Mixed Farimg0150
+    Group 0150: Mixed Farimg0150
+Description:
+  This class includes the combined production of crops and animals without a specialized production of
+  crops or animals. The size of the overall farming operation is not a determining factor. If either
+  production of crops or animals in a given unit exceeds 66 per cent or more of standard gross
+  margins, the combined activity should not be included here, but allocated to crop or animal
+  farming.
+  Class 016: Support Activities to Agriculture and Post-Harvest Crop Activities
+Description:
+  includes activities incidental to agricultural production and activities similar to agriculture not
+  undertaken for production purposes (in the sense of harvesting agricultural products), done on a
+  fee or contract basis. Also included are post-harvest crop activities, aimed at preparing
+  agricultural products for the primary market.
+    Group 0161: Support Activities to Agriculture to Crop Production
+Description:
+  agricultural activities on a fee or contract basis ( preparation of fields, establishing a crop,
+  treatment of crops, crop spraying, including by air, trimming of fruit trees and vines,
+  transplantation of rice, thinning of beets, harvesting, pest control (including rabbits);
+  operation of agricultural irrigation equipment; provision of agricultural machinery with operators
+  and crew; maintenance of land to keep it in good condition for agricultural use. agricultural
+  activities on a fee or contract basis ( preparation of fields, establishing a crop, treatment of
+  crops, crop spraying, including by air, trimming of fruit trees and vines, transplantation of
+  rice, thinning of beets, harvesting, pest control (including rabbits); operation of agricultural
+  irrigation equipment; provision of agricultural machinery with operators and crew; maintenance of
+  land to keep it in good condition for agricultural use.
+    Group 0162: Support Activities to Agriculture to Animal Production
+Description:
+  agricultural activities on a fee or contract basis (activities to promote propagation, growth and
+  output of animals, herd testing services, droving services, agistment services, poultry
+  caponizing, coop cleaning, activities related to artificial insemination, stud services, sheep
+  shearing, farm animal boarding and care; activities of farriers. agricultural activities on a fee
+  or contract basis (activities to promote propagation, growth and output of animals, herd testing
+  services, droving services, agistment services, poultry caponizing, coop cleaning, activities
+  related to artificial insemination, stud services, sheep shearing, farm animal boarding and care;
+  activities of farriers.
+    Group 0163: Post-Harvest Crop Activities
+Description:
+  preparation of crops for primary markets, i.e. cleaning, trimming, grading, disinfecting; cotton
+  ginning; preparation of tobacco leaves; preparation of cocoa beans; waxing of fruit; sun-drying of
+  fruit and vegetables. 33
+    Group 0164: Seed Processing for Propagation
+Description:
+  This class includes all post-harvest activities aimed at improving the propagation quality of seed
+  through the removal of non-seed materials, undersized, mechanically or insect- damaged and
+  immature seeds as well as removing the seed moisture to a safe level for seed storage. This
+  activity includes the drying, cleaning, grading and treating of seeds until they are marketed. The
+  treatment of genetically modified seeds is included here.
+  Class 017: Hunting and related Service Activities
+    Group 0170: Hunting and related Service Activities
+Description:
+  hunting and trapping on a commercial basis; taking of animals; taking of animals (dead or alive) for
+  food, fur, skin; production of fur skins, reptile or bird skins from hunting or trapping
+  activities; land-based catching of sea mammals.
+Division 02: Forestry and Logging
+
+  Class 021: Silviculture and other Forestry Activities
+    Group 0210: Silviculture and other Forestry Activities
+Description:
+  growing of standing timber: planting, replanting, transplanting, thinning and conserving of forests
+  and timber tracts; growing of firewood; operation of forest tree nurseries
+  Class 022: Logging
+    Group 0220: Logging
+Description:
+  production of round wood for forest-based manufacturing industries; gathering and production of fire
+  wood, production of charcoal in forest (using traditional methods).
+  Class 023: Gathering of Non-wood Forest Products
+    Group 0230: Gathering of Non-wood Forest Products
+Description:
+  includes gathering of wild growing materials (mushrooms, berries, nuts, vegetable hair, eelgrass,
+  mosses and lichens)
+  Class 024: Support Services to Forestry
+    Group 0240: Support Services to Forestry
+Description:
+  includes forestry activities (forestry in- ventories, forest management consulting services, timber
+  evaluation, forest fire fighting and protection, forest pest control), logging service activities
+  (transport of logs within the forest).
+Division 03: Fishing and Aquaculture
+
+  Class 031: Fishing
+Description:
+  This group includes capture fishery, i.e. the hunting, collecting and gathering activities directed
+  at removing or collecting live wild aquatic organisms (predominantly fish, molluscs and
+  crustaceans) including plants from the oceanic, coastal or inland waters for human consumption and
+  other purposes by hand or more usually by various types of fishing gear such as nets, lines and
+  stationary traps. Such activities can be conducted on the intertidal shoreline (e.g. collection of
+  molluscs such as mussels and oysters) or shore based netting, or from home-made dugouts or more
+  commonly using commercially made boats in inshore, coastal waters or offshore waters. 34
+    Group 0311: Marine Fishing
+Description:
+  fishing on a commercial basis in ocean and coastal waters; whale catching; taking of marine aquatic
+  animals: turtles, sea squirts, tunicates; activities of vessels engaged both in fishing and in
+  processing and preserving fish; gathering of other marine organisms and materials.
+    Group 0312: Fresh Water Fishing
+Description:
+  includes fishing on a commercial basis in inland waters; taking of fresh water aquatic animals;
+  gathering of freshwater animals.
+  Class 032: Aquaculture
+Description:
+  This group includes aquaculture (or aquafarming), i.e. the production process involving the
+  culturing or farming (including harvesting) of aquatic organisms(fish, molluscs, crustaceans,
+  plants, crocodiles alligators and amphibians) using techniques designed to increase the production
+  of the organisms in question beyond the natural capacity of the environment (for example regular
+  stocking, feeding and protection from predators). Culturing/farming refers to the rearing up to
+  their juvenile and/or adult phase under captive conditions of the above organisms. In addition,
+  aquaculture also encompasses individual, corporate or state ownership of the individual organisms
+  throughout the rearing or culture stage, up to and including harvesting.
+    Group 0321: Marine Aquaculture
+Description:
+  includes fish farming in sea water including farming of marine ornamental fish; growing of laver and
+  other edible sea weeds; culture of crustaceans, bivalves, other molluscs and other aquatic animals
+  in sea water; aquaculture activities in salt water filled tanks or reservoirs; operation of fish
+  hatcheries; operation of marine worm farms.
+    Group 0322: Fresh Water Aquaculture
+Description:
+  fish farming in freshwater including farming of freshwater ornamental fish; culture of fresh water
+  crustaceans, bivalves, other molluscs and other aquatic animals; operation of fish hatcheries;
+  farming of frogs.
+Division 04: Subsistence Agriculture (S)
+
+  Class 041: Growing of Crops (S)
+Description:
+  A crop A crop is any cultivated plant, fungus, or alga that is harvested for food, clothing,
+  livestock fodder, biofuel, medicine, or other uses.
+    Group 0411: Traditional or Subsistence Crop Farming (S)
+Description:
+  Major crops include maize (corn), sorghum, millet, beans, sugarcane, pumpkin, wheat, rice, cassa-
+  va, soybeans, hay, potatoes and cotton.
+    Group 0412: Growing of Vegetables
+Description:
+  A vegetable is an edible plant or its part, intended for cooking or eating raw. Vegetables are most
+  often consumed as salads or cooked in savory or salty dishes, and these include cabbage, carrots,
+  spinach,
+  Class 042: Rearing of Animals (S)
+Description:
+  Livestock: These are domesticated animals raised in an agricultural setting to produce commodities
+  such as food, milk and fiber. This article does not discuss poultry or farmed fish, although
+  these, especially poultry, are commonly included within the meaning of “livestock”. Livestock are
+  generally raised for subsistence purposes. Raising animals (animal husbandry) is a component of
+  modern agriculture.
+    Group 0421: Traditional or Subsistence Cattle Farming (S)
+Description:
+  raising and breeding of cattle for subsistence purposes
+    Group 0422: Traditional or Subsistence Small Stock Farming (S)
+Description:
+  raising and breeding of sheep and goats for meat, milk or any other purposes relevant to the
+  breeder.
+    Group 0423: Traditional Poultry Farming (S)
+Description:
+  raising and breeding of poultry: (fowls of any species, chickens, ducks, geese, turkeys and guinea
+  fowls) for production of eggs; operation of poultry hatcheries for subsistence purposes.
+    Group 0429: Other Traditional or Subsistence Farming (S)
+Description:
+  includes all other subsistence agricultural activities not stated in the above categories, such as
+  rearing of rabbits, rearing of wild animals such as buffalos, lions, kudus, impalas for meat or
+  any other purposes relevant to the breeder
+  Class 043: Mixed Traditional or Subsistence Farming (S)
+    Group 0430: Mixed Traditional or Subsistence Farming (S)
+Description:
+  This class includes the combined production of crops and animals without a specialized production of
+  crops or animals. The typical subsistence farm has a range of crops and animals needed by the
+  family to feed and clothe themselves during the year.

@@ -1,0 +1,292 @@
+INDUSTRY: WHOLESALE AND RETAIL TRADE; REPAIR OF MOTOR VEHICLES AND MOTORCYCLES
+==============================================================================
+
+Division 45: Wholesale and Retail Trade and Repair of Motor Vehicles and Motor Cycles
+
+  Class 451: Sale of Motor Vehicles
+    Group 4510: Sale of Motor Vehicles
+Description:
+  wholesale and retail sale of new and used vehicles (passenger motor vehicles, including specialized
+  passenger motor vehicles such as ambulances and minibuses, lorries, trailers and semi-trailers,
+  camping vehicles such as caravans and motor homes); wholesale and retail sale of off-road motor
+  vehicles; wholesale and retail sale by commission agents; car auctions. 73
+  Class 452: Maintenance and Repair of Motor Vehicles
+    Group 4520: Maintenance and Repair of Motor Vehicles
+Description:
+  maintenance and repair of motor vehicles; tyre and tube repair, fitting or replacement; anti- rust
+  treatment installation of parts and accessories not as part of the manufacturing process.
+  Class 453: Sale of Motor Vehicle Parts and Accessories
+    Group 4530: Sale of Motor Vehicle Parts and Accessories
+Description:
+  wholesale and retail sale of all kinds of parts, components, supplies, tools and accessories for
+  motor vehicles, such as: rubber tires and inner tubes for tires, spark plugs, batteries, lighting
+  equipment and electrical parts.
+  Class 454: Sale, Maintenance and Repair of Motor Cycles and Related Parts and Accessories
+    Group 4540: Sale, Maintenance and Repair of Motor Cycles and Related Parts and Accessories
+Description:
+  and Accessories: wholesale and retail sale of motorcycles, including mopeds; wholesale and retail
+  sale of parts and accessories for motorcycles; maintenance and repair of motorcycles.
+Division 46: Wholesale Trade, except of Motor Vehicles and Motor Cycles
+
+  Class 461: Wholesale on a Fee or Contract Basis
+    Group 4610: Wholesale on a Fee or Contract Basis
+Description:
+  activities of commission agents and all other wholesalers who trade on behalf and on the account of
+  others; activities of those involved in bringing sellers and buyers together or undertaking
+  commercial transactions on behalf of a principal which is sale of : (agricultural raw materials,
+  live animals, textile raw materials and semi-finished goods, fuels, ores, metals and industrial
+  chemicals, including fertilizers, food, beverages and tobacco, textiles, clothing, fur, footwear
+  and leather goods, timber and building materials, machinery, including office machinery and
+  computers, industrial equipment, ships and aircraft, furniture, household goods and hardware).
+  Class 462: Wholesale of Agricultural Raw Materials and Live Animals
+    Group 4620: Wholesale of Agricultural Raw Materials and Live Animals
+Description:
+  wholesale of grains and seeds; wholesale of oleaginous fruits; wholesale of flowers and plants;
+  wholesale of unmanufactured tobacco; wholesale of live animals; wholesale of hides and skins;
+  wholesale of leather; wholesale of agricultural material, waste, residues and by-products used for
+  animal feed.
+  Class 463: Wholesale of Food, Beverages and Tobacco
+    Group 4630: Wholesale of Food, Beverages and Tobacco
+Description:
+  wholesale of fruit and vegetables; wholesale of dairy products; wholesale of eggs and egg products;
+  wholesale of edible oils and fats of animal or vegetable origin; wholesale of meat and meat
+  products; wholesale of fishery products; wholesale of sugar, chocolate and sugar confectionery;
+  wholesale of bakery products; wholesale of beverages; wholesale of coffee, tea, cocoa and spices;
+  wholesale of tobacco products; buying of wine in bulk and bottling without transformation;
+  wholesale of feed for pet animals. 74
+  Class 464: Wholesale of Household Goods
+    Group 4641: Wholesale of Textiles, Clothing and Footwear
+Description:
+  wholesale of yarn; wholesale of fabrics; wholesale of household linen; wholesale of haberdashery:
+  needles, sewing thread; wholesale of clothing, including sports clothes; wholesale of clothing
+  accessories such as gloves, ties and braces; wholesale of footwear; wholesale of fur articles;
+  wholesale of umbrellas.
+    Group 4649: Wholesale of Other Household Goods
+Description:
+  wholesale of household furniture; wholesale of household appliances; wholesale of consumer
+  electronics; wholesale of lighting equipment; wholesale of cutlery; wholesale of china and
+  glassware; wholesale of woodenware, wickerwork and cork ware; wholesale of pharmaceutical and
+  medical goods; wholesale of perfumeries, cosmetics and soaps; wholesale of bicycles and their
+  parts and accessories; wholesale of stationery, books, magazines and newspapers; wholesale of
+  photographic and optical goods (e.g. sunglasses, binoculars, magnifying glasses); wholesale of
+  recorded audio and video tapes, CDs, DVDs; wholesale of leather goods and travel accessories;
+  wholesale of watches, clocks and jewellery; wholesale of musical instruments, games and toys,
+  sports goods.
+  Class 465: Wholesale of Machinery, Equipment and Supplies
+    Group 4651: Wholesale of Computers, Computer Peripheral Equipment and Software
+Description:
+  Software: wholesale of computers and computer peripheral equipment; wholesale of software.
+    Group 4652: Wholesale of Electronic and Telecommunications Equipment and Parts
+Description:
+  and Parts: wholesale of electronic valves and tubes; wholesale of semiconductor devices; wholesale
+  of microchips and integrated circuits; wholesale of printed circuits; wholesale of blank audio and
+  video tapes and diskettes, magnetic and optical disks (CDs, DVDs); wholesale of telephone and
+  communications equipment.
+    Group 4653: Wholesale of Agricultural Machinery, Equipment and Supplies
+Description:
+  wholesale of agricultural machinery and equipment; lawn mowers.
+    Group 4659: Wholesale of Other Machinery and Equipment
+Description:
+  wholesale of office machinery and equipment, except computers and computer peripheral equipment;
+  wholesale of office furniture; wholesale of transport equipment except motor vehicles, motorcycles
+  and bicycles; wholesale of production-line robots; wholesale of wires and switches and other
+  installation equipment for industrial use; wholesale of other electrical material such as
+  electrical motors, transformers; wholesale of machine tools of any type and for any material;
+  wholesale of other machinery for use in industry, trade and navigation and other Services;
+  wholesale of computer-controlled machine tools; wholesale of computer-controlled machinery for the
+  textile industry and of computer-controlled sewing and knitting machines; wholesale of measuring
+  instruments and equipment 75
+  Class 466: Other Specialised Wholesale
+    Group 4661: Wholesale of Solid, Liquids and Gaseous Fuels and Related Products
+Description:
+  wholesale of fuels, greases, lubricants, oils such as: (charcoal, coal, coke, fuel wood, naphtha,
+  crude petroleum, crude oil, diesel fuel, gasoline, fuel oil, heating oil, kerosene, liquefied
+  petroleum gases, butane and propane gas, lubricating oils and greases, refined petroleum products)
+    Group 4662: Wholesale of Metals and Metal Ores
+Description:
+  wholesale of ferrous and non- ferrous metal ores; wholesale of ferrous and non-ferrous metals in
+  primary forms; wholesale of ferrous and non-ferrous semi-finished metal products; wholesale of
+  gold and other precious metals.
+    Group 4663: Wholesale of Construction Materials, Hardware, Plumbing and Heating Equipment and Supplies
+Description:
+  Heating Equipment and Supplies: wholesale of wood in the rough; wholesale of products of primary
+  processing of wood; wholesale of paint and varnish; wholesale of construction materials; wholesale
+  of wallpaper and floor coverings; wholesale of flat glass; wholesale of hardware and locks;
+  wholesale of fittings and fixtures; wholesale of hot water heaters; wholesale of sanitary
+  equipment (baths, washbasins, toilets and other sanitary porcelain) ; wholesale of sanitary
+  installation equipment (tubes, pipes, fittings, taps, T-pieces, connections, rubber pipes);
+  wholesale of tools such as hammers, saws, screwdrivers and other hand tools.
+    Group 4669: Wholesale of Waste and Scrap and Other Products NEC
+Description:
+  wholesale of industrial chemicals; wholesale of fertilizers and agrochemical products; wholesale of
+  plastic materials in primary forms ; wholesale of rubber; wholesale of textile fibres; wholesale
+  of paper in bulk; wholesale of precious stones; wholesale of metal and non-metal waste and scrap
+  and materials for recycling, including collecting, sorting, separating, stripping of used goods
+  such as cars in order to obtain reusable parts, packing and repacking, storage and delivery, but
+  without a real transformation process. Additionally, the purchased and sold waste has a remaining
+  value; dismantling of automobiles, computers, televisions and other equipment to obtain and re-
+  sell usable parts.
+  Class 469: Non- Specialised Wholesale Trade
+    Group 4690: Non- Specialised Wholesale Trade
+Description:
+  wholesale of a variety of goods without any particular specialization.
+  Class 466: Other Specialised Wholesale
+    Group 4661: Wholesale of Solid, Liquids and Gaseous Fuels and Related Products
+Description:
+  wholesale of fuels, greases, lubricants, oils such as: (charcoal, coal, coke, fuel wood, naphtha,
+  crude petroleum, crude oil, diesel fuel, gasoline, fuel oil, heating oil, kerosene, liquefied
+  petroleum gases, butane and propane gas, lubricating oils and greases, refined petroleum products)
+    Group 4662: Wholesale of Metals and Metal Ores
+Description:
+  wholesale of ferrous and non- ferrous metal ores; wholesale of ferrous and non-ferrous metals in
+  primary forms; wholesale of ferrous and non-ferrous semi-finished metal products; wholesale of
+  gold and other precious metals.
+    Group 4663: Wholesale of Construction Materials, Hardware, Plumbing and Heating Equipment and Supplies
+Description:
+  Heating Equipment and Supplies: wholesale of wood in the rough; wholesale of products of primary
+  processing of wood; wholesale of paint and varnish; wholesale of construction materials; wholesale
+  of wallpaper and floor coverings; wholesale of flat glass; wholesale of hardware and locks;
+  wholesale of fittings and fixtures; wholesale of hot water heaters; wholesale of sanitary
+  equipment (baths, washbasins, toilets and other sanitary porcelain) ; wholesale of sanitary
+  installation equipment (tubes, pipes, fittings, taps, T-pieces, connections, rubber pipes);
+  wholesale of tools such as hammers, saws, screwdrivers and other hand tools.
+    Group 4669: Wholesale of Waste and Scrap and Other Products NEC
+Description:
+  wholesale of industrial chemicals; wholesale of fertilizers and agrochemical products; wholesale of
+  plastic materials in primary forms ; wholesale of rubber; wholesale of textile fibres; wholesale
+  of paper in bulk; wholesale of precious stones; wholesale of metal and non-metal waste and scrap
+  and materials for recycling, including collecting, sorting, separating, stripping of used goods
+  such as cars in order to obtain reusable parts, packing and repacking, storage and delivery, but
+  without a real transformation process. Additionally, the purchased and sold waste has a remaining
+  value; dismantling of automobiles, computers, televisions and other equipment to obtain and re-
+  sell usable parts.
+  Class 469: Non- Specialised Wholesale Trade
+    Group 4690: Non- Specialised Wholesale Trade
+Description:
+  wholesale of a variety of goods without any particular specialization.
+Division 47: Retail Trade, except of Motor Vehicles and Motor Cycles
+
+  Class 471: Retail Trade in Non-Specialised Stores
+    Group 4711: Retail Trade in Non-Specialised Stores with Food, Beverages and Tobacco
+Description:
+  Tobacco: retail sale of a large variety of goods of which, however, food products, beverages or
+  tobacco should be predominant; retail sale activities of general stores that have, apart from
+  their main sales of food products, beverages or tobacco, several other types of goods such as
+  wearing apparel, furniture, appliances, hardware, cosmetics. 76
+    Group 4719: Other Retail Trade in Non-Specialised Stores
+Description:
+  retail sale of a large variety of goods of which food products, beverages or tobacco are not
+  predominant, such as: retail sale activities of department stores carrying a general line of
+  goods, including wearing apparel, furniture, appliances, hardware, cosmetics, jewellery, toys,
+  sports goods.
+  Class 472: Retail Sale of Food, Beverages and Tobacco in Specialised Stores
+    Group 4721: Retail Sale of Food in Specialised Stores ,
+Description:
+  retail sale of any the following types of goods: (fresh or preserved fruit and vegetables, dairy
+  products and eggs, meat and meat products, fish, other seafood and products thereof, bakery
+  products, sugar confectionery, other food products).
+    Group 4722: Retail Sale of Beverages in Specialised Stores
+Description:
+  retail sale of beverages: (alcoholic beverages, non-alcoholic beverages).
+    Group 4723: Retail Sale of Tobacco in Specialised Stores
+Description:
+  retail sale of tobacco and retail sale of tobacco products.
+  Class 473: Retail Sale of Automotive Fuel in Specialised Stores
+    Group 4730: Retail Sale of Automotive Fuel in Specialised Stores
+Description:
+  retail sale of fuel for motor vehicles and motorcycles; retail sale of lubricating products and
+  cooling products for motor vehicles
+  Class 474: Retail Sale of Information and Communications Equipment in Specialised Stores
+    Group 4741: Retail Sale of Computers, Peripheral Units, Software and Telecommunications Equipment in Specialised Stores
+Description:
+  Telecommunications Equipment in Specialized Stores: retail sale of computers; retail sale of
+  computer peripheral equipment; retail sale of video game consoles; retail sale of non-customized
+  software, including video games; retail sale of telecommunication equipment
+    Group 4742: Retail Sale of Audio and Video Equipment in Specialised Stores
+Description:
+  retail sale of radio and television equipment; retail sale of stereo equipment; retail sale of CD
+  and DVD players and recorders.
+  Class 475: Retail Sale of Other Household Equipment in Specialised Stores
+    Group 4751: Retail Sale of Textiles in Specialised Stores
+Description:
+  retail sale of fabrics; retail sale of knitting yarn; retail sale of basic materials for rug,
+  tapestry or embroidery making; retail sale of textiles; retail sale of haberdashery: needles,
+  sewing thread.
+    Group 4752: Retail Sale of Hardware, Paints and Glass in Specialised Stores
+Description:
+  retail sale of hardware; retail sale of paints, varnishes and lacquers; retail sale of flat glass;
+  retail sale of other building material such as bricks, wood, sanitary equipment; retail sale of
+  do-it-yourself material and equipment; retail sale of lawnmowers, however operated; retail sale of
+  saunas. 77
+    Group 4753: Retail Sale of Carpets, Rugs, Wall and Floor Coverings in Specialised Stores
+Description:
+  Stores: retail sale of carpets and rugs; retail sale of curtains and net curtains; retail sale of
+  wallpaper and floor coverings.
+    Group 4759: Retail Sale of Electrical Household Appliances, Furniture, Lighting Equipment and Other Household Articles in Specialised Stores
+Description:
+  Equipment and Other Household Articles in Specialized Stores: retail sale of household furniture;
+  retail sale of articles for lighting; retail sale of household utensils and cutlery, crockery,
+  glassware, china and pottery; retail sale of wooden, cork and wickerwork goods; retail sale of
+  household appliances; retail sale of musical instruments and scores; retail sale of security
+  systems, such as locking devices, safes, and vaults, without installation or maintenance services;
+  retail sale of household articles and equipment.
+  Class 476: Retail Sale of Cultural and Recreational Goods in Specialised Stores
+    Group 4761: Retail Sale of Books, Newspapers and Stationery in Specialised Stores
+Description:
+  Stores: retail sale of books of all kinds; retail sale of newspapers and stationery; retail sale of
+  office supplies such as pens, pencils, paper.
+    Group 4762: Retail Sale of Music and Video Recordings in Specialised Stores
+Description:
+  retail sale of musical records, audio tapes, compact discs and cassettes; retail sale of video tapes
+  and DVDs; retail sale of blank tapes and discs.
+    Group 4763: Retail Sale of Sporting Equipment in Specialised Stores
+Description:
+  retail sale of sports goods, fishing gear, camping goods, boats and bicycles.
+    Group 4764: Retail Sale of Games and Toys in Specialised Stores
+Description:
+  retail sale of games and toys, made of all materials.
+  Class 477: Retail Sale of Other Goods in Specialised Stores
+    Group 4771: Retail Sale of Clothing, Footwear and Leather Articles in Specialised Stores
+Description:
+  Stores: retail sale of articles of clothing; retail sale of articles of fur; retail sale of clothing
+  accessories such as gloves, ties, braces; retail sale of umbrellas; retail sale of footwear;
+  retail sale of leather goods; retail sale of travel accessories of leather and leather
+  substitutes.
+    Group 4772: Retail Sale of Pharmaceutical and Medical Goods, Cosmetics and Toilet Articles in Specialised Stores
+Description:
+  Toilet Articles in Specialized Stores: retail sale of pharmaceuticals; retail sale of medical and
+  orthopaedic goods; retail sale of perfumery and cosmetic articles.
+    Group 4773: Other Retail Sale of New Goods in Specialised Stores
+Description:
+  retail sale of photographic, optical and precision equipment; activities of opticians; retail sale
+  of watches, clocks and jewellery; retail sale of flowers, plants, seeds, fertilizers, pet animals
+  and pet food; retail sale of souvenirs, craftwork and religious articles; activities of commercial
+  art galleries; retail sale of household fuel oil, bottled gas, coal and fuel wood; entail sale of
+  cleaning materials; retail sale of weapons and ammunition; retail sale of stamps and coins; retail
+  sale of non-food products. 78
+    Group 4774: Retail Sale of Second-Hand Goods
+Description:
+  retail sale of second-hand books; retail sale of other second-hand goods; retail sale of antiques;
+  activities of auctioning houses (retail).
+  Class 478: Retail Sale Via Stalls and Markets
+    Group 4781: Retail Sale Via Stalls and Markets of Food, Beverages and Tobacco Products
+Description:
+  Products: retail sale of food, beverages and tobacco products via stalls or markets.
+    Group 4782: Retail Sale Via Stalls and Markets of Textiles, Clothing and Footwear
+Description:
+  retail sale of textiles, clothing and footwear via stalls or markets.
+    Group 4789: Retail Sale Via Stalls and Markets of Other Goods
+Description:
+  retail sale of other goods via stalls or markets, such as: (carpets and rugs, books, games and toys,
+  household appliances and consumer electronics, music and video recordings).
+  Class 479: Retail Trade Not in Stores, Stalls or Markets
+    Group 4791: Retail Sale of Via Mail Order Houses or Via Internet
+Description:
+  retail sale of any kind of product by mail order; retail sale of any kind of product over the
+  Internet; direct sale via television, radio and telephone; Internet retail auctions.
+    Group 4799: Other Retail Sale Not in Stores, Stalls or Markets
+Description:
+  retail sale of any kind of product in any way that is not included in previous classes: (by direct
+  sales or door-to-door sales persons, through vending machines); direct selling of fuel (heating
+  oil, fire wood), delivered directly to the customer’s premises; activities of non-store auctions;
+  retail sale by commission agents

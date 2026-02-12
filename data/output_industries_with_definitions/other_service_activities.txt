@@ -1,0 +1,120 @@
+INDUSTRY: OTHER SERVICE ACTIVITIES
+==================================
+
+Division 94: Activities of Membership Organisations
+
+  Class 941: Activities of Business, Employers and Professional Membership Organisations
+    Group 9411: Activities of Business and Employers Membership Organisations
+Description:
+  activities of organizations whose members’ interests centre on the development and prosperity of
+  enterprises in a particular line of business or trade, including farming, or on the economic
+  growth and climate of a particular geographical area or political subdivision without regard 108
+  activities of chambers of commerce, guilds and similar organizations; dissemination of
+  information, representation before government agencies, public relations and labour negotiations
+  of business and employer organizations.
+    Group 9412: Activities of Professional Membership Organisations
+Description:
+  activities of organizations whose members’ interests centre chiefly on a particular scientific
+  discipline, professional practice or technical field, such as medical associations, legal
+  associations, accounting associations, engineering associations, architects associations;
+  activities of associations of specialists engaged in cultural activities, such as associations of
+  writers, painters, performers of various kinds, journalists; dissemination of information, the
+  establishment and supervision of standards of practice, representation before government agencies
+  and public relations of professional organizations; activities of learned societies.
+  Class 942: Activities of Trade Unions
+    Group 9420: Activities of Trade Unions
+Description:
+  promoting of the interests of organized labor and union employees; activities of associations whose
+  members are employees interested chiefly in the representation of their views concerning the
+  salary and work situation, and in concerted action through organization; activities of single
+  plant unions, of unions composed of affiliated branches and of labour organizations composed of
+  affiliated unions on the basis of trade, region, organizational structure or other criteria.
+  Class 949: Activities of Other Membership Organisations
+    Group 9491: Activities of Religious Organisations
+Description:
+  activities of religious organizations or individuals providing services directly to worshippers in
+  churches, mosques, temples, synagogues or other places; activities of organizations providing
+  monastery and convent services; religious retreat activities; religious funeral service
+  activities.
+    Group 9492: Activities of Political Organisations
+Description:
+  activities of political organizations and auxiliary organizations such as young people’s auxiliaries
+  associated with a political party. These organizations chiefly engage in influencing decision-
+  taking in public governing bodies by placing members of the party or those sympathetic to the
+  party in political office and involve the dissemination of information, public relations, fund-
+  raising etc.
+    Group 9499: Activities of Other Membership Organisations NEC
+Description:
+  activities of organizations not directly affiliated to a political party furthering a public cause
+  or issue by means of public education, political influence, fund- raising; automobile
+  associations; associations for the purpose of social acquaintanceship such as rotary clubs,
+  lodges; associations of youth, young persons’ associations, student associations, clubs and
+  fraternities; associations for the pursuit of a cultural or recreational activity or hobby (other
+  than sports or games), e.g. poetry, literature and book 109 art clubs, craft and collectors’
+  clubs, social clubs, carnival clubs; grant giving activities by membership organizations or
+  others.
+Division 95: Repair of Computers and Personal and Household Goods
+
+  Class 951: Repair of Computers and Communication Equipment
+    Group 9511: Repair of Computers and Peripheral Equipment
+Description:
+  includes the repair of electronic equipment, such as computers and computing machinery and
+  peripheral equipment; repair and maintenance; computer terminals like automatic teller machines
+  (ATM’s); point-of-sale (POS) terminals, not mechanically operated hand-held computers (PDA’s).
+    Group 9512: Repair of Communication Equipment
+Description:
+  repair and maintenance of communications equipment such as cordless telephones, cellular phones,
+  carrier equipment modems, fax machines, communications transmission equipment (e.g. routers,
+  bridges, and modems), two-way radios, commercial TV and video cameras.
+  Class 952: Repair of Personal and Household Goods
+    Group 9521: Repair of Consumer Electronics
+Description:
+  repair and maintenance of consumer electronics such as television, radio receivers, video cassette
+  recorders (VCR), CD players, household-type video cameras.
+    Group 9522: Repair of Household Appliances and Home and Garden Equipment
+Description:
+  repair and servicing of household appliances like refrigerators, stoves, washing machines, clothes
+  dryers, room air conditioners; repair and servicing of home and garden equipment, lawnmowers,
+  edgers, snow- and leaf- blowers, trimmers.
+    Group 9523: Repair of Footwear and Leather Goods
+Description:
+  repair and maintenance of footwear; fitting of heels; repair and maintenance of leather goods.
+    Group 9524: Repair of Furniture and Home Furnishings
+Description:
+  reupholstering, refinishing, repairing and restoring of furniture and home furnishings including
+  office furniture; assembly of self-standing furniture.
+    Group 9529: Repair of Other Personal and Household Goods
+Description:
+  repair of bicycles; repair and alteration of clothing; repair and alteration of jewellery; repair of
+  watches, clocks and their parts such as watchcases and housings of all materials; movements,
+  chronometers; repair of sporting goods (except sporting guns); repair of books; repair of musical
+  instruments; repair of toys and similar articles; repair of other personal and household goods;
+  piano-tuning.
+Division 96: Other Personal Service Activities
+
+  Class 960: Other Personal Service Activities
+    Group 9601: Washing and Dry-Cleaning of Textiles and Fur Products
+Description:
+  laundering and dry-cleaning, pressing etc., of all kinds of clothing (including fur) and textiles,
+  provided by mechanical equipment, by hand or by self- service coin-operated machines, whether for
+  the general public or for industrial or commercial clients; laundry collection and delivery;
+  carpet and rug shampooing and drapery and curtain cleaning, whether on clients’ premises or not;
+  provision of linens, work uniforms and related items by laundries; diaper supply services; repair
+  and minor alteration of garments or other textile articles when done in connection with cleaning.
+    Group 9602: Hairdressing and Other Beauty Treatment
+Description:
+  hair washing, trimming and cutting, setting, dyeing, tinting, waving, straightening and similar
+  activities for men and women; shaving and beard trimming; facial massage, manicure and pedicure,
+  make-up.
+    Group 9603: Funeral and Related Activities
+Description:
+  burial and incineration of human or animal corpses and related activities; maintenance of graves and
+  mausoleums; rental or sale of graves.
+    Group 9609: Other Personal Service Activities NEC
+Description:
+  activities of Turkish baths, sauna and steam baths, solariums, reducing and slandering salons,
+  massage salons; astrological and spiritualists’ activities; social activities such as escort
+  services, dating services, services of marriage bureau; pet care services such as boarding,
+  grooming, sitting and training pets; genealogical organizations; shoe shiners, porters, valet car
+  parker; concession operation of coin-operated personal service machines (photobooths, weighing
+  machines, machines for checking blood pressure, coin-operated lockers).

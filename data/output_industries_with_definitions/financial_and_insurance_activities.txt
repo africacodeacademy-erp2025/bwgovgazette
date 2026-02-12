@@ -1,0 +1,125 @@
+INDUSTRY: FINANCIAL AND INSURANCE ACTIVITIES
+============================================
+
+Division 64: Financial Service Activities, Except Insurance and Pension Funding
+
+  Class 641: Monetary Intermediation
+    Group 6411: Central banking
+Description:
+  This class includes Issuing and managing the country’s currency, Monitoring and control of the money
+  supply, Taking deposits that are used for clearance between financial institutions, Supervising
+  banking operations, holding the country’s international reserves, acting as banker to the
+  government. The activities of central banks will vary for institutional reasons.
+    Group 6419: Other Monetary Intermediation
+Description:
+  This class includes the receiving of deposits and /or close substitutes for deposits and extending
+  of credit or lending funds. The granting of credit can take a variety of forms, such as loans,
+  mortgages, credit cards etc. These activities are generally carried out by monetary institutions
+  other than central banks, such as Banks, Savings banks and Credit unions. This class also includes
+  postal giro and postal savings bank activities, Credit granting for house purchase by specialised
+  deposit-taking institutions and Money order activities
+  Class 642: Activities on Holding Companies
+    Group 6420: Activities on Holding Companies
+Description:
+  This class includes the activities of holding companies, i.e. units that hold the assets (owning
+  controlling-levels of equity) of a group of subsidiary corporations and whose principal activity
+  is owning the group. The holding companies in this class do not provide any other service to the
+  businesses in which the equity is held, i.e. they do not administer or manage other units.
+  Class 643: Trusts, Funds and Similar Financial Entities
+    Group 6430: Trusts, Funds and Similar Financial Entities
+Description:
+  This class includes legal entities organised to pool securities or other financial assets, without
+  managing, on behalf of shareholders or beneficiaries. The portfolios are customised to achieve
+  specific investment characteristics, such as diversification, risk, rate, rate of return and
+  private volatility. These entities earn interest, dividends and other property income, but have
+  little or no employment and no revenue from the sale of services. This class includes Open-end
+  investment funds, Closed-end investment funds, Truths, estates or agency accounts, administered on
+  behalf of the beneficiaries under the terms of a trust agreement, will or agency agreement and
+  Unit investment trust funds
+  Class 649: Other Financial Service Activities, except Insurance and Pension Funding Activities NEC
+    Group 6491: Financial Leasing
+Description:
+  This class includes leasing where the term approximately covers the expected life of the asset and
+  the lessee acquires substantially all the benefits of its use and takes all the risks associated
+  with its ownership. The ownership of the asset may or may not eventually be transferred. Such
+  leases cover all or virtually all costs including interest. 89
+    Group 6492: Other Credit Granting
+Description:
+  This class includes financial service activities primarily concerned with making loans by
+  institutions not involved in monetary intermediation, where the granting of credit can take a
+  variety of forms, such as loans, mortgages, credit cards etc., providing the following types of
+  services Granting of consumer credit, International trade financing, Provision of long-term
+  finance to industry by individual banks, Money lending outside the banking system, Credit granting
+  for house purchase by specialized non-depository institutions, Pawnshops and pawnbrokers.
+    Group 6499: Other Financial Service Activities except Insurance and Pending Funding Activities
+Description:
+  Funding Activities, n.e.c This class includes other financial service activities primarily concerned
+  with distributing funds other than by making loans, Factoring activities, Writing of swaps,
+  options and other hedging arrangements, Activities of viatical settlement companies, Own-account
+  investment activities, such as by venture capital companies and investment clubs.
+Division 65: Insurance, Reinsurance and Pension Funding, except Compulsory Social Security
+
+  Class 651: Insurance
+    Group 6511: Life Insurance
+Description:
+  This class includes underwriting annuities and life insurance policies, disability income insurance
+  policies, and accidental death and dismemberment insurance policies (with or without a substantial
+  savings element).
+    Group 6512: Non-Life Insurance
+Description:
+  This class includes provision of insurance services other than life insurance, Accident and fire
+  insurance, Health insurance, Travel insurance, Property insurance, Motor, marine, aviation and
+  transport insurance, Pecuniary loss and liability insurance.
+  Class 652: Reinsurance
+    Group 6520: Reinsurance
+Description:
+  This class includes activities of assuming all or part of the risk associated with existing
+  insurance policies originally underwritten by other insurance carriers
+  Class 653: Pension Funding
+    Group 6530: Pension Funding
+Description:
+  This class includes legal entities (i.e. funds, plans and/or programmes) organised to provide
+  retirement income benefits exclusively for the sponsor’s employees or members. This includes
+  pension plans with de- fined benefits, as well as individual plans where benefits are simply de-
+  fined through the member’s contribution. This class also includes Employee benefit plans, Pension
+  funds and plans, and Retirement plans. 90
+Division 66: Activities Auxiliary to Financial Services and Insurance Activities
+
+  Class 661: Activities Auxiliary to Financial Service Activities, except Insurance and Pension Funding
+    Group 6611: Administration of Financial markets
+Description:
+  This class includes operation and supervision of financial markets oth- er than by public
+  authorities, such as Commodity contracts exchanges, Futures commodity contracts exchanges,
+  Securities exchanges, Stock exchanges, Stock or commodity options exchanges
+    Group 6612: Security and Commodity Contract Brokerage
+Description:
+  This class includes dealing in financial markets on behalf of others (e.g. stock broking) and
+  related activities, Security brokerage, Commodity contracts brokerage and Activities of bureau de
+  change.
+    Group 6619: Other Activities Auxiliary to Financial Service Activities
+Description:
+  This class includes activities auxiliary to financial service activities not elsewhere classified,
+  such as financial transaction processing and settlement activities, including for credit card
+  transactions, Investment advisory services, Activities of mortgage advisers and brokers. This
+  class also includes Trustee, fiduciary and custody services on a fee or contract basis
+  Class 662: Activities Auxiliary to Insurance and Pension Funding
+    Group 6621: Risk and Damage Evaluation
+Description:
+  This class includes the provision of administration services of insurance, such as assessing and
+  settling insurance claims. This class also includes assessing insurance claims, Claims adjusting,
+  Risk assessing, Risk and damage evaluation, Average and loss adjusting; settling insurance claims
+    Group 6622: Activities of Insurance Agents and brokers
+Description:
+  This class includes activities of insurance agents and brokers (insurance intermediaries) in
+  selling, negotiating or soliciting of annuities and insurance and reinsurance policies
+    Group 6629: Other Activities Auxiliary to Insurance and Pension Funding
+Description:
+  This class includes Activities involved in or closely related to insurance and pension funding
+  (except claims adjusting and activities of insurance agents), Salvage administration and Actuarial
+  services
+  Class 663: Fund Management Activities
+    Group 6630: Fund Management Activities
+Description:
+  This class includes portfolio and fund management activities on a fee or contract basis, for
+  individuals, businesses and others. This class also includes Management of pension funds,
+  Management of mutual funds and Management of other investment funds 91

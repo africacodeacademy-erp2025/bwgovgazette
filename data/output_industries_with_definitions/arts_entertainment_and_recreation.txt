@@ -1,0 +1,91 @@
+INDUSTRY: ARTS, ENTERTAINMENT AND RECREATION
+============================================
+
+Division 90: Creative, Arts and Entertainment Activities
+
+  Class 900: Creative, Arts and Entertainment Activities
+    Group 9001: Music Activities, Composers, Producers and Songwriters
+    Group 9002: Literature, Writers and Editors
+Description:
+  Activities of individual writers, for all subjects including fictional writing, technical writing;
+  activities of independent journalists; restoring of works of art such as paintings 106
+    Group 9003: Visual Arts, Sculptors and Illustrators
+Description:
+  Activities of sculptors, painters, cartoonists, engravers, etchers
+    Group 9004: Performing Arts, Dancers and Event Managers
+Description:
+  This includes the production and promotion of, and participation in, live performances, events or
+  exhibits intended for public viewing; the provision of artistic, creative or technical skills for
+  the production of artistic products and live performances: stage-set designers and builders,
+  operation of concert and theatre halls and other arts facilities. Production of live theatrical
+  presentations, concerts and opera or dance productions and other stage productions are included
+  here.
+    Group 9005: Film, Actors and Associated Agents
+Description:
+  Activities of groups, circuses or companies, orchestras or bands, activities of individual artists
+  such as authors, actors, directors, musi- cians, lecturers or speakers,
+Division 91: Libraries, Archives, Museums and Other Cultural Activities
+
+  Class 910: Library and Archives Activities
+    Group 9101: Library and Archives Activities
+Description:
+  documentation and information activities of libraries of all kinds, reading, listening and viewing
+  rooms, public archives providing service to the general public or to a special clientele, such as
+  students, scientists, staff, members as well as operation of government archives:(organization of
+  a collection, whether specialized or not, cataloguing collections, lending and storage of books,
+  maps, periodicals, films, records, tapes, works of art, retrieval activities in order to comply
+  with information requests); stock photo libraries and services.
+    Group 9102: Museums Activities and Operation of Historical Sites and Buildings
+Description:
+  operation of museums of all kinds: (art museums, museums of jewellery, furniture, costumes,
+  ceramics, silverware, natural history, science and technological museums, historical museums,
+  including military museums, other specialized museums, open-air museums); operation of historical
+  sites and buildings.
+    Group 9103: Botanical and Zoological Gardens and Nature Reserve Activities
+Description:
+  operation of botanical and zoological gardens, including children’s zoos; operation of nature
+  reserves, including wildlife preservation
+Division 92: Gambling and Betting Activities
+
+  Class 920: Gambling and betting Activities
+    Group 9200: Gambling and betting Activities
+Description:
+  bookmaking and other betting operations; off-track betting; operation of casinos, including
+  “floating casinos”; sale of lottery tickets; operation (exploitation) of coin-operated gambling
+  machines; operation of virtual gambling web sites. 107
+Division 93: Sports Activities and Amusement and Recreational Activities
+
+  Class 931: Sports Activities
+    Group 9311: Operation of Sports Facilities
+Description:
+  operation of facilities for indoor or out- door sports events (open, closed or covered, with or
+  without spectator seating); organization and operation of outdoor or indoor sports events for
+  professionals or amateurs by organizations with own facilities.
+    Group 9312: Activities of Sports Clubs
+Description:
+  includes the activities of sports clubs, which, whether professional, semi-professional or amateur
+  clubs, give their members the opportunity to engage in sporting activities; operation of sports
+  clubs (football clubs, bowling clubs, swimming clubs, golf clubs, boxing clubs, body-building
+  clubs, winter sports clubs, chess clubs, track and field clubs, shooting clubs).
+    Group 9319: Other Sports Activities
+Description:
+  activities of producers or promoters of sports events, with or without facilities, activities of
+  individual own-account sportsmen and athletes, referees, judges, time-keepers; activities of
+  sports leagues and regulating bodies; activities related to promotion of sporting events;
+  activities of racing stables, kennels and garages; operation of sport fishing and hunting
+  preserves; activities of mountain guides; support activities for sport or recreational hunting and
+  fishing.
+  Class 932: Other Amusement and Recreational Activities
+    Group 9321: Activities of Amusement Parks and Theme Parks
+Description:
+  activities of amusement parks or theme parks, including the operation of a variety of attractions,
+  such as mechanical rides, water rides, games, shows, theme exhibits and picnic grounds.
+    Group 9329: Other Amusement and Recreational Activities NEC
+Description:
+  activities of recreation parks, beaches, including renting of facilities such as bathhouses,
+  lockers, chairs; operation of recreational transport facilities, e.g. marinas; operation of ski
+  hills; renting of leisure and pleasure equipment as an integral part of recreational facilities;
+  operation of fairs and shows of a recreational nature; operation of discotheques and dance floors;
+  operation (exploitation) of coin-operated games; other amusement and recreation activities (except
+  amusement parks and theme parks) not elsewhere classified; activities of producers or
+  entrepreneurs of live events other than arts or sports events, with or without facilities.

@@ -1,0 +1,34 @@
+INDUSTRY: ELECTRICITY, GAS, STEAM AND AIR CONDITIONING SUPPLY
+=============================================================
+
+Division 35: Electricity, Gas, Steam and Air Conditioning Supply
+
+  Class 351: Electric Power Generation, Transmission and distribution
+    Group 3510: Electric Power Generation, Transmission and distribution
+Description:
+  operation of generation facilities that produce electric energy, including thermal, nuclear,
+  hydroelectric, gas turbine, diesel and renewable; operation of transmission systems that convey
+  the electricity from the generation facility to the distribution system; operation of distribution
+  systems (i.e. consisting of lines, poles, meters, and wiring) that convey electric power received
+  from the generation facility or the transmission system to the final consumer; sale of electricity
+  to the user; activities of electric power brokers or agents that arrange the sale of electricity
+  via power distribution systems operated by others; operation of electricity and transmission
+  capacity exchanges for electric power.
+  Class 352: Manufacture of Gas, Distribution of Gaseous Fuels through mains
+    Group 3520: Manufacture of Gas, Distribution of Gaseous Fuels through mains
+Description:
+  manufacture of gas and the distribution of natural or synthetic gas to the consumer through a system
+  of mains; production of gas for the purpose of gas supply by carbonation of coal, from by-products
+  of agriculture or from waste; manufacture of gaseous fuels with a specified calorific value, by
+  purification, blending and other processes from gases of various types including natural gas;
+  transportation, distribution and supply of gaseous fuels of all kinds through a system of mains;
+  sale of gas to the user through mains; activities of gas brokers or agents that arrange the sale
+  of gas over gas distribution systems operated by others; commodity and transport capacity
+  exchanges for gaseous fuels.
+  Class 253: Steam and Air Conditioning Supply
+    Group 3530: Steam and Air Conditioning Supply
+Description:
+  production, collection and distribution of steam and hot water for heating, power and other
+  purposes; production and distribution of cooled air; production and distribution of chilled water
+  for cooling purposes; production of ice, including ice for food and non-food (e.g. cooling)
+  purposes. 69

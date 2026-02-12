@@ -1,0 +1,229 @@
+INDUSTRY: ADMINISTRATIVE AND SUPPORT SERVICE ACTIVITIES
+=======================================================
+
+Division 77: Rental and Leasing Activities
+
+  Class 771: Renting and Leasing of Motor Vehicles
+    Group 7710: Renting and Leasing of Motor Vehicles
+Description:
+  This class includes renting and operational leasing of the following types of vehicles; Passengers
+  cars (without drivers); Trucks, utility trailers and recreational vehicles.
+  Class 772: Renting and Leasing of Personal and Household Goods
+    Group 7721: Renting and Leasing of Recreational and Sports Goods
+Description:
+  This class includes renting of recreational and sports equipment; Pleasure boats, canoes, sailboats;
+  Bicycles; Beach chairs and umbrellas; Other sports equipment and Skis.
+    Group 7722: Renting of Video Tapes and Disks
+Description:
+  This class includes renting of video tapes, records, CDs, DVDs etc. 96
+    Group 7729: Renting and Leasing of Other Personal and Household Goods
+Description:
+  This class includes renting of all kinds of household or personal goods, to households or industries
+  (except recreational and sports equipment); Textiles, wearing apparel and footwear; Furniture,
+  pottery and glass, kitchen and tableware, electrical appliances and house wares; Jewellery,
+  musical instruments, scenery and costumes; Books, journals and magazines; Machinery and equipment
+  used by amateurs or as a hobby e.g. tools for home repairs; Flowers and plants and Electronic
+  equipment for household use.
+  Class 773: Renting and Leasing of Other Machinery, Equipment and Tangible Goods
+    Group 7730: Renting and Leasing of Other Machinery, Equipment and Tangible Goods
+Description:
+  Goods This class includes renting and operational leasing, without operator, of other machinery and
+  equipment that are generally used as capital goods by industries; Engines and turbines; Machine
+  tools; Mining and oilfield equipment; Professional radio, television and communication equipment;
+  Motion picture production equipment; Measuring and controlling equipment; Other scientific,
+  commercial and industrial machinery; Renting and operational leasing of land-transport equipment
+  (other than motor vehicles) without drivers; Motorcycles, caravans and campers; Railroad vehicles;
+  Renting and operational leasing of water- transport equipment (other than motor vehicles) without
+  drivers; Motorcycles, caravans and campers; Railroad vehicles; Renting and operational leasing of
+  water-transport equipment without operator; Commercial boats and ships; Renting and operational
+  leasing of air transport equipment without operator; Airplanes; Hot-air balloons; Renting and
+  operational leasing of water-transport equipment without operator; Commercial boats and ships;
+  Renting and operational leasing of air transport equipment without operator; Airplanes; Hot-air
+  balloons; Renting and operational leasing of agricultural and forestry machinery and equipment
+  without operator; Renting of products produced by class 2821, such as agricultural tractors;
+  Renting and operational leasing of construction and civil-engineering machinery and equipment
+  without operator; Crane lorries; Scaffolds and work platforms, without erection and dismantling;
+  Renting and operational leasing of office machinery and equipment without operator; Computers and
+  computer peripheral equipment; Duplicating machines, typewriters and word-processing machines;
+  Accounting machinery and equipment; cash registers, electronic calculators; Office furniture This
+  class also includes renting of accommodation or office containers; Renting of containers; Renting
+  of pallets and Renting of animals (e.g. herds, race horses)
+  Class 774: Leasing and Intellectual property and similar Products, except Copyrighted Works
+    Group 7740: Leasing and Intellectual property and similar Products, except Copyrighted Works
+Description:
+  righted Works This class includes the activities of allowing others to use intellectual property
+  products and similar products for which a royalty payment or licensing fee is paid to the owner of
+  the product (i.e. the asset holder). The leasing of these products can take various forms, such as
+  permission for reproduction, use in subsequent processes or products, operating businesses under a
+  franchise etc. 97 This class includes leasing of intellectual property products (except
+  copyrighted works, such as books or software); Receiving royalties or licensing fees for the use
+  of: Patented entities; Trademarks or service marks; Brand names; Mineral exploration and
+  evaluation and Franchise agreements.
+Division 78: Employment Activities
+
+  Class 781: Activities of Employment Placement Agencies
+    Group 7810: Activities of Employment Placement Agencies
+Description:
+  This class includes listing employment vacancies and referring or placing applicants for employment,
+  where the individuals referred or placed are not employees of the employment agencies. This class
+  also includes personnel search, selection referral and placement activities, including executive
+  placement and search activities; Activities of casting agencies and bureaus, such as theatrical
+  casting agencies; Activities of on-line employment placement agencies
+  Class 782: Temporary Employment Agency Activities
+    Group 7820: Temporary Employment Agency Activities
+Description:
+  This class includes Supplying workers to clients’ businesses for limited periods of time to
+  temporarily replace or supplement the working force of the client, where the individuals provided
+  are employees of the temporary help service unit. Units classified here do not provide direct
+  supervision of their employees at the clients’ work sites.
+  Class 783: Other Human Resources Provision
+    Group 7830: Other Human Resources Provision
+Description:
+  This class includes provision of human resources for client businesses; The provision of human
+  resources is typically done on a long-term or permanent basis and the units classified here may
+  perform a wide range of human resource and personnel management duties associated with this
+  provision. This units classified here represent the employer of record for the employees on
+  matters relating to payroll, taxes, and other fiscal and human resource issues, but they are not
+  responsible for direction and supervision of employees.
+Division 79: Travel Agency, Tour Operators, Reservation Services and Related Activities
+
+  Class 791: Travel Agency and Tour Operators Activities
+    Group 7911: Travel Agency Activities
+Description:
+  This class includes activities of agencies primarily engaged in selling travel, tour and
+  transportation and accommodation services to the gen- eral public and commercial clients.
+    Group 7912: Tour Operator Activities
+Description:
+  This class includes arranging and assembling tours that are sold through travel agencies or directed
+  by tour operators. The tours may include any or all of the following: Transportation,
+  Accommodation, Food and Visits to museums, historical or cultural sites, theatrical, musical or
+  sporting events 98
+  Class 799: Other Reservation Services and Related Activities
+    Group 7990: Other Reservation Services and Related Activities
+Description:
+  This class includes: Provision of other travel-related reservation services: Reservations for
+  transportation, hotels, restaurants, car rentals, entertainment and sport; Provision of time-share
+  exchange services; Ticket sales activities for theatrical, sports and other amusement and
+  entertainment events; Provision of visitor assistance services; Provision of travel information to
+  visitors; Activities of tourist guides and Tourism promotion activities.
+Division 80: Security and Investigation Activities
+
+  Class 801: Private Security Activities
+    Group 8010: Private Security Activities
+Description:
+  This class includes the provision of one or more of the following: guard and patrol services,
+  picking up and delivering money, receipts or other valuable items with personnel and equipment to
+  protect such properties while in transit. This class also includes armoured car services;
+  Bodyguard services; Poly- graph services; Fingerprinting services and Security guard services.
+  Class 802: Security Systems Services Activities
+    Group 8020: Security Systems Services Activities
+Description:
+  This class includes Monitoring or remote monitoring of electronic security alarm systems, such as
+  burglar and fire alarms, including their maintenance; Installing, repairing, rebuilding, and
+  adjusting mechanical or electronic locking devices, safes and security vaults. The units carrying
+  out these activities may also engage in selling such security systems, mechanical or electronic
+  locking devices, safes and security vaults.
+  Class 803: Investigation Activities
+    Group 8030: Investigation Activities
+Description:
+  This class includes Investigation and detective service activities of all private investigators,
+  independent of the type of client or purpose of investigation.
+Division 81: Services To Buildings and Landscape Activities
+
+  Class 811: Combined Facilities Support Activities
+    Group 8110: Combined Facilities Support Activities
+Description:
+  This class includes provision of a combination of support services within a client’s facility, such
+  as general interior cleaning, maintenance, trash disposal, guard and security, mail routing,
+  reception, laundry and related services to support operations within facilities. Units classified
+  here provide operating staff to carry out these support activities, but are not involved with or
+  responsible for the core business or activities of the client.
+  Class 812: Cleaning Activities
+    Group 8121: General Cleaning of Buildings
+Description:
+  This class includes general (non-specialized) cleaning of all types of buildings, such as Offices,
+  Houses or apartments, Factories, Shops and Institutions; General (non-specialised) cleaning of
+  other business and 99 These activities cover mostly interior cleaning although they may include
+  the cleaning of associated exterior areas such as windows or passageways.
+    Group 8129: Other Building and Industrial Cleaning Activities
+Description:
+  This class includes exterior cleaning of buildings of all types, including offices, factories,
+  shops, institutions and other business and professional premises and multiunit residential
+  buildings; Specialized cleaning activities for buildings such as window cleaning, chimney cleaning
+  and cleaning of fireplaces, stoves, furnaces, incinerators, boilers, ventilation ducts and exhaust
+  units; Swimming pool cleaning and maintenance services; Cleaning of industrial machinery; Bottle
+  cleaning; Cleaning of trains, buses, places, Cleaning of the inside of road and sea tankers;
+  Disinfecting and exterminating activities; Street sweeping and snow and ice removal; Other
+  building and industrial cleaning activities, n.e.c.
+  Class 813: Landscape Care and Maintenance Service Activities
+    Group 8130: Landscape Care and Maintenance Service Activities
+Description:
+  This class includes planting, care and maintenance of parks and gardens for Private and public
+  housing; Public and semi-public buildings (schools, hospitals, administrative buildings, church
+  buildings etc); Municipal grounds (parks, green areas, cemeteries etc); Highway greenery (roads,
+  train lines and tramlines, waterways, ports); Industrial and commercial buildings; Greenery for
+  Buildings (roof gardens, facade greenery, indoor gardens); Sports grounds (e.g. football fields,
+  golf courses etc.), play grounds, lawns for sunbathing and other recreational parks; Stationary
+  and flowing water (basins, alternating wet areas, ponds, swimming pools, ditches, watercourses,
+  plant sewage systems); Plants for protection against noise, wind, erosion, visibility and dazzling
+  This class also includes Maintenance of land in order to keep it in good ecological condition.
+Division 82: Office Administrative, Office Support and Other Business Support Activities
+
+  Class 821: Office Administrative and Service Activities
+    Group 8211: Combined Office Administrative and Support Activities
+Description:
+  This class includes Provision of a combination of day-to-day office administrative services, such as
+  reception, financial planning, billing and record keeping, personnel and physical distribution
+  (mail services) and logistics for others on a contract or fee basis.
+    Group 8219: Photocopying, Document Preparation and Other Specialised Office Support Activities
+Description:
+  Office Support Activities This class includes a variety of copying, document preparation and
+  specialized office support activities. The document copying/printing activities included here
+  cover only short-run type printing activities. 100 Document preparation, Document editing or
+  desktop publishing, Secretarial support services, Transcription of documents, and other
+  secretarial services, Letter or resume writing, Provision of mailbox rental and other mailing
+  activities (except direct mail advertising), Photocopying, Duplicating, Blueprinting, Other
+  document copying services without also providing printing services, such as offset printing, quick
+  printing, digital printing, prepress services
+  Class 822: Activities of Call Centres
+    Group 8220: Activities of Call Centres
+Description:
+  This class includes: Activities of inbound call centres, answering calls from clients by using human
+  operators, automatic call distribution, computer telephone integration, interactive voice response
+  systems or similar methods to receive orders, provide product information, deal with customer
+  requests for assistance or address customer complaints; Activities of inbound call centres,
+  answering calls from clients by using human operators, automatic call distribution, computer
+  telephone integration, interactive voice response systems or similar methods to receive orders,
+  provide product information, deal with customer requests for assistance or address customer
+  complaints; Activities of outbound call centres using similar methods to sell or market goods or
+  services to potential customers, undertake market research or public opinion polling and similar
+  activities for clients.
+  Class 823: Organisations of Conventions and Trade Shows
+    Group 8230: Organisations of Conventions and Trade Shows
+Description:
+  This class includes organisation, promotion and/or management of events, such as business and trade
+  shows, conventions, conferences and meetings, whether or not including the management and
+  provision of the staff to operate the facilities in which these events take place.
+  Class 829: Business Support Service Activities NEC
+    Group 8291: Activities of Collection Agencies and Credit Bureaus
+Description:
+  This class includes: Collection of payment for claims and remittance of payments collected to the
+  clients, such as bill or debt collection services, Compiling of information, such as credit and
+  employment histories on individuals and credit histories on businesses and providing the
+  information to financial institutions, retailers and others who have a need to evaluate the
+  creditworthiness of these persons and businesses.
+    Group 8292: Packaging Activities
+Description:
+  This class includes: Packaging activities on a fee or contact basis, wheth- er or not these involve
+  an automated process; Bottling of liquids, in- cluding beverages and food, Packaging of solids
+  (blister packaging, foil-covered etc.), Security packaging of pharmaceutical preparations,
+  Labelling, stamping and imprinting, Parcel-packing and gift-wrapping
+    Group 8299: Other Business Support Service Activities NEC
+Description:
+  This class includes: Providing verbatim reporting and stenotype recording of live legal proceedings
+  and transcribing subsequent recorded materials, such as: Court reporting or stenotype recording
+  services, 101 captioning of live television performances of meetings, conferences, Address bar
+  coding services, Bar code imprinting services, Fundraising organization services on a contract or
+  fee basis, Mail pre-sorting services, Repossession services, Parking meter coin collection
+  services, Activities of independent auctioneers, Administration of loyalty programmes and Other
+  support activities typically provided to businesses not elsewhere classified

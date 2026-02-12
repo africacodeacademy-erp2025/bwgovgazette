@@ -1,0 +1,58 @@
+INDUSTRY: EDUCATION
+===================
+
+Division 85: Education
+
+  Class 851: Pre-Primary and Primary Education
+    Group 8510: Pre-Primary and Primary Education
+Description:
+  pre-primary education; primary education; special education for handicapped students at this level;
+  provision of literacy programmes for adults.
+  Class 852: Secondary Education
+    Group 8521: General Secondary Education
+Description:
+  general school education in the first stage of the secondary level corresponding more or less to the
+  period of compulsory school attendance; general school education in the second stage of the
+  secondary level giving, in principle, access to higher education; special education for
+  handicapped students at this lev- el.
+    Group 8522: Technical and Vocational Secondary Education
+Description:
+  technical and vocational education below the level of higher education; instruction for tourist
+  guides; instruction for chefs, hoteliers and restaurateurs; special education for handicapped
+  students at this level; cosmetology and barber schools; computer repair training; driving schools
+  for occupational drivers e.g. of trucks, buses, coaches. 103
+  Class 853: Higher Education
+    Group 8530: Higher Education
+Description:
+  includes the provision of post-secondary non-tertiary and tertiary education, including granting of
+  degrees at baccalaureate, graduate or post-graduate level. Includes post-secondary non-tertiary
+  education; first stage of tertiary education (not leading to an advanced research qualification);
+  second stage of tertiary education (leading to an advanced research qualification); performing
+  arts schools providing higher education
+  Class 854: Other Education
+    Group 8541: Sports and Recreation Education
+Description:
+  includes the provision of instruction in athletic activities to groups or individuals, such as by
+  camps and schools. Includes sports instruction (baseball, basketball, cricket, football, etc);
+  camps, sports instruction; cheerleading instruction; gymnastics instruction; riding instruction,
+  academies or schools; swimming instruction; professional sports instructors, teachers, coaches;
+  martial arts instruction; card game instruction (such as bridge); yoga instruction.
+    Group 8542: Cultural Education
+Description:
+  piano teachers and other music instruction; art instruction; dance instruction and dance studios;
+  drama schools (except academic); fine arts schools (except academic); performing arts schools
+  (except academic); photography schools (except commercial). Other Education NEC: includes the
+  provision of instruction and specialized training, generally for adults, not comparable to the
+  general education class does not include activities of academic schools, colleges, and
+  universities. includes education that is not definable by level; academic tutoring services;
+  college board preparation; learning centres offering remedial courses; professional examination
+  review courses; language instruction and conversational skills instruction; speed reading
+  instruction; religious instruction; automobile driving schools; flying schools; lifeguard
+  training; survival training; public speaking training; computer training.
+    Group 8549: Other Education NEC
+  Class 855: Educational Support Activities
+    Group 8550: Educational Support Activities
+Description:
+  provision of non-instructional services that support educational processes or systems: (educational
+  consulting, educational guidance counselling services, educational testing evaluation services,
+  educational testing services, organization of student exchange programs).
