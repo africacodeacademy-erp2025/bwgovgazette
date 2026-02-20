@@ -23,8 +23,8 @@ model Document {
   updatedAt        DateTime @updatedAt
 
   text             DocumentText?
-  tags             DocumentTag[]        // free-text labels
-  sicTags          DocumentSicTag[]     // structured SIC tagging
+  tags             DocumentTag[]
+  sicTags          DocumentSicTag[]
   chunks           DocumentChunk[]
 
   @@map("documents")
@@ -55,7 +55,7 @@ model DocumentText {
 }
 
 /* =========================
-   FREE-TEXT TAGS (NON-SIC)
+   FREE-TEXT TAGS
 ========================= */
 
 model DocumentTag {
@@ -77,7 +77,7 @@ model DocumentChunk {
   documentId String
   index      Int
   text       String
-  embedding  Json?
+  embedding  Json?    // ready for pgvector later
   createdAt  DateTime @default(now())
 
   document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
@@ -102,25 +102,29 @@ model SicNode {
   title        String?
   description  String?
 
+  // future semantic search
+  embedding    Json?    // safe placeholder for pgvector
+
   // data-quality flags
   isDuplicate  Boolean  @default(false)
   isInferred   Boolean  @default(false)
   isTruncated  Boolean  @default(false)
 
-  // lifecycle / normalization
+  // lifecycle
   isActive     Boolean  @default(true)
-  supersededBy String?  // SicNode.id (soft reference)
+  supersededBy String?
 
   // provenance
   sourceDoc    String?
   sourcePage   Int?
 
-  // optional but powerful
   path         String?
 
   createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   documentTags DocumentSicTag[]
+  signals      SicSignal[]
 
   @@index([level])
   @@index([code])
@@ -130,8 +134,8 @@ model SicNode {
 enum SicLevel {
   industry
   division
-  class
   group
+  class
 }
 
 /* =========================
@@ -157,4 +161,51 @@ enum TagSource {
   ai
   manual
   rule
+}
+
+/* =========================
+   SIC SIGNAL MAP
+========================= */
+
+model SicSignal {
+  id               String        @id @default(uuid())
+  sicNodeId        String
+
+  value            String        // raw phrase
+  normalizedValue  String        // preprocessed (lowercase, stemmed)
+
+  type             SignalType
+  weight           Float
+  specificityScore Float
+
+  minFrequency     Int?          // optional guard
+  maxFrequency     Int?          // optional noise control
+  priority         Int           @default(0)
+
+  createdBy        SignalSource
+  isActive         Boolean       @default(true)
+
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  sicNode          SicNode       @relation(fields: [sicNodeId], references: [id], onDelete: Cascade)
+
+  @@index([sicNodeId])
+  @@index([normalizedValue])
+  @@index([type])
+}
+
+enum SignalType {
+  core
+  phrase
+  verb
+  synonym
+  negative
+  boost
+}
+
+enum SignalSource {
+  auto
+  ai
+  manual
 }
