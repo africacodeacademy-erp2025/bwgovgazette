@@ -1,0 +1,23 @@
+INDUSTRY: REAL ESTATE ACTIVITIES
+================================
+
+Division 68: Real Estate Activities
+
+  Class 681: Real Estate Activities with Own or Leased Property
+    Group 6810: Real Estate Activities with Own or Leased Property
+Description:
+  This class includes Buying, selling, renting and operation of self-owned or leased real estate, such
+  as Apartment building and dwellings, Non- residential building, including exhibition halls, self-
+  storage facilities, malls and shopping centres; Land-provision of homes and furnished or
+  unfurnished flats or apartments for more permanent use, typically on a monthly or annual basis.
+  This class also includes development of building projects for own operation, i.e. for renting of
+  space in these building; Subdividing real estate into lots, without land improvement, Operation of
+  residential mobile home sites
+  Class 682: Real Estate Activities on a Free or Contract Basis
+    Group 6820: Real Estate Activities on a Free or Contract Basis
+Description:
+  This class includes the provision of real estate activities on a fee or contract basis including
+  real estate related services. This class also includes activities of real estate agents and
+  brokers, In- termediation in buying, selling and renting of real estate on a fee or contact basis,
+  Management of real estate on a fee or contact basis, Ap- praisal services for real estate,
+  Activities of real estate escrow agents

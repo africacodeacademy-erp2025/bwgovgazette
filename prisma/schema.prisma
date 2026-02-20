@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/* =========================
+   DOCUMENTS
+========================= */
+
+model Document {
+  id               String   @id @default(uuid())
+  sourceType       String   @default("gazette")
+  fileName         String
+  fileUrl          String
+  mimeType         String?
+  fileSize         Int?
+  processingStatus ProcessingStatus @default(pending)
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  text             DocumentText?
+  tags             DocumentTag[]
+  sicTags          DocumentSicTag[]
+  chunks           DocumentChunk[]
+
+  @@map("documents")
+}
+
+enum ProcessingStatus {
+  pending
+  text_extracted
+  chunked
+  classified
+  reviewed
+  failed
+}
+
+/* =========================
+   DOCUMENT TEXT
+========================= */
+
+model DocumentText {
+  documentId  String   @id
+  content     String?
+  summary     String?
+  extractedAt DateTime @default(now())
+
+  document    Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@map("document_texts")
+}
+
+/* =========================
+   FREE-TEXT TAGS
+========================= */
+
+model DocumentTag {
+  documentId String
+  tag        String
+
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@id([documentId, tag])
+  @@map("document_tags")
+}
+
+/* =========================
+   DOCUMENT CHUNKS
+========================= */
+
+model DocumentChunk {
+  id         String   @id @default(uuid())
+  documentId String
+  index      Int
+  text       String
+  embedding  Json?    // ready for pgvector later
+  createdAt  DateTime @default(now())
+
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([documentId, index])
+  @@map("document_chunks")
+}
+
+/* =========================
+   SIC HIERARCHY
+========================= */
+
+model SicNode {
+  id           String   @id @default(uuid())
+
+  parentId     String?
+  parent       SicNode?  @relation("SicHierarchy", fields: [parentId], references: [id])
+  children     SicNode[] @relation("SicHierarchy")
+
+  level        SicLevel
+  code         String?
+  title        String?
+  description  String?
+
+  // future semantic search
+  embedding    Json?    // safe placeholder for pgvector
+
+  // data-quality flags
+  isDuplicate  Boolean  @default(false)
+  isInferred   Boolean  @default(false)
+  isTruncated  Boolean  @default(false)
+
+  // lifecycle
+  isActive     Boolean  @default(true)
+  supersededBy String?
+
+  // provenance
+  sourceDoc    String?
+  sourcePage   Int?
+
+  path         String?
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  documentTags DocumentSicTag[]
+  signals      SicSignal[]
+
+  @@index([level])
+  @@index([code])
+  @@index([isActive])
+}
+
+enum SicLevel {
+  industry
+  division
+  group
+  class
+}
+
+/* =========================
+   DOCUMENT ↔ SIC TAGGING
+========================= */
+
+model DocumentSicTag {
+  documentId String
+  sicNodeId  String
+
+  confidence Float?
+  tagSource  TagSource
+  notes      String?
+
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  sicNode    SicNode  @relation(fields: [sicNodeId], references: [id], onDelete: Cascade)
+
+  @@id([documentId, sicNodeId])
+  @@index([sicNodeId])
+}
+
+enum TagSource {
+  ai
+  manual
+  rule
+}
+
+/* =========================
+   SIC SIGNAL MAP
+========================= */
+
+model SicSignal {
+  id               String        @id @default(uuid())
+  sicNodeId        String
+
+  value            String        // raw phrase
+  normalizedValue  String        // preprocessed (lowercase, stemmed)
+
+  type             SignalType
+  weight           Float
+  specificityScore Float
+
+  minFrequency     Int?          // optional guard
+  maxFrequency     Int?          // optional noise control
+  priority         Int           @default(0)
+
+  createdBy        SignalSource
+  isActive         Boolean       @default(true)
+
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  sicNode          SicNode       @relation(fields: [sicNodeId], references: [id], onDelete: Cascade)
+
+  @@index([sicNodeId])
+  @@index([normalizedValue])
+  @@index([type])
+}
+
+enum SignalType {
+  core
+  phrase
+  verb
+  synonym
+  negative
+  boost
+}
+
+enum SignalSource {
+  auto
+  ai
+  manual
+}

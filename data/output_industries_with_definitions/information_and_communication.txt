@@ -1,0 +1,215 @@
+INDUSTRY: INFORMATION AND COMMUNICATION
+=======================================
+
+Division 58: Publishing Activities
+
+  Class 581: Publishing of Books, Periodicals and Other Publishing Activities
+    Group 5811: Book Publishing
+Description:
+  This class includes the activities of publishing books in print, electronic (CD, electronic displays
+  etc.) or audio form or on the internet. This class includes publishing of books, brochures,
+  leaflets and similar publications, including publishing of dictionaries and encyclopedias,
+  publishing of atlases, maps and charts, publishing of audio books and Publishing of encyclopedias
+  etc. On CD-ROM
+    Group 5812: Publishing of Directories and Mailing Lists
+Description:
+  This class includes the publishing of lists of facts/information (databases) that are protected in
+  their form, but not in their content. These lists can be published in printed or electronic form.
+  This class also includes publishing of mailing lists, publishing of telephone books, publishing of
+  other directories and compilations, such as case law, pharmaceutical compendia etc.
+    Group 5813: Publishing of Newspapers, Journals and Periodicals
+Description:
+  This class includes publishing of newspapers, including advertising newspapers, publishing of
+  periodicals and other journals, including publishing of radio and television schedules; Publishing
+  can be done in print or electronic form, including on the internet. 84
+    Group 5819: Other Publishing Activities
+Description:
+  This class includes Publishing (including on-line) of Catalogs, Photos, engravings and postcards,
+  Greeting cards, Forms, Posters, reproduction of works of art, Advertising material, Other printed
+  matter and On-line publishing of statistics or other information
+  Class 582: Software Publishing
+    Group 5820: Software Publishing
+Description:
+  This class includes publishing of ready-made (non-customized) software, Operating systems, Business
+  and other applications and Computer games for all platforms
+Division 59: Motion Picture, Video and Television Programme Production, Sound Recording and Music Publishing Activities
+
+  Class 591: Motion Picture, Video and Television Programme Activities
+    Group 5911: Motion Picture, Video and Television Programme Activities
+Description:
+  This class includes production of motion pictures, videos, television programmes or television
+  commercials.
+    Group 5912: Motion Picture, Video and Television Programme Post-Production Activities
+Description:
+  Activities This class includes post-production activities such as Editing, titling, subtitling,
+  credits, closed captioning, Computer-produced graphics, animation and special effects, Film/tape
+  transfers, Activities of motion picture film laboratories and activities of special laboratories
+  for animated films, Developing and processing motion picture film, Reproduction of motion picture
+  film for theatrical distribution. This class also includes Activities of stock footage film
+  libraries.
+    Group 5913: Motion Picture, Video and television Programme Distribution Activities
+Description:
+  Activities This class includes Distribution film, video tapes, DVD and similar productions to motion
+  picture theatres, television networks and stations and exhibitors. This class also includes
+  Acquiring film, video tape and DVD distribution right
+    Group 5914: Motion Picture Projection Activities
+Description:
+  This class includes Motion picture or videotape projection in cinemas, in the open air or in other
+  projection facilities, and Activities of cine-clubs
+  Class 592: Sound Recording and Music Publishing Activities
+    Group 5920: Sound Recording and Music Publishing Activities
+Description:
+  This class includes production of original (sound) master recordings, such as tapes, CDs, Sound
+  recording service activities in a studio or elsewhere, including the production of taped (i.e.
+  non-live) radio programming, audio for film, television, Music publishing, i.e. activities of
+  Acquiring and registering copyrights for musical compositions, Promoting, authorizing and using
+  these compositions in recordings, radio, television, motion pictures, live performances, print and
+  other media; 85 public units engaged in these activities may own the copyright or act as
+  administrator of the music copyrights on behalf of the copyright owners. This class also includes
+  publishing of music and sheet books.
+Division 60: Programming and Broadcasting Activities
+
+  Class 601: Radio Broadcasting
+    Group 6010: Radio Broadcasting
+Description:
+  This class includes broadcasting audio signals through radio broadcasting studios and facilities for
+  the transmission of aural programming to the public, to affiliates or to subscribers This class
+  also includes activities of radio networks, i.e. assembling and transmitting aural programming to
+  the affiliates or subscribers via over- the-air broadcasts, cable or satellite, Radio broadcasting
+  activities over the internet (internet radio stations) and Data broadcasting integrated with radio
+  broadcasting
+  Class 602: Television Programming and Broadcasting Activities
+    Group 6020: Television Programming and Broadcasting Activities
+Description:
+  This class includes creation of a complete television channel programme, from purchased programme
+  components (e.g. movies, documents etc.), self produced programme components (e.g. local news,
+  live reports) or a combination thereof This complete television programme can be either broadcast
+  by the producing unit or produced for transmission by third distributors, such as cable companies
+  or satellite television providers. The programming may be a general or specialised nature (e.g.
+  limited formats such as news, sports, education or youth oriented programming), may be made freely
+  available to users or may be available only on a subscription basis. This class also includes
+  programming of video-on-demand channels and Data broadcasting integrated with television
+  broadcasting
+Division 61: Telecommunications
+
+  Class 611: Wired Telecommunications Activities
+    Group 6110: Wired Telecommunications Activities
+Description:
+  This class includes operating, maintaining or providing access to facilities for the transmission of
+  voice, data, text, sound and video using a wired telecommunications infrastructure, including
+  Operating and maintaining switching and transmission facilities to provide point –to-point
+  communications via landlines, microwave or a combination of landlines and satellite linkups,
+  Operating of cable distribution systems (e.g. for distribution of data and television signals),
+  Furnishing telegraph and other non-vocal communications using own facilities. The transmission
+  facilities that carry out these activities, may be based on a single technology or a combination
+  of technologies This class also includes purchasing access and network capacity from owners and
+  operators of networks and providing telecommunications services using this capacity to businesses
+  and households; Provision of internet access by the operator of the wired infrastructure 86
+  Class 612: Wireless Telecommunications Activities
+    Group 6120: Wireless Telecommunications Activities
+Description:
+  This class includes operating, maintaining or providing access to facilities for the transmission of
+  voice, data, text, sound, and video using a wireless telecommunications infrastructure;
+  Maintaining and operating paging as well as cellular and other wireless telecommunications
+  networks; the transmission facilities provide Omni-directional transmission via airwaves and may
+  be based on a single technology or a combination of technologies. This class also includes
+  purchasing access and network capacity from owners and operators of networks and providing
+  wireless telecommunications services (except satellite) using this capacity to businesses and
+  households; Provision of internet access by the operator of the wireless infrastructure
+  Class 613: Satellite Telecommunications Activities
+    Group 6130: Satellite Telecommunications Activities
+Description:
+  This class includes Operating, maintaining or providing access to facilities for the transmission of
+  voice, data, text, sound and video using a satellite telecommunications infrastructure; Delivery
+  of visual, aural or textual programming received from cable networks, local television stations or
+  radio networks to consumers via direct -to-home satellite systems (the units classified here do
+  not generally originate programming material) This class also includes provision of internet
+  access by the operator of the satellite infrastructure
+  Class 619: Other Telecommunications Activities
+    Group 6190: Other Telecommunications Activities
+Description:
+  This class includes provision of specialized telecommunications applications, such as satellite
+  tracking, communications telemetry, and radar station operations; Operation of satellite terminal
+  stations and associated facilities operationally connected with one or more terrestrial
+  communications systems and capable of transmitting telecommunication to or receiving
+  telecommunications from satellite systems; Provision of internet access over networks between the
+  client and the ISP not owned or controlled by the ISP, such as dial-up internet access; Provision
+  of telephone and internet access in facilities open to the public; Provision of telecommunications
+  services over existing telecom connections; VOIP (Voice over internet protocol) provision;
+  Telecommunications reseller (i.e. purchasing and reselling network capacity without providing
+  additional services)
+Division 62: Computer Programming, Consultancy and Related Activities
+
+  Class 620: Computer Programming Activities
+    Group 6201: Computer Programming Activities
+Description:
+  This class includes the writing, modifying, testing and supporting of software. The class also
+  includes designing the structure and content of, and /or writing the computer code necessary to
+  create and implement; Systems software (including updates and patches); Software applications
+  (including updates and patches); Databases; Web pages 87
+    Group 6202: Computer Consultancy and Computer Facilities Management Activities
+Description:
+  Activities This class includes planning and designing of computer systems that integrate computer
+  hardware, software and communication technologies. The units classified in this class may provide
+  the hardware and software components of the system as part of their integrated services or these
+  components may be provided by third parties or vendors. The units clas- sified in this class often
+  install the system and train and support the users of the system. This class also includes
+  provision of on-site management and operation of client’s computer systems and/or data processing
+  facil- ities, as well as related support services.
+    Group 6209: Other Information Technology and Computer Service Activities
+Description:
+  This class includes other information technology and computer related activities not elsewhere
+  classified, such as Computer disaster recovery, Installation (setting-up) of personal computers
+  and Software installation
+Division 63: Information Service Activities
+
+  Class 631: Data Processing, Hosting and Related Activities, Web Portals
+    Group 6311: Data Processing, Hosting and Related Activities
+Description:
+  This class includes provision of infrastructure for hosting, data processing services and related
+  activities, Specialized hosting activities such as Web hosting, Streaming services, Application
+  hosting, Application service provisioning, General time-share provision of mainframe facilities to
+  clients, Data processing activities, Complete processing of data supplied by clients, Generation
+  of specialized reports from data supplied by clients and Provision of data entry services
+    Group 6312: Web Portals
+Description:
+  This class includes operation of web sites that use a search engine to generate and maintain
+  extensive databases of internet addresses and content in an easily searchable format; Operation of
+  other websites that act as portals to the internet, such as media sites providing periodically
+  updated content
+  Class 639: Other Information Service Activities
+    Group 6391: News Agency Activities
+Description:
+  This class includes news syndicate and news agency activities furnishing news, pictures and features
+  to the media
+    Group 6399: Other Information Service Activities NEC
+Description:
+  This class includes other information service activities not elsewhere classified, such as telephone
+  based information services, Information search services on a contract or fee basis, News clipping
+  services and press clipping services. 88
+Division 63: Information Service Activities
+
+  Class 631: Data Processing, Hosting and Related Activities, Web Portals
+    Group 6311: Data Processing, Hosting and Related Activities
+Description:
+  This class includes provision of infrastructure for hosting, data processing services and related
+  activities, Specialized hosting activities such as Web hosting, Streaming services, Application
+  hosting, Application service provisioning, General time-share provision of mainframe facilities to
+  clients, Data processing activities, Complete processing of data supplied by clients, Generation
+  of specialized reports from data supplied by clients and Provision of data entry services
+    Group 6312: Web Portals
+Description:
+  This class includes operation of web sites that use a search engine to generate and maintain
+  extensive databases of internet addresses and content in an easily searchable format; Operation of
+  other websites that act as portals to the internet, such as media sites providing periodically
+  updated content
+  Class 639: Other Information Service Activities
+    Group 6391: News Agency Activities
+Description:
+  This class includes news syndicate and news agency activities furnishing news, pictures and features
+  to the media
+    Group 6399: Other Information Service Activities NEC
+Description:
+  This class includes other information service activities not elsewhere classified, such as telephone
+  based information services, Information search services on a contract or fee basis, News clipping
+  services and press clipping services. 88

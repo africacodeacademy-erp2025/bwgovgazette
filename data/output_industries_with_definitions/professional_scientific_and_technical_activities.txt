@@ -1,0 +1,126 @@
+INDUSTRY: PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES
+===========================================================
+
+Division 69: Legal and Accounting Activities
+
+  Class 691: Legal Activities
+    Group 6910: Legal Activities
+Description:
+  This class includes legal representation of one party’s interest against another party, whether or
+  not before courts or other judicial bodies by, or under supervision of, persons who are members of
+  the bar, Advice and representation in civil cases, Advice and representation in criminal cases,
+  Advice and representation in connection with labour disputes, General counselling and advising,
+  preparation of legal documents, Articles of incorporation, partnership agreements or similar
+  documents in connection with company formation, Patents and copyrights, Preparation of deeds,
+  wills, trusts, Other activities of notaries public, civil law notaries, bailiffs, arbitrators,
+  examiners and referees
+  Class 692: Accounting, Bookkeeping and Auditing Activities; Tax Consultancy
+    Group 6920: Accounting, Bookkeeping and Auditing Activities; Tax Consultancy
+Description:
+  This class includes recording of commercial transactions from businesses or others, Preparation or
+  auditing of financial accounts, Examination of accounts and certification of their accuracy,
+  Preparation of personal and business income tax returns, Advisory activities and representation on
+  behalf of clients before tax authorities 92
+  Class 701: Activities of Head Offices
+    Group 7010: Activities of Head Offices
+Description:
+  This class includes the overseeing and managing of other units of the company or enterprise;
+  undertaking the strategic or organizational planning and decision making role of the company or
+  enterprise; exercising operational control and manage the day to day operations of their related
+  units. The class also includes activities of Head offices, Centralized administrative offices,
+  corporate offices, District and regional offices and Subsidiary.
+  Class 702: Management Consultancy Activities
+    Group 7020: Management Consultancy Activities
+Description:
+  This class includes the provision of advice, guidance and operational assistance to businesses and
+  other organizations on management issues, such as strategic and organizational planning; decision
+  areas that are financial in nature; marketing objectives and policies; human resource policies,
+  practices and planning; production scheduling and control planning. This provision of business
+  services may include advice, guidance or operational assistance to businesses and the public
+  service regarding Public relations and communication, Lobbying activities, Design of accounting
+  methods or procedures, cost accounting programmes, budgetary control procedures, Advice and help
+  to businesses and public services in planning, organization, efficiency and control, management
+  information etc.
+Division 71: Architectural and Engineering Activities; Technical Testing and Analysis
+
+  Class 711: Architectural and Engineering Activities and Related Technical Consultancy
+    Group 7110: Architectural and Engineering Activities and Related Technical Consultancy
+Description:
+  Consultancy This class includes the provision of architectural services, engineering services,
+  drafting services, building inspection services and surveying and mapping services and the like.
+  This class also includes architectural consulting activities, Building design and drafting, Town
+  and city planning and landscape architecture, Engineering design (i.e. applying physical laws and
+  principles of engineering in the design of machines, material, instruments, structures, processes
+  and systems) and consulting activities for, Machinery, industrial processes and industrial plant,
+  Projects involving civil engineering, hydraulic engineering, traffic engineering, Water management
+  projects, Projects elaboration and realization relative to electrical and electronic engineering,
+  mining engineering, chemical engineering, mechanical, industrial and systems engineering, safety
+  engineering, Project management activities related to construction, Elaboration of projects using
+  air conditioning, refrigeration, sanitary and pollution control engineering, acoustical
+  engineering; Geophysical, geologic and seismic surveying, Geodetic surveying activities, Land and
+  boundary surveying activities; Hydrologic surveying activities; Subsurface surveying activities,
+  Cartographic and spatial information activities. 93
+  Class 712: Technical Testing and Analysis
+    Group 7120: Technical Testing and Analysis
+Description:
+  This class includes performance of physical, chemical and other analytical testing of all types of
+  materials and products (see below for exceptions), Acoustics and vibration testing, Testing of
+  composition and purity of minerals, Testing activities in the field of food hygiene, including
+  veterinary testing and control in relation to food production, Testing of physical characteristics
+  and performance of materials, such as strength, thickness, durability, radioactivity;
+  Qualification and reliability testing; Performance testing of complete machinery: motors,
+  automobiles, electronic equipment; Radiographic testing of welds and weld and joints; Failure
+  analysis; Testing and measuring of environmental indicators: air and water pollution etc;
+  Certification of products, including consumer goods, motor vehicles, aircraft, pressurized
+  containers, nuclear plants; Periodic road-safety testing of motor vehicles; Testing with use of
+  models or mock-ups (e.g. of aircraft, ships, dams etc); Operation of police laboratories.
+Division 72: Scientific Research and Development
+
+  Class 721: Research and Experimental Development on Natural Sciences and Engineering
+    Group 7210: Research and Experimental Development on Natural Sciences and Engineering
+Description:
+  Engineering This class includes research and experimental development on natural science and
+  engineering; Research and development on natural sciences; Research and development on engineering
+  and technology; Research and development on medical sciences; Research and development on
+  biotechnology; Research and development on agricultural sciences; Interdisciplinary research and
+  development, predominantly on natural sciences and engineering
+  Class 722: Research and Experimental Development on Social Sciences and Humanities
+    Group 7220: Research and Experimental Development on Social Sciences and Humanities
+Description:
+  Humanities This class includes research and development on social sciences; Research and development
+  on humanities; Interdisciplinary research and development, predominantly on social sciences and
+  humanities;
+Division 73: Advertising and Market Research
+
+  Class 731: Advertising
+    Group 7310: Advertising
+Description:
+  This class includes the provision of a full range of advertising services (i.e. through in-house
+  capabilities or subcontracting), including advice, creative services, production of advertising
+  material, media planning and buying. This class includes creation and realization of advertising
+  campaigns, Creating and placing advertising in newspapers, periodicals, radio, television, the
+  internet and other media; Creating and placing of outdoor advertising, e.g. billboards, panels,
+  bulletins and frames, window dressing, showroom design, car and bus carding; Media representation,
+  i.e. sale of time and space for various media soliciting 94 material or samples; Provision of
+  advertising space on billboards; Creation of stands and other display structures and sites;
+  Conducting marketing campaigns and other advertising services aimed at attracting and retaining
+  customers; Promotion of products; Point-of-sale marketing; Direct mail advertising and Marketing
+  consulting.
+  Class 732: Market Research and Public Opinion Polling
+    Group 7320: Market Research and Public Opinion Polling
+Description:
+  This class includes investigation into market potential, acceptance and familiarity of products and
+  buying habits of consumers for the purpose of sales promotion and development of new products,
+  including statistical analysis of the results; Investigation into collective opinions of the
+  public about political, economic and social issues and statistical analysis thereof.
+Division 75: Veterinary Activities
+
+  Class 750: Veterinary Activities
+    Group 7500: Veterinary Activities
+Description:
+  This class includes animal health care and control activities for farm animals; Animal health care
+  and control activities for pet animals; These activities are carried out by qualified
+  veterinarians when working in veterinary hospitals as well as when visiting farms, kennels or
+  homes, in own consulting and surgery rooms or elsewhere. This class also includes activities of
+  veterinary assistants or other auxiliary veterinary personnel; Clinico-pathological and other
+  diagnostic activities pertaining to animals and Animal ambulance activities

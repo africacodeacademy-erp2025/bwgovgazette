@@ -1,0 +1,92 @@
+INDUSTRY: CONSTRUCTION
+======================
+
+Division 41: Construction of Buildings
+
+  Class 410: Construction of Buildings
+    Group 4100: Construction of Buildings
+Description:
+  construction of all types of residential buildings; construction of all types of non-residential
+  building; assembly and erection of prefabricated constructions on the site; remodelling or
+  renovating existing residential structures 71
+Division 42: Civil Engineering
+
+  Class 421: Construction of Roads and Railways
+    Group 4210: Construction of Roads and Railways
+Description:
+  construction of motorways, streets, roads, other vehicular and pedestrian ways; surface work on
+  streets, roads, highways, bridges or tunnels; construction of bridges, including those for
+  elevated highways; construction of tunnels; construction of railways and subways; construction of
+  airfield runways.
+  Class 422: Construction of Utility Projects (e.g Dams, Reservoirs, Pipelines)
+    Group 4220: Construction of Utility Projects (e.g Dams, Reservoirs, Pipelines)
+Description:
+  construction of civil engineering constructions for : (long-distance pipelines, communication and
+  power lines , urban pipelines, urban communication and power lines; ancillary urban works, water
+  main and line construction, irrigation systems, reservoirs); construction of: (sewer systems,
+  including repair, sewage disposal plants, pumping stations, power plants); water well drilling.
+  Class 429: Construction of Other Civil Engineering Projects
+    Group 4290: Construction of Other Civil Engineering Projects
+Description:
+  construction of industrial facilities, except buildings (refineries, chemical plants); construction
+  of (waterways, harbour and river works, pleasure ports, locks), dams and dykes; dredging of
+  waterways; construction work, other than buildings, such as (outdoor sports facilities); land
+  subdivision with land improvement (e.g. adding of roads, utility infrastructure).
+Division 43: Specialised Construction Activities
+
+  Class 431: Demolition and Site Preparation
+    Group 4311: Demolition
+Description:
+  demolition or wrecking of buildings and other structures
+    Group 4312: Site Preparation
+Description:
+  includes the preparation of sites for subsequent construction activities; clearing of building
+  sites; earth moving: excavation, landfill, levelling and grading of construction sites, trench
+  digging, rock removal, blasting; drilling, boring and core sampling for construction, geophysical,
+  geological or similar purposes; site preparation for mining; building site drainage; drainage of
+  agricultural or forestry land.
+  Class 432: Electrical, Plumbing and Other Construction Installation Activities
+    Group 4321: Electrical Installation
+Description:
+  installation of electrical wiring and fittings, telecommunications wiring, computer network and
+  cable television wiring, including fibre optic, satellite dishes, lighting systems, fire alarms,
+  burglar alarm systems, street lighting and electrical signals, airport runway lighting.
+    Group 4322: Plumbing, Heat and Air Conditioning Installation
+Description:
+  includes the installation of plumbing, heating and air-conditioning systems, including additions,
+  alterations, maintenance and repair; installation in buildings or other construction projects of
+  (heating systems (electric, gas and oil), furnaces, cooling towers, non-electric solar energy
+  collectors, plumbing and sanitary equipment, ventilation, refrigeration or air-conditioning
+  equipment and ducts, gas fittings, steam piping, fire sprinkler systems, lawn sprinkler systems,
+  duct work installation. 72
+    Group 4329: Other Construction Installation Activities
+Description:
+  includes the installation of equipment other than electrical, plumbing, heating and air-conditioning
+  systems or industrial machinery in buildings and civil engineering structures, including
+  maintenance and repair. This Includes installation in buildings or other construction projects of
+  elevators, escalators, automated and revolving doors, lightning conductors, vacuum cleaning
+  systems, thermal, sound or vibration insulation.
+  Class 433: Building Completion and Finishing
+    Group 4330: Building Completion and Finishing
+Description:
+  application in buildings or other construction projects of interior and exterior plaster or stucco,
+  including related lathing materials; installation of doors (except automated and revolving),
+  windows, door and window frames, of wood or other materials; installation of fitted kitchens,
+  staircases, shop fittings; installation of furniture; interior completion such as ceilings, wooden
+  wall coverings, movable partitions; laying, tiling, hanging or fitting in buildings or other
+  construction projects ; interior and exterior painting of buildings; painting of civil engineering
+  structures; installation of glass, mirrors; cleaning of new buildings after construction; other
+  building completion work ; interior installation of shops, mobile homes, boats.
+  Class 439: Other Specialised Construction Activities
+    Group 4390: Other Specialised Construction Activities
+Description:
+  construction activities specializing in one aspect common to different kind of structures, requiring
+  specialized skill or equipment (construction of foundations, including pile driving, damp proofing
+  and water proofing works, de-humidification of buildings, shaft sinking, erection of non-self-
+  manufactured steel elements, steel bending, bricklaying and stone setting, roof covering for
+  residential buildings, scaffolds and work platform erecting and dismantling, excluding renting of
+  scaffolds and work platforms, erection of chimneys and industrial ovens, work with specialist
+  access requirements necessitating climbing skills and the use of related equipment, e.g. working
+  at height on tall structures), subsurface work; construction of outdoor swimming pools; steam
+  cleaning, sand blasting and similar activities for building exteriors; renting of cranes with
+  operator.

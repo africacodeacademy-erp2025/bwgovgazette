@@ -1,0 +1,1227 @@
+INDUSTRY: MANUFACTURING
+=======================
+
+Division 10: Manufacture of Food Products
+
+  Class 101: Processing and Preserving of Meat
+    Group 1010: Processing and Preserving of Meat
+Description:
+  operation of slaughter houses engaged in killing, dressing or packaging meat (beef, pork, poultry,
+  lamb, rabbit, mutton, camel); production of fresh, chilled or frozen meat in carcasses; production
+  of fresh, chilled or frozen meat in cuts; production of fresh, chilled or frozen meat, in
+  individual portions, production of dried, salted or smoked meat, production of meat products;
+  slaughtering and processing of whales on land or on specialized vessels; production of hides and
+  skins; rendering of lard and other edible fats of animal origin; processing of animal offal;
+  production of pulled wool; production of feather and down.
+  Class 102: Processing and Preserving of Fish, Crustaceans and Molluscs
+    Group 1020: Processing and Preserving of Fish, Crustaceans and Molluscs
+Description:
+  production of fish, crustacean and mollusk products, production of fishmeal for human consumption or
+  animal feed, production of meals and soluble from fish and other aquatic animals unfit for human
+  consumption; preparation and preservation of fish, crustaceans and molluscs: freezing, deep-
+  freezing, drying, smoking, salting, immersing in brine, canning; 39
+  Class 103: Processing and Preserving of Fruit and Vegetables
+    Group 1030: Processing and Preserving of Fruit and Vegetables
+Description:
+  manufacture of food consisting chiefly of fruit or vegetables, except ready-made dishes in frozen or
+  canned form; preserving of fruit, nuts or vegetables: freezing, drying, immersing in oil or in
+  vinegar, canning ; manufacture of fruit or vegetable food products; manufacture of fruit or
+  vegetable juices; manufacture of jams, marmalades and table jellies ; processing and preserving of
+  potatoes: (manufacture of prepared frozen potatoes, manufacture of dehydrated mashed potatoes,
+  manufacture of potato snacks, manufacture of potato crisp, manufacture of potato flour and meal )
+  ;roasting of nuts; manufacture of nut foods and pastes; industrial peeling of potatoes; production
+  of concentrates from fresh fruits and vegetables; manufacture of perishable prepared foods of
+  fruit and vegetables.
+  Class 104: Manufacture of Vegetables and Animal Oils and Fats
+    Group 1040: Manufacture of Vegetables and Animal Oils and Fats
+Description:
+  includes the manufacture of crude and refined oils and fats from vegetable or animal materials,
+  except rendering or refining of lard and other edible animal fats; manufacture of crude vegetable
+  oils: olive oil, soya-bean oil, palm oil, sunflower-seed oil, cotton-seed oil, rape, colza or
+  mustard oil, linseed oil; manufacture of non-defatted flour or meal of oilseeds, oil nuts or oil
+  kernels; manufacture of refined vegetable oils: olive oil, soya- bean oil ; processing of
+  vegetable oils: blowing, boiling, dehydration, hydrogenation; manufacture of margarine;
+  manufacture of melanges and similar spreads; manufacture of compound cooking fats ; manufacture of
+  non-edible animal oils and fats ;extraction of fish and marine mammal oils ;production of cotton
+  linters, oilcakes and other residual products of oil production.
+  Class 105: Manufacture of Dairy Products
+    Group 1050: Manufacture of Dairy Products
+Description:
+  manufacture of fresh liquid milk, pasteurized, sterilized, homogenized and/or ultra-heat treated;
+  manufacture of milk-based drinks; manufacture of cream from fresh liquid milk, pasteurized,
+  sterilized, homogenized; manufacture of dried or concentrated milk whether or not sweetened;
+  manufacture of milk or cream in solid form; manufacture of butter; manufacture of yoghurt;
+  manufacture of cheese; manufacture of ice cream and other edible ice such as sorbet
+  Class 106: Manufacture of Grain Mill Products, Starches and Starch Products
+    Group 1061: Manufacture of Grain Mill Products
+Description:
+  grain milling: production of flour, groats, meal or pellets of wheat, rye, oats, maize (corn) or
+  other cereal grains; rice milling: production of husked, milled, polished, glazed, parboiled or
+  converted rice; production of rice flour ; vegetable milling: production of flour or meal of dried
+  leguminous vegetables, of roots or tubers, or of edible nuts; manufacture of cereal breakfast
+  foods ; manufacture of flour mixes and prepared blended flour and dough for bread, cakes, biscuits
+  or pancakes. 40
+    Group 1062: Manufacture of Starches and Starch Products
+Description:
+  manufacture of starches from rice, potatoes, maize; wet corn milling; manufacture of glucose,
+  glucose syrup, maltose, inulin; manufacture of gluten ; manufacture of tapioca and tapioca
+  substitutes prepared from starch ; manufacture of corn oil
+  Class 107: Manufacture of Other Food Products
+    Group 1071: Manufacture of Bakery Products
+Description:
+  includes the manufacture of fresh, frozen or dry bakery products. manufacture of bread and rolls;
+  manufacture of fresh pastry, cakes, pies, tarts ; manufacture of rusks, biscuits and other “dry”
+  bakery products ; manufacture of preserved pastry goods and cakes; manufacture of snack products
+  (cookies, crackers, pretzels etc.),whether sweet or salted ; manufacture of tortillas ;
+  manufacture of frozen bakery products: pancakes, waffles, rolls.
+    Group 1072: Manufacture of Sugar
+Description:
+  manufacture or refining of sugar (sucrose) and sugar substitutes from the juice of cane, beet, maple
+  and palm ; manufacture of sugar syrups ; manufacture of molasses ; production of maple syrup and
+  sugar.
+    Group 1073: Manufacture of Cocoa, Chocolate and Sugar Confectionery
+Description:
+  manufacture of cocoa, cocoa butter, cocoa fat, cocoa oil; manufacture of chocolate and chocolate
+  confectionery ;manufacture of sugar confectionery: caramels, cachous, nougats, fondant, white
+  chocolate; manufacture of chewing gum ; preserving in sugar of fruit, nuts, fruit peels and other
+  parts of plants; manufacture of confectionery lozenges and pastilles
+    Group 1074: Manufacture of Macaroni, Noodles, Couscous and Similar FarinaceousProducts
+Description:
+  Farinaceous Products: manufacture of pastas such as macaroni and noodles, whether or not cooked or
+  stuffed; manufacture of couscous; manufacture of canned or frozen pasta products
+    Group 1075: Manufacture of Prepared Meals and Dishes
+Description:
+  includes the manufacture of ready-made (i.e. prepared, seasoned and cooked) meals and dishes. These
+  dishes are processed to preserve them, such as in frozen or canned form, and are usually packaged
+  and labeled for re-sale, i.e. this class does not include the preparation of meals for immediate
+  consumption, such as in restaurants. To be considered a dish, these foods have to contain at least
+  two distinct main ingredients (except seasoning etc). includes manufacture of meat or poultry
+  dishes ; manufacture of fish dishes, including fish and chips; manufacture of prepared dishes of
+  vegetables ; manufacture of canned stews and vacuum-prepared meals ;manufacture of other prepared
+  meals (such as “TV dinners”), manufacture of frozen or otherwise preserved pizza 41
+    Group 1079: Manufacture of Other Food Products NEC
+Description:
+  decaffeinating and roasting of coffee; production of coffee products (ground coffee, soluble coffee,
+  extracts and concentrates of coffee ); manufacture of coffee substitutes; blending of tea and math
+  ; manufacture of extracts and preparations based on tea ; manufacture of soups and broths;
+  manufacture of special foods( infant formula, follow up milks and other follow up foods, baby
+  foods ) foods containing homogenized ingredients; manufacture of spices, sauces and condiments
+  (mayonnaise, mustard flour and meal, prepared mustard); manufacture of vinegar ; manufacture of
+  artificial honey and caramel; manufacture of perishable prepared foods, ( sandwiches, fresh
+  (uncooked) pizza; manufacture of herb infusions (mint, vervain, chamomile etc.) ;manufacture of
+  yeast ; manufacture of extracts and juices of meat, fish, crustaceans or molluscs; manufacture of
+  non-dairy milk and cheese substitutes ; manufacture of egg products, egg albumin; processing of
+  salt into food-grade salt, e.g. iodized salt ; manufacture of artificial concentrates.
+  Class 108: Manufacture of Prepared Animal Feeds
+    Group 1080: Manufacture of Prepared Animal Feeds
+Description:
+  manufacture of prepared feeds for pets, including dogs, cats, birds, fish; manufacture of prepared
+  feeds for farm animals, including animal feed concentrates and feed supplements; preparation of
+  unmixed (single) feeds for farm animals; treatment of slaughter waste to produce animal feeds.
+Division 11: Manufacture of Beverages
+
+  Class 110: Distilling, Rectifying and Blending of Spirits
+    Group 1101: Distilling, Rectifying and Blending of Spirits
+Description:
+  manufacture of distilled, potable, alcoholic beverages: whisky, brandy, gin, liqueurs, “mixed
+  drinks”; blending of distilled spirits; production of neutral spirits.
+    Group 1102: Manufacture of Wines
+Description:
+  manufacture of wine; manufacture of sparkling wine; manufacture of wine from concentrated grape
+  must; manufacture of fermented but not distilled alcoholic beverages: sake, cider, Perry, mead,
+  other fruit wines and mixed beverages containing alcohol ;manufacture of vermouth and the like;
+  blending of wine; manufacture of low or non-alcoholic wine.
+    Group 1103: Manufacture of Malt Liquors and Malt
+Description:
+  manufacture of malt liquors, such as beer, ale, porter and stout; manufacture of malt; manufacture
+  of low alcohol or non-alcoholic beer
+    Group 1104: Manufacture of Soft Drinks, Production of Mineral Waters and Other Bottled Waters
+Description:
+  Other Bottled Waters: manufacture of non-alcoholic beverages, except non-alcoholic beer and wine;
+  production of natural mineral waters and other bottled waters; manufacture of soft drinks (non-
+  alcoholic flavoured and/or sweetened waters: lemonade, orangeade, cola, fruit drinks, tonic
+  waters). 42
+Division 12: Manufacture of Tobacco Products
+
+  Class 120: Manufacture of Tobacco Products
+    Group 1200: Manufacture of Tobacco Products
+Description:
+  manufacture of tobacco products and products of tobacco substitutes: cigarettes, cigarette tobacco,
+  cigars, pipe tobacco, chewing tobacco, snuff; manufacture of “homogenized” or “reconstituted”
+  tobacco; stemming and redrying of tobacco.
+Division 13: Manufacture of Textiles
+
+  Class 131: Spinning, Weaving and Finishing of Textiles
+    Group 1311: Preparation and Spinning of Textile Fibres
+Description:
+  preparatory operations on textile fibres (reeling and washing of silk, degreasing and carbonizing of
+  wool and dyeing of wool fleece, carding and combing of all kinds of animal, vegetable and man-made
+  fibres); spinning and manufacture of yarn or thread for weaving or sewing, for the trade or for
+  further processing (texturizing, twisting, folding, cabling and dipping of synthetic or artificial
+  filament yarns); manufacture of paper yarn.
+    Group 1312: Weaving of Textiles
+Description:
+  manufacture of broad woven cotton-type, woollen-type, worsted-type or silk-type fabrics, including
+  from mixtures or artificial or synthetic yarns; manufacture of other broad woven fabrics, using
+  flax, ramie, hemp, jute, bast fibres and special yarns; manufacture of woven pile or chenille
+  fabrics, terry towelling, gauze; manufacture of woven fabrics of glass fibres; manufacture of
+  woven fabrics of carbon and aramid threads; manufacture of imitation fur by weaving
+    Group 1313: Finishing of Textiles
+Description:
+  bleaching and dyeing of textile fibres, yarns, fabrics and textile articles, including wearing
+  apparel ; dressing, drying, steaming, shrinking, mending, Sanforizing, mercerizing of textiles and
+  textile articles, including wearing apparel; bleaching of jeans; pleating and similar work on
+  textiles; waterproofing, coating, rubberizing or impregnating of garments ;silk- screen printing
+  on textiles and wearing apparel.
+  Class 139: Manufacture of Other Textiles
+    Group 1391: Manufacture of Knitted and Crocheted Fabrics
+Description:
+  manufacture and processing of knitted or crocheted fabrics(pile and terry fabrics, net and window
+  furnishing type fabrics knitted on Raschel or similar machines, other knitted or crocheted
+  fabrics);manufacture of imitation fur by knitting.
+    Group 1392: Manufacture of made-up Textile Articles, except Apparel
+Description:
+  manufacture, of made-up articles of any textile material, including of knitted or crocheted fabrics:
+  (blankets, including travelling rugs, bed, table, toilet or kitchen linen ,quilts, eiderdowns,
+  cushions, pouffes, pillows, sleeping bags); manufacture of made-up furnishing articles (curtains,
+  valances, blinds, bedspreads, furniture or machine covers etc. tarpaulins, tents, camping goods,
+  sails, sunblinds, loose covers for cars, machines or furniture, flags, banners, pennants, dust
+  cloths, dishcloths and similar articles, life jackets, parachutes); manufacture of the textile
+  part of electric blankets; manufacture of hand-woven tapestries; manufacture of tire covers. 43
+    Group 1393: Manufacture of Carpets and Rugs
+Description:
+  manufacture of textile floor coverings (carpets, rugs and mats, tiles): manufacture of needle-loom
+  felt floor coverings.
+    Group 1394: Manufacture of Cordage, Rope, Twine and Netting
+Description:
+  manufacture of twine, cordage, rope and cables of textile fibres or strip or the like, whether or
+  not impregnated, coated, covered or sheathed with rubber or plastics; manufacture of knotted
+  netting of twine, cordage or rope; manufacture of products of rope or netting: fishing nets,
+  ships’ fenders, unloading cushions, loading slings, rope or cable fitted with metal rings etc.
+    Group 1399: Manufacture of Other Textiles NEC
+Description:
+  includes all activities related to the manufacture of textiles or textile products, not specified
+  elsewhere in division 13 or 14, involving a large number of processes and a great variety of goods
+  produced; manufacture of narrow woven fabrics, including fabrics consisting of warp without weft
+  assembled by means of an adhesive; manufacture of labels, badges; manufacture of ornamental
+  trimmings: braids, tassels, pompons; manufacture of felt;;manufacture of tulles and other net
+  fabrics, and of lace and embroidery, in the piece, in strips or in motifs; manufacture of fabric
+  impregnated, coated, covered or laminated with plastics; manufacture of metallized yarn or gimped
+  yarn, rubber thread and cord covered with textile material, textile yarn or strip covered,
+  impregnated, coated or sheathed with rubber or plastics; manufacture of tyre cord fabric of high-
+  tenacity man-made yarn ;manufacture of other treated or coated fabrics: tracing cloth, canvas
+  prepared for use by painters, buckram and similar stiffened textile fabrics, fabrics coated with
+  gum or amylaceous substances; manufacture of diverse textile articles: textile wicks, incandescent
+  gas mantles and tubular gas mantle fabric, hose piping, transmission or conveyor belts or belting
+  (whether or not reinforced with metal or other material), bolting cloth, straining cloth
+  ;manufacture of automotive trimmings ;manufacture of pressure sensitive cloth-tape ;manufacture of
+  artists’ canvas boards and tracing cloth ;manufacture of shoe-lace, of textiles; manufacture of
+  powder puffs and mitts
+Division 14: Manufacture of Wearing Apparels
+
+  Class 141: Manufacture of Wearing Apparel, except Fur Apparel
+    Group 1410: Manufacture of Wearing Apparel, except Fur Apparel
+Description:
+  includes the manufacture of wearing apparel. The material used may be of any kind (see below for
+  exceptions) and may be coated, impregnated or rubberized. 44
+  Class 142: Manufacture of Articles of Fur
+    Group 1420: Manufacture of Articles of Fur
+Description:
+  includes manufacture of articles made of fur skins( fur wearing apparel and clothing accessories,
+  assemblies of fur skins such as “dropped” fur skins, plates, mats, strips, diverse articles of fur
+  skins: rugs, unstuffed pouffes, industrial polishing cloths.
+  Class 143: Manufacture of Knitted and Crocheted Apparel
+    Group 1430: Manufacture of Knitted and Crocheted Apparel
+Description:
+  manufacture of knitted or crocheted wearing apparel and other made-up articles directly into shape:
+  pullovers, cardigans, jerseys, waistcoats and similar articles; manufacture of hosiery, including
+  socks, tights and pantyhose.
+Division 15: Manufacture of Leather and Related Products
+
+  Class 151: Tanning and Dressing of Leather, Manufacture of Luggage, Handbags,
+    Group 1511: Tanning and Dressing of Leather, Dressing and Dyeing of Fur
+Description:
+  tanning, dyeing and dressing of hides and skins; manufacture of chamois dressed, parchment dressed,
+  patent or metallized leathers; manufacture of composition leather; scraping, shearing, plucking,
+  currying, tanning, bleaching and dyeing of fur skins and hides with the hair on.
+    Group 1512: Manufacture of Luggage, Handbags and the Like, Saddlery and Harness
+Description:
+  Harness: manufacture of luggage, handbags and the like, of leather, composition leather or any other
+  material, such as plastic sheeting, textile materials, vulcanized fibre or paperboard, where the
+  same technology is used as for leather ; manufacture of saddlery and harness; manufacture of non-
+  metallic watch bands (e.g. fabric, leather, plastic);manufacture of diverse articles of leather or
+  composition leather: driving belts, packings; manufacture of shoe-lace, of leather; manufacture of
+  horse whips and riding crops.
+  Class 152: , Manufacture of Footwear
+    Group 1520: , Manufacture of Footwear
+Description:
+  manufacture of footwear for all purposes, of any material, by any process, including moulding (see
+  below for exceptions); manufacture of leather parts of footwear: manufacture of uppers and parts
+  of uppers, outer and inner soles, heels; manufacture of gaiters, leggings and similar articles. 45
+Division 16: Manufacture of Wood and of Products of Wood and Cork, except Furniture, Manufacture of Articles of Straw and Plaiting Materials
+
+  Class 161: Sawmilling and Planning of Wood
+    Group 1610: Sawmilling and Planning of Wood
+Description:
+  sawing, planning and machining of wood; slicing, peeling or chipping logs ;manufacture of wooden
+  railway sleepers; manufacture of unassembled wooden flooring; manufacture of wood wool, wood
+  flour, chips, particles; drying of wood; impregnation or chemical treatment of wood with
+  preservatives or other materials
+  Class 162: Manufacture of Products of Wood, Cork, Straw and Plaiting Materials
+    Group 1621: Manufacture of Veneer Sheets and Wood-based Panels
+Description:
+  manufacture of veneer sheets thin enough to be used for veneering, making plywood or other purposes
+  (smoothed, dyed, coated, impregnated, reinforced (with paper or fabric backing), made in the form
+  of motifs; manufacture of plywood, veneer panels and similar laminated wood boards and sheets;
+  manufacture of particle board and fibre-board; manufacture of densified wood; manufacture of glue
+  laminated wood, laminated veneer wood
+    Group 1622: Manufacture of Builders’ Carpentry and Joinery
+Description:
+  manufacture of wooden goods intended to be used primarily in the construction industry ( beams,
+  rafters, roof struts, glue-laminated or metal connected prefabricated wooden roof trusses, doors,
+  windows, shutters and their frames, whether or not containing metal fittings, such as hinges,
+  locks, stairs, railings, wooden beadings and mouldings, shingles and shakes, parquet floor blocks,
+  strips etc., assembled into panels); manufacture of prefabricated buildings, or elements thereof,
+  predominantly of wood; manufacture of mobile homes; manufacture of wood partitions (except free
+  standing).
+    Group 1623: Manufacture of Wooden Containers
+Description:
+  manufacture of packing cases, boxes, crates, drums and similar packings of wood; manufacture of
+  pallets, box pallets and other load boards of wood; manufacture of barrels, vats, tubs and other
+  coopers’ products of wood; manufacture of wooden cable-drums. 46
+    Group 1629: Manufacture of Other Products of Wood, Manufacture of Articles of Cork, Straw and Plaiting Materials
+Description:
+  of Cork, Straw and Plaiting Materials: manufacture of various wood products (wooden handles and
+  bodies for tools, brooms, brushes, wooden boot or shoe parts (e.g. heels), wooden boot or shoe
+  lasts and tree, wooden clothes hangers, wooden mirror and picture frames, wooden frames for
+  artists’ canvases, household utensils and kitchenware of wood, wooden statuettes and ornaments,
+  wood marquetry, inlaid wood, wooden cases for jewellery, cutlery and similar articles, wooden
+  spools, cops, bobbins, sewing thread reels and similar articles of turned wood, wooden handles for
+  umbrellas, canes and similar, wooden blocks for the manufacture of smoking pipes, other articles
+  of wood; natural cork processing, manufacture of agglomerated cork; manufacture of articles of
+  natural or agglomerated cork, including floor coverings ;manufacture of plaits and products of
+  plaiting materials: mats, matting, screens, cases; manufacture of basket-ware and wickerwork;
+  manufacture of fire logs, made of pressed wood or substitute materials like coffee or soybean
+  grounds.
+Division 17: Manufacture of Paper and Paper products
+
+  Class 170: Manufacture of Pulp, Paper and Paperboard
+    Group 1701: Manufacture of Pulp, Paper and Paperboard
+Description:
+  manufacture of bleached, semi-bleached or unbleached paper pulp by mechanical, chemical (dissolving
+  or non-dissolving) or semi-chemical processes; manufacture of cotton-linters pulp; removal of ink
+  and manufacture of pulp from waste paper; manufacture of paper and paperboard intended for further
+  industrial processing; further processing of paper and paperboard (coating, covering and
+  impregnating of paper and paperboard, manufacture of crinkled paper, manufacture of laminates and
+  foils, if laminated with paper or paperboard ;manufacture of handmade paper; manufacture of
+  newsprint and other printing or writing paper ;manufacture of cellulose wadding and webs of
+  cellulose fibres; manufacture of carbon paper or stencil paper in rolls or large sheets
+    Group 1702: Manufacture of Corrugated Paper and Paperboard and of Containers of
+Description:
+  Containers of Paper and Paperboard: manufacture of corrugated paper and paperboard; manufacture of
+  containers of corrugated paper or paperboard; manufacture of folding paperboard containers;
+  manufacture of containers of solid board; manufacture of other containers of paper and paperboard;
+  manufacture of sacks and bags of paper; manufacture of office box files and similar articles 47
+    Group 1709: Manufacture of Other Articles of Paper and Paperboard
+Description:
+  manufacture of household and personal hygiene paper and cellulose wadding products (cleansing
+  tissues, handkerchiefs, towels, serviettes, toilet paper, sanitary towels and tampons, napkins and
+  napkin liners for babies, cups, dishes and trays);manufacture of textile wadding and articles of
+  wadding: sanitary towels, tampons ;manufacture of printing and writing paper ready for use;
+  manufacture of computer printout paper ready for use; manufacture of self-copy paper ready for
+  use; manufacture of duplicator stencils and carbon paper ready for use ;manufacture of gummed or
+  adhesive paper ready for use ;manufacture of envelopes and letter- cards; manufacture of
+  registers, accounting books, binders, albums and similar educational and commercial stationery
+  ;manufacture of boxes, pouches, wallets and writing compendiums containing an assortment of paper
+  stationery ;manufacture of wallpaper and similar wall coverings, including vinyl-coated and
+  textile wallpaper ;manufacture of labels; manufacture of filter paper and paperboard; manufacture
+  of paper and paperboard bobbins, spools, cops; manufacture of egg trays and other moulded pulp
+  packaging products ;manufacture of paper novelties.
+Division 18: Printing and Reproduction of Recorded Media
+
+  Class 181: Printing and Service Activities Related to Printing
+    Group 1811: Printing
+Description:
+  printing of newspapers, magazines and other periodicals, books and brochures, music and music
+  manuscripts, maps, atlases, posters, advertising catalogues, prospectuses and other printed
+  advertising, postage stamps, taxation stamps, documents of title, cheques and other security
+  papers, diaries, calendars, business forms and other commercial printed matter, personal
+  stationery and other printed matter by letterpress, offset, photogravure, flexographic and other
+  printing presses, duplication machines, computer printers, embossers etc., including quick
+  printing ;printing directly onto textiles, plastic, glass, metal, wood and ceramics (except silk-
+  screen printing on textiles and wearing apparel) ;printing on labels or tags (lithographic,
+  gravure printing, flexographic printing, other).
+    Group 1812: Service Activities Related to Printing
+Description:
+  binding of printed sheets, e.g. into books, brochures, magazines, catalogues etc., by folding,
+  assembling, stitching, glueing, collating, basting, adhesive binding, trimming, gold stamping
+  ;composition, typesetting, phototypesetting, pre-press data input including scanning and optical
+  character recognition, electronic make-up ;plate-making services including image setting and
+  plate- setting (for the printing processes letter press and offset ); engraving or etching or
+  etching of cylinders for gravure; plate processes direct to plate (also photopolymer plates);
+  preparation of plates and dies for relief stamping or printing; production of proofs; artistic
+  work including preparation of litho stones and prepared woodblocks; production of reprographic
+  products; design of printing products e.g. sketches, layouts, dummies and other graphic activities
+  such as die-sinking or die- stamping, Braille copying, punching and drilling, embossing,
+  varnishing and laminating, collating and insetting, creasing 48
+  Class 182: Reproduction of Recorded Media
+    Group 1820: Reproduction of Recorded Media
+Description:
+  reproduction from master copies of gramophone records, compact discs and tapes with music or other
+  sound recordings ;reproduction from master copies of records, compact discs and tapes with motion
+  pictures and other video recordings; reproduction from master copies of software and data on discs
+  and tapes.
+Division 19: Manufacture of Coke and Refined Petroleum Products
+
+  Class 191: Manufacture of Coke Oven Products
+    Group 1910: Manufacture of Coke Oven Products
+Description:
+  operation of coke ovens ;production of coke and semi-coke; production of pitch and pitch coke;
+  production of coke oven gas; production of crude coal and lignite tars; agglomeration of coke.
+Division 20: Manufacture of Chemicals and Chemical Products
+
+  Class 201: Manufacture of Basic Chemicals, Fertilizers and Nitrogen Compounds, Plastics and Synthetic Rubber in Primary Forms
+    Group 2011: Manufacture of Basic Chemicals
+Description:
+  manufacture of liquefied or compressed inorganic industrial or medical gases (elemental gases,
+  liquid or compressed air, refrigerant gases, mixed industrial gases, inert gases such as carbon
+  dioxide, isolating gases);manufacture of dyes and pigments from any source in basic form or as
+  concentrate; manufacture of chemical elements; manufacture of inorganic acids except nitric acid;
+  manufacture of alkalis, lyes and other inorganic bases except ammonia; manufacture of other
+  inorganic compounds ; manufacture of basic organic chemicals (acyclic hydrocarbons, saturated and
+  unsaturated, cyclic hydrocarbons, saturated and unsaturated, acyclic and cyclic alcohols, mono-
+  and poly-carboxylic acids, including acetic acid, other oxygen-function compounds, including
+  aldehydes, ketones, quinones and dual or poly oxygen-function compounds, synthetic glycerol,
+  nitrogen-function organic compounds, including amines, fermentation of sugarcane, corn or similar
+  to produce alcohol and esters, other organic compounds, including wood distillation products (e.g.
+  charcoal) ;manufacture of distilled water; manufacture of synthetic aromatic products; roasting of
+  iron pyrites; manufacture of products of a kind used as fluorescent brightening agents or as
+  luminophores ; enrichment of uranium and thorium ores and production of fuel elements for nuclear
+  reactors. 49
+    Group 2012: Manufacture of Fertilizers and Nitrogen Compounds
+Description:
+  manufacture of fertilizers (straight or complex nitrogenous, phosphatic or potassic fertilizers,
+  urea, crude natural phosphates and crude natural potassium salts);manufacture of associated
+  nitrogen products( nitric and sulphonitric acids, ammonia, ammonium chloride, ammonium carbonate,
+  nitrites and nitrates of potassium); manufacture of potting soil with peat as main constituent ;
+  manufacture of potting soil mixtures of natural soil, sand, clays and minerals.
+    Group 2013: Manufacture of Plastics and Synthetic Rubber in Primary Forms
+Description:
+  manufacture of plastics in primary forms (polymers, including those of ethylene, propylene, styrene,
+  vinyl chloride, vinyl acetate and acrylics, polyamides, phenolic and epoxide resins and
+  polyurethanes, alkyd and polyester resins and polyethers, silicones, ion-exchangers based on
+  polymers);manufacture of synthetic rubber in primary forms (synthetic rubber, factice);
+  manufacture of mixtures of synthetic rubber and natural rubber or rubber-like gums; manufacture of
+  cellulose and its chemical derivatives
+  Class 202: Manufacture of Other Chemicals Products
+    Group 2021: Manufacture of Pesticides and Other Agrochemical Products
+Description:
+  manufacture of insecticides, rodenticides, fungicides, herbicides; manufacture of anti-sprouting
+  products, plant growth regulators; manufacture of disinfectants (for agricultural and other use);
+  manufacture of other agrochemical products n.e.c.
+    Group 2022: Manufacture of Paints, Vanishes and Similar Coatings, Printing Ink and Mastics
+Description:
+  Ink and Mastics: manufacture of paints and varnishes, enamels or lacquers; manufacture of prepared
+  pigments and dyes, opacifiers and colours; manufacture of vitrifiable enamels and glazes and
+  engobes and similar preparations; manufacture of mastics; manufacture of caulking compounds and
+  similar non-refractory filling or surfacing preparations ;manufacture of organic composite
+  solvents and thinners; manufacture of prepared paint or varnish removers; manufacture of printing
+  ink.
+    Group 2023: Manufacture of Soaps and Detergents, cleaning and Polishing Preparations,
+Description:
+  Preparations, Perfumes and Toilet Preparations: includes manufacture of organic surface-active
+  agents; manufacture of soap; manufacture of paper, wadding, felt etc. coated or covered with soap
+  or detergent; manufacture of crude glycerol;; manufacture of surface-active preparations (washing
+  powders in solid or liquid form and detergents, dish-washing preparations, textile softeners);
+  manufacture of cleaning and polishing products: (preparations for perfuming or deodorizing rooms,
+  artificial waxes and prepared waxes, polishes and creams for leather, polishes and creams for
+  wood, polishes for coachwork, glass and metal ,scouring pastes and powders, including paper,
+  wadding etc. coated or covered with these) ;manufacture of perfumes and toilet preparations(
+  perfumes and toilet water ,beauty and make-up preparations, sunburn prevention and suntan
+  preparations, manicure and pedicure preparations, shampoos, hair lacquers, waving and
+  straightening preparations, dentifrices and preparations for oral 50 including pre-shave and
+  aftershave preparations, deodorants and bath salts, depilatories.
+    Group 2029: Manufacture of Other Chemical Products NEC
+Description:
+  manufacture of propellant powders; manufacture of explosives and pyrotechnic products, including
+  percussion caps, detonators, signaling flares; manufacture of gelatin and its derivatives, glues
+  and prepared adhesives, including rubber-based glues and adhesives ;manufacture of extracts of
+  natural aromatic products; manufacture of resic noids; manufacture of aromatic distilled waters;
+  manufacture of mixtures of odoriferous products for the manufacture of perfumes or food ;
+  manufacture of photographic plates, films, sensitized paper and other sensitized unexposed
+  materials; manufacture of chemical preparations for photographic uses; manufacture of various
+  chemical products ( peptones, peptone derivatives, other protein substances and their derivatives,
+  essential oils, chemically modified oils and fats, materials used in the finishing of textiles and
+  leather, powders and pastes used in soldering, brazing or welding, substances used to pickle
+  metal, prepared additives for cements, activated carbon, lubricating oil additives, prepared
+  rubber accelerators, catalysts and other chemical products for industrial use.
+  Class 203: Manufacture of Man-made Fibres
+    Group 2030: Manufacture of Man-made Fibres
+Description:
+  manufacture of synthetic or artificial filament tow; manufacture of synthetic or artificial staple
+  fibres, not carded, combed or otherwise processed for spinning ;manufacture of synthetic or
+  artificial filament yarn, including high-tenacity yarn ;manufacture of synthetic or artificial
+  monofilament or strip.
+Division 21: Manufacture of Pharmaceuticals, Medical and Botanical Products
+
+  Class 210: Manufacture of Pharmaceuticals, Medicinal Chemical and Botanical Products
+    Group 2100: Manufacture of Pharmaceuticals, Medicinal Chemical and Botanical Products
+Description:
+  Products: Manufacture of medicinal active substances to be used for their pharmacological properties
+  in the manufacture of medicaments: antibiotics, basic vitamins, salicylic and O-acetylsalicylic
+  acids; manufacture of medicaments: (antisera and other blood fractions, vaccines, diverse
+  medicaments, including homeopathic preparation); manufacture of chemical contraceptive products
+  for external use and hormonal contraceptive medicaments ;manufacture of medical diagnostic
+  preparations, including pregnancy tests; manufacture of radioactive in-vivo diagnostic substances
+  ;manufacture of biotech pharmaceuticals; manufacture of chemically pure sugars; processing of
+  glands and manufacture of extracts of glands; manufacture of medical impregnated wadding, gauze,
+  bandages, dressings; preparation of botanical products (grinding, grading, milling) for
+  pharmaceutical use.
+Division 22: Manufacture of Rubber and Plastics Products
+
+  Class 221: Manufacture of Rubber Products
+    Group 2211: Manufacture of Rubber Tyres and Tubes; Retreading and Rebuilding of Rubber Tyres
+Description:
+  of Rubber Tyres: manufacture of rubber tyres for vehicles, equipment, mobile machinery, aircraft,
+  toy, furniture and other uses: (pneumatic tyres , solid or cushion tyres), manufacture of inner
+  tubes for tyres; manufacture of interchangeable tyre treads, tyre flaps, “camelback” strips for
+  retreading tyres ; tyre rebuilding and retreading. 51
+    Group 2219: Manufacture of Other Rubber Products
+Description:
+  manufacture of other products of natural or synthetic rubber, unvulcanized, vulcanized or hardened:
+  ( rubber plates, sheets, strip, rods, profile shapes, tubes, pipes and hoses, rubber conveyor or
+  transmission belts or belting, rubber hygienic articles: sheath contraceptives, teats, hot water
+  bottle, rubber articles of apparel (if only sealed together, not sewn), rubber thread and rope,
+  rubberized yarn and fabrics, rubber rings, fittings and seals, rubber roller coverings, inflatable
+  rubber mattresses, inflatable balloons); manufacture of rubber brushes ;manufacture of hard rubber
+  pipe stems; manufacture of hard rubber combs, hair pins, hair rollers, and similar; manufacture of
+  rubber repair materials ; manufacture of textile fabric impregnated, coated, covered or laminated
+  with rubber, where rubber is the chief constituent ; manufacture of rubber waterbed mattresses;
+  manufacture of rubber bathing caps and aprons; manufacture of rubber wet suits and diving suits.
+  Class 222: Manufacture of Plastics Products
+    Group 2220: Manufacture of Plastics Products
+Description:
+  includes the processing of new or spent (i.e. recycled) plastics resins into intermediate or final
+  products, using such processes as compression molding, extrusion molding, injection molding, blow
+  molding and casting. For most of these, the production process is such that a wide variety of
+  products can be made. It includes manufacture of semi-manufactures of plastic products: (plastic
+  plates, sheets, blocks, film, foil, strip); manufacture of finished plastic products (plastic
+  tubes, pipes and hoses; hose and pipe fittings); manufacture of plastic articles for the packing
+  of goods: (plastic bags, sacks, containers, boxes, cases, carboys, bottles) ;manufacture of
+  builders’ plastics ware ( plastic doors, windows, frames, shutters, blinds, skirting boards,
+  tanks, reservoirs, plastic floor, wall or ceiling coverings in rolls or in the form of tiles;
+  manufacture of plastic tableware, kitchenware and toilet articles; cellophane film or sheet
+  ;manufacture of resilient floor coverings, such as vinyl, linoleum; manufacture of artificial
+  stone (e.g. cultured marble); manufacture of plastic signs (non-electrical); manufacture of
+  diverse plastic products ( plastic headgear, insulating fittings, parts of lighting fittings,
+  office or school supplies, articles of apparel (if only sealed together, not sewn), fittings for
+  furniture, statuettes, transmission and conveyer belts, self-adhesive tapes of plastic, plastic
+  wall paper, plastic shoe lasts, plastic cigar and cigarette holders, combs, plastics hair curlers,
+  plastics novelties).
+Division 23: Manufacture of Other Non-Metallic Mineral Products
+
+  Class 231: Manufacture of Glass and Glass Products
+    Group 2310: Manufacture of Glass and Glass Products
+Description:
+  manufacture of flat glass, including wired, coloured or tinted flat glass; manufacture of toughened
+  or laminated flat glass; manufacture of glass in rods or tubes; manufacture of glass paving blocks
+  ; manufacture of glass mirrors; manufacture of multiple-walled insulating units of glass;
+  manufacture of bottles and other containers of glass or crystal; manufacture of drinking glasses
+  and other domestic glass or crystal articles; manufacture of glass fibres, including glass wool
+  and non-woven products thereof; manufacture of laboratory, hygienic or pharmaceutical glassware;
+  manufacture of clock or watch 52 manufacture of glassware used in imitation jewellery; manufacture
+  of glass insulators and glass insulating fittings; manufacture of glass envelopes for lamps;
+  manufacture of glass figurines.
+  Class 239: Manufacture of Non-Metallic Mineral Products
+    Group 2391: Manufacture of Refractory Products
+Description:
+  include manufacture of refractory mortars, concrete; manufacture of refractory ceramic goods (heat-
+  insulated ceramic goods of siliceous fossil meals, refractory bricks, blocks and tiles, retorts);
+  manufacture of refractory articles containing magnesite, dolomite or chromite.
+    Group 2392: Manufacture of Clay Building Materials
+Description:
+  manufacture of non-refractory ceramic hearth or wall tiles, mosaic cubes; manufacture of non-
+  refractory ceramic flags and paving; manufacture of structural non-refractory clay building
+  materials: ( manufacture of ceramic bricks, roofing tiles, chimney pots, pipes, conduits);
+  manufacture of flooring blocks in baked clay; manufacture of ceramic sanitary fixtures.
+    Group 2393: Manufacture of Other Porcelain and Ceramic Products
+Description:
+  manufacture of ceramic tableware and other domestic or toilet articles; manufacture of statuettes
+  and other ornamental ceramic articles; manufacture of electrical insulators and insulating
+  fittings of ceramics; manufacture of ceramic and ferrite magnets; manufacture of ceramic
+  laboratory, chemi- cal and industrial products; manufacture of ceramic pots, jars and similar
+  articles of a kind used for conveyance or packing of goods; manufacture of ceramic furniture;
+  manufacture of ceramic products.
+    Group 2394: Manufacture of Cement, Lime and Plaster
+Description:
+  manufacture of clinkers and hydraulic cements, including Portland, aluminous cement, slag cement and
+  superphosphate cements manufacture of quicklime, slaked lime and hydraulic lime; manufacture of
+  plasters of calcined gypsum or calcined sulphate; manufacture of calcined dolomite.
+    Group 2395: Manufacture of Articles of Concrete, Cement and Plaster
+Description:
+  manufacture of precast concrete, cement or artificial stone articles for use in construction:
+  (tiles, flagstones, bricks, boards, sheets, panels, pipes, posts) ; manufacture of prefabricated
+  structural components for buildings or civil engineering of cement, concrete or artificial stone ;
+  manufacture of plaster articles for use in construction (boards, sheets, panels); manufacture of
+  building materials of vegetable substances (wood wool, straw, reeds, rushes) agglomerated with
+  cement, plaster or other mineral binder ; manufacture of articles of asbestos-cement or cellulose
+  fibre-cement or the like (corrugated sheets, other sheets, panels, tiles, tubes, pipes,
+  reservoirs, troughs, basins, sinks, jars, furniture, window frames); manufacture of other articles
+  of concrete, plaster, cement or artificial stone:( statuary, furniture, bas- and haut-reliefs,
+  vases, flowerpots); manufacture of powdered mortars; manufacture of ready- mix and dry-mix
+  concrete and mortars 53
+    Group 2396: Cutting, Shaping and Finishing of Stone
+Description:
+  includes cutting, shaping and finishing of stone for use in construction, in cemeteries on roads as
+  roofing; manufacture of stone furniture.
+    Group 2399: Manufacture of Other Non-Metallic Mineral Products NEC
+Description:
+  manufacture of millstones, sharpening or polishing stones and natural or artificial abrasive
+  products, including abrasive products on a soft base (e.g. sandpaper) ; manufacture of friction
+  material and unmounted articles thereof with a base of mineral substances or of cellulose;
+  manufacture of mineral insulating materials: (slag wool, rock wool and similar mineral wools;
+  exfoliated vermiculite, expanded clays and similar heat-insulating, sound-insulating or sound-
+  absorbing materials); manufacture of articles of diverse mineral substances: (worked mica and
+  articles of mica, of peat, of graphite); manufacture of articles of asphalt or similar material,
+  e.g. asphalt-based adhesives, coal tar pitch ; carbon and graphite fibers and products (except
+  electrodes and electrical applications).
+Division 24: Manufacture of Basic Metals
+
+  Class 241: Manufacture of Basic Iron and Steel
+    Group 2410: Manufacture of Basic Iron and Steel
+Description:
+  includes operations of conversion by reduction of iron ore in blast furnaces and oxygen converters
+  or of ferrous waste and scrap in electric arc furnaces or by direct reduction of iron ore without
+  fusion to obtain crude steel which is smelted and refined in a ladle furnace and then poured and
+  solidified in a continuous caster in order to produce semi-finished flat or long products, which
+  are used, after reheating, in rolling, drawing and extruding operations to manufacture finished
+  products such as plate, sheet, strip, bars, rods, wire, tubes, pipes and hollow profiles;
+  operation of blast furnaces, steel converters, rolling and finishing mills; production of pig iron
+  and spiegeleisen in pigs, blocks or other primary forms ; production of ferro- alloys ; production
+  of ferrous products by direct reduction of iron and other spongy ferrous products ; production of
+  iron of exceptional purity by electrolysis or other chemical processes; production of granular
+  iron and iron powder; production of steel in ingots or other primary forms; remelting of scrap
+  ingots of iron or steel production of semi-finished products of steel; manufacture of hot-rolled
+  and cold-rolled flat-rolled products of steel.
+  Class 242: Manufacture of Basic Precious and Other Non-Ferrous Metals
+    Group 2420: Manufacture of Basic Precious and Other Non-Ferrous Metals
+Description:
+  production of basic precious metals; production of precious metal alloys; production of precious
+  metal semi-products; production of silver rolled onto base metals; production of gold rolled onto
+  base metals or silver; production of platinum and platinum group metals rolled onto gold, silver
+  or base metals; production of aluminium from alumina; production of aluminium from electrolytic
+  refining of aluminium waste and scrap; production of aluminium alloys; semi-manufacturing of
+  aluminium; production of lead, zinc and tin from ores; production of lead, zinc and tin from
+  electrolytic refining of lead, zinc and tin waste and scrap; production of lead, zinc and tin
+  alloys; semi-manufacturing of lead, zinc and tin; production of copper from ores; production of
+  copper from electrolytic refining of copper waste and scrap; production of copper alloys. 54
+  Class 243: Casting of Metals
+    Group 2431: Casting of Iron and Steel
+Description:
+  casting of semi-finished iron products; casting of grey iron castings; casting of spheroidal
+  graphite iron castings; casting of malleable cast-iron products; casting of semi-finished steel
+  products; casting of steel castings; manufacture of tubes, pipes and hollow profiles and of tube
+  or pipe fittings of cast iron; manufacture of seamless tubes and pipes of steel by centrifugal
+  casting; manufacture of tube or pipe fittings of cast-steel.
+    Group 2432: Casting of Non-Ferrous Metals
+Description:
+  includes casting of semi-finished products of aluminium, magnesium, titanium, zinc; casting of light
+  metal castings; casting of heavy metal castings; casting of precious metal castings.
+Division 25: Manufacture of Fabricated Metal Products, except Machinery and
+
+  Class 251: Manufacture of Structural Metal Products, Tanks, Reservoirs and Steam Generators
+    Group 2511: Manufacture of Structural Metal Products
+Description:
+  manufacture of metal frameworks or skeletons for construction and parts thereof (towers, masts,
+  trusses, bridges); manufacture of industrial frameworks in metal (frameworks for blast furnaces,
+  lifting and handling equipment); manufacture of prefabricated buildings mainly of metal (site
+  huts, modular exhibition elements); manufacture of metal doors, windows and their frames, shutters
+  and gates; metal room partitions for floor attachment.
+    Group 2512: Manufacture of Tanks, Reservoirs and Containers of Metal
+Description:
+  manufacture of reservoirs, tanks and similar containers of metal, of types normally installed as
+  fixtures for storage or manufacturing use; manufacture of metal containers for compressed or
+  liquefied gas; manufacture of central heating boilers or radiators.
+    Group 2513: Manufacture of Steam Generators, except Central Heating Hot Water Boilers
+Description:
+  Boilers: manufacture of steam or other vapor generators; manufacture of auxiliary plant for use with
+  steam generators (condensers, economizers, super-heaters, steam collectors and accumulators);
+  manufacture of nuclear reactors, except isotope separators; manufacture of parts for marine or
+  power boilers.
+  Class 259: Manufacture of Other Fabricated Metal Products; Metalworking ServiceActivities
+    Group 2591: Forging, Pressing, Stamping and Roll-Forming of Metal; Powder Metallurgy
+Description:
+  Metallurgy: includes forging, pressing, stamping and roll-forming of metal; powder metallurgy;
+  production of metal objects directly from metal powder by heat treatment or under pressure.
+    Group 2592: Treatment and Coating of Metals; Machining
+Description:
+  plating, anodizing etc. of metals; heat treatment of metals; deburring, sandblasting, tumbling,
+  cleaning of metals; colouring and engraving of metals; non-metallic coating of metals; hardening,
+  buffing of metals; boring, turning, milling, eroding, planning, lapping, broaching, levelling,
+  sawing, grinding, sharpening, polishing, welding, splicing etc. of metalwork pieces; cutting of
+  and writing on metals by means of laser beams. 55
+    Group 2593: Manufacture of Cutlery, Hand Tools and General Hardware
+Description:
+  manufacture of domestic cutlery such as knives, forks, spoons; manufacture of other articles of
+  cutlery; manufacture of knives and cutting blades for machines or for mechanical appliances;
+  manufacture of hand tools such as pliers, screwdrivers; manufacture of non-power- driven
+  agricultural hand tools ; manufacture of saws and saw blades, including circular saw blades and
+  chainsaw blades ; manufacture of interchangeable tools for hand tools, whether or not power-
+  operated, or for machine tools: drills, punches, milling cutters; manufacture of press tools;
+  manufacture of blacksmiths’ tools: forges, anvils; manufacture of moulding boxes and moulds
+  (except ingot moulds); manufacture of vices, clamps; manufacture of padlocks, locks, keys, hinges
+  and the like, hardware for buildings, furniture, vehicles; manufacture of cutlasses, swords,
+  bayonets.
+    Group 2599: Manufacture of Other Fabricated Metal Products NEC
+Description:
+  manufacture of pails, cans, drums, buckets, boxes; manufacture of tins and cans for food products,
+  collapsible tubes and boxes; manufacture of metallic closures; manufacture of metal cable, plaited
+  bands and similar articles; manufacture of uninsulated metal cable or insulated cable not capable
+  of being used as a conductor of electricity; manufacture of articles made of wire: barbed wire,
+  wire fencing, grill, netting, cloth; manufacture of nails and pins; manufacture of rivets, washers
+  and similar non-threaded products; manufacture of screw machine products; manufacture of bolts,
+  screws, nuts and similar threaded products; manufacture of springs (except watch springs);
+  manufacture of chain, except power transmission chain; manufacture of metal household articles;
+  manufacture of baths, sinks, washbasins and similar articles; manufacture of metal goods for
+  office use, except furniture; manufacture of safes, strongboxes, armored doors; manufacture of
+  various metal articles; manufacture of foil bags; manufacture of permanent metallic magnets;
+  manufacture of metal vacuum jugs and bottles; manufacture of metal signs (non-
+  electrical);manufacture of metal badges and metal military insignia; manufacture of metal hair
+  curlers, metal umbrella handles and frames, combs.
+Division 26: Manufacture of Computer, Electronic and Optical Products
+
+  Class 261: Manufacture of Electronic Components and Boards
+    Group 2610: Manufacture of Electronic Components and Boards
+Description:
+  includes manufacture of capacitors, electronic; manufacture of resistors, electronic; manufacture of
+  microprocessors; manufacture of bare printed circuit boards; manufacture of electron tubes;
+  manufacture of electronic connectors; manufacture of integrated circuits (analog, digital or
+  hybrid); manufacture of diodes, transistors and related discrete devices ; manufacture of
+  inductors (e.g. chokes, coils, transformers), electronic component type ; manufacture of
+  electronic crystals and crystal assemblies; manufacture of solenoids, switches and transducers for
+  electronic applications; manufacture of dice or wafers, semiconductor, finished or semi-finished;
+  manufacture of interface cards (e.g. sound, video, controllers, network, modems);manufacture of
+  display components (plasma, polymer, LCD);manufacture of light emitting diodes (LED); loading of
+  components onto printed circuit boards. 56
+  Class 262: Manufacture of Computers and Peripheral Equipment
+    Group 2620: Manufacture of Computers and Peripheral Equipment
+Description:
+  includes manufacture and/or assembly of electronic computers, such as mainframes, desktop computers,
+  laptops , handheld computers and computer servers; and computer peripheral equipment, such as
+  storage devices and input/output devices (printers, monitors, keyboards); manufacture of magnetic
+  discs, manufacture of optical, manufacture of prointers; manufacture of monitors; manufacture of
+  keyboards.
+  Class 263: Manufacture of Communication Equipment
+    Group 2630: Manufacture of Communication Equipment
+Description:
+  includes manufacture of central office switching equipment ; manufacture of cordless telephones;
+  manufacture of private branch exchange (PBX) equipment ; manufacture of telephone and facsimile
+  equipment, including telephone answering machines ; manufacture of data communications equipment,
+  such as bridges, routers, and gateways; manufacture of transmitting and receiving antenna;
+  manufacture of cable television equipment; manufacture of pagers; manufacture of cellular phones;
+  manufacture of mobile communication equipment; manufacture of radio and television studio and
+  broadcasting equipment, including television cameras; manufacture of modems, carrier equipment;
+  manufacture of burglar and fire alarm systems, sending signals to a control station; manufacture
+  of radio and television transmitters; manufacture of infrared devices (e.g. remote controls)
+  Class 264: Manufacture of Consumer Electronics
+    Group 2640: Manufacture of Consumer Electronics
+Description:
+  includes manufacture of video cassette recorders and duplicating equipment; manufacture of
+  televisions; manufacture of television monitors and displays; manufacture of audio recording and
+  duplicating systems; manufacture of stereo equipment; manufacture of radio receivers; manufacture
+  of speaker systems; manufacture of household-type video cameras; manufacture of jukeboxes;
+  manufacture of amplifiers for musical instruments and public address systems; manufacture of
+  microphones; manufacture of CD and DVD players ; manufacture of karaoke machines ; manufacture of
+  headphones (e.g. radio, stereo, computer) ; manufacture of video game consoles
+  Class 265: Manufacturing of Measuring, Testing, Navigating and Control Equipment; Watches and Clocks
+    Group 2651: Manufacturing of Measuring, Testing, Navigating and Control Equipment
+Description:
+  Equipment: includes manufacture of aircraft engine instruments; manufacture of automotive emissions
+  testing equipment ; manufacture of meteorological instruments ; manufacture of physical properties
+  testing and inspection equipment; manufacture of polygraph machines; manufacture of instruments
+  for measuring and testing electricity and electrical signals (including for telecommunications) ;
+  manufacture of radiation detection and monitoring instruments ; manufacture of electron and proton
+  microscopes; manufacture of surveying instruments; manufacture of thermometers liquid-in-glass and
+  bimetal types (except medical); manufacture of humidistats ; manufacture of hydronic limit
+  controls; manufacture of flame and burner control; manufacture of spectrometers; manufacture of
+  pneumatic gauges; manufacture of consumption meters (e.g. water, gas); manufacture of flow meters
+  and detectors, pulse (signal) generators; metal detectors; 57 equipment, including sonobuoys;
+  manufacture of radar equipment ; manufacture of GPS devices ; manufacture of environmental
+  controls and automatic controls for appliances; manufacture of measuring and recording equipment
+  (e.g. flight recorders); manufacture of motion detectors ; manufacture of laboratory analytical
+  instruments (e.g. blood analysis equipment); manufacture of laboratory scales, balances,
+  incubators, and miscellaneous laboratory apparatus for measuring, testing, etc.
+    Group 2652: Manufacturing of Watches and Clocks
+Description:
+  includes manufacture of watches and clocks of all kinds, including instrument panel clocks;
+  manufacture of watch and clock cases, including cases of precious metals; manufacture of time-
+  recording equipment and equipment for measuring, recording and otherwise displaying intervals of
+  time with a watch or clock movement or with synchronous motor; manufacture of time switches and
+  other releases with a watch or clock movement or with synchronous motor:
+  Class 266: Manufacture of Irradiation, Electro-medical and Electro-therapeutic Equipment
+    Group 2660: Manufacture of Irradiation, Electro-medical and Electro-therapeutic Equipment
+Description:
+  Equipment: includes manufacture of irradiation apparatus and tubes (e.g. industrial, medical
+  diagnostic, medical therapeutic, research, scientific); manufacture of CT scanners; manufacture of
+  PET scanners ; manufacture of magnetic resonance imaging (MRI) equipment; manufacture of medical
+  ultrasound equipment; manufacture of electrocardiographs; manufacture of electro medical
+  endoscopic equipment; manufacture of medical laser equipment ; manufacture of pacemakers ;
+  manufacture of hearing aids ; manufacture of food and milk irradiation equipment
+  Class 267: Manufacture of Optical Instruments and Photographic Equipment
+    Group 2670: Manufacture of Optical Instruments and Photographic Equipment
+Description:
+  includes the manufacture of optical instruments and lenses, such as binoculars, microscopes (except
+  electron, proton), telescopes, prisms and lenses (except ophthalmic); the coating or polishing of
+  lenses (except ophthalmic); the mounting of lenses (except ophthalmic) and the manufacture of
+  photographic equipment such as cameras and light meters; manufacture of motion picture and slide
+  projectors;
+  Class 268: Manufacture of Magnetic and Optical Media
+    Group 2680: Manufacture of Magnetic and Optical Media
+Description:
+  includes manufacture of blank magnetic audio and video tapes; manufacture of blank magnetic audio
+  and video cassettes; manufacture of blank diskettes; manufacture of blank optical discs;
+  manufacture of hard drive media 58
+Division 27: Manufacture of Electrical Equipment
+
+  Class 271: Manufacture of Electric Motors, Generators, Transformers and Electricity Distribution and Control Apparatus
+    Group 2710: Manufacture of Electric Motors, Generators, Transformers and Electricity Distribution and Control Apparatus
+Description:
+  and Electricity Distribution and Control Apparatus: includes the manufacture of power, distribution
+  and specialty transformers; electric motors, generators and motor generator sets; switchgear and
+  switchboard apparatus; relays and industrial controls. The electrical equipment manufactured in
+  this class is for distribution level voltages; manufacture of fluorescent ballasts (i.e.
+  transformers); manufacture of substation transformers for electric power distribution; manufacture
+  of transmission and distribution voltage regulators manufacture of prime mover generator sets;
+  rewinding of armatures on a factory basis; manufacture of power circuit breakers; manufacture of
+  surge suppressors (for distribution level voltage); manufacture of control panels for electric
+  power distribution
+  Class 272: Manufacture of Batteries and Accumulators
+    Group 2720: Manufacture of Batteries and Accumulators
+Description:
+  includes the manufacture of non-rechargeable and rechargeable batteries; manufacture of primary
+  cells and primary batteries; manufacture of electric accumulators.
+  Class 273: Manufacture of Wiring and Wiring Devices
+    Group 2731: Manufacture of Fibre Optic Cables
+Description:
+  manufacture of fiber optic cable for data transmission or live transmission of images.
+    Group 2732: Manufacture of Other Electronic and Electric Wires and Cables
+Description:
+  includes manufacture of insulated wire and cable, made of steel, copper, and aluminium.
+    Group 2733: Manufacture of Wiring Devices
+Description:
+  manufacture of bus bars, electrical conductors (except switchgear-type); manufacture of GFCI (ground
+  fault circuit interrupters); manufacture of lamp holders; manufacture of lightning arrestors and
+  coils; manufacture of switches for electrical wiring); manufacture of electrical outlets and
+  sockets; manufacture of boxes for electrical wiring (e.g. junction, outlet, switch boxes);
+  manufacture of electrical conduit and fitting; manufacture of transmission pole and line hardware;
+  manufacture of plastic non-current-carrying wiring devices including plastic junction boxes, face
+  plates, and similar, plastic pole line fittings.
+  Class 274: Manufacture of Electric Lighting Equipment
+    Group 2740: Manufacture of Electric Lighting Equipment
+Description:
+  manufacture of discharge, incandescent, fluorescent, ultra-violet, infra-red etc. lamps, fixtures
+  and bulbs; manufacture of ceiling lighting fixtures; manufacture of chandeliers; manufacture of
+  table lamps (i.e. lighting fixture); manufacture of Christmas tree lighting sets; manufacture of
+  electric fire place logs; manufacture of flashlights; manufacture of electric insect lamps;
+  manufacture of lanterns (e.g. carbide, electric, gas, gasoline, kerosene); manufacture of
+  spotlights; manufacture of street lighting fixtures (except traffic signals); manufacture of
+  lighting equipment for transportation equipment (e.g. for motor vehicles, aircraft, boats);
+  manufacture of non-electrical lighting equipment. 59
+  Class 275: Manufacture of Domestic Appliances
+    Group 2750: Manufacture of Domestic Appliances
+Description:
+  includes the manufacture of small electric appliances and electric housewares, household-type fans,
+  household-type vacuum cleaners, electric household-type floor care machines, household-type
+  cooking appliances, household-type laundry equipment, household-type refrigerators, upright and
+  chest freezers and other electrical and non-electrical household appliances, such as dishwashers,
+  water heaters and garbage disposal units. This class includes the manufacture of appliances with
+  electric, gas or other fuel sources.
+  Class 279: Manufacture of Other Electrical Equipment
+    Group 2790: Manufacture of Other Electrical Equipment
+Description:
+  includes manufacture of battery chargers, solid-state; manufacture of door opening and closing
+  devices, electrical; manufacture of electric bells; manufacture of ultrasonic cleaning machines
+  (except laboratory and dental); manufacture of tanning beds; manufacture of solid state inverters,
+  rectifying apparatus, fuel cells, regulated and unregulated power supplies; manufacture of
+  uninterruptible power supplies (UPS); manufacture of surge suppressors (except for distribution
+  level voltage); manufacture of appliance cords, extension cords, and other electrical cord sets
+  with insulated wire and connectors; manufacture of carbon and graphite electrodes, contacts, and
+  other electrical carbon and graphite products; manufacture of particle accelerators; manufacture
+  of electrical capacitors, resistors, condensers and similar components ; manufacture of
+  electromagnets; manufacture of sirens.
+Division 28: Manufacture of Machinery and Equipment NEC
+
+  Class 281: Manufacture of General-Purpose Machinery
+    Group 2811: Manufacture of Engines and Turbines, except Aircraft, Vehicle and Cycle Engines
+Description:
+  Cycle Engines: includes manufacture of internal combustion piston engines, except motor vehicle,
+  aircraft and cycle propulsion engines; manufacture of pistons, piston rings, carburetors and such
+  for all internal combustion engines, diesel engines; manufacture of inlet and exhaust valves of
+  internal combustion engines; manufacture of turbines and parts; manufacture of boiler-turbine
+  sets; manufacture of turbine- generator sets.
+    Group 2812: Manufacture of Fluid Power Equipment
+Description:
+  includes manufacture of hydraulic and pneumatic components (including hydraulic cpumps, hydraulic
+  motors, hydraulic and pneumatic cylinders, hydraulic and pneumatic valves, hydraulic and pneumatic
+  hose and fittings); manufacture of air preparation equipment for use in pneumatic systems;
+  manufacture of fluid power systems; manufacture of hydraulic transmission equipment.
+    Group 2813: Manufacture of Other Pumps, Compressors, Taps and Valves
+Description:
+  manufacture of air or vacuum pumps, air or other gas compressors; manufacture of pumps for liquids
+  whether or not fitted with a measuring device; manufacture of pumps designed for fitting to
+  internal combustion engines: oil, water and fuel pumps for motor vehicles; manufacture of 60
+  manufacture of sanitary taps and valves; manufacture of heating taps and valves; manufacture of
+  hand pumps.
+    Group 2814: Manufacture of Bearings, Gears, Gearing and Driving Elements
+Description:
+  manufacture of ball and roller bearings and parts thereof; manufacture of mechanical power
+  transmission equipment; manufacture of gears, gearing and gear boxes and other speed changers;
+  manufacture of clutches and shaft couplings; manufacture of flywheels and pulleys; manufacture of
+  articulated link chain; manufacture of power transmission chain
+    Group 2815: Manufacture of Ovens, Furnaces and Furnace Burners
+Description:
+  manufacture of electrical and other industrial and laboratory furnaces and ovens, including
+  incinerators; manufacture of burners; manufacture of permanent mount electric space heaters,
+  electric swimming pool heaters; manufacture of permanent mount non-electric household heating
+  equipment, such as solar heating, steam heating, oil heat and similar furnaces and heating
+  equipment; manufacture of electric household-type furnaces (electric forced air furnaces, heat
+  pumps), non-electric household forced air furnaces; manufacture of mechanical stokers, grates, ash
+  dischargers.
+    Group 2816: Manufacture of Lifting and Handling Equipment
+Description:
+  manufacture of hand-operated or power-driven lifting, handling, loading or unloading machinery;
+  manufacture of conveyors, Telfer; manufacture of lifts, escalators and moving walkways ;
+  manufacture of parts specialized for lifting and handling equipment
+    Group 2817: Manufacture of Office Machinery and Equipment,(except Computers and Peripheral Equipment)
+Description:
+  Computers and Peripheral Equipment): manufacture of calculating machines; manufacture of adding
+  machines, cash registers; manufacture of calculators, electronic; manufacture of postage meters,
+  mail handling machines (envelope stuffing, sealing and addressing machinery; opening, sorting,
+  scanning), collating machinery; manufacture of typewriters; manufacture of stenography machines;
+  manufacture of office-type binding equipment (i.e. plastic or tape binding; manufacture of cheque
+  writing machines; manufacture of coin counting and coin wrapping machinery; manufacture of pencil
+  sharpeners; manufacture of staplers and staple removers; manufacture of voting machines;
+  manufacture of tape dispensers; manufacture of hole punches; manufacture of photocopy machines;
+  manufacture of toner cartridges; manufacture of blackboards; white boards and marker boards;
+  manufacture of dictating machines 61
+    Group 2818: Manufacture of Power- Driven Hand Tools
+    Group 2819: Manufacture of Other General-Purpose Machinery
+Description:
+  manufacture of industrial refrigerating or freezing equipment, including assemblies of major
+  components; manufacture of air-conditioning machines, including for motor vehicles; manufacture of
+  non-domestic fans; manufacture of weighing machinery (other than sensitive laboratory balances);
+  manufacture of filtering or purifying machinery and apparatus for liquids; manufacture of
+  equipment for projecting, dispersing or spraying liquids or powders; manufacture of packing and
+  wrapping machinery; manufacture of machinery for cleaning or drying bottles and for aerating
+  beverages; manufacture of distilling or rectifying plant for petroleum refineries, chemical
+  industries, beverage industries; manufacture of heat exchangers; manufacture of machinery for
+  liquefying air or gas
+  Class 282: Manufacture of Special-Purpose Machinery
+    Group 2821: Manufacture of Agricultural and Forestry Machinery
+Description:
+  manufacture of tractors used in agriculture and forestry; manufacture of walking (pedestrian-
+  controlled) tractors; manufacture of mowers, including lawnmowers; manufacture of agricultural
+  self-loading or self-unloading trailers or semi-trailers; manufacture of agricultural machinery
+  for soil preparation, planting or fertilizing; manufacture of harvesting or threshing machinery:;
+  manufacture of milking machines; manufacture of spraying machinery for agricultural use;
+  manufacture of diverse agricultural machinery.
+    Group 2822: Manufacture of Metal-Forming Machinery and Machine Tools
+Description:
+  manufacture of machine tools for working metals and other materials (wood, bone, stone, hard rubber,
+  hard plastics, cold glass etc.), including those using a laser beam, ultrasonic waves, plasma arc,
+  magnetic pulse; manufacture of machine tools for turning, drilling, milling ,shaping, planning,
+  boring, grinding; manufacture of stamping or pressing machine tools; manufacture of punch presses,
+  hydraulic presses, hydraulic brakes, drop hammers, forging machines; manufacture of draw-benches,
+  thread rollers or machines for working wires; manufacture of stationary machines for nailing,
+  stapling, glueing or otherwise assembling wood, cork, bone, hard rubber or plastics; manufacture
+  of stationary rotary or rotary percussion drills, filing machines, riveters, sheet metal cutters;
+  manufacture of presses for the manufacture of particle board; manufacture of electroplating
+  machinery.
+    Group 2823: Manufacture of Machinery for Metallurgy
+Description:
+  manufacture of machines and equipment for handling hot metals; manufacture of metal-rolling mills
+  and rolls for such mills.
+    Group 2824: Manufacture of Machinery for Mining, Quarrying and Construction
+Description:
+  manufacture of continuous-action elevators and conveyors for underground use; manufacture of boring,
+  cutting, sinking and tunnelling machinery (whether or not for underground use); manufacture of
+  machinery for treating minerals by screening, sorting, separating, washing, crushing; manufacture
+  of concrete and mortar mixers; manufacture of earth-moving machinery; manufacture of pile drivers
+  62 surfacing machinery; manufacture of track laying tractors and tractors used in construction or
+  mining; manufacture of bulldozer and angle- dozer blades; manufacture of off-road dumping trucks
+    Group 2825: Manufacture of Machinery for Food, Beverages and Tobacco Processing
+Description:
+  Processing: manufacture of agricultural dryers; manufacture of machinery for the dairy industry;
+  manufacture of machinery for the grain milling industry; manufacture of presses, crushers used to
+  make wine, cider, fruit juices; manufacture of machinery for the bakery industry or for making
+  macaroni, spaghetti or similar products; manufacture of machines and equipment to process diverse
+  foods; manufacture of machinery for the extraction or preparation of animal or vegetable fats or
+  oils; manufacture of machinery for the preparation of tobacco and for the making of cigarettes or
+  cigars, or for pipe or chewing tobacco or snuff; manufacture of machinery for the preparation of
+  food in hotels and restaurants.
+    Group 2826: Manufacture of Machinery for Textile, Apparel and Leather Production
+Description:
+  Production: manufacture of textile machinery; manufacture of auxiliary machines or equipment for
+  textile machinery; manufacture of textile printing machinery; manufacture of machinery for fabric
+  processing; manufacture of laundry machinery; manufacture of sewing machines, sewing machine heads
+  and sewing machine needles; manufacture of machines for producing or finishing felt or non-wovens;
+  manufacture of leather machines:
+    Group 2829: Manufacture of Other Special-Purpose Machinery
+Description:
+  manufacture of machinery for making paper pulp; manufacture of paper and paperboard making
+  machinery; manufacture of dryers for wood, paper pulp, paper or paperboard; manufacture of
+  machinery producing articles of paper or paperboard; manufacture of machinery for working soft
+  rubber or plastics; manufacture of printing and bookbinding machines and machines for activities
+  supporting printing on a variety of materials; manufacture of machinery for producing tiles,
+  bricks, shaped ceramic pastes, pipes, graphite electrodes, blackboard chalk, foundry moulds;
+  manufacture of semi-conductor manufacturing machinery; manufacture of industrial robots performing
+  multiple tasks for special purposes; manufacture of diverse special-purpose machinery and
+  equipment; manufacture of tire alignment and balancing equipment; balancing equipment (except
+  wheel balancing); manufacture of central greasing systems; manufacture of aircraft launching gear,
+  aircraft carrier catapults and related equipment; manufacture of automatic bowling alley equipment
+  (e.g. pin-setters); manufacture of roundabouts, swings, shooting galleries and other fairground
+  amusements. 63
+Division 29: Manufacture of Motor Vehicles, Trailers and Semi-Trailers
+
+  Class 291: Manufacture of Motor Vehicles
+    Group 2910: Manufacture of Motor Vehicles
+Description:
+  manufacture of passenger cars; manufacture of commercial vehicles; manufacture of buses, trolley-
+  buses and coaches; manufacture of motor vehicle engines; manufacture of chassis fitted with
+  engines.
+  Class 292: Manufacture of Bodies (Coachwork) for Motor Vehicles; Manufacture of Trailers and Semi-Trailers
+    Group 2920: Manufacture of Bodies (Coachwork) for Motor Vehicles; Manufacture of Trailers and Semi-Trailers
+Description:
+  of Trailers and Semi-Trailers: manufacture of bodies, including cabs for motor vehicles; outfitting
+  of all types of motor vehicles, trailers and semi-trailers; manufacture of trailers and semi-
+  trailers; manufacture of containers for carriage by one or more modes of transport.
+  Class 293: Manufacture of Parts and Accessories for Motor Vehicles
+    Group 2930: Manufacture of Parts and Accessories for Motor Vehicles
+Description:
+  manufacture of diverse parts and accessories for motor vehicles: (brakes, gearboxes, axles, road
+  wheels, suspension shock absorbers, radiators, silencers, exhaust pipes, catalytic converters,
+  clutches, steering wheels, steering columns and steering boxes ); manufacture of parts and
+  accessories of bodies for motor vehicles; manufacture of car seats; manufacture of motor vehicle
+  electrical equipment, such as generators, alternators, spark plugs, ignition wiring harnesses,
+  power window and door systems, assembly of purchased gauges into instrument panels, voltage
+  regulators.
+Division 29: Manufacture of Motor Vehicles, Trailers and Semi-Trailers
+
+  Class 291: Manufacture of Motor Vehicles
+    Group 2910: Manufacture of Motor Vehicles
+Description:
+  manufacture of passenger cars; manufacture of commercial vehicles; manufacture of buses, trolley-
+  buses and coaches; manufacture of motor vehicle engines; manufacture of chassis fitted with
+  engines.
+  Class 292: Manufacture of Bodies (Coachwork) for Motor Vehicles; Manufacture of Trailers and Semi-Trailers
+    Group 2920: Manufacture of Bodies (Coachwork) for Motor Vehicles; Manufacture of Trailers and Semi-Trailers
+Description:
+  of Trailers and Semi-Trailers: manufacture of bodies, including cabs for motor vehicles; outfitting
+  of all types of motor vehicles, trailers and semi-trailers; manufacture of trailers and semi-
+  trailers; manufacture of containers for carriage by one or more modes of transport.
+  Class 293: Manufacture of Parts and Accessories for Motor Vehicles
+    Group 2930: Manufacture of Parts and Accessories for Motor Vehicles
+Description:
+  manufacture of diverse parts and accessories for motor vehicles: (brakes, gearboxes, axles, road
+  wheels, suspension shock absorbers, radiators, silencers, exhaust pipes, catalytic converters,
+  clutches, steering wheels, steering columns and steering boxes ); manufacture of parts and
+  accessories of bodies for motor vehicles; manufacture of car seats; manufacture of motor vehicle
+  electrical equipment, such as generators, alternators, spark plugs, ignition wiring harnesses,
+  power window and door systems, assembly of purchased gauges into instrument panels, voltage
+  regulators.
+Division 30: Manufacture of Other Transport Equipment
+
+  Class 301: Building of Ships and Boats
+    Group 3012: Building of Pleasure and Sporting Boats
+Description:
+  manufacture of inflatable boats and rafts; building of sailboats with or without auxiliary motor;
+  building of motor boats; building of recreation-type hovercraft; manufacture of personal
+  watercraft; manufacture of other pleasure and sporting boats.
+  Class 309: Manufacture of Transport Equipments NEC
+    Group 3091: Manufacture of Motor Cycles
+Description:
+  manufacture of motorcycles, mopeds and cycles fitted with an auxiliary engine; manufacture of
+  engines for motorcycles; manufacture of sidecars; manufacture of parts and accessories for
+  motorcycles
+    Group 3092: Manufacture of Bicycles and Invalid Carriers
+Description:
+  manufacture of non- motorized bicycles and other cycles, including (delivery) tricycles, tandems,
+  children’s bicycles and tricycles; manufacture of parts and accessories of bicycles; manufacture
+  of invalid carriages with or without motor; manufacture of parts and accessories of invalid
+  carriages; manufacture of baby carriages 64
+    Group 3099: Manufacture of Other Transport Equipments NEC
+Description:
+  manufacture of hand-propelled vehicles: luggage trucks, handcarts, sledges, shopping carts;
+  manufacture of vehicles drawn by animals: sulkies, donkey-carts, hearses.
+Division 31: Manufacture of Furniture
+
+  Class 310: Manufacture of Furniture
+    Group 3100: Manufacture of Furniture
+Description:
+  manufacture of chairs and seats for offices, workrooms, hotels, restaurants, public and domestic
+  premises; manufacture of chairs and seats for theatres, cinemas and the like; manufacture of
+  sofas, sofa beds and sofa sets; manufacture of garden chairs and seats; manufacture of special
+  furniture for shops: counters, display cases, shelves; manufacture of furniture for churches,
+  schools, restaurants; manufacture of office furniture; manufacture of kitchen furniture;
+  manufacture of furniture for bedrooms, living rooms, gardens; manufacture of cabinets for sewing
+  machines, televisions; manufacture of laboratory benches, stools and other laboratory seating,
+  laboratory furniture (e.g. cabinets and tables).
+Division 32: Other Manufacturing
+
+  Class 321: Manufacture of Jewellery, Bijouterie and Related Articles
+    Group 3211: Manufacture of Jewellery and Related Articles
+Description:
+  production of worked pearls; production of precious and semi-precious stones in the worked state,
+  including the working of industrial quality stones and synthetic or reconstructed precious or
+  semi-precious stones; working of diamonds; manufacture of jewellery of precious metal or of base
+  metals clad with precious metals, or precious or semi-precious stones, or of combinations of
+  precious metal and precious or semi-precious stones or of other materials; manufacture of
+  goldsmiths’ articles of precious metals or of base metals clad with precious metals; manufacture
+  of technical or laboratory articles of precious metal: crucibles, spatulas, electroplating anodes;
+  manufacture of precious metal watch bands, wristbands, watch straps and cigarette cases;
+  manufacture of coins, including coins for use as legal tender, whether or not of precious metal;
+  engraving of personal precious and non-precious metal products.
+    Group 3212: Manufacture of Imitation Jewellery and Related Articles
+Description:
+  manufacture of rings, bracelets, necklaces, and similar articles of jewellery made from base metals
+  plated with precious metals; jewellery containing imitation stones such as imitation gems stones,
+  imitation diamonds, and similar; manufacture of metal watch bands.
+    Group 3213: Diamond Sorting Activities (S)
+Description:
+  Diamonds are recovered after liberation and gravity concentration by making use of physical
+  properties which are inherently different to the gangue minerals present. These properties are
+  X-ray luminescence, atomic density and transparency. 65
+    Group 3214: Diamond Cutting and Polishing Activities (S)
+Description:
+  When diamonds emerge from the earth, they are rough and unrefined. Technically, diamond cutting is
+  the practice of changing a diamond from a rough stone into a faceted gem. In its most general
+  explanation, the diamond cutting process includes several steps: planning, cleaving or sawing,
+  bruting, polishing, and final inspection. These are the steps involved in cutting and polishing: •
+  Cleaving or sawing – Cleaving is the separation of a piece of diamond rough into separate pieces,
+  to be finished as separate gems. Sawing is the use of a diamond saw or laser to cut the diamond
+  rough into separate pieces. • Bruting - the process whereby two diamonds are set onto spinning
+  axles turning in opposite directions, which are then set to grind against each other to shape each
+  diamond into a round shape. This can also be known as girdling. • Polishing - the name given to
+  process whereby the facets are cut onto the diamond and final polishing is performed. This step
+  gives the diamond its brilliant sparkle that we know so well. • Final inspection – the final stage
+  of diamond cutting involves thoroughly cleaning the diamond in acids, and examining the diamond to
+  see whether it meets the quality standards of the manufacturer.
+  Class 322: Manufacture of Musical Instruments
+    Group 3220: Manufacture of Musical Instruments
+Description:
+  manufacture of stringed instruments; manufacture of keyboard stringed instruments, including
+  automatic pianos; manufacture of keyboard pipe organs, including harmoniums and similar keyboard
+  instruments with free metal reeds; manufacture of accordions and similar instruments, including
+  mouth organs; manufacture of wind instruments; manufacture of percussion musical instruments;
+  manufacture of musical instruments, the sound of which is produced electronically; manufacture of
+  musical boxes, fairground organs, calliopes; manufacture of instrument parts and accessories;
+  manufacture of whistles, call horns and other mouth-blown sound signalling instruments.
+  Class 323: Manufacture of Sports Goods
+    Group 3230: Manufacture of Sports Goods
+Description:
+  includes the manufacture of sporting and athletic goods (except apparel and footwear); manufacture
+  of articles and equipment for sports, outdoor and indoor games, of any material (hard, soft and
+  inflatable balls, rackets, bats and clubs, skis, bindings and poles, ski-boots, sailboards and
+  surfboards, requisites for sport fishing, including landing nets, requisites for hunting, mountain
+  climbing, leather sports gloves and sports headgear, ice skates, roller skates, bows and
+  crossbows, gymnasium, fitness centre or athletic equipment).
+  Class 324: Manufacture of Games and Toys
+    Group 3240: Manufacture of Games and Toys
+Description:
+  manufacture of dolls and doll garments, parts and accessories; manufacture of action figures;
+  manufacture of toy animals; manufacture of toy musical instruments; manufacture of playing cards;
+  manufacture of board games and similar games; manufacture of electronic games: chess; manufacture
+  of reduced-size models and similar recreational models, electrical trains, construction 66 sets;
+  manufacture of coin-operated games, billiards, special tables for casino games; manufacture of
+  articles for funfair, table or parlour games; manufacture of wheeled toys designed to be ridden,
+  including plastic bicycles and tricycles; manufacture of puzzles and similar articles.
+  Class 325: Manufacture of Medical and Dental Instruments and Supplies
+    Group 3250: Manufacture of Medical and Dental Instruments and Supplies
+Description:
+  manufacture of surgical drapes and sterile string and tissue; manufacture of dental fillings and
+  cements (except denture adhesives), dental wax and other dental plaster preparations; manufacture
+  of bone reconstruction cements; manufacture of dental laboratory furnaces; manufacture of
+  laboratory ultrasonic cleaning machinery; manufacture of laboratory sterilizers; manufacture of
+  laboratory type distilling apparatus, laboratory centrifuges; manufacture of medical, surgical,
+  dental or veterinary furniture; manufacture of bone plates and screws, syringes, needles,
+  catheters, cannulae.
+  Class 329: Other Manufacturing NEC
+    Group 3290: Other Manufacturing NEC
+Description:
+  manufacture of protective safety equipment; manufacture of brooms and brushes, including brushes
+  constituting parts of machines, hand-operated mechanical floor sweepers, mops and feather dusters,
+  paint brushes, paint pads and rollers, squeegees and other brushes, brooms, mops; manufacture of
+  shoe and clothes brushes; manufacture of pens and pencils of all kinds whether or not mechanical;
+  manufacture of pencil leads; manufacture of date, sealing or numbering stamps, hand-operated
+  devices for printing, or embossing labels, hand printing sets, prepared typewriter ribbons and
+  inked pads; manufacture of globes; manufacture of umbrellas, sun-umbrellas, walking sticks, seat-
+  sticks; manufacture of buttons, press-fasteners, snap-fasteners, press- studs, slide fasteners;
+  manufacture of cigarette lighters; manufacture of articles of personal use: smoking pipes, scent
+  sprays, vacuum flasks and other vacuum vessels for personal or household use, wigs, false beards,
+  eyebrows; manufacture of miscellaneous articles: candles, tapers and the like; bouquets, wreaths
+  and floral baskets; artificial flowers, fruit and foliage; jokes and novelties; hand sieves and
+  hand riddles; tailors’ dummies; burial caskets; taxidermy activities.
+Division 33: Repair and Installation of Machinery and Equipment
+
+  Class 331: Repair of Fabricated Metal Products, Machinery and Equipment
+    Group 3311: Repair of Fabricated Metal Products
+Description:
+  repair of metal tanks, reservoirs and containers; repair and maintenance for pipes and pipelines;
+  mobile welding repair; repair of steel shipping drums; repair and maintenance of steam or other
+  vapor generators; repair and maintenance of auxiliary plant for use with steam generators; repair
+  and maintenance of nuclear reactors, except isotope separators; repair and maintenance of parts
+  for marine or power boilers; plate work repair of central heating boilers and radiators; repair
+  and maintenance of fire arms and ordnance. 67
+    Group 3312: Repair of Machinery
+Description:
+  includes repair and maintenance of non- automotive engines, e.g. ship or rail engines; repair and
+  maintenance of pumps and related equipment; repair and maintenance of fluid power equipment;
+  repair of valves; repair of gearing and driving elements; repair and maintenance of industrial
+  process furnaces; repair and maintenance of materials handling equipment; repair and maintenance
+  of commercial refrigeration equipment and air purifying equipment; repair and maintenance of
+  commercial-type general-purpose machinery; repair of other power-driven hand-tools; repair and
+  maintenance of metal cutting and metal forming machine tools and accessories; repair and
+  maintenance of other machine tools; repair and maintenance of agricultural tractors; repair and
+  maintenance of agricultural machinery and forestry and logging machinery; repair and maintenance
+  of metallurgy machinery; repair and maintenance of mining, construction, and oil and gas field
+  machinery; repair and maintenance of food, beverage, and tobacco processing machinery; repair and
+  maintenance of textile apparel, and leather production machinery; repair and maintenance of
+  papermaking machinery.
+    Group 3313: Repair of Electronic and Optical Equipment
+Description:
+  repair and maintenance of the measuring, testing, navigating and control equipment of aircraft
+  engine instruments, (automotive emissions testing equipment, meteorological instruments, physical,
+  electrical and chemical properties testing and inspection equipment, surveying instruments,
+  radiation detection and monitoring instruments); repair and maintenance of irradiation, electro-
+  medical and electrotherapeutic equipment (magnetic resonance imaging equipment, medical ultrasound
+  equipment, pacemakers, hearing aids, electrocardiographs, electro-medical endoscopic equipment,
+  irradiation apparatus; repair and maintenance of optical instruments and equipment(binoculars,
+  microscopes (except electron and proton microscopes), telescopes, prisms and lenses (except
+  ophthalmic), photographic equipment.
+    Group 3314: Repair of Electrical Equipment
+Description:
+  includes repair and maintenance of power, distribution, and specialty transformers; repair and
+  maintenance of electric motors, generators, and motor generator sets; repair and maintenance of
+  switchgear and switchboard apparatus; repair and maintenance of relays and industrial controls;
+  repair and maintenance of primary and storage batteries; repair and maintenance of electric
+  lighting equipment; repair and maintenance of current-carrying wiring devices and non- current-
+  carrying wiring devices for wiring electrical circuits.
+    Group 3315: Repair of Transport Equipment, except Motor Vehicles
+Description:
+  repair and routine maintenance of ships; repair and maintenance of pleasure boats; repair and
+  maintenance of locomotives and railroad cars (except factory rebuilding or factory conversion);
+  repair and maintenance of aircraft (except factory conversion, factory overhaul, factory
+  rebuilding); repair and maintenance of aircraft engines; repair of animal drawn buggies and wagons
+  68
+    Group 3319: Repair of Other Equipment
+Description:
+  repair of fishing nets, including mending; repair or ropes, riggings, canvas and tarps; repair of
+  fertilizer and chemical storage bags; repair or reconditioning of wooden pallets, shipping drums
+  or barrels, and similar items; repair of pinball machines and other coin-operated games; restoring
+  of organs and other historical musical instruments.
+  Class 332: Installation of Industrial Machinery and Equipment
+    Group 3320: Installation of Industrial Machinery and Equipment
+Description:
+  installation of industrial machinery in industrial plant; installation of industrial process control
+  equipment; installation of other industrial equipment; dismantling large-scale machinery and
+  equipment; activities of millwrights; machine rigging; installation of bowling alley equipment.

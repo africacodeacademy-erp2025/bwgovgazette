@@ -1,0 +1,61 @@
+INDUSTRY: PUBLIC ADMINISTRATION AND DEFENCE; COMPULSORY SOCIAL SECURITY
+=======================================================================
+
+Division 84: Public Administration and Defence; Compulsory Social Security
+
+  Class 841: Administration of the State and the Economic and Social Policy of the Com-
+    Group 8411: General Public Administration Activities
+Description:
+  executive and legislative administration of central, regional and local bodies; administration and
+  supervision of fiscal affairs: (operation of taxation schemes, duty/ tax collection on goods and
+  tax violation investigation, customs administration); budget implementation and management of
+  public funds and public debt: (raising and receiving of moneys and control of their disbursement);
+  administration of overall (civil) R&D policy and associated funds; administration and operation of
+  overall economic and social planning and statistical services at the various levels of government.
+    Group 8412: Regulation of the Activities of Providing Health Care, Education, Cultural Services and Other Social Services, excluding Social Security
+Description:
+  Cultural Services and Other Social Services, excluding Social Security: public administration of
+  programmes aimed to increase personal well-being; sponsoring of recreational and cultural
+  activities; distribution of public grants to artists; administration of potable water supply
+  programmes; administration of waste collection and disposal operations; administration of
+  environmental protection programmes; administration of housing programmes.
+    Group 8413: Regulation of and Contribution to More Efficient Operation of Businesses
+    Group 8414: Local Government Activities (Cities/Towns/District Councils and Land Boards Activities) (S)
+Description:
+  This includes the activities of Cities and Town Councils, District Councils and Lang Boards.
+  Class 842: Provision of Services to the Community as a whole
+    Group 8421: Foreign Affairs
+Description:
+  administration and operation of the ministry of foreign affairs and diplomatic and consular missions
+  stationed abroad or at offices of international organizations; administration, operation and
+  support for information and cultural services intended for distribution beyond national
+  boundaries; aid to foreign countries, whether or not routed through international organizations;
+  provision of military aid to foreign countries; management of foreign trade, international
+  financial and foreign technical affairs.
+    Group 8422: Defence Activities
+Description:
+  administration, supervision and operation of military defence affairs and land, sea, air and space
+  defence forces; administration, operation and support of civil defence forces; support for the
+  working out of contingency plans and the carrying out of exercises in which civilian institutions
+  and populations are involved. 102
+    Group 8423: Public Order and Safety Activities
+Description:
+  administration and operation of regular and auxiliary police forces supported by public authorities
+  and of port, border, coastguards and other special police forces, including traffic regulation,
+  alien registration, and maintenance of arrest records; firefighting and fire prevention
+  (administration and operation of regular and auxiliary fire brigades in fire prevention,
+  firefighting, rescue of persons and animals, assistance in civic disasters, floods, road
+  accidents); administration and operation of administrative civil and criminal law courts, military
+  tribunals and the judicial system, including legal representation and advice on behalf of the
+  government or when provided by the government in cash or services; rendering of judgements and
+  interpretations of the law; arbitration of civil actions; prison administration and provision of
+  correctional services, including rehabilitation services, regardless of whether their
+  administration and operation is done by government units or by private units on a contract or fee
+  basis; provision of supplies for domestic emergency use in case of peacetime disasters.
+  Class 843: Compulsory Social Security Activities
+    Group 8430: Compulsory Social Security Activities
+Description:
+  funding and administration of government-provided social security programmes: (sickness, work-
+  accident and unemployment insurance, retirement pensions, programmes covering losses of income due
+  to maternity, temporary disablement, widowhood).
+    Group 8431: Voluntary Social/ Community Service Activities (e.g Tirelo Sechaba) (S)
