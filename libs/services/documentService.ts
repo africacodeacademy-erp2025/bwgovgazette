@@ -87,7 +87,7 @@ export class DocumentService {
         mimeType: file.mimetype,
         fileSize: file.size,
         sourceType,
-        processingStatus: extractedText ? "completed" : "failed",
+        processingStatus: extractedText.trim() ? "text_extracted" : "failed",
 
         // Use DocumentText relation
         text:

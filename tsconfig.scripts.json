@@ -5,5 +5,10 @@
     "moduleResolution": "node",
     "noEmit": false
   },
-  "include": ["libs/parser/**/*.ts"]
+  "include": [
+    "libs/parser/**/*.ts",
+    "libs/utils/**/*.ts",
+    "libs/services/**/*.ts",
+    "libs/prisma.ts"
+  ]
 }
