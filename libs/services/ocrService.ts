@@ -6,21 +6,20 @@ import { pathToFileURL } from "url";
 import { createCanvas } from "canvas";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 
-// Explicitly set the worker source for Node.js environment.
-// This prevents Next.js from trying to bundle the worker as a client-side chunk.
-if (typeof window === "undefined") {
-  const workerPath = path.join(
-    process.cwd(),
-    "node_modules",
-    "pdfjs-dist",
-    "legacy",
-    "build",
-    "pdf.worker.mjs",
-  );
-  (
-    pdfjsLib as typeof pdfjsLib & { GlobalWorkerOptions: { workerSrc: string } }
-  ).GlobalWorkerOptions.workerSrc = pathToFileURL(workerPath).toString();
-}
+// Resolve the worker path at runtime pointing directly into node_modules.
+// pdfjs-dist is kept as a serverExternalPackage so Node (not Turbopack)
+// owns the module — the file:// URL is therefore always resolvable.
+const workerPath = path.join(
+  process.cwd(),
+  "node_modules",
+  "pdfjs-dist",
+  "legacy",
+  "build",
+  "pdf.worker.mjs",
+);
+(
+  pdfjsLib as typeof pdfjsLib & { GlobalWorkerOptions: { workerSrc: string } }
+).GlobalWorkerOptions.workerSrc = pathToFileURL(workerPath).toString();
 
 // Custom canvas factory for Node.js
 class NodeCanvasFactory {
