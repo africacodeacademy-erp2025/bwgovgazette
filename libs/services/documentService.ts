@@ -54,7 +54,7 @@ export class DocumentService {
     }
 
     // Embeddings and chunks
-    let documentEmbedding = null;
+    let documentEmbedding: number[] = [];
     let chunks: Array<{
       text: string;
       embedding: number[] | null;
@@ -62,21 +62,27 @@ export class DocumentService {
     }> = [];
 
     if (extractedText.trim() && embeddingService.isReady()) {
-      const textChunks = embeddingService.splitTextIntoChunks(
-        extractedText,
-        800,
-      );
-      const chunkEmbeddings =
-        await embeddingService.generateEmbeddingzForChunks(textChunks);
-      documentEmbedding = await embeddingService.generateEmbedding(
-        extractedText.slice(0, 2000),
-      );
+      try {
+        const textChunks = embeddingService.splitTextIntoChunks(
+          extractedText,
+          800,
+        );
 
-      chunks = textChunks.map((text, i) => ({
-        text,
-        embedding: chunkEmbeddings[i] || null,
-        index: i,
-      }));
+        const chunkEmbeddings =
+          await embeddingService.generateEmbeddingzForChunks(textChunks);
+
+        // Utility handles truncation (4,000 chars) internally.
+        documentEmbedding =
+          await embeddingService.generateEmbedding(extractedText);
+
+        chunks = textChunks.map((text, i) => ({
+          text,
+          embedding: chunkEmbeddings[i] ?? null,
+          index: i,
+        }));
+      } catch (embeddingError) {
+        console.warn("Embedding generation failed:", embeddingError);
+      }
     }
 
     // Create document with proper relations
@@ -87,7 +93,7 @@ export class DocumentService {
         mimeType: file.mimetype,
         fileSize: file.size,
         sourceType,
-        processingStatus: extractedText ? "text_extracted" : "failed",
+        processingStatus: extractedText ? "completed" : "failed",
 
         // Use DocumentText relation
         text:
@@ -135,7 +141,7 @@ export class DocumentService {
       extractedText,
       ocrConfidence,
       chunksCount: chunks.length,
-      hasEmbeddings: !!documentEmbedding,
+      hasEmbeddings: documentEmbedding.length > 0,
       processingMethod,
       summary,
       summaryMetadata,

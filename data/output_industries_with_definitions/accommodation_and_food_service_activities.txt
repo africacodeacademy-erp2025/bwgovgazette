@@ -1,0 +1,66 @@
+INDUSTRY: ACCOMMODATION AND FOOD SERVICE ACTIVITIES
+===================================================
+
+Division 55: Accommodation
+
+  Class 551: Short Term Accommodation Activities
+    Group 5510: Short Term Accommodation Activities
+Description:
+  This class includes the provision of accommodation, typically on a daily or weekly basis,
+  principally for short stay by visitors. This includes the provision of furnished accommodation in
+  guest rooms and suites or complete self-contained units with kitchens, with or without daily or
+  other regular housekeeping services, and may often include a range of additional services such as
+  food and beverage services, parking, laundry services, swimming pools and exercise rooms,
+  recreational facilities and conference and convention facilities. This class also includes the
+  provision of short-term accommodation provided by Hotels, Resort hotels, Suite/apartment hotels,
+  Motels, Motor hotels, Guest houses, Pensions, Bed and breakfast units, Visitor flats and
+  bungalows, Time-share units, Holiday homes, Chalets, housekeeping cottages and cabins., Youth
+  hostels and mountain refuges
+  Class 552: Camping Grounds, Recreational Vehicles Parks and Trailer Parks
+    Group 5520: Camping Grounds, Recreational Vehicles Parks and Trailer Parks
+Description:
+  This class includes provision of accommodation in campgrounds, trailer parks, recreational camps and
+  fishing and hunting camps for short stay visitors; Provision of space and facilities for
+  recreational vehicles. This class also includes accommodation provided by Protective shelters or
+  plain bivouac facilities for placing tents and/ or sleeping bags
+  Class 559: Other Accommodation
+    Group 5590: Other Accommodation
+Description:
+  This class includes the provision of temporary or longer-term accommodation in single or shared
+  rooms or dormitories for students, migrant (seasonal) workers and other individuals. This class
+  also includes accommodation provided by Student residences, School dormitories, Workers hostels,
+  Rooming and boarding houses and Railway sleeping cars
+Division 56: Food and Beverage Service Activities
+
+  Class 561: Restaurants and Mobile Food Services Activities
+    Group 5610: Restaurants and Mobile Food Services Activities
+Description:
+  This class includes the provision of food services to customers, whether they are served while
+  seated or serve themselves from a display of items, whether they eat the prepared meals on the
+  premises, take them out or have them delivered. This includes the preparation and serving of meals
+  for immediate consumption from motorized vehicles or non-motorized carts. This class also includes
+  activities of Restaurants, Cafeterias, Fast- food restaurants, Pizza delivery, Take-out eating
+  places, Ice cream truck vendors, Mobile food carts, Food preparation in market stalls This class
+  also includes restaurant and bar activities connected to transportation, when carried out by
+  separate units 83
+  Class 562: Events Catering and Other Food Services Activities
+    Group 5621: Events Catering
+Description:
+  This class includes the provision of food services based on contractual arrangements with the
+  customer, at the location specified by the customer, for a specific event. This class also
+  includes event catering
+    Group 5629: Other Food Services Activities
+Description:
+  This class includes industrial catering, i.e. the provision of food services based on contractual
+  arrangements with the customer, for a specific period of time. Also included is the operation of
+  food concessions at sports and similar facilities. The food is often prepared in a central unit.
+  This class includes activities of food service contractors (e.g. for transportation companies),
+  Operation of food concessions at sports and similar facilities, Operation of canteens or
+  cafeterias (e.g. for factories, offices, hospitals or schools) on a concession basis.
+  Class 563: Beverage Serving Activities
+    Group 5630: Beverage Serving Activities
+Description:
+  This class includes the preparation and serving of beverages for immediate consumption on the
+  premises. This class includes activities of Bars, Taverns, Cocktail lounges, Discotheques (with
+  beverage serving predominant), Beer parlors and pubs, Coffee shops, Fruit juice bars and Mobile
+  beverage vendors

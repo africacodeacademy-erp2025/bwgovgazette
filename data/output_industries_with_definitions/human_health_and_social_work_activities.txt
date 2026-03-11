@@ -1,0 +1,95 @@
+INDUSTRY: HUMAN HEALTH AND SOCIAL WORK ACTIVITIES
+=================================================
+
+Division 86: Human Health Activities
+
+  Class 861: Hospital Activities
+    Group 8610: Hospital Activities
+Description:
+  short- or long-term hospital activities, i.e. medical, diagnostic and treatment activities, of
+  general hospitals and specialized hospitals; services of medical and paramedical staff, services
+  of laboratory and technical facilities, including radiologic and anaesthesiologic services,
+  emergency room services, provision of operating room services, pharmacy services ,food and other
+  hospital services, services of family planning centres. 104
+  Class 862: Medical and Dental Practice Activities
+    Group 8620: Medical and Dental Practice Activities
+Description:
+  medical consultation and treatment in the field of general and specialized medicine by general
+  practitioners and medical specialists and surgeons; dental practice activities of a general or
+  specialized nature, e.g. dentistry, endodontic and pediatric dentistry; oral pathology;
+  orthodontic activities; family planning centres providing medical treatment; dental activities in
+  operating rooms; private consultants’ services to inpatients.
+  Class 869: Human Health Activities
+    Group 8690: Human Health Activities
+Description:
+  activities for human health not performed by hospitals or by medical doctors or dentists (activities
+  of nurses, midwives, physiotherapists or other paramedical practitioners in the field of
+  optometry, hydrotherapy, medical massage, occupational therapy, speech therapy, chiropody,
+  homeopathy, chiropractice, acupuncture); activities of dental paramedical personnel such as dental
+  therapists, school dental nurses and dental hygienists, who may work remote from, but are
+  periodically supervised by, the dentist; activities of medical laboratories ( X-ray laboratories
+  and other diagnostic imaging centres, blood analysis laboratories); activities of blood banks,
+  sperm banks, transplant organ banks; ambulance transport of patients by any mode of transport
+  including airplanes. These services are often provided during a medical emergency.
+Division 87: Residential Care Activities
+
+  Class 871: Residential Nursing Care Facilities
+    Group 8710: Residential Nursing Care Facilities
+Description:
+  activities of homes for the elderly with nursing care, convalescent homes, rest homes with nursing
+  care, nursing care facilities, nursing homes.
+  Class 872: Residential Care Activities for Mental Retardation, Mental Health and Substance Abuse
+    Group 8720: Residential Care Activities for Mental Retardation, Mental Health and Substance Abuse
+Description:
+  and Substance Abuse: includes the provision of residential care (but not licensed hospital care) to
+  people with mental retardation, mental illness, or substance abuse problems. Facilities provide
+  room, board, protective supervision and counseling and some health care. It also includes
+  provision of residential care and treatment for patients with mental health and substance abuse
+  illnesses. Also includes activities of facilities for treatment of alcoholism and drug addiction,
+  psychiatric convalescent homes, residential group homes for the emotionally disturbed, mental
+  retardation facilities, mental health halfway houses.
+  Class 873: Residential Care Activities for the Elderly and People Living With Disability(PLWD)
+    Group 8730: Residential Care Activities for the Elderly and People Living With Disability(PLWD)
+Description:
+  Disability (PLWD): includes the provision of residential and personal care services for the elderly
+  and disabled who are unable to fully care for themselves and/or who do not desire to live
+  independently. The care typically includes room, board, supervision, and assistance in daily liv-
+  ing, such as housekeeping services. In some instances these units pro- vide skilled nursing care
+  for residents in separate on-site facilities. This includes activities such as assisted-living
+  facilities, continuing care retire- ment communities, homes for the elderly with minimal nursing
+  care, rest homes without nursing care. 105
+  Class 879: Other Residential Care Activities
+    Group 8790: Other Residential Care Activities
+Description:
+  includes the provision of residential and personal care services for persons, except the elderly and
+  disabled, who are unable to fully care for themselves or who do not desire to live independently.
+  Includes activities provided on a round-the- clock basis directed to provide social assistance to
+  children and special categories of persons with some limits on ability for self-care, but where
+  medical treatment or education are not important elements:
+Division 88: Social Work Activities without Accommodation
+
+  Class 881: Social Work Activities without Accommodation for the Elderly and PLWD
+    Group 8810: Social Work Activities without Accommodation for the Elderly and PLWD
+Description:
+  PLWD: social, counseling, welfare, referral and similar services which are aimed at the elderly and
+  disabled in their homes or elsewhere and carried out by public or by private organizations,
+  national or local self- help organizations and by specialists providing counseling services such
+  as visiting of the elderly and disabled, day-care activities for the elderly or for handicapped
+  adults, vocational rehabilitation and habilitation activities for disabled persons provided that
+  the education component is limited.
+  Class 889: Other Social Work Activities without Accommodation
+    Group 8890: Other Social Work Activities without Accommodation
+Description:
+  social, counseling, welfare, refugee, referral and similar services which are delivered to
+  individuals and families in their homes or elsewhere and carried out by public or by private
+  organizations, disaster relief organizations and national or local self-help organizations and by
+  specialists providing counseling services such as welfare and guidance activities for children and
+  adolescents, adoption activities, activities for the prevention of cruelty to children and others,
+  household budget counseling, marriage and family guidance, credit and debt counseling services,
+  community and neighbor-hood activities, activities for disaster victims, refugees, immigrants,
+  including temporary or extended shelter for them, vocational rehabilitation and habilitation
+  activities for unemployed persons provided that the education component is limited, eligibility
+  determination in connection with welfare aid, rent supplements or food stamps, child day-care
+  activities, including for handicapped children, day facilities for the homeless and other socially
+  weak groups, charitable activities like fund-raising or other supporting activities aimed at
+  social work.

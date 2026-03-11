@@ -1,0 +1,107 @@
+INDUSTRY: MINING AND QUARRYING
+==============================
+
+Division 05: Mining of Coal and Lignite
+
+  Class 051: Mining of Hard Coal
+    Group 0510: Mining of Hard Coal
+Description:
+  underground or surface mining, including mining through liquefaction methods; cleaning, sizing ,
+  grading pulverizing, compressing of coal to classify, improve quality or facilitate transport or
+  storage; recovery of hard coal from culm banks.
+  Class 052: Mining of Lignite
+    Group 0520: Mining of Lignite
+Description:
+  mining of lignite (brown coal): underground or surface mining, including mining through liquefaction
+  methods; washing, dehydrating, pulverizing, compressing of lignite to improve quality or
+  facilitate transport or storage.
+Division 06: Extraction of Crude Petroleum and Natural Gas
+
+  Class 061: Extraction of Crude Petroleum
+    Group 0610: Extraction of Crude Petroleum
+Description:
+  extraction of crude petroleum oils; extraction of bituminous or oil shale and tar sand; production
+  of crude petroleum from bituminous shale and sand; processes to obtain crude oils: decantation,
+  desalting, dehydration, stabilization.
+  Class 062: Extraction of Natural Gas
+    Group 0620: Extraction of Natural Gas
+Description:
+  production of crude gaseous hydrocarbon (natural gas); extraction of condensates; draining and
+  separation of liquid hydrocarbon fractions; gas desulphurization; mining of hydrocarbon liquids,
+  obtained through liquefaction or pyrolysis.
+Division 07: Mining of Metal Ores and Gemstones
+
+  Class 071: Mining of Iron Ores
+    Group 0710: Mining of Iron Ores
+Description:
+  includes mining of chiefly for iron content; beneficiation and agglomeration of iron ores.
+  Class 072: Mining of Non-Ferrous Metal Ores
+    Group 0722: Mining of Copper/Nickel (S)
+Description:
+  Copper-Nickel is an alloy of copper that contains nickel and strengthening elements, such as iron
+  and manganese. Cupronickel is highly resistant to corrosion in seawater, because its electrode
+  potential is adjusted to be neutral with regard to seawater. Because of this, it is used for
+  piping, heat exchangers and condensers in seawater systems, as well as marine hardware, and
+  sometimes for the propellers, crankshafts and hulls of premium tugboats, fishing boats and other
+  working boats. A more familiar common use is in silver-coloured modern circulation coins. 37
+    Group 0724: Mining of Gold Mining (S)
+Description:
+  Gold is a chemical element with the symbol Au and atomic number 79. It is a dense, soft, malleable
+  and ductile metal with a bright yellow color and luster, the properties of which remain without
+  tarnishing when exposed to air or water. Chemically, gold is a transition metal and a group 11
+  element. It is one of the least reactive chemical elements, and is solid under standard
+  conditions.
+  Class 073: Mining of Gemstones
+    Group 0731: Mining of Diamonds (S)
+Description:
+  This is a metastable allotrope of carbon, where the carbon atoms are arranged in a variation of the
+  face-centered cubic crystal structure called a diamond lattice. Diamond is less stable than
+  graphite, but the conversion rate from diamond to graphite is negligible at standard conditions.
+  Diamond is renowned as a material with superlative physical qualities, most of which originate
+  from the strong covalent bonding between its atoms. In particular, diamond has the highest
+  hardness and thermal conductivity of any bulk material. Those properties determine the major
+  industrial application of diamond in cutting and polishing tools and the scientific applications
+  in diamond knives and diamond anvil cells.
+Division 08: Other Mining and Quarrying
+
+  Class 081: Quarrying of Stone, Sand and Clay
+    Group 0810: Quarrying of Stone, Sand and Clay
+Description:
+  quarrying, rough trimming and sawing of monumental and building stone such as marble, granite,
+  sandstones; quarrying, crushing and breaking of limestone; mining of gypsum and anhydrite; mining
+  of chalk; extraction and dredging of industrial sand, sand for construction and gravel; breaking
+  and crushing of stone and gravel; quarrying of sand; mining of clays, refractory clays and kaolin.
+  Class 089: Mining and Quarrying N.E.C
+    Group 0891: Mining of Chemical and Fertilizer Minerals
+Description:
+  mining of natural phosphates and natural potassium salts; mining of native sulphur; extraction and
+  preparation of pyrites and pyrrhotite, except roasting; mining of natural barium sulphate and
+  carbonate (barytes and witherite), natural borates, natural magnesium sulphates (kieserite);
+  mining of earth colours, fluorspar and other minerals valued chiefly as a source of chemicals;
+  guano mining.
+    Group 0892: Extraction of Peat
+Description:
+  includes peat digging; peat agglomeration; preparation of peat to improve quality or facilitate
+  transport or storage.
+    Group 0894: Extraction of Soda Ash and Salt (S)
+    Group 0899: Other Mining and Quarrying N.E.C (except Diamonds)
+Description:
+  mining and quarrying of various minerals and materials ( abrasive materials, asbestos, siliceous
+  fossil metals, natural graphite, talc, natural asphalt, asphalt, asphaltic rock, natural solid
+  bitumen, gemstones, quartz, mica. 38
+Division 09: Mining Support Service Activities
+
+  Class 091: Support Activities for Petroleum and Natural Gas Extraction
+    Group 0910: Support Activities for Petroleum and Natural Gas Extraction
+Description:
+  oil and gas extraction services provided on fee or contract basis: exploration services in
+  connection with petroleum or gas extraction, e.g. traditional prospecting methods, such as making
+  geological observations at prospective sites ; redirecting drilling and re-drilling repairing and
+  dismantling; cementing oil and gas well casings; pumping of wells; plugging and abandoning wells;
+  liquefaction and re-gasification of natural gas for purpose of transport, done at the mine site;
+  draining and pumping services; test drilling in connection with petroleum or gas extraction.
+  Class 099: Support Activities for Other Mining and Quarrying
+    Group 0990: Support Activities for Other Mining and Quarrying
+Description:
+  includes support services on a fee or contract basis: exploration services, draining and pumping
+  services, test drilling and test hole boring

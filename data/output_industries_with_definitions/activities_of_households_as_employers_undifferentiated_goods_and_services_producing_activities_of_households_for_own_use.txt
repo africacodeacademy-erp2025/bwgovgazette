@@ -1,0 +1,29 @@
+INDUSTRY: ACTIVITIES OF HOUSEHOLDS AS EMPLOYERS; UNDIFFERENTIATED GOODS AND SERVICES-PRODUCING ACTIVITIES OF HOUSEHOLDS FOR OWN USE
+===================================================================================================================================
+
+Division 97: Activities of Households as Employers of Domestic Personnel
+
+  Class 970: Activities of Households as Employers of Domestic Personnel
+    Group 9700: Activities of Households as Employers of Domestic Personnel
+Description:
+  activities of households as employers of domestic personnel such as maids, cooks, waiters, valets,
+  butlers, laundresses, gardeners, gatekeepers, stable-lads, chauffeurs, caretakers, governesses,
+  babysitters, tutors, secretaries.
+Division 98: Undifferentiated Goods and Services-Producing Activities of Private Households for Own Use
+
+  Class 981: Undifferentiated Goods -Producing Activities of Private Households for Own Use
+    Group 9810: Undifferentiated Goods -Producing Activities of Private Households for Own Use
+Description:
+  for Own Use: This includes un-differentiated subsistence goods- producing activities of households,
+  i.e., the activities of households that are engaged in a variety of activities that produce goods
+  for their own subsistence. These activities include hunting and gathering, farming, the production
+  of shelter and clothing and other goods produced by the household for its own subsistence. 111
+  Class 982: Undifferentiated Services-Producing Activities of Private Households for Own Use
+    Group 9820: Undifferentiated Services-Producing Activities of Private Households for Own Use
+Description:
+  Households for Own Use: This includes un-differentiated subsistence services-producing activities of
+  households, i.e. the activities of households that are engaged in a variety of activities that
+  produce services for their own subsistence. These activities include cooking, teaching, caring for
+  household members and other services produced by the household for its own subsistence. If
+  households are also engaged in the production of multiple goods for subsistence purposes, they are
+  classified to the undifferentiated goods-producing subsistence activities of households.

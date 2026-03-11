@@ -1,0 +1,14 @@
+INDUSTRY: ACTIVITIES OF EXTRATERRITORIAL ORGANIZATIONS AND BODIES
+=================================================================
+
+Division 99: Activities of Extraterritorial Organizations and Bodies
+
+  Class 990: Activities of Extraterritorial Organizations and Bodies
+    Group 9900: Activities of Extraterritorial Organizations and Bodies
+Description:
+  activities of international organizations such as the United Nations and the specialized agencies of
+  the United Nations system, regional bodies etc., the International Monetary Fund, the World Bank,
+  the World Customs Organization, the Organisation for Economic Co-operation and Development, the
+  Organization of Petroleum Exporting Countries, the European Communities, the European Free Trade
+  Association; activities of diplomatic and consular missions when being determined by the country
+  of their location rather than by the country they represent. 112
