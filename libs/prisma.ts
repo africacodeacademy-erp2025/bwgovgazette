@@ -56,11 +56,27 @@ function createPrismaClient() {
 
   // Configure pool with SSL settings for Supabase
   // Force SSL but don't verify the certificate chain (required for Supabase pooler)
+  //
+  // keepAlive + keepAliveInitialDelayMillis: emits TCP keep-alive probes so
+  //   the OS/network layer detects dead connections before Prisma tries to
+  //   reuse them.  Critical for long-running uploads (OCR / embedding) where
+  //   the pg server or Supabase pooler drops idle connections.
+  //
+  // idleTimeoutMillis: proactively retire idle pool connections after 30 s,
+  //   well before Supabase's server_idle_timeout (600 s by default).  When
+  //   the next query arrives it gets a fresh connection instead of a stale one.
+  //
+  // connectionTimeoutMillis: fail fast (10 s) when no connection is available
+  //   rather than blocking indefinitely.
   const poolConfig: PoolConfig = {
     connectionString,
     ssl: {
       rejectUnauthorized: false,
     },
+    keepAlive: true,
+    keepAliveInitialDelayMillis: 10_000,
+    idleTimeoutMillis: 30_000,
+    connectionTimeoutMillis: 10_000,
   };
 
   const pool = new Pool(poolConfig);
