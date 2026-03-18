@@ -1,5 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/libs/prisma";
+import { authenticateRequest, requireRole } from "@/libs/utils/authHelpers";
 import { createClient } from "@supabase/supabase-js";
 import { writeFile, unlink, mkdir } from "fs/promises";
 import path from "path";
@@ -36,7 +37,19 @@ function safeErrorDetails(err: unknown): string {
   return String(err);
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Authenticate and authorize user
+  const { authenticated, user, error } = await authenticateRequest(request);
+  if (!authenticated) {
+    return error;
+  }
+
+  // Require ADMIN role
+  const roleError = requireRole("ADMIN")(user);
+  if (roleError) {
+    return roleError;
+  }
+
   // Lazily initialize Supabase client to avoid requiring env at build time
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -135,6 +148,7 @@ export async function POST(request: Request) {
         fileSize: file.size,
         sourceType,
         processingStatus: "pending",
+        userId: user.id,
         tags:
           tags.length > 0
             ? {

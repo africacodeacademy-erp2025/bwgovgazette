@@ -155,3 +155,257 @@ If you want to test locally first, modify `documentService.processDocument()` to
 - **Summaries**: Requires `OPENAI_API_KEY`; stored in `DocumentText.summary`
 - **File Storage**: Raw files stored in Supabase; temp files created for OCR then deleted
 - **Processing**: Currently synchronous; consider async queues (Bull, BullMQ) for production
+
+---
+
+## Authentication & Authorization Setup
+
+### Overview
+
+The system implements JWT-based authentication with role-based access control (RBAC). Two roles are included:
+- **ADMIN**: Manage users, taxonomy, upload and manage documents
+- **USER**: Read and search documents only (default role)
+
+### Installation
+
+#### 1. Install Authentication Dependencies
+
+```bash
+npm install bcrypt jsonwebtoken
+npm install --save-dev @types/bcrypt @types/jsonwebtoken
+```
+
+#### 2. Update Environment Variables
+
+Add the following to your `.env` file:
+
+```bash
+JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-recommended
+```
+
+Generate a strong secret:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+#### 3. Run Database Migration
+
+Create the User and Role tables:
+
+```bash
+npx prisma migrate dev --name add_auth_models
+```
+
+This will:
+- Create `User` table with email, hashed password, and roleId
+- Create `Role` table with name and permissions
+- Add `userId` foreign key to `Document` table
+
+#### 4. Seed Initial Roles (Optional)
+
+```bash
+npx ts-node --project tsconfig.scripts.json libs/parser/seed.ts
+```
+
+Or manually create roles via Prisma:
+
+```bash
+npx prisma studio
+```
+
+Create two documents in the `Role` table:
+```json
+[
+  { "name": "ADMIN", "description": "Administrator", "permissions": ["manage:all", "upload", "classify"] },
+  { "name": "USER", "description": "Regular User", "permissions": ["read", "search", "download"] }
+]
+```
+
+### API Endpoints
+
+#### Register a New User
+
+```bash
+curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "Secure123!"
+  }'
+```
+
+**Response (201):**
+```json
+{
+  "message": "Registration successful",
+  "user": {
+    "id": "user-uuid",
+    "email": "user@example.com",
+    "role": "USER"
+  }
+}
+```
+
+**Password Requirements:**
+- Minimum 8 characters
+- At least one uppercase letter
+- At least one lowercase letter
+- At least one number
+
+#### Login
+
+```bash
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "Secure123!"
+  }'
+```
+
+**Response (200):**
+```json
+{
+  "message": "Login successful",
+  "user": {
+    "id": "user-uuid",
+    "email": "user@example.com",
+    "role": "USER"
+  }
+}
+```
+
+Token is automatically set as `authToken` HttpOnly cookie.
+
+#### Get Current User
+
+```bash
+curl -X GET http://localhost:3000/api/auth/me \
+  -H "Authorization: Bearer {token}"
+```
+
+**Response (200):**
+```json
+{
+  "user": {
+    "id": "user-uuid",
+    "email": "user@example.com",
+    "role": "USER",
+    "roleId": "role-uuid",
+    "permissions": ["read", "search", "download"]
+  }
+}
+```
+
+#### Logout
+
+```bash
+curl -X POST http://localhost:3000/api/auth/logout
+```
+
+**Response (200):**
+```json
+{
+  "message": "Logged out successfully"
+}
+```
+
+Token cookie is cleared.
+
+### Protected Routes
+
+#### Upload Document (ADMIN only)
+
+```bash
+curl -X POST http://localhost:3000/api/upload \
+  -H "Authorization: Bearer {token}" \
+  -F "file=@document.pdf" \
+  -F "sourceType=gazette" \
+  -F "tags=legal,2026"
+```
+
+Returns **403 Forbidden** if user role is not ADMIN.
+
+#### Get Documents (Authenticated Users)
+
+```bash
+curl -X GET http://localhost:3000/api/documents?limit=20 \
+  -H "Authorization: Bearer {token}"
+```
+
+Returns **401 Unauthorized** if not authenticated.
+
+### Using Authentication in Frontend
+
+The token is stored as an HttpOnly cookie, so it's automatically sent with requests. For additional security with API calls, you can also send it via Authorization header:
+
+```javascript
+// Register
+const registerRes = await fetch('/api/auth/register', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password }),
+  credentials: 'include', // Send cookies
+});
+
+// Login
+const loginRes = await fetch('/api/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password }),
+  credentials: 'include',
+});
+
+// Get current user
+const meRes = await fetch('/api/auth/me', {
+  credentials: 'include', // Sends authToken cookie
+});
+
+// Upload with Bearer token (alternative to cookie)
+const uploadRes = await fetch('/api/upload', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${token}` },
+  body: formData,
+});
+```
+
+### Architecture
+
+**JWT Utilities** (`libs/utils/jwtUtils.ts`):
+- `generateToken()`: Create JWT with userId, email, role
+- `verifyToken()`: Verify and decode JWT
+- `extractToken()`: Extract from Bearer header or cookies
+- Token expiry: 1 day
+
+**Password Utilities** (`libs/utils/passwordUtils.ts`):
+- `hashPassword()`: Bcrypt hashing (10 rounds)
+- `comparePassword()`: Verify password against hash
+- `validatePassword()`: Enforce password strength
+
+**Auth Service** (`libs/services/authService.ts`):
+- `registerUser()`: Create user with validation
+- `authenticateUser()`: Login and generate token
+- `getUserById()`: Fetch user with role/permissions
+
+**Auth Helpers** (`libs/utils/authHelpers.ts`):
+- `authenticateRequest()`: Extract and verify JWT from request
+- `requireRole()`: Middleware to check user role
+- `requirePermission()`: Check specific permissions
+
+### Error Responses
+
+| Status | Scenario |
+|--------|----------|
+| 400 | Invalid input (missing email/password, weak password) |
+| 401 | Invalid credentials, missing token, expired token |
+| 403 | Insufficient permissions/role |
+| 500 | Server error |
+
+### Next Steps (Optional)
+
+1. **Refresh Tokens**: Add token rotation for improved security
+2. **Email Verification**: Send verification email on registration
+3. **Admin Panel**: UI for user and role management
+4. **Password Reset**: Forgot password flow with email
+5. **Session Management**: Track active sessions per user
+6. **Audit Logging**: Log authentication events

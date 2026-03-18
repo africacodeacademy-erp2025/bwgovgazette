@@ -19,6 +19,9 @@ model Document {
   fileSize         Int?
   processingStatus ProcessingStatus @default(pending)
 
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
@@ -27,6 +30,7 @@ model Document {
   sicTags          DocumentSicTag[]     // structured SIC tagging
   chunks           DocumentChunk[]
 
+  @@index([userId])
   @@map("documents")
 }
 
@@ -210,4 +214,40 @@ enum TagSource {
   ai
   manual
   rule
+}
+
+/* =========================
+   AUTHENTICATION & AUTHORIZATION
+========================= */
+
+model Role {
+  id          String   @id @default(uuid())
+  name        String   @unique // ADMIN, USER
+  description String?
+  permissions String[] // Store permission strings for fine-grained control
+
+  users       User[]
+
+  createdAt   DateTime @default(now())
+
+  @@map("roles")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password      String   // bcrypt hash
+  roleId        String
+  role          Role     @relation(fields: [roleId], references: [id])
+
+  emailVerified Boolean? @default(false)
+  lastLogin     DateTime?
+
+  documents     Document[]
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([roleId])
+  @@map("users")
 }
