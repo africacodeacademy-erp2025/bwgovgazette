@@ -7,11 +7,41 @@ datasource db {
 }
 
 /* =========================
+   USER
+========================= */
+
+model User {
+  id               String   @id // Supabase user ID from auth.users
+  email            String   @unique
+  firstName        String?
+  lastName         String?
+  role             UserRole @default(user)
+  isActive         Boolean  @default(true)
+
+  // Timestamps
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  documents        Document[]
+  sicSignals       SicSignal[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  user
+  moderator
+  admin
+}
+
+/* =========================
    DOCUMENTS
 ========================= */
 
 model Document {
   id               String   @id @default(uuid())
+  userId           String
   sourceType       String   @default("gazette")
   fileName         String
   fileUrl          String
@@ -22,11 +52,13 @@ model Document {
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   text             DocumentText?
   tags             DocumentTag[]
   sicTags          DocumentSicTag[]
   chunks           DocumentChunk[]
 
+  @@index([userId])
   @@map("documents")
 }
 
@@ -170,6 +202,7 @@ enum TagSource {
 model SicSignal {
   id               String        @id @default(uuid())
   sicNodeId        String
+  createdById      String?
 
   value            String        // raw phrase
   normalizedValue  String        // preprocessed (lowercase, stemmed)
@@ -189,6 +222,7 @@ model SicSignal {
   updatedAt        DateTime      @updatedAt
 
   sicNode          SicNode       @relation(fields: [sicNodeId], references: [id], onDelete: Cascade)
+  createdByUser    User?         @relation(fields: [createdById], references: [id], onDelete: SetNull)
 
   @@index([sicNodeId])
   @@index([normalizedValue])

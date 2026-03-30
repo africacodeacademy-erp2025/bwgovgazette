@@ -14,6 +14,7 @@ export class DocumentService {
     },
     sourceType: string = "gazette",
     tags: string[] = [],
+    userId: string, // Add userId for row-level security
   ) {
     //text extraction
     let extractedText = "";
@@ -79,7 +80,7 @@ export class DocumentService {
       }));
     }
 
-    // Create document with proper relations
+    // Create document with proper relations and userId
     const document = await prisma.document.create({
       data: {
         fileName: file.filename,
@@ -87,6 +88,7 @@ export class DocumentService {
         mimeType: file.mimetype,
         fileSize: file.size,
         sourceType,
+        userId, // Set userId for row-level security
         processingStatus: extractedText ? "completed" : "failed",
 
         // Use DocumentText relation
@@ -143,15 +145,20 @@ export class DocumentService {
   }
 
   async getAllDocuments({
+    userId,
     sourceType,
     limit,
     offset,
   }: {
+    userId: string;
     sourceType?: string;
     limit: number;
     offset: number;
   }) {
-    const where = sourceType && sourceType !== "all" ? { sourceType } : {};
+    const where: any = { userId }; // Row-level security: only user's documents
+    if (sourceType && sourceType !== "all") {
+      where.sourceType = sourceType;
+    }
 
     const [documents, totalCount] = await Promise.all([
       prisma.document.findMany({
@@ -196,9 +203,9 @@ export class DocumentService {
     };
   }
 
-  async getDocumentById(id: string) {
-    const document = await prisma.document.findUnique({
-      where: { id },
+  async getDocumentById(id: string, userId: string) {
+    const document = await prisma.document.findFirst({
+      where: { id, userId }, // Row-level security: verify user owns document
       include: {
         text: true,
         tags: true,

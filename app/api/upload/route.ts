@@ -1,13 +1,20 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { documentService } from "@/libs/services/documentService";
 import { createClient } from "@supabase/supabase-js";
 import { writeFile, unlink, mkdir } from "fs/promises";
 import path from "path";
 import { randomUUID } from "crypto";
+import { requireAuth, type AuthRequest } from "@/libs/authMiddleware";
 
 const BUCKET = process.env.SUPABASE_STORAGE_BUCKET || "documents";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Check authentication
+  const authUser = await requireAuth(request);
+  if (authUser instanceof NextResponse) {
+    return authUser;
+  }
+
   // Lazily initialize Supabase client to avoid requiring env at build time
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -89,7 +96,7 @@ export async function POST(request: Request) {
     await writeFile(tempPath, buffer);
 
     try {
-      // Process document with documentService
+      // Process document with documentService, passing userId
       const result = await documentService.processDocument(
         {
           filename: uniqueFilename,
@@ -101,6 +108,7 @@ export async function POST(request: Request) {
         },
         sourceType,
         tags,
+        authUser.userId, // Add userId for row-level security
       );
 
       // Clean up temp file

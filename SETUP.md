@@ -98,6 +98,145 @@ Required variables:
 npx prisma migrate dev --name add_document_chunks
 ```
 
+## Authentication Setup
+
+### Schema Changes for Auth
+
+1. **Added `User` model**:
+   - `id`: Supabase user ID
+   - `email`: Unique email address
+   - `firstName`, `lastName`: Optional user profile
+   - `role`: User role (user, moderator, admin)
+   - `isActive`: Account status
+   - Relations: `documents` and `sicSignals`
+
+2. **Added user relationships**:
+   - `Document.userId`: Foreign key to User (enforces row-level security)
+   - `SicSignal.createdById`: Optional user who created the signal
+
+### New Auth Files
+
+1. **`libs/auth.ts`**:
+   - `extractToken()`: Extract JWT from Authorization header
+   - `verifyToken()`: Verify token with Supabase
+   - `getUserFromHeaders()`: Get user from request headers
+   - `syncSupabaseUser()`: Create/update user in database
+
+2. **`libs/authMiddleware.ts`**:
+   - `requireAuth()`: Middleware to protect routes (returns 401 if not authenticated)
+   - `getOptionalUser()`: Optional auth (returns null if not authenticated)
+
+### Protected API Routes
+
+All document routes now require authentication:
+
+- **`POST /api/upload`**: Requires Bearer token; tags documents with user's ID
+- **`GET /api/documents`**: Requires Bearer token; returns only user's documents
+- **`GET /api/[id]`**: Requires Bearer token; returns document only if user owns it
+- **`POST /api/auth/signup`**: Public; creates new user
+- **`POST /api/auth/login`**: Public; signs in user
+- **`POST /api/auth/logout`**: Optional; client-side token revocation
+- **`GET /api/auth/me`**: Requires Bearer token; returns current user profile
+
+### Row-Level Security
+
+All document queries now enforce user isolation:
+
+```typescript
+// Only return documents owned by the authenticated user
+getAllDocuments({ userId, sourceType, limit, offset })
+getDocumentById(id, userId) // Checks both id AND userId
+```
+
+### Auth API Examples
+
+#### Sign Up
+```bash
+curl -X POST http://localhost:3000/api/auth/signup \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "securepassword",
+    "firstName": "John",
+    "lastName": "Doe"
+  }'
+```
+
+Response:
+```json
+{
+  "success": true,
+  "user": {
+    "id": "user-uuid",
+    "email": "user@example.com",
+    "firstName": "John",
+    "lastName": "Doe"
+  }
+}
+```
+
+#### Sign In
+```bash
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "securepassword"
+  }'
+```
+
+Response:
+```json
+{
+  "success": true,
+  "user": { ... },
+  "session": {
+    "accessToken": "eyJhbGc...",
+    "refreshToken": "...",
+    "expiresIn": 3600
+  }
+}
+```
+
+#### Get Current User
+```bash
+curl -X GET http://localhost:3000/api/auth/me \
+  -H "Authorization: Bearer {accessToken}"
+```
+
+#### Upload Document (Protected)
+```bash
+curl -X POST http://localhost:3000/api/upload \
+  -H "Authorization: Bearer {accessToken}" \
+  -F "file=@document.pdf" \
+  -F "sourceType=gazette" \
+  -F "tags=important,finance"
+```
+
+#### Get Documents (Protected, Row-Level)
+```bash
+curl -X GET "http://localhost:3000/api/documents?sourceType=gazette&limit=10" \
+  -H "Authorization: Bearer {accessToken}"
+```
+
+### Running Migrations
+
+After updating the schema:
+
+```bash
+# Apply migrations
+npx prisma migrate deploy
+
+# Or during development
+npx prisma migrate dev
+```
+
+This will:
+1. Create the `users` table
+2. Add `userId` to `documents` table
+3. Add `createdById` to `SicSignal` table
+4. Create necessary indexes
+
 This will:
 
 - Add the `DocumentChunk` table
